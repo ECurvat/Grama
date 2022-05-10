@@ -17,4 +17,21 @@ public class Arete {
 	public String toString() {
 		return "Arête : " + "Type = " + type + ", Longueur = " + longueur + "km";
 	}
+
+	@Override
+	public int hashCode() {
+		int hash = 7;
+		return hash;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if(!(obj instanceof Arete)) {
+			return false;
+		}
+		Arete p = (Arete)obj;
+		return this.type.equals(p.type) && this.longueur == p.longueur;
+	}
+	
+	
 }
