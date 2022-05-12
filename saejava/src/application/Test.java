@@ -23,7 +23,7 @@ public class Test {
 		List<Correspondance> listeCorrespondance = new ArrayList<>();
 		listeCorrespondance = trouverLesCorrespondances("graphe.csv", listeSommet, listeArete);
 		for (int i = 0; i < listeCorrespondance.size(); i++) {
-			System.out.println(i + "" + listeCorrespondance.get(i));
+			System.out.println(i + " " + listeCorrespondance.get(i));
 		}
     }
 }

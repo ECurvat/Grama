@@ -19,10 +19,7 @@ public class Deserialisation {
 		File getCSVFiles = new File(nomFichier);
         Scanner sc = new Scanner(getCSVFiles);
 		sc.useDelimiter(";;");
-		
 
-		
-		
 		List<Sommet> listeSommet = new ArrayList<>();
 		
 		while(sc.hasNext()) {
@@ -32,7 +29,6 @@ public class Deserialisation {
 			infopremier[0] = infopremier[0].replace("\n", "");
 			listeSommet.add(new Sommet(infopremier[0], infopremier[1]));
 		}
-		
         sc.close();  
 		return listeSommet;
 	}
@@ -68,9 +64,6 @@ public class Deserialisation {
 		}
 		scanAretes.close();
 		return listeArete;
-		
-		
-		
 	}
 	
 	public static List<Correspondance> trouverLesCorrespondances(String nomFichier, List<Sommet> listeSommet, List<Arete> listeArete) throws FileNotFoundException {
@@ -95,9 +88,7 @@ public class Deserialisation {
 				listeCorrespondance.add(new Correspondance(listeSommet.get(positionOriginal), listeSommet.get(positionFin), listeArete.get(positionRoute)));
 			}
 		}
-		for(Correspondance item : listeCorrespondance) {
-			System.out.println(item);
-		}
+		scanSucc.close();
 		return listeCorrespondance;
 	}
 }

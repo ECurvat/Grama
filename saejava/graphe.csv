@@ -20,12 +20,11 @@ V,Lille:A,233|V,Paris;D,70|V,Mons;A,221|V,Reims;D,31|L,MuseeLens;A,123|R,AlTagli
 L,TourEiffel:N,4|V,Paris;;
 V,Bruxelles:N,70|V,Namur;A,70|V,Mons;N,60|V,Charleroi;D,28|L,WalibiBE;N,26|R,Francart;;
 V,Namur:N,70|V,Bruxelles;D,40|L,WalibiBE;D,80|R,Francart;;
-V,Mons:A,70|V,Bruxelles;A,102|L,MuseeLens;D,94|R,AlTaglio;;
+V,Mons:A,70|V,Bruxelles;A,102|L,MuseeLens;D,94|R,AlTaglio;N,50|V,Charleroi;D,70|V,Lille;;
 V,Charleroi:N,60|V,Bruxelles;D,26|V,Philippeville;N,50|V,Mons;N,120|V,Libramont;D,53|L,WalibiBE;D,45|R,Francart;;
 L,WalibiBE:D,28|V,Bruxelles;D,40|V,Namur;D,53|V,Charleroi;;
 R,Francart:N,26|V,Bruxelles;D,80|V,Namur;D,45|V,Charleroi;;
 V,Philippeville:D,26|V,Charleroi;N,83|V,Libramont;A,138|L,CentreSportifArlon;;
 V,Libramont:N,83|V,Philippeville;N,120|V,Charleroi;;
-V,Mons:N,50|V,Charleroi;D,70|V,Lille;;
 L,MuseeLens:A,102|V,Mons;D,31|V,Lille;;
 R,AlTaglio:D,94|V,Mons;A,123|V,Lille;A,102|V,Reims;;

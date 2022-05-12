@@ -1,7 +1,5 @@
 package metier;
 
-import java.util.Objects;
-
 /**
  *
  * @author elliot
@@ -9,6 +7,7 @@ import java.util.Objects;
 public class Sommet {
 	private String type;
 	private String nom;
+	
 
 	public Sommet(String type, String nom) {
 		this.type = type;
@@ -42,5 +41,4 @@ public class Sommet {
 		Sommet p = (Sommet)obj;
 		return this.type.equals(p.type) && this.nom.equals(p.nom);
 	}
-	
 }
