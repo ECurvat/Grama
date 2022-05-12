@@ -1,15 +1,7 @@
 package application;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import metier.Arete;
-import metier.Sommet;
-import static outils.Deserialisation.trouverLesSommets;
-import static outils.Deserialisation.trouverLesAretes;
-import static outils.Deserialisation.trouverLesSuccesseurs;
+import metier.*;
 
 /**
  *
@@ -17,12 +9,19 @@ import static outils.Deserialisation.trouverLesSuccesseurs;
  */
 public class Test {
 	public static void main(String[] args) throws FileNotFoundException {
-		List<Sommet> listeSommet = new ArrayList<>();
-		listeSommet = trouverLesSommets("graphe.csv");
-		List<Arete> listeArete = new ArrayList<>();
-		listeArete = trouverLesAretes("graphe.csv", listeSommet);
-		trouverLesSuccesseurs("graphe.csv", listeSommet, listeArete);
+		Graphe graphePrincipal = new Graphe("graphe.csv");
 		System.out.println("Exemple d'affichage des successeurs du 3e sommet :");
-		listeSommet.get(2).afficherSuccesseurs();		
+		graphePrincipal.getListeSommet().get(2).afficherSuccesseurs();
+		
+		for (Sommet item : graphePrincipal.getListeSommetParType("V")) {
+			System.out.println(item);
+		}
+		
+		for (Arete item : graphePrincipal.getListeAreteParType("A")) {
+			System.out.println(item);
+		}
+		System.out.println(graphePrincipal.getListeAreteParType("A").size());
+		
+		graphePrincipal.afficherListeAreteParType("R");
     }
 }

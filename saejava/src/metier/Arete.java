@@ -32,4 +32,12 @@ public class Arete {
 		Arete p = (Arete)obj;
 		return this.type.equals(p.type) && this.longueur == p.longueur;
 	}
+
+	public String getType() {
+		return type;
+	}
+
+	public int getLongueur() {
+		return longueur;
+	}
 }

@@ -22,7 +22,7 @@ public class Sommet {
 
 	@Override
 	public String toString() {
-		return "Sommet : " + "Type = " + type + ", Nom = " + nom + "\n\t";
+		return "Sommet : " + "Type = " + type + ", Nom = " + nom;
 	}
 
 	public String getType() {
