@@ -119,4 +119,24 @@ public class Graphe {
 		}
 		return sommetsRecherches;
 	}
+	
+	public boolean rechercher1Distance(Sommet premier, Sommet deuxieme) {
+		for (Map.Entry<Arete, Sommet> item : premier.getSetSuccesseurs()) {
+			if (item.getValue().equals(deuxieme)) {
+//				System.out.println("1-distance entre " + premier + " et " + deuxieme + " :\n\tVia " + item.getKey());
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean rechercher2Distance(Sommet premier, Sommet deuxieme) {
+		for (Map.Entry<Arete, Sommet> item : premier.getSetSuccesseurs()) {
+			if (this.rechercher1Distance(item.getValue(), deuxieme)) {
+				System.out.println("2-distance entre " + premier + " et " + deuxieme);
+				return true;
+			}
+		}
+		return false;
+	}
 }

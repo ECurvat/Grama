@@ -27,5 +27,10 @@ public class Test {
 		for(Sommet item : graphePrincipal.rechercherSommetsRelies(29)) {
 			System.out.println(item);
 		}
+		for(int i = 0; i < graphePrincipal.getListeSommet().size(); i++) {
+			System.out.println(i + " " + graphePrincipal.getListeSommet().get(i));
+		}
+		System.out.println(graphePrincipal.rechercher1Distance(graphePrincipal.getListeSommet().get(17), graphePrincipal.getListeSommet().get(18)));
+		System.out.println(graphePrincipal.rechercher2Distance(graphePrincipal.getListeSommet().get(4), graphePrincipal.getListeSommet().get(22)));
     }
 }
