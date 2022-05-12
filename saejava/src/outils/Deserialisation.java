@@ -70,7 +70,7 @@ public class Deserialisation {
 		return listeArete;
 	}
 	
-	public static void trouverLesCorrespondance(String nomFichier, List<Sommet> listeSommet, List<Arete> listeArete) throws FileNotFoundException {
+	public static void trouverLesSuccesseurs(String nomFichier, List<Sommet> listeSommet, List<Arete> listeArete) throws FileNotFoundException {
 		// Ouverture du CSV et séparation par lignes
 		File getCSVFiles = new File(nomFichier);
 		Scanner scanSucc = new Scanner(getCSVFiles);

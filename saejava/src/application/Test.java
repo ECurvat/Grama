@@ -9,7 +9,7 @@ import metier.Arete;
 import metier.Sommet;
 import static outils.Deserialisation.trouverLesSommets;
 import static outils.Deserialisation.trouverLesAretes;
-import static outils.Deserialisation.trouverLesCorrespondance;
+import static outils.Deserialisation.trouverLesSuccesseurs;
 
 /**
  *
@@ -21,7 +21,7 @@ public class Test {
 		listeSommet = trouverLesSommets("graphe.csv");
 		List<Arete> listeArete = new ArrayList<>();
 		listeArete = trouverLesAretes("graphe.csv", listeSommet);
-		trouverLesCorrespondance("graphe.csv", listeSommet, listeArete);
+		trouverLesSuccesseurs("graphe.csv", listeSommet, listeArete);
 		System.out.println("Exemple d'affichage des successeurs du 3e sommet :");
 		listeSommet.get(2).afficherSuccesseurs();		
     }
