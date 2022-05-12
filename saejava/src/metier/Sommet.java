@@ -50,9 +50,14 @@ public class Sommet {
 		return this.type.equals(p.type) && this.nom.equals(p.nom);
 	}
 	
-
+	// Sert pour la désérialisation (ajout d'un successeur par exemple)
 	public Map<Arete, Sommet> getSuccesseurs() {
 		return successeurs;
+	}
+	
+	public Set<Map.Entry<Arete, Sommet>> getSetSuccesseurs() {
+		Set<Map.Entry<Arete,Sommet>> parcours= successeurs.entrySet();
+		return parcours;
 	}
 	
 	public void afficherSuccesseurs() {

@@ -22,6 +22,10 @@ public class Test {
 		}
 		System.out.println(graphePrincipal.getListeAreteParType("A").size());
 		
-		graphePrincipal.afficherListeAreteParType("R");
+		graphePrincipal.afficherListeAreteParType("");
+		System.out.println(graphePrincipal.getListeArete().get(29));
+		for(Sommet item : graphePrincipal.rechercherSommetsRelies(29)) {
+			System.out.println(item);
+		}
     }
 }

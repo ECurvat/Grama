@@ -3,6 +3,7 @@ package metier;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import static outils.Deserialisation.trouverLesAretes;
 import static outils.Deserialisation.trouverLesSommets;
 import static outils.Deserialisation.trouverLesSuccesseurs;
@@ -103,5 +104,19 @@ public class Graphe {
 		} catch (TypeInconnuException e) {
 			System.out.println("Erreur levée : " + e.getMessage());
 		}
+	}
+	
+	public List<Sommet> rechercherSommetsRelies(int positionListe) {
+		List<Sommet> sommetsRecherches = new ArrayList<>();
+		Arete sujet = listeArete.get(positionListe);
+		for(Sommet objet : listeSommet) {
+			for(Map.Entry<Arete, Sommet> item : objet.getSetSuccesseurs()) {
+				if (item.getKey().equals(sujet) && !sommetsRecherches.contains(objet)) {
+					sommetsRecherches.add(objet);
+					sommetsRecherches.add(item.getValue());
+				}
+			}
+		}
+		return sommetsRecherches;
 	}
 }
