@@ -1,12 +1,18 @@
 package metier;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
+
 /**
  *
  * @author elliot
  */
 public class Sommet {
-	private String type;
-	private String nom;
+	private final String type;
+	private final String nom;
+	private Map<Arete,Sommet> successeurs = new HashMap<>();
 	
 
 	public Sommet(String type, String nom) {
@@ -29,7 +35,9 @@ public class Sommet {
 
 	@Override
 	public int hashCode() {
-		int hash = 7;
+		int hash = 3;
+		hash = 89 * hash + Objects.hashCode(this.type);
+		hash = 89 * hash + Objects.hashCode(this.nom);
 		return hash;
 	}
 
@@ -40,5 +48,22 @@ public class Sommet {
 		}
 		Sommet p = (Sommet)obj;
 		return this.type.equals(p.type) && this.nom.equals(p.nom);
+	}
+	
+	// Sert pour la désérialisation (ajout d'un successeur par exemple)
+	public Map<Arete, Sommet> getSuccesseurs() {
+		return successeurs;
+	}
+	
+	public Set<Map.Entry<Arete, Sommet>> getSetSuccesseurs() {
+		Set<Map.Entry<Arete,Sommet>> parcours= successeurs.entrySet();
+		return parcours;
+	}
+	
+	public void afficherSuccesseurs() {
+		Set<Map.Entry<Arete,Sommet>> parcours= successeurs.entrySet();
+		for (Map.Entry<Arete,Sommet> entree : parcours){
+			System.out.println("Sommet de destination : " + entree.getValue() + "via la route : " + entree.getKey());
+		}
 	}
 }

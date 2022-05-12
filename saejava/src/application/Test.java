@@ -1,14 +1,7 @@
 package application;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import metier.Arete;
-import metier.Correspondance;
-import metier.Sommet;
-import static outils.Deserialisation.trouverLesSommets;
-import static outils.Deserialisation.trouverLesAretes;
-import static outils.Deserialisation.trouverLesCorrespondances;
+import metier.*;
 
 /**
  *
@@ -16,14 +9,28 @@ import static outils.Deserialisation.trouverLesCorrespondances;
  */
 public class Test {
 	public static void main(String[] args) throws FileNotFoundException {
-		List<Sommet> listeSommet = new ArrayList<>();
-		listeSommet = trouverLesSommets("graphe.csv");
-		List<Arete> listeArete = new ArrayList<>();
-		listeArete = trouverLesAretes("graphe.csv", listeSommet);
-		List<Correspondance> listeCorrespondance = new ArrayList<>();
-		listeCorrespondance = trouverLesCorrespondances("graphe.csv", listeSommet, listeArete);
-		for (int i = 0; i < listeCorrespondance.size(); i++) {
-			System.out.println(i + " " + listeCorrespondance.get(i));
+		Graphe graphePrincipal = new Graphe("graphe.csv");
+		System.out.println("Exemple d'affichage des successeurs du 3e sommet :");
+		graphePrincipal.getListeSommet().get(2).afficherSuccesseurs();
+		
+		for (Sommet item : graphePrincipal.getListeSommetParType("V")) {
+			System.out.println(item);
 		}
+		
+		for (Arete item : graphePrincipal.getListeAreteParType("A")) {
+			System.out.println(item);
+		}
+		System.out.println(graphePrincipal.getListeAreteParType("A").size());
+		
+		graphePrincipal.afficherListeAreteParType("");
+		System.out.println(graphePrincipal.getListeArete().get(29));
+		for(Sommet item : graphePrincipal.rechercherSommetsRelies(29)) {
+			System.out.println(item);
+		}
+		for(int i = 0; i < graphePrincipal.getListeSommet().size(); i++) {
+			System.out.println(i + " " + graphePrincipal.getListeSommet().get(i));
+		}
+		System.out.println(graphePrincipal.rechercher1Distance(graphePrincipal.getListeSommet().get(17), graphePrincipal.getListeSommet().get(18)));
+		System.out.println(graphePrincipal.rechercher2Distance(graphePrincipal.getListeSommet().get(4), graphePrincipal.getListeSommet().get(22)));
     }
 }

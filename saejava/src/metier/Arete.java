@@ -5,8 +5,8 @@ package metier;
  * @author elliot
  */
 public class Arete {
-	private String type;
-	private int longueur;
+	private final String type;
+	private final int longueur;
 
 	public Arete(String type, int kilometrage) {
 		this.type = type;
@@ -32,6 +32,12 @@ public class Arete {
 		Arete p = (Arete)obj;
 		return this.type.equals(p.type) && this.longueur == p.longueur;
 	}
-	
-	
+
+	public String getType() {
+		return type;
+	}
+
+	public int getLongueur() {
+		return longueur;
+	}
 }
