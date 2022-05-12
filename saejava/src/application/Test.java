@@ -3,12 +3,13 @@ package application;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import metier.Arete;
-import metier.Correspondance;
 import metier.Sommet;
 import static outils.Deserialisation.trouverLesSommets;
 import static outils.Deserialisation.trouverLesAretes;
-import static outils.Deserialisation.trouverLesCorrespondances;
+import static outils.Deserialisation.trouverLesCorrespondance;
 
 /**
  *
@@ -20,10 +21,8 @@ public class Test {
 		listeSommet = trouverLesSommets("graphe.csv");
 		List<Arete> listeArete = new ArrayList<>();
 		listeArete = trouverLesAretes("graphe.csv", listeSommet);
-		List<Correspondance> listeCorrespondance = new ArrayList<>();
-		listeCorrespondance = trouverLesCorrespondances("graphe.csv", listeSommet, listeArete);
-		for (int i = 0; i < listeCorrespondance.size(); i++) {
-			System.out.println(i + " " + listeCorrespondance.get(i));
-		}
+		trouverLesCorrespondance("graphe.csv", listeSommet, listeArete);
+		System.out.println("Exemple d'affichage des successeurs du 3e sommet :");
+		listeSommet.get(2).afficherSuccesseurs();		
     }
 }
