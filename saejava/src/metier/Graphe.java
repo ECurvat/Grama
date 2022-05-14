@@ -1,5 +1,6 @@
 package metier;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +17,7 @@ public class Graphe {
 	private List<Sommet> listeSommet = new ArrayList<>();
 	private List<Arete> listeArete = new ArrayList<>();
 	
-	public Graphe(String nomFichier) throws FileNotFoundException {
+	public Graphe(File nomFichier) throws FileNotFoundException {
 		listeSommet = trouverLesSommets(nomFichier);
 		listeArete = trouverLesAretes(nomFichier, listeSommet);
 		trouverLesSuccesseurs(nomFichier, listeSommet, listeArete);

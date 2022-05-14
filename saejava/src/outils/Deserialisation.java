@@ -13,17 +13,16 @@ import metier.Arete;
  * @author elliot
  */
 public class Deserialisation {
-	public static List<Sommet> trouverLesSommets(String nomFichier) throws FileNotFoundException {
+	public static List<Sommet> trouverLesSommets(File nomFichier) throws FileNotFoundException {
 		// Ouverture du CSV et séparation par lignes
-		File getCSVFiles = new File(nomFichier);
-        Scanner sc = new Scanner(getCSVFiles);
-		sc.useDelimiter(";;");
+        Scanner scanSommets = new Scanner(nomFichier);
+		scanSommets.useDelimiter(";;");
 
 		List<Sommet> listeSommet = new ArrayList<>();
 		
 		// Traitement du CSV pour n'avoir que les sommets d'origine
-		while(sc.hasNext()) {
-			String ligneActuelle = sc.next();
+		while(scanSommets.hasNext()) {
+			String ligneActuelle = scanSommets.next();
 			String[] ligneSplit = ligneActuelle.split(":");
 			String[] infopremier = ligneSplit[0].split(",");
 			infopremier[0] = infopremier[0].replace("\n", "");
@@ -31,14 +30,13 @@ public class Deserialisation {
 			// Ajout des sommets d'origine à la liste de sommets
 			listeSommet.add(new Sommet(infopremier[0], infopremier[1]));
 		}
-        sc.close();  
+        scanSommets.close();  
 		return listeSommet;
 	}
 	
-	public static List<Arete> trouverLesAretes(String nomFichier, List<Sommet> listeSommet) throws FileNotFoundException {
+	public static List<Arete> trouverLesAretes(File nomFichier, List<Sommet> listeSommet) throws FileNotFoundException {
 		// Ouverture du CSV et séparation par lignes
-		File getCSVFiles = new File(nomFichier);
-        Scanner scanAretes = new Scanner(getCSVFiles);
+		Scanner scanAretes = new Scanner(nomFichier);
 		scanAretes.useDelimiter(";;");
 		
 		List<Arete> listeTemporaire = new ArrayList<>();
@@ -70,10 +68,9 @@ public class Deserialisation {
 		return listeArete;
 	}
 	
-	public static void trouverLesSuccesseurs(String nomFichier, List<Sommet> listeSommet, List<Arete> listeArete) throws FileNotFoundException {
+	public static void trouverLesSuccesseurs(File nomFichier, List<Sommet> listeSommet, List<Arete> listeArete) throws FileNotFoundException {
 		// Ouverture du CSV et séparation par lignes
-		File getCSVFiles = new File(nomFichier);
-		Scanner scanSucc = new Scanner(getCSVFiles);
+		Scanner scanSucc = new Scanner(nomFichier);
 		scanSucc.useDelimiter(";;");
 		
 		while(scanSucc.hasNext()) {

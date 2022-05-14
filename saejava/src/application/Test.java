@@ -1,5 +1,6 @@
 package application;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import metier.*;
 
@@ -9,7 +10,7 @@ import metier.*;
  */
 public class Test {
 	public static void main(String[] args) throws FileNotFoundException {
-		Graphe graphePrincipal = new Graphe("graphe.csv");
+		Graphe graphePrincipal = new Graphe(new File("graphe.csv"));
 		System.out.println("Exemple d'affichage des successeurs du 3e sommet :");
 		graphePrincipal.getListeSommet().get(2).afficherSuccesseurs();
 		
