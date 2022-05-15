@@ -5,9 +5,7 @@
 package vue;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import javax.swing.JFileChooser;
-import javax.swing.JFrame;
 import metier.*;
 
 /**
@@ -214,22 +212,18 @@ public class Accueil extends javax.swing.JFrame{
 		int option = choixFichier.showOpenDialog(null);
             if(option == JFileChooser.APPROVE_OPTION){
                File file = choixFichier.getSelectedFile();
-				try {
-					graphePrincipal = new Graphe(file);
-					jLabelMessageGraphe.setText("Graphe correctement importé : " + file.getName());
-					jButtonEcran0.setEnabled(true);
-					jButtonEcran1.setEnabled(true);
-					jButtonEcran2.setEnabled(true);
-					jButtonEcran3.setEnabled(true);
-					jButtonEcran4.setEnabled(true);
-					jMenuItemEcran0.setEnabled(true);
-					jMenuItemEcran1.setEnabled(true);
-					jMenuItemEcran2.setEnabled(true);
-					jMenuItemEcran3.setEnabled(true);
-					jMenuItemEcran4.setEnabled(true);
-				} catch (FileNotFoundException e) {
-					System.out.println("Dans le gestionnaire : " + e.getMessage());
-				}
+			   graphePrincipal = new Graphe(file);
+			   jLabelMessageGraphe.setText("Graphe correctement importé : " + file.getName());
+			   jButtonEcran0.setEnabled(true);
+			   jButtonEcran1.setEnabled(true);
+			   jButtonEcran2.setEnabled(true);
+			   jButtonEcran3.setEnabled(true);
+			   jButtonEcran4.setEnabled(true);
+			   jMenuItemEcran0.setEnabled(true);
+			   jMenuItemEcran1.setEnabled(true);
+			   jMenuItemEcran2.setEnabled(true);
+			   jMenuItemEcran3.setEnabled(true);
+			   jMenuItemEcran4.setEnabled(true);
 			}
     }//GEN-LAST:event_jButtonImporterActionPerformed
 

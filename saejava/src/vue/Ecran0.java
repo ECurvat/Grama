@@ -202,7 +202,7 @@ public class Ecran0 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSommetsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSommetsActionPerformed
-        jLabelResultat.setText(graphePrincipal.getListeSommet().toString());
+        //jLabelResultat.setText(graphePrincipal.getListeSommet().toString());
     }//GEN-LAST:event_jButtonSommetsActionPerformed
 
 	/**

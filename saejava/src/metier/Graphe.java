@@ -1,143 +1,78 @@
 package metier;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import static outils.Deserialisation.trouverLesAretes;
-import static outils.Deserialisation.trouverLesSommets;
-import static outils.Deserialisation.trouverLesSuccesseurs;
 
 /**
  *
- * @author elliot
+ * @author François
  */
 public class Graphe {
-	private List<Sommet> listeSommet = new ArrayList<>();
-	private List<Arete> listeArete = new ArrayList<>();
-	
-	public Graphe(File nomFichier) throws FileNotFoundException {
-		listeSommet = trouverLesSommets(nomFichier);
-		listeArete = trouverLesAretes(nomFichier, listeSommet);
-		trouverLesSuccesseurs(nomFichier, listeSommet, listeArete);
+	private List<Sommet> listSommet=new ArrayList<>();
+	private String nomFichier;
+
+	public Graphe(String nomFichier) throws IOException {
+		this.nomFichier = nomFichier;
+		ouvrir();
 	}
 
-	public List<Sommet> getListeSommet() {
-		return listeSommet;
+	public Graphe(File file) {
+		throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
 	}
 
-	public List<Arete> getListeArete() {
-		return listeArete;
+	public List<Sommet> getListSommet() {
+		return listSommet;
 	}
 	
-	public List<Sommet> getListeSommetParType(String typeSommet) {
-		List<Sommet> listeRecherchee = new ArrayList<>();
-		for(Sommet item : listeSommet) {
-			if (item.getType().equals(typeSommet)) {
-				listeRecherchee.add(item);
-			}
-		}
-		return listeRecherchee;
-	}
 	
-	public List<Arete> getListeAreteParType(String typeArete) {
-		List<Arete> listeRecherchee = new ArrayList<>();
-		for(Arete item : listeArete) {
-			if (item.getType().equals(typeArete)) {
-				listeRecherchee.add(item);
-			}
-		}
-		return listeRecherchee;
-	}
-	
-	public void afficherListeSommetParType(String typeSommet) {
-		try {
-			if (!typeSommet.equalsIgnoreCase("V") && !typeSommet.equalsIgnoreCase("R") && !typeSommet.equalsIgnoreCase("L")) {
-				throw new TypeInconnuException();
-			} else {
-				int nbSommet = 0;
-				switch (typeSommet) {
-					case "V" : System.out.println("Affichage des villes du graphe :");
-								break;
-					case "R" : System.out.println("Affichage des restaurants du graphe :");
-								break;
-					case "L" : System.out.println("Affichage des lieux de loisir du graphe :");
-								break;
-					default: break;
-				}
-				for(Sommet item : listeSommet) {
-					if (item.getType().equals(typeSommet)) {
-						System.out.println("\t" + item);
-						nbSommet++;
-					}
-				}
-				System.out.println("Nombre de sommet(s) trouvé(s) : " + nbSommet);
-			}
-		} catch (TypeInconnuException e) {
-			System.out.println("Erreur levée : " + e.getMessage());
-		}
-	}
-	
-	public void afficherListeAreteParType(String typeArete) {
-		try {
-			if (!typeArete.equalsIgnoreCase("A") && !typeArete.equalsIgnoreCase("N") && !typeArete.equalsIgnoreCase("D")) {
-				throw new TypeInconnuException();
-			} else {
-				int nbArete = 0;
-				switch (typeArete) {
-					case "A" : System.out.println("Affichage des autoroutes du graphe :");
-								break;
-					case "N" : System.out.println("Affichage des routes nationales du graphe :");
-								break;
-					case "D" : System.out.println("Affichage des routes départementales du graphe :");
-								break;
-					default: break;
-				}
-				for(Arete item : listeArete) {
-					if (item.getType().equals(typeArete)) {
-						System.out.println("\t" + item);
-						nbArete++;
-					}
-				}
-				System.out.println("Nombre d'arête(s) trouvée(s) : " + nbArete);
-			}
-		} catch (TypeInconnuException e) {
-			System.out.println("Erreur levée : " + e.getMessage());
-		}
-	}
-	
-	public List<Sommet> rechercherSommetsRelies(int positionListe) {
-		List<Sommet> sommetsRecherches = new ArrayList<>();
-		Arete sujet = listeArete.get(positionListe);
-		for(Sommet objet : listeSommet) {
-			for(Map.Entry<Arete, Sommet> item : objet.getSetSuccesseurs()) {
-				if (item.getKey().equals(sujet) && !sommetsRecherches.contains(objet)) {
-					sommetsRecherches.add(objet);
-					sommetsRecherches.add(item.getValue());
-				}
-			}
-		}
-		return sommetsRecherches;
-	}
-	
-	public boolean rechercher1Distance(Sommet premier, Sommet deuxieme) {
-		for (Map.Entry<Arete, Sommet> item : premier.getSetSuccesseurs()) {
-			if (item.getValue().equals(deuxieme)) {
-//				System.out.println("1-distance entre " + premier + " et " + deuxieme + " :\n\tVia " + item.getKey());
-				return true;
-			}
-		}
-		return false;
-	}
-	
-	public boolean rechercher2Distance(Sommet premier, Sommet deuxieme) {
-		for (Map.Entry<Arete, Sommet> item : premier.getSetSuccesseurs()) {
-			if (this.rechercher1Distance(item.getValue(), deuxieme)) {
-				System.out.println("2-distance entre " + premier + " et " + deuxieme);
-				return true;
-			}
-		}
-		return false;
+	public void ouvrir() throws FileNotFoundException, IOException{
+		
+		BufferedReader scanSommets = new BufferedReader(new FileReader(nomFichier));
+        
+        String ligneActuelle;
+        while ((ligneActuelle = scanSommets.readLine()) != null) {
+			//System.out.println(ligneActuelle);
+            String sommet = ligneActuelle.split(":")[0];
+            String[] sommetSplit = sommet.split(",");
+            listSommet.add(new Sommet(sommetSplit[0], sommetSplit[1]));
+        }
+        scanSommets.close(); 
+      
+		BufferedReader scanAretes = new BufferedReader(new FileReader(nomFichier));
+   
+        while ((ligneActuelle = scanAretes.readLine()) != null) {
+            ligneActuelle.replace(";;", "");
+            
+            String[] séparationSommetArete = ligneActuelle.split(":");
+            
+           
+            String[] infoSommetOrigine = séparationSommetArete[0].split(",");
+			String[] listeDestination = séparationSommetArete[1].split(";");
+			
+			/*
+			System.out.println("__________________________________________________________________");
+			
+            System.out.println("Info sommet origine : " +  Arrays.toString(infoSommetOrigine));
+			System.out.println("Liste destination : " + Arrays.toString(listeDestination));
+			System.out.println("Nombre de routes voisines : " + listeDestination.length);
+			*/
+			
+			Sommet origine=listSommet.get(listSommet.indexOf(new Sommet(infoSommetOrigine[0], infoSommetOrigine[1])));
+			//System.out.println(origine);
+			
+            for(String item:listeDestination) {
+				
+                String[] séparationRouteDestination = item.split("\\|");
+                String[] routeIndividuelle = séparationRouteDestination[0].split(",");
+				String[] routeDestination = séparationRouteDestination[1].split(",");
+				Sommet destination = listSommet.get(listSommet.indexOf(new Sommet(routeDestination[0], routeDestination[1])));
+				origine.getVoisins().add(new Arete(routeIndividuelle[0], Integer.parseInt(routeIndividuelle[1]),destination));
+            }
+        }
 	}
 }

@@ -7,30 +7,21 @@ package metier;
 public class Arete {
 	private final String type;
 	private final int longueur;
+	private Sommet destination;
 
-	public Arete(String type, int kilometrage) {
+	public Sommet getDestination() {
+		return destination;
+	}
+
+	public Arete(String type, int kilometrage,Sommet destination) {
 		this.type = type;
 		this.longueur = kilometrage;
+		this.destination=destination;
 	}	
 	
 	@Override
 	public String toString() {
 		return "Arête : " + "Type = " + type + ", Longueur = " + longueur + "km";
-	}
-
-	@Override
-	public int hashCode() {
-		int hash = 7;
-		return hash;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if(!(obj instanceof Arete)) {
-			return false;
-		}
-		Arete p = (Arete)obj;
-		return this.type.equals(p.type) && this.longueur == p.longueur;
 	}
 
 	public String getType() {

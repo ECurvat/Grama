@@ -1,29 +1,38 @@
 package metier;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
- * @author elliot
+ * @author François
  */
 public class Sommet {
-	private final String type;
-	private final String nom;
-	private Map<Arete,Sommet> successeurs = new HashMap<>();
-	
+	private String type;
+	private String nom;
+	private List<Arete> voisins = new ArrayList<>();
 
 	public Sommet(String type, String nom) {
 		this.type = type;
 		this.nom = nom;
 	}
-
+	
+	public List<Arete> getVoisins() {
+		return voisins;
+	}
+	
 	@Override
 	public String toString() {
 		return "Sommet : " + "Type = " + type + ", Nom = " + nom;
 	}
+
+	@Override
+	public boolean equals(Object o ){
+		if (!(o instanceof Sommet))
+			return false;
+		Sommet p = (Sommet)o;
+		return type.equals(p.getType()) && nom.equals(p.getNom());
+	} 
 
 	public String getType() {
 		return type;
@@ -32,38 +41,7 @@ public class Sommet {
 	public String getNom() {
 		return nom;
 	}
-
-	@Override
-	public int hashCode() {
-		int hash = 3;
-		hash = 89 * hash + Objects.hashCode(this.type);
-		hash = 89 * hash + Objects.hashCode(this.nom);
-		return hash;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if(!(obj instanceof Sommet)) {
-			return false;
-		}
-		Sommet p = (Sommet)obj;
-		return this.type.equals(p.type) && this.nom.equals(p.nom);
-	}
 	
-	// Sert pour la désérialisation (ajout d'un successeur par exemple)
-	public Map<Arete, Sommet> getSuccesseurs() {
-		return successeurs;
-	}
 	
-	public Set<Map.Entry<Arete, Sommet>> getSetSuccesseurs() {
-		Set<Map.Entry<Arete,Sommet>> parcours= successeurs.entrySet();
-		return parcours;
-	}
 	
-	public void afficherSuccesseurs() {
-		Set<Map.Entry<Arete,Sommet>> parcours= successeurs.entrySet();
-		for (Map.Entry<Arete,Sommet> entree : parcours){
-			System.out.println("Sommet de destination : " + entree.getValue() + "via la route : " + entree.getKey());
-		}
-	}
 }
