@@ -10,15 +10,15 @@ import java.util.List;
 public class Sommet {
 	private String type;
 	private String nom;
-	private List<Arete> voisins = new ArrayList<>();
+	private List<Arete> successeurs = new ArrayList<>();
 
 	public Sommet(String type, String nom) {
 		this.type = type;
 		this.nom = nom;
 	}
 	
-	public List<Arete> getVoisins() {
-		return voisins;
+	public List<Arete> getSuccesseurs() {
+		return successeurs;
 	}
 	
 	@Override
@@ -41,7 +41,4 @@ public class Sommet {
 	public String getNom() {
 		return nom;
 	}
-	
-	
-	
 }

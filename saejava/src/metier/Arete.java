@@ -31,4 +31,13 @@ public class Arete {
 	public int getLongueur() {
 		return longueur;
 	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if(!(o instanceof Arete)) {
+			return false;
+		}
+		Arete p = (Arete) o;
+		return this.type.equals(p.type) && this.longueur == p.longueur;
+	}
 }

@@ -212,7 +212,6 @@ public class Accueil extends javax.swing.JFrame{
 		int option = choixFichier.showOpenDialog(null);
             if(option == JFileChooser.APPROVE_OPTION){
                File file = choixFichier.getSelectedFile();
-			   graphePrincipal = new Graphe(file);
 			   jLabelMessageGraphe.setText("Graphe correctement importé : " + file.getName());
 			   jButtonEcran0.setEnabled(true);
 			   jButtonEcran1.setEnabled(true);
