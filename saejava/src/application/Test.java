@@ -50,5 +50,13 @@ public class Test {
 		if(test.trouverSommetsRelies(new Arete("A", 72, test.getListeSommet().get(2))).isEmpty()) {
 			System.out.println("Rien à trouver");
 		}
+		
+		// TEST VERIFIER SI 1-DISTANCE
+		System.out.println("Test si deux sommets sont reliés à une 1-distance (Auxerre et Paris réellement reliés) : " + test.rechercher1Distance(test.getListeSommet().get(8), test.getListeSommet().get(17)));
+		System.out.println("Test si deux sommets sont reliés à une 1-distance (Lyon et Paris non reliés) : " + test.rechercher1Distance(test.getListeSommet().get(0), test.getListeSommet().get(17)));
+		
+		// TEST VERIFIER SI 2-DISTANCE
+		System.out.println("Test si deux sommets sont reliés à une 2-distance (Lyon et Chalon réellement reliés) : " + test.rechercher2Distance(test.getListeSommet().get(0), test.getListeSommet().get(2)));
+		System.out.println("Test si deux sommets sont reliés à une 2-distance (Lyon et Macon non reliés) : " + test.rechercher2Distance(test.getListeSommet().get(0), test.getListeSommet().get(1)));
     }
 }

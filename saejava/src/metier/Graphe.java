@@ -121,4 +121,26 @@ public class Graphe {
 		}
 		return trouvailles;
 	}
+	
+	public boolean rechercher1Distance(Sommet premier, Sommet deuxieme) {
+		for(Arete item : premier.getSuccesseurs()) {
+			if(item.getDestination().equals(deuxieme)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean rechercher2Distance(Sommet premier, Sommet deuxieme) {
+		// 2-distance exactement donc : 
+		if(rechercher1Distance(premier, deuxieme)) {
+			return false;
+		}
+		for(Arete item : premier.getSuccesseurs()) {
+			if(rechercher1Distance(item.getDestination(), deuxieme)) {
+				return true;
+			}
+		}
+		return false;
+	}
 }
