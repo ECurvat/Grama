@@ -143,4 +143,30 @@ public class Graphe {
 		}
 		return false;
 	}
+	
+	public List<Integer> infographe(){
+		List<Integer> listVal= new ArrayList<>();
+		int countNode = 0;
+		int countVilles = 0;
+		int countResto = 0;
+		int countLoisir = 0;
+		for(Sommet item:listeSommet){
+			countNode++;
+			if(item.getType().equals("V")){
+				countVilles++;
+			}
+			else if (item.getType().equals("R")) {
+				countResto++;
+			}
+			else if(item.getType().equals("L")){
+				countLoisir++;
+			}
+		}
+		listVal.add(countNode);
+		listVal.add(countVilles);
+		listVal.add(countResto);
+		listVal.add(countLoisir);
+		return listVal;
+	}
+	
 }

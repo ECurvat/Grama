@@ -4,20 +4,30 @@
  */
 package vue;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.DefaultListModel;
 import metier.*;
 
 /**
  *
- * @author elliot
+ * @author elliot and François
  */
 public class Ecran0 extends javax.swing.JFrame {
 	
 	Graphe graphePrincipal;
+	//private ModeleListLigne modeleListe=new ModeleListLigne();
+	//private List<String> tabLigne = new ArrayList<>();
+	private DefaultListModel<String> modeleListe;
 
 	/**
 	 * Creates new form Ecran0
 	 */
 	public Ecran0() {
+		
+		//tabLigne.add("Aled");
+		//modeleListe.initData(tabLigne);
+		modeleListe=new DefaultListModel<>();
 		initComponents();
 	}
 
@@ -43,7 +53,14 @@ public class Ecran0 extends javax.swing.JFrame {
         jButtonSommets = new javax.swing.JButton();
         jButtonAretes = new javax.swing.JButton();
         jLabelTitreChoix = new javax.swing.JLabel();
-        jLabelResultat = new javax.swing.JLabel();
+        jPanel_resultat = new javax.swing.JPanel();
+        jLabelRecap = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jList2 = new javax.swing.JList<>();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jList3 = new javax.swing.JList<>();
         jMenuBar = new javax.swing.JMenuBar();
         jMenuFichier = new javax.swing.JMenu();
         jMenuItemInformations = new javax.swing.JMenuItem();
@@ -117,6 +134,29 @@ public class Ecran0 extends javax.swing.JFrame {
 
         jLabelTitreChoix.setText("Afficher les informations sur :");
 
+        javax.swing.GroupLayout jPanel_resultatLayout = new javax.swing.GroupLayout(jPanel_resultat);
+        jPanel_resultat.setLayout(jPanel_resultatLayout);
+        jPanel_resultatLayout.setHorizontalGroup(
+            jPanel_resultatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_resultatLayout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addComponent(jLabelRecap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel_resultatLayout.setVerticalGroup(
+            jPanel_resultatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_resultatLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelRecap, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jScrollPane1.setViewportView(jList1);
+
+        jScrollPane2.setViewportView(jList2);
+
+        jScrollPane3.setViewportView(jList3);
+
         javax.swing.GroupLayout jPanelPrincipalLayout = new javax.swing.GroupLayout(jPanelPrincipal);
         jPanelPrincipal.setLayout(jPanelPrincipalLayout);
         jPanelPrincipalLayout.setHorizontalGroup(
@@ -124,7 +164,7 @@ public class Ecran0 extends javax.swing.JFrame {
             .addGroup(jPanelPrincipalLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelResultat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel_resultat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanelPrincipalLayout.createSequentialGroup()
                         .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelTitreChoix)
@@ -132,8 +172,15 @@ public class Ecran0 extends javax.swing.JFrame {
                                 .addComponent(jButtonSommets)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jButtonAretes)))
-                        .addGap(0, 404, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelPrincipalLayout.createSequentialGroup()
+                .addContainerGap(41, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
         );
         jPanelPrincipalLayout.setVerticalGroup(
             jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,9 +191,14 @@ public class Ecran0 extends javax.swing.JFrame {
                 .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonSommets)
                     .addComponent(jButtonAretes))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelResultat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel_resultat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2)
+                    .addComponent(jScrollPane3)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(53, 53, 53))
         );
 
         jMenuFichier.setText("Fichier");
@@ -189,7 +241,7 @@ public class Ecran0 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(jPanelNavigation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
@@ -202,7 +254,15 @@ public class Ecran0 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSommetsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSommetsActionPerformed
-        //jLabelResultat.setText(graphePrincipal.getListeSommet().toString());
+		int nbNode = graphePrincipal.infographe().get(0);
+		int nbVilles = graphePrincipal.infographe().get(1);
+		int nbResto = graphePrincipal.infographe().get(2);
+		int nbLoisir = graphePrincipal.infographe().get(3);
+		jLabelRecap.setText("votre graphe posséde : "+nbNode+"  Noeuds,"+nbVilles+" Villes,"+nbResto+" Restaurant,"+nbLoisir+" lieux de loisir,");
+		
+		
+		modeleListe.addElement("test");
+		jList1.setModel(modeleListe);
     }//GEN-LAST:event_jButtonSommetsActionPerformed
 
 	/**
@@ -249,8 +309,11 @@ public class Ecran0 extends javax.swing.JFrame {
     private javax.swing.JButton jButtonEcran3;
     private javax.swing.JButton jButtonEcran4;
     private javax.swing.JButton jButtonSommets;
-    private javax.swing.JLabel jLabelResultat;
+    private javax.swing.JLabel jLabelRecap;
     private javax.swing.JLabel jLabelTitreChoix;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JList<String> jList2;
+    private javax.swing.JList<String> jList3;
     private javax.swing.JMenuBar jMenuBar;
     private javax.swing.JMenu jMenuFichier;
     private javax.swing.JMenuItem jMenuItemAccueil;
@@ -264,5 +327,9 @@ public class Ecran0 extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuNavigation;
     private javax.swing.JPanel jPanelNavigation;
     private javax.swing.JPanel jPanelPrincipal;
+    private javax.swing.JPanel jPanel_resultat;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     // End of variables declaration//GEN-END:variables
 }

@@ -58,5 +58,12 @@ public class Test {
 		// TEST VERIFIER SI 2-DISTANCE
 		System.out.println("Test si deux sommets sont reliés à une 2-distance (Lyon et Chalon réellement reliés) : " + test.rechercher2Distance(test.getListeSommet().get(0), test.getListeSommet().get(2)));
 		System.out.println("Test si deux sommets sont reliés à une 2-distance (Lyon et Macon non reliés) : " + test.rechercher2Distance(test.getListeSommet().get(0), test.getListeSommet().get(1)));
+		
+		//TEST POUR NOMBRE NOEUD,VILLES,RETSTAURANT,LIEUX DE LOISIR
+		System.out.println("--------------------------------------------------------");
+		System.out.println(test.infographe());
+		
+		
+		
     }
 }
