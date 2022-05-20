@@ -2,11 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package metier;
+package modele;
 
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.AbstractListModel;
+import metier.Sommet;
 
 /**
  *
@@ -25,6 +26,7 @@ public class ModeleListLoisir extends AbstractListModel<String>{
 	public String getElementAt(int index) {
 		return dataLoisir.get(index).getNom();
 	}
+	
 	public void ajouterLoisir(List<Sommet> tableauLoisir){
 		for(Sommet elem:tableauLoisir){
 			dataLoisir.add(elem);

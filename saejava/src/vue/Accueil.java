@@ -4,12 +4,20 @@
  */
 package vue;
 
+import modele.ModeleListRestaurant;
+import modele.ModeleListLoisir;
+import modele.ModeleListLVille;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import metier.*;
+import modele.ModeleListAutoroutes;
+import modele.ModeleListDepartementales;
+import modele.ModeleListNationales;
 
 /**
  *
@@ -21,6 +29,9 @@ public class Accueil extends javax.swing.JFrame{
 	private ModeleListLVille modeleVille = new ModeleListLVille();
 	private ModeleListRestaurant modeleRestaurant = new ModeleListRestaurant();
 	private ModeleListLoisir modeleLoisir = new ModeleListLoisir();
+	private ModeleListAutoroutes modeleAuto = new ModeleListAutoroutes();
+	private ModeleListNationales modelNatio = new ModeleListNationales();
+	private ModeleListDepartementales modelDeparte = new ModeleListDepartementales();
 
 	/**
 	 * Creates new form Accueil
@@ -41,20 +52,27 @@ public class Accueil extends javax.swing.JFrame{
         jButtonImporter = new javax.swing.JButton();
         jLabelMessageGraphe = new javax.swing.JLabel();
         jPanelEcran0 = new javax.swing.JPanel();
-        jButtonSommets = new javax.swing.JButton();
-        jButtonAretes = new javax.swing.JButton();
-        jLabelTitreChoix = new javax.swing.JLabel();
         jPanel_resultat = new javax.swing.JPanel();
-        jLabelRecap = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         jScrollPane3 = new javax.swing.JScrollPane();
         jList3 = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         jList2 = new javax.swing.JList<>();
-        jLabelVillesAutoroutes = new javax.swing.JLabel();
-        jLabelRestaurantNationales = new javax.swing.JLabel();
-        jLabelLoisirDepartementale = new javax.swing.JLabel();
+        jLabelVilles = new javax.swing.JLabel();
+        jLabelRestaurant = new javax.swing.JLabel();
+        jLabelLoisir = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jList4 = new javax.swing.JList<>();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jList5 = new javax.swing.JList<>();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jList6 = new javax.swing.JList<>();
+        jLabelAutoroutes = new javax.swing.JLabel();
+        jLabelNationales = new javax.swing.JLabel();
+        jLabelDepartementales = new javax.swing.JLabel();
+        jLabelRecap = new javax.swing.JLabel();
+        jButtonInfo = new javax.swing.JButton();
         jPanelEcran1 = new javax.swing.JPanel();
         jPanelEcran2 = new javax.swing.JPanel();
         jPanelEcran3 = new javax.swing.JPanel();
@@ -77,52 +95,32 @@ public class Accueil extends javax.swing.JFrame{
             }
         });
 
+        jLabelMessageGraphe.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelMessageGraphe.setText("En attente d'importation d'un graphe...");
 
         javax.swing.GroupLayout jPanelAccueilLayout = new javax.swing.GroupLayout(jPanelAccueil);
         jPanelAccueil.setLayout(jPanelAccueilLayout);
         jPanelAccueilLayout.setHorizontalGroup(
             jPanelAccueilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelAccueilLayout.createSequentialGroup()
-                .addGroup(jPanelAccueilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelAccueilLayout.createSequentialGroup()
-                        .addGap(123, 123, 123)
-                        .addComponent(jLabelMessageGraphe))
-                    .addComponent(jButtonImporter))
-                .addContainerGap())
+            .addComponent(jLabelMessageGraphe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAccueilLayout.createSequentialGroup()
+                .addContainerGap(279, Short.MAX_VALUE)
+                .addComponent(jButtonImporter, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(290, 290, 290))
         );
         jPanelAccueilLayout.setVerticalGroup(
             jPanelAccueilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAccueilLayout.createSequentialGroup()
-                .addGap(192, 192, 192)
+                .addContainerGap(254, Short.MAX_VALUE)
                 .addComponent(jLabelMessageGraphe)
-                .addGap(173, 173, 173)
+                .addGap(128, 128, 128)
                 .addComponent(jButtonImporter)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(43, 43, 43))
         );
 
         jTabbedPane1.addTab("Accueil", jPanelAccueil);
 
         jPanelEcran0.setEnabled(false);
-
-        jButtonSommets.setText("Sommets");
-        jButtonSommets.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSommetsActionPerformed(evt);
-            }
-        });
-
-        jButtonAretes.setText("Arêtes");
-        jButtonAretes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAretesActionPerformed(evt);
-            }
-        });
-
-        jLabelTitreChoix.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabelTitreChoix.setText("Afficher les informations sur :");
-
-        jLabelRecap.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         jList1.setModel(modeleVille);
         jScrollPane1.setViewportView(jList1);
@@ -133,79 +131,118 @@ public class Accueil extends javax.swing.JFrame{
         jList2.setModel(modeleRestaurant);
         jScrollPane2.setViewportView(jList2);
 
-        jLabelVillesAutoroutes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabelVilles.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabelRestaurantNationales.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabelRestaurant.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jLabelLoisirDepartementale.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabelLoisir.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        jList4.setModel(modeleAuto);
+        jScrollPane4.setViewportView(jList4);
+
+        jList5.setModel(modelNatio);
+        jScrollPane5.setViewportView(jList5);
+
+        jList6.setModel(modelDeparte);
+        jScrollPane6.setViewportView(jList6);
+
+        jLabelAutoroutes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        jLabelNationales.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        jLabelDepartementales.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        jLabelRecap.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout jPanel_resultatLayout = new javax.swing.GroupLayout(jPanel_resultat);
         jPanel_resultat.setLayout(jPanel_resultatLayout);
         jPanel_resultatLayout.setHorizontalGroup(
             jPanel_resultatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel_resultatLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
                 .addGroup(jPanel_resultatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelRecap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel_resultatLayout.createSequentialGroup()
-                        .addGap(23, 23, 23)
+                        .addGap(6, 6, 6)
                         .addGroup(jPanel_resultatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabelVillesAutoroutes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel_resultatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabelRestaurantNationales, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel_resultatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
-                            .addComponent(jLabelLoisirDepartementale, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)))
-                .addContainerGap())
+                            .addGroup(jPanel_resultatLayout.createSequentialGroup()
+                                .addComponent(jLabelVilles, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabelRestaurant, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabelLoisir, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel_resultatLayout.createSequentialGroup()
+                                .addGroup(jPanel_resultatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabelAutoroutes, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel_resultatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(jLabelNationales, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel_resultatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(jLabelDepartementales, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel_resultatLayout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jLabelRecap, javax.swing.GroupLayout.PREFERRED_SIZE, 741, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel_resultatLayout.setVerticalGroup(
             jPanel_resultatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel_resultatLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelRecap, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addGroup(jPanel_resultatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3)
-                    .addComponent(jScrollPane1))
-                .addGap(18, 18, 18)
+                .addComponent(jLabelRecap, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel_resultatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel_resultatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelVillesAutoroutes)
-                    .addComponent(jLabelRestaurantNationales)
-                    .addComponent(jLabelLoisirDepartementale))
-                .addContainerGap())
+                    .addComponent(jLabelVilles)
+                    .addComponent(jLabelRestaurant)
+                    .addComponent(jLabelLoisir))
+                .addGap(12, 12, 12)
+                .addGroup(jPanel_resultatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane5)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel_resultatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel_resultatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabelAutoroutes, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabelNationales, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelDepartementales, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
+
+        jButtonInfo.setText("afficher les infomration du Graphes");
+        jButtonInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonInfoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelEcran0Layout = new javax.swing.GroupLayout(jPanelEcran0);
         jPanelEcran0.setLayout(jPanelEcran0Layout);
         jPanelEcran0Layout.setHorizontalGroup(
             jPanelEcran0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelEcran0Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelEcran0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel_resultat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabelTitreChoix)
-                    .addGroup(jPanelEcran0Layout.createSequentialGroup()
-                        .addComponent(jButtonSommets, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonAretes, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(273, 273, 273)
+                .addComponent(jButtonInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel_resultat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanelEcran0Layout.setVerticalGroup(
             jPanelEcran0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelEcran0Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelTitreChoix)
-                .addGap(0, 0, 0)
-                .addGroup(jPanelEcran0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonSommets, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonAretes, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(38, Short.MAX_VALUE)
+                .addComponent(jButtonInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel_resultat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(44, 44, 44))
+                .addComponent(jPanel_resultat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("0-distance", jPanelEcran0);
@@ -214,11 +251,11 @@ public class Accueil extends javax.swing.JFrame{
         jPanelEcran1.setLayout(jPanelEcran1Layout);
         jPanelEcran1Layout.setHorizontalGroup(
             jPanelEcran1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 793, Short.MAX_VALUE)
+            .addGap(0, 782, Short.MAX_VALUE)
         );
         jPanelEcran1Layout.setVerticalGroup(
             jPanelEcran1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 409, Short.MAX_VALUE)
+            .addGap(0, 463, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("1-distance", jPanelEcran1);
@@ -227,11 +264,11 @@ public class Accueil extends javax.swing.JFrame{
         jPanelEcran2.setLayout(jPanelEcran2Layout);
         jPanelEcran2Layout.setHorizontalGroup(
             jPanelEcran2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 793, Short.MAX_VALUE)
+            .addGap(0, 782, Short.MAX_VALUE)
         );
         jPanelEcran2Layout.setVerticalGroup(
             jPanelEcran2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 409, Short.MAX_VALUE)
+            .addGap(0, 463, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("2-distance", jPanelEcran2);
@@ -240,11 +277,11 @@ public class Accueil extends javax.swing.JFrame{
         jPanelEcran3.setLayout(jPanelEcran3Layout);
         jPanelEcran3Layout.setHorizontalGroup(
             jPanelEcran3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 793, Short.MAX_VALUE)
+            .addGap(0, 782, Short.MAX_VALUE)
         );
         jPanelEcran3Layout.setVerticalGroup(
             jPanelEcran3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 409, Short.MAX_VALUE)
+            .addGap(0, 463, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab(">= 2-distance", jPanelEcran3);
@@ -253,11 +290,11 @@ public class Accueil extends javax.swing.JFrame{
         jPanelEcran4.setLayout(jPanelEcran4Layout);
         jPanelEcran4Layout.setHorizontalGroup(
             jPanelEcran4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 793, Short.MAX_VALUE)
+            .addGap(0, 782, Short.MAX_VALUE)
         );
         jPanelEcran4Layout.setVerticalGroup(
             jPanelEcran4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 409, Short.MAX_VALUE)
+            .addGap(0, 463, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("p-distance", jPanelEcran4);
@@ -306,31 +343,38 @@ public class Accueil extends javax.swing.JFrame{
 		jTabbedPane1.setEnabled(true);
     }//GEN-LAST:event_jButtonImporterActionPerformed
 
-    private void jButtonAretesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAretesActionPerformed
-        int nbArete = graphePrincipal.infoarete().get(0);
-		int nbAutoroutes =graphePrincipal.infoarete().get(1);
-		int nbNationales = graphePrincipal.infoarete().get(2);
-		int nbDepartementales = graphePrincipal.infoarete().get(3);
-		jLabelRecap.setText("Votre graphe posséde : "+nbArete+" Arete");
-		jLabelVillesAutoroutes.setText(nbAutoroutes+" Autoroutes");
-		jLabelRestaurantNationales.setText(nbNationales+" Nationales");
-		jLabelLoisirDepartementale.setText(nbDepartementales+" Départementales");
-    }//GEN-LAST:event_jButtonAretesActionPerformed
-
-    private void jButtonSommetsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSommetsActionPerformed
-        int nbNode = graphePrincipal.infographe().get(0);
+    private void jButtonInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInfoActionPerformed
+		int nbNode = graphePrincipal.infographe().get(0);
         int nbVilles = graphePrincipal.infographe().get(1);
         int nbResto = graphePrincipal.infographe().get(2);
         int nbLoisir = graphePrincipal.infographe().get(3);
-        jLabelRecap.setText("votre graphe posséde : "+nbNode+" Noeuds");
-        jLabelVillesAutoroutes.setText(nbVilles+" Villes");
-        jLabelRestaurantNationales.setText(nbResto+" Restaurant");
-        jLabelLoisirDepartementale.setText(nbLoisir+" lieux de loisir");
+		
+		
+		
+        jLabelVilles.setText(nbVilles+" Villes");
+        jLabelRestaurant.setText(nbResto+" Restaurant");
+        jLabelLoisir.setText(nbLoisir+" lieux de loisir");
+		
+		int nbArete = graphePrincipal.infoarete().get(0);
+		int nbAutoroute = graphePrincipal.infoarete().get(1);
+		int nbNationales = graphePrincipal.infoarete().get(2);
+		int nbDepartment = graphePrincipal.infoarete().get(3);
+		
+        jLabelAutoroutes.setText(nbAutoroute+" Autoroutes");
+		jLabelNationales.setText(nbNationales+" Nationales");
+		jLabelDepartementales.setText(nbDepartment+" Departementales");
+		
+		jLabelRecap.setText("votre graphe posséde : "+nbNode+" noeuds"+" et "+nbArete+" arete");
+	
         modeleVille.ajouterVille(graphePrincipal.trouverSommetsParType("V"));
 		modeleRestaurant.ajouterRestaurant(graphePrincipal.trouverSommetsParType("R"));
 		modeleLoisir.ajouterLoisir(graphePrincipal.trouverSommetsParType("L"));
 		
-    }//GEN-LAST:event_jButtonSommetsActionPerformed
+		modeleAuto.ajouterAutoroute(graphePrincipal.trouverAretesParType("A"));
+		modelNatio.ajouterNationales(graphePrincipal.trouverAretesParType("N"));
+		modelDeparte.ajouterDepartmentales(graphePrincipal.trouverAretesParType("D"));
+		
+    }//GEN-LAST:event_jButtonInfoActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -368,18 +412,22 @@ public class Accueil extends javax.swing.JFrame{
 	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonAretes;
     private javax.swing.JButton jButtonImporter;
-    private javax.swing.JButton jButtonSommets;
-    private javax.swing.JLabel jLabelLoisirDepartementale;
+    private javax.swing.JButton jButtonInfo;
+    private javax.swing.JLabel jLabelAutoroutes;
+    private javax.swing.JLabel jLabelDepartementales;
+    private javax.swing.JLabel jLabelLoisir;
     private javax.swing.JLabel jLabelMessageGraphe;
+    private javax.swing.JLabel jLabelNationales;
     private javax.swing.JLabel jLabelRecap;
-    private javax.swing.JLabel jLabelRestaurantNationales;
-    private javax.swing.JLabel jLabelTitreChoix;
-    private javax.swing.JLabel jLabelVillesAutoroutes;
+    private javax.swing.JLabel jLabelRestaurant;
+    private javax.swing.JLabel jLabelVilles;
     private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList2;
     private javax.swing.JList<String> jList3;
+    private javax.swing.JList<String> jList4;
+    private javax.swing.JList<String> jList5;
+    private javax.swing.JList<String> jList6;
     private javax.swing.JMenuBar jMenuBar;
     private javax.swing.JMenu jMenuFichier;
     private javax.swing.JMenuItem jMenuItemImporter;
@@ -395,6 +443,9 @@ public class Accueil extends javax.swing.JFrame{
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 }

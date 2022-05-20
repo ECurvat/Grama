@@ -2,39 +2,36 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package metier;
+package modele;
 
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.AbstractListModel;
+import metier.Sommet;
 
 /**
  *
  * @author frsgr
  */
-public class ModeleListLVille extends AbstractListModel<String>{
+public class ModeleListRestaurant extends AbstractListModel<String>{
 	
-	private List<Sommet>dataVille=new ArrayList<>();
+	private List<Sommet> dataRestaurant=new ArrayList<>();
 	
-	public void initData(List<Sommet> tab){
-		dataVille=tab;
-	}
-
 	@Override
 	public int getSize() {
-		return dataVille.size();
+		return dataRestaurant.size();
 	}
 
 	@Override
 	public String getElementAt(int index) {
-		return dataVille.get(index).getNom();
+		return dataRestaurant.get(index).getNom();
 	}
 	
-	public void ajouterVille(List<Sommet> tableauVille){
-		for(Sommet elem:tableauVille){
-			dataVille.add(elem);
+	public void ajouterRestaurant(List<Sommet> tableauResto){
+		for(Sommet elem:tableauResto){
+			dataRestaurant.add(elem);
 		}
-		fireIntervalAdded(this, 0, dataVille.size());
-		
+		fireIntervalAdded(this, 0, dataRestaurant.size());
 	}
+	
 }
