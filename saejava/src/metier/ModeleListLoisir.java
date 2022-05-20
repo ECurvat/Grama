@@ -12,21 +12,24 @@ import javax.swing.AbstractListModel;
  *
  * @author frsgr
  */
-public class ModeleListLigne extends AbstractListModel<String>{
+public class ModeleListLoisir extends AbstractListModel<String>{
 	
-	private List<String>dataLigne=new ArrayList<>();
-	
-	public void initData(List<String> tab){
-		dataLigne=tab;
-	}
+	private List<Sommet>dataLoisir=new ArrayList<>();
 
 	@Override
 	public int getSize() {
-		return dataLigne.size();
+		return dataLoisir.size();
 	}
 
 	@Override
 	public String getElementAt(int index) {
-		return dataLigne.get(index);
+		return dataLoisir.get(index).getNom();
 	}
+	public void ajouterLoisir(List<Sommet> tableauLoisir){
+		for(Sommet elem:tableauLoisir){
+			dataLoisir.add(elem);
+		}
+		fireIntervalAdded(this, 0, dataLoisir.size());
+	}
+	
 }
