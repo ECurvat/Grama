@@ -62,11 +62,7 @@ public class Test {
 		System.out.println("--------------------------------------------------------");
 		System.out.println(test.infographe());
 		
-		
-		
-
 		// TEST COMPARAISON VILLES
-		System.out.println("Comparaison Lyon avec Excelsior : " + test.comparerOCG(test.getListeSommet().get(20), test.getListeSommet().get(10)).toString());
-
+		System.out.println("Comparaison Lyon avec Excelsior : " + test.comparerOCG(test.getListeSommet().get(0), test.getListeSommet().get(29)).toString());
     }
 }
