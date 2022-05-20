@@ -13,7 +13,7 @@ import metier.*;
 
 /**
  *
- * @author frsgr
+ * @author François, Elliot
  */
 public class Accueil extends javax.swing.JFrame{
 	

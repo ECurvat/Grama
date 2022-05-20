@@ -2,7 +2,7 @@ package metier;
 
 /**
  *
- * @author elliot
+ * @author François, Elliot
  */
 public class Arete {
 	private final String type;
