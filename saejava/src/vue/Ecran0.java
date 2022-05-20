@@ -8,7 +8,7 @@ import metier.*;
 
 /**
  *
- * @author elliot
+ * @author François, Elliot
  */
 public class Ecran0 extends javax.swing.JFrame {
 	

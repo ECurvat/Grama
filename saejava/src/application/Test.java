@@ -6,7 +6,7 @@ import metier.*;
 
 /**
  *
- * @author François
+ * @author François, Elliot
  */
 public class Test {
 	public static void main(String[] args) throws FileNotFoundException, IOException {
@@ -58,5 +58,8 @@ public class Test {
 		// TEST VERIFIER SI 2-DISTANCE
 		System.out.println("Test si deux sommets sont reliés à une 2-distance (Lyon et Chalon réellement reliés) : " + test.rechercher2Distance(test.getListeSommet().get(0), test.getListeSommet().get(2)));
 		System.out.println("Test si deux sommets sont reliés à une 2-distance (Lyon et Macon non reliés) : " + test.rechercher2Distance(test.getListeSommet().get(0), test.getListeSommet().get(1)));
+		
+		// TEST COMPARAISON VILLES
+		System.out.println("Comparaison Lyon avec Excelsior : " + test.comparerOCG(test.getListeSommet().get(20), test.getListeSommet().get(10)).toString());
     }
 }

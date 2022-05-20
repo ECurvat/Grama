@@ -2,7 +2,7 @@ package metier;
 
 /**
  *
- * @author elliot
+ * @author François, Elliot
  */
 public class TypeInconnuException extends Exception {
 	public TypeInconnuException() {

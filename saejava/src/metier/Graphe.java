@@ -143,4 +143,56 @@ public class Graphe {
 		}
 		return false;
 	}
+	
+	//pour le sommet en question on regarde tous ses voisins puis on regarde les voisins de ces voisins
+	
+	public List<Integer> comparerOCG(Sommet premier, Sommet deuxieme) {
+		List<Integer> resultat = new ArrayList<>();
+		int nbVPremier = 0, nbRPremier = 0, nbLPremier = 0;
+		for(Arete item : premier.getSuccesseurs()) {
+			for(Arete parcours : item.getDestination().getSuccesseurs()) {
+				switch (parcours.getDestination().getType()) {
+					case "V" : nbVPremier++;
+								break;
+					case "R" : nbRPremier++;
+								break;
+					case "L" : nbLPremier++;
+								break;
+				}
+			}
+		}
+		System.out.println("NB V Premier : " + nbVPremier + " NB R Premier : " + nbRPremier + " NB L Premier : " + nbLPremier);
+		
+		int nbVDeuxieme = 0, nbRDeuxieme = 0, nbLDeuxieme = 0;
+		for(Arete item : deuxieme.getSuccesseurs()) {
+			for(Arete parcours : item.getDestination().getSuccesseurs()) {
+				switch (parcours.getDestination().getType()) {
+					case "V" : nbVDeuxieme++;
+								break;
+					case "R" : nbRDeuxieme++;
+								break;
+					case "L" : nbLDeuxieme++;
+								break;
+				}
+			}
+		}
+		System.out.println("NB V Deuxieme : " + nbVDeuxieme + " NB R Deuxieme : " + nbRDeuxieme + " NB L Deuxieme : " + nbLDeuxieme);
+		
+		// Format liste retour : [comparaison premier avec deuxieme VILLE, comparaison premier avec deuxieme RESTAURANT, comparaison premier avec deuxieme LOISIR]
+		// Correspondances : [1 - premier > deuxième, 0 - premier = deuxieme, -1 - premier < deuxieme]
+		int comparaison;
+		if (nbVPremier>nbVDeuxieme) comparaison = 1;
+		else if (nbVPremier<nbVDeuxieme) comparaison = -1;
+		else comparaison = 0;
+		resultat.add(comparaison);
+		if (nbRPremier>nbRDeuxieme) comparaison = 1;
+		else if (nbRPremier<nbRDeuxieme) comparaison = -1;
+		else comparaison = 0;
+		resultat.add(comparaison);
+		if (nbLPremier>nbLDeuxieme) comparaison = 1;
+		else if (nbLPremier<nbLDeuxieme) comparaison = -1;
+		else comparaison = 0;
+		resultat.add(comparaison);
+		return resultat;
+	}
 }
