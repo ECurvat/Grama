@@ -169,6 +169,34 @@ public class Graphe {
 		return listVal;
 	}
 	
+	public List<Integer>infoarete(){
+		List<Integer> listArete= new ArrayList<>();
+		int CountLink = 0;
+		int CountAutoroute = 0;
+		int CountRnationnales = 0;
+		int CountRdepartementale = 0;
+		
+		for(Sommet s:listeSommet){
+			for(Arete elem:s.getSuccesseurs()){
+				CountLink++;
+				if (elem.getType().equals("A")) {
+					CountAutoroute++;
+				}
+				else if (elem.getType().equals("N")) {
+					CountRnationnales++;
+				}
+				else if (elem.getType().equals("D")) {
+					CountRdepartementale++;
+				}
+			}
+		}
+		listArete.add(CountLink);
+		listArete.add(CountAutoroute);
+		listArete.add(CountRnationnales);
+		listArete.add(CountRdepartementale);
+		return listArete;
+	}
+	
 
 	//pour le sommet en question on regarde tous ses voisins puis on regarde les voisins de ces voisins
 	

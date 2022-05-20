@@ -64,5 +64,9 @@ public class Test {
 		
 		// TEST COMPARAISON VILLES
 		System.out.println("Comparaison Lyon avec Excelsior : " + test.comparerOCG(test.getListeSommet().get(0), test.getListeSommet().get(29)).toString());
+		
+		//TEST POUR LE NOMBRE DE ARETE
+		System.out.println("---------------------------------------------------------");
+		System.out.println(test.infoarete());
     }
 }
