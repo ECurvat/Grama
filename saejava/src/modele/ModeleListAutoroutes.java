@@ -35,4 +35,7 @@ public class ModeleListAutoroutes extends AbstractListModel<String> {
 		fireIntervalAdded(this, 0, dataAutouroute.size());
 		
 	}
+	public void SupprimerA(){
+		dataAutouroute.clear();
+	}
 }

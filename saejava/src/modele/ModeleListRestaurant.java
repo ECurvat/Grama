@@ -34,4 +34,8 @@ public class ModeleListRestaurant extends AbstractListModel<String>{
 		fireIntervalAdded(this, 0, dataRestaurant.size());
 	}
 	
+	public void SupprimerR(){
+		dataRestaurant.clear();
+	}
+	
 }

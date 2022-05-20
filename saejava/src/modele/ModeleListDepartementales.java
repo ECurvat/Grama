@@ -36,4 +36,7 @@ public class ModeleListDepartementales extends AbstractListModel<String> {
 		
 	}
 	
+	public void SupprimerD(){
+		dataDeparte.clear();
+	}
 }

@@ -33,5 +33,8 @@ public class ModeleListLoisir extends AbstractListModel<String>{
 		}
 		fireIntervalAdded(this, 0, dataLoisir.size());
 	}
+	public void SupprimerL(){
+		dataLoisir.clear();
+	}
 	
 }

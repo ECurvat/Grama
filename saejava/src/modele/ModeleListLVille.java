@@ -33,4 +33,7 @@ public class ModeleListLVille extends AbstractListModel<String>{
 		}
 		fireIntervalAdded(this, 0, dataVille.size());	
 	}
+	public void SupprimerV(){
+		dataVille.clear();
+	}
 }

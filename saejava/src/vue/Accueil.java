@@ -30,8 +30,8 @@ public class Accueil extends javax.swing.JFrame{
 	private ModeleListRestaurant modeleRestaurant = new ModeleListRestaurant();
 	private ModeleListLoisir modeleLoisir = new ModeleListLoisir();
 	private ModeleListAutoroutes modeleAuto = new ModeleListAutoroutes();
-	private ModeleListNationales modelNatio = new ModeleListNationales();
-	private ModeleListDepartementales modelDeparte = new ModeleListDepartementales();
+	private ModeleListNationales modeleNatio = new ModeleListNationales();
+	private ModeleListDepartementales modeleDeparte = new ModeleListDepartementales();
 
 	/**
 	 * Creates new form Accueil
@@ -140,10 +140,10 @@ public class Accueil extends javax.swing.JFrame{
         jList4.setModel(modeleAuto);
         jScrollPane4.setViewportView(jList4);
 
-        jList5.setModel(modelNatio);
+        jList5.setModel(modeleNatio);
         jScrollPane5.setViewportView(jList5);
 
-        jList6.setModel(modelDeparte);
+        jList6.setModel(modeleDeparte);
         jScrollPane6.setViewportView(jList6);
 
         jLabelAutoroutes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -341,38 +341,57 @@ public class Accueil extends javax.swing.JFrame{
 			}
 			}
 		jTabbedPane1.setEnabled(true);
+		if(modeleVille.getSize()!= 0){
+			
+			modeleVille.SupprimerV();
+			modeleLoisir.SupprimerL();
+			modeleRestaurant.SupprimerR();
+			modeleAuto.SupprimerA();
+			modeleDeparte.SupprimerD();
+			modeleNatio.SupprimerN();
+			
+			jLabelRecap.setText("");
+			jLabelVilles.setText("");
+			jLabelRestaurant.setText("");
+			jLabelLoisir.setText("");
+			jLabelAutoroutes.setText("");
+			jLabelNationales.setText("");
+			jLabelDepartementales.setText("");
+			
+		}
     }//GEN-LAST:event_jButtonImporterActionPerformed
 
     private void jButtonInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInfoActionPerformed
-		int nbNode = graphePrincipal.infographe().get(0);
-        int nbVilles = graphePrincipal.infographe().get(1);
-        int nbResto = graphePrincipal.infographe().get(2);
-        int nbLoisir = graphePrincipal.infographe().get(3);
+		if(jLabelNationales.getText().equals("")){
+			int nbNode = graphePrincipal.infographe().get(0);
+			int nbVilles = graphePrincipal.infographe().get(1);
+			int nbResto = graphePrincipal.infographe().get(2);
+			int nbLoisir = graphePrincipal.infographe().get(3);
 		
+			jLabelVilles.setText(nbVilles+" Villes");
+			jLabelRestaurant.setText(nbResto+" Restaurant");
+			jLabelLoisir.setText(nbLoisir+" lieux de loisir");
 		
+			int nbArete = graphePrincipal.infoarete().get(0);
+			int nbAutoroute = graphePrincipal.infoarete().get(1);
+			int nbNationales = graphePrincipal.infoarete().get(2);
+			int nbDepartment = graphePrincipal.infoarete().get(3);
 		
-        jLabelVilles.setText(nbVilles+" Villes");
-        jLabelRestaurant.setText(nbResto+" Restaurant");
-        jLabelLoisir.setText(nbLoisir+" lieux de loisir");
+			jLabelAutoroutes.setText(nbAutoroute+" Autoroutes");
+			jLabelNationales.setText(nbNationales+" Nationales");
+			jLabelDepartementales.setText(nbDepartment+" Departementales");
 		
-		int nbArete = graphePrincipal.infoarete().get(0);
-		int nbAutoroute = graphePrincipal.infoarete().get(1);
-		int nbNationales = graphePrincipal.infoarete().get(2);
-		int nbDepartment = graphePrincipal.infoarete().get(3);
+			jLabelRecap.setText("votre graphe posséde : "+nbNode+" noeuds"+" et "+nbArete+" arete");
+
+			modeleVille.ajouterVille(graphePrincipal.trouverSommetsParType("V"));
+			modeleRestaurant.ajouterRestaurant(graphePrincipal.trouverSommetsParType("R"));
+			modeleLoisir.ajouterLoisir(graphePrincipal.trouverSommetsParType("L"));
 		
-        jLabelAutoroutes.setText(nbAutoroute+" Autoroutes");
-		jLabelNationales.setText(nbNationales+" Nationales");
-		jLabelDepartementales.setText(nbDepartment+" Departementales");
+			modeleAuto.ajouterAutoroute(graphePrincipal.trouverAretesParType("A"));
+			modeleNatio.ajouterNationales(graphePrincipal.trouverAretesParType("N"));
+			modeleDeparte.ajouterDepartmentales(graphePrincipal.trouverAretesParType("D"));
+		}
 		
-		jLabelRecap.setText("votre graphe posséde : "+nbNode+" noeuds"+" et "+nbArete+" arete");
-	
-        modeleVille.ajouterVille(graphePrincipal.trouverSommetsParType("V"));
-		modeleRestaurant.ajouterRestaurant(graphePrincipal.trouverSommetsParType("R"));
-		modeleLoisir.ajouterLoisir(graphePrincipal.trouverSommetsParType("L"));
-		
-		modeleAuto.ajouterAutoroute(graphePrincipal.trouverAretesParType("A"));
-		modelNatio.ajouterNationales(graphePrincipal.trouverAretesParType("N"));
-		modelDeparte.ajouterDepartmentales(graphePrincipal.trouverAretesParType("D"));
 		
     }//GEN-LAST:event_jButtonInfoActionPerformed
 

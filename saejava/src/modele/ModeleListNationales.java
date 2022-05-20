@@ -35,4 +35,7 @@ public class ModeleListNationales extends AbstractListModel<String>{
 		fireIntervalAdded(this, 0, dataNatio.size());
 	}
 	
+	public void SupprimerN(){
+		dataNatio.clear();
+	}
 }
