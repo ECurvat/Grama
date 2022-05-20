@@ -175,6 +175,7 @@ public class Graphe {
 	public List<Integer> comparerOCG(Sommet premier, Sommet deuxieme) {
 		List<Integer> resultat = new ArrayList<>();
 		List<Sommet> eviterLesDoublons1 = new ArrayList<>();
+		eviterLesDoublons1.add(premier);
 		int nbVPremier = 0, nbRPremier = 0, nbLPremier = 0;
 		for(Arete item : premier.getSuccesseurs()) {
 			for(Arete parcours : item.getDestination().getSuccesseurs()) {
@@ -191,9 +192,9 @@ public class Graphe {
 				}
 			}
 		}
-		System.out.println("NB V Premier : " + nbVPremier + " NB R Premier : " + nbRPremier + " NB L Premier : " + nbLPremier);
 		
 		List<Sommet> eviterLesDoublons2 = new ArrayList<>();
+		eviterLesDoublons2.add(deuxieme);
 		int nbVDeuxieme = 0, nbRDeuxieme = 0, nbLDeuxieme = 0;
 		for(Arete item : deuxieme.getSuccesseurs()) {
 			for(Arete parcours : item.getDestination().getSuccesseurs()) {
@@ -210,7 +211,6 @@ public class Graphe {
 				}
 			}
 		}
-		System.out.println("NB V Deuxieme : " + nbVDeuxieme + " NB R Deuxieme : " + nbRDeuxieme + " NB L Deuxieme : " + nbLDeuxieme);
 		
 		// Format liste retour : [comparaison premier avec deuxieme VILLE, comparaison premier avec deuxieme RESTAURANT, comparaison premier avec deuxieme LOISIR]
 		// Correspondances : [1 - premier > deuxième, 0 - premier = deuxieme, -1 - premier < deuxieme]
