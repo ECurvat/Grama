@@ -4,20 +4,19 @@
  */
 package vue;
 
-import modele.ModeleListRestaurant;
-import modele.ModeleListLoisir;
-import modele.ModeleListLVille;
+import modeleJlist.ModeleListRestaurant;
+import modeleJlist.ModeleListLoisir;
+import modeleJlist.ModeleListLVille;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFileChooser;
 import metier.*;
-import modele.ModeleListAutoroutes;
-import modele.ModeleListDepartementales;
-import modele.ModeleListNationales;
+import modeleJlist.ModeleListAutoroutes;
+import modeleJlist.ModeleListDepartementales;
+import modeleJlist.ModeleListNationales;
 
 /**
  *
@@ -32,6 +31,11 @@ public class Accueil extends javax.swing.JFrame{
 	private ModeleListAutoroutes modeleAuto = new ModeleListAutoroutes();
 	private ModeleListNationales modeleNatio = new ModeleListNationales();
 	private ModeleListDepartementales modeleDeparte = new ModeleListDepartementales();
+	
+	private DefaultComboBoxModel modeleVilleCombo = new DefaultComboBoxModel();
+	private DefaultComboBoxModel modeleRestoCombo = new DefaultComboBoxModel();
+	private DefaultComboBoxModel modeleLoisirCombo = new DefaultComboBoxModel();
+	
 
 	/**
 	 * Creates new form Accueil
@@ -74,6 +78,16 @@ public class Accueil extends javax.swing.JFrame{
         jLabelRecap = new javax.swing.JLabel();
         jButtonInfo = new javax.swing.JButton();
         jPanelEcran1 = new javax.swing.JPanel();
+        jTabbedPane3 = new javax.swing.JTabbedPane();
+        jPanelNoeuds = new javax.swing.JPanel();
+        jComboBoxVille = new javax.swing.JComboBox<>();
+        jComboBoxRestaurant = new javax.swing.JComboBox<>();
+        jComboBoxLoisir = new javax.swing.JComboBox<>();
+        jLabelVoisin = new javax.swing.JLabel();
+        jButtonReinitialiser = new javax.swing.JButton();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jListResNoeuds = new javax.swing.JList<>();
+        jPanelLiens = new javax.swing.JPanel();
         jPanelEcran2 = new javax.swing.JPanel();
         jPanelEcran3 = new javax.swing.JPanel();
         jPanelEcran4 = new javax.swing.JPanel();
@@ -104,14 +118,14 @@ public class Accueil extends javax.swing.JFrame{
             jPanelAccueilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabelMessageGraphe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAccueilLayout.createSequentialGroup()
-                .addContainerGap(279, Short.MAX_VALUE)
+                .addContainerGap(291, Short.MAX_VALUE)
                 .addComponent(jButtonImporter, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(290, 290, 290))
         );
         jPanelAccueilLayout.setVerticalGroup(
             jPanelAccueilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAccueilLayout.createSequentialGroup()
-                .addContainerGap(254, Short.MAX_VALUE)
+                .addContainerGap(255, Short.MAX_VALUE)
                 .addComponent(jLabelMessageGraphe)
                 .addGap(128, 128, 128)
                 .addComponent(jButtonImporter)
@@ -189,7 +203,7 @@ public class Accueil extends javax.swing.JFrame{
                                 .addGap(18, 18, 18)
                                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(jLabelRecap, javax.swing.GroupLayout.PREFERRED_SIZE, 741, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         jPanel_resultatLayout.setVerticalGroup(
             jPanel_resultatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -218,7 +232,7 @@ public class Accueil extends javax.swing.JFrame{
                     .addComponent(jLabelDepartementales, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
-        jButtonInfo.setText("afficher les infomration du Graphes");
+        jButtonInfo.setText("afficher les information du Graphes");
         jButtonInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonInfoActionPerformed(evt);
@@ -238,7 +252,7 @@ public class Accueil extends javax.swing.JFrame{
         jPanelEcran0Layout.setVerticalGroup(
             jPanelEcran0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelEcran0Layout.createSequentialGroup()
-                .addContainerGap(38, Short.MAX_VALUE)
+                .addContainerGap(39, Short.MAX_VALUE)
                 .addComponent(jButtonInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel_resultat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -247,15 +261,91 @@ public class Accueil extends javax.swing.JFrame{
 
         jTabbedPane1.addTab("0-distance", jPanelEcran0);
 
+        jComboBoxVille.setModel(modeleVilleCombo);
+        jComboBoxVille.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxVilleActionPerformed(evt);
+            }
+        });
+
+        jComboBoxRestaurant.setModel(modeleRestoCombo);
+
+        jComboBoxLoisir.setModel(modeleLoisirCombo);
+
+        jLabelVoisin.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabelVoisin.setText("Voisins direct :");
+
+        jButtonReinitialiser.setText("Réinitialiser");
+
+        jListResNoeuds.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { " " };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane7.setViewportView(jListResNoeuds);
+
+        javax.swing.GroupLayout jPanelNoeudsLayout = new javax.swing.GroupLayout(jPanelNoeuds);
+        jPanelNoeuds.setLayout(jPanelNoeudsLayout);
+        jPanelNoeudsLayout.setHorizontalGroup(
+            jPanelNoeudsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelNoeudsLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(jPanelNoeudsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabelVoisin)
+                    .addGroup(jPanelNoeudsLayout.createSequentialGroup()
+                        .addComponent(jComboBoxVille, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jComboBoxRestaurant, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jComboBoxLoisir, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane7))
+                .addContainerGap(14, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelNoeudsLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonReinitialiser, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(321, 321, 321))
+        );
+        jPanelNoeudsLayout.setVerticalGroup(
+            jPanelNoeudsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelNoeudsLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanelNoeudsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBoxVille, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxRestaurant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxLoisir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabelVoisin)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonReinitialiser)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        jTabbedPane3.addTab("Noeuds", jPanelNoeuds);
+
+        javax.swing.GroupLayout jPanelLiensLayout = new javax.swing.GroupLayout(jPanelLiens);
+        jPanelLiens.setLayout(jPanelLiensLayout);
+        jPanelLiensLayout.setHorizontalGroup(
+            jPanelLiensLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 794, Short.MAX_VALUE)
+        );
+        jPanelLiensLayout.setVerticalGroup(
+            jPanelLiensLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 431, Short.MAX_VALUE)
+        );
+
+        jTabbedPane3.addTab("Liens", jPanelLiens);
+
         javax.swing.GroupLayout jPanelEcran1Layout = new javax.swing.GroupLayout(jPanelEcran1);
         jPanelEcran1.setLayout(jPanelEcran1Layout);
         jPanelEcran1Layout.setHorizontalGroup(
             jPanelEcran1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 782, Short.MAX_VALUE)
+            .addComponent(jTabbedPane3)
         );
         jPanelEcran1Layout.setVerticalGroup(
             jPanelEcran1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 463, Short.MAX_VALUE)
+            .addComponent(jTabbedPane3, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         jTabbedPane1.addTab("1-distance", jPanelEcran1);
@@ -264,11 +354,11 @@ public class Accueil extends javax.swing.JFrame{
         jPanelEcran2.setLayout(jPanelEcran2Layout);
         jPanelEcran2Layout.setHorizontalGroup(
             jPanelEcran2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 782, Short.MAX_VALUE)
+            .addGap(0, 794, Short.MAX_VALUE)
         );
         jPanelEcran2Layout.setVerticalGroup(
             jPanelEcran2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 463, Short.MAX_VALUE)
+            .addGap(0, 464, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("2-distance", jPanelEcran2);
@@ -277,11 +367,11 @@ public class Accueil extends javax.swing.JFrame{
         jPanelEcran3.setLayout(jPanelEcran3Layout);
         jPanelEcran3Layout.setHorizontalGroup(
             jPanelEcran3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 782, Short.MAX_VALUE)
+            .addGap(0, 794, Short.MAX_VALUE)
         );
         jPanelEcran3Layout.setVerticalGroup(
             jPanelEcran3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 463, Short.MAX_VALUE)
+            .addGap(0, 464, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab(">= 2-distance", jPanelEcran3);
@@ -290,11 +380,11 @@ public class Accueil extends javax.swing.JFrame{
         jPanelEcran4.setLayout(jPanelEcran4Layout);
         jPanelEcran4Layout.setHorizontalGroup(
             jPanelEcran4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 782, Short.MAX_VALUE)
+            .addGap(0, 794, Short.MAX_VALUE)
         );
         jPanelEcran4Layout.setVerticalGroup(
             jPanelEcran4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 463, Short.MAX_VALUE)
+            .addGap(0, 464, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("p-distance", jPanelEcran4);
@@ -359,6 +449,15 @@ public class Accueil extends javax.swing.JFrame{
 			jLabelDepartementales.setText("");
 			
 		}
+		for(Sommet elem :graphePrincipal.trouverSommetsParType("V")){
+			modeleVilleCombo.addElement(elem);
+		}
+		for(Sommet elem:graphePrincipal.trouverSommetsParType("R")){
+			modeleRestoCombo.addElement(elem);
+		}
+		for(Sommet elem:graphePrincipal.trouverSommetsParType("L")){
+			modeleLoisirCombo.addElement(elem);
+		}
     }//GEN-LAST:event_jButtonImporterActionPerformed
 
     private void jButtonInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInfoActionPerformed
@@ -395,6 +494,10 @@ public class Accueil extends javax.swing.JFrame{
 		
     }//GEN-LAST:event_jButtonInfoActionPerformed
 
+    private void jComboBoxVilleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxVilleActionPerformed
+        
+    }//GEN-LAST:event_jComboBoxVilleActionPerformed
+
 	/**
 	 * @param args the command line arguments
 	 */
@@ -428,11 +531,16 @@ public class Accueil extends javax.swing.JFrame{
 				new Accueil().setVisible(true);
 			}
 		});
+		
 	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonImporter;
     private javax.swing.JButton jButtonInfo;
+    private javax.swing.JButton jButtonReinitialiser;
+    private javax.swing.JComboBox<String> jComboBoxLoisir;
+    private javax.swing.JComboBox<String> jComboBoxRestaurant;
+    private javax.swing.JComboBox<String> jComboBoxVille;
     private javax.swing.JLabel jLabelAutoroutes;
     private javax.swing.JLabel jLabelDepartementales;
     private javax.swing.JLabel jLabelLoisir;
@@ -441,12 +549,14 @@ public class Accueil extends javax.swing.JFrame{
     private javax.swing.JLabel jLabelRecap;
     private javax.swing.JLabel jLabelRestaurant;
     private javax.swing.JLabel jLabelVilles;
+    private javax.swing.JLabel jLabelVoisin;
     private javax.swing.JList<String> jList1;
     private javax.swing.JList<String> jList2;
     private javax.swing.JList<String> jList3;
     private javax.swing.JList<String> jList4;
     private javax.swing.JList<String> jList5;
     private javax.swing.JList<String> jList6;
+    private javax.swing.JList<String> jListResNoeuds;
     private javax.swing.JMenuBar jMenuBar;
     private javax.swing.JMenu jMenuFichier;
     private javax.swing.JMenuItem jMenuItemImporter;
@@ -458,6 +568,8 @@ public class Accueil extends javax.swing.JFrame{
     private javax.swing.JPanel jPanelEcran2;
     private javax.swing.JPanel jPanelEcran3;
     private javax.swing.JPanel jPanelEcran4;
+    private javax.swing.JPanel jPanelLiens;
+    private javax.swing.JPanel jPanelNoeuds;
     private javax.swing.JPanel jPanel_resultat;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -465,6 +577,8 @@ public class Accueil extends javax.swing.JFrame{
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane3;
     // End of variables declaration//GEN-END:variables
 }
