@@ -12,7 +12,6 @@ public class Test {
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 		Graphe test = new Graphe("graphe.csv");
 		
-		
 		for (Sommet e : test.getListeSommet()){
 			System.out.printf("%-50s",e);
 			for (Arete v : e.getSuccesseurs()){
