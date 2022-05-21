@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package modeleJlist;
+package modele;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,9 +13,9 @@ import metier.Arete;
  *
  * @author frsgr
  */
-public class ModeleListAutoroutes extends AbstractListModel<String> {
+public class ModeleListAutoroute extends AbstractListModel<String> {
 
-	private List<Arete>dataAutouroute=new ArrayList<>();
+	private List<Arete> dataAutouroute = new ArrayList<>();
 	
 	@Override
 	public int getSize() {
@@ -28,14 +28,14 @@ public class ModeleListAutoroutes extends AbstractListModel<String> {
 		return val;
 	}
 	
-	public void ajouterAutoroute(List<Arete> tableauAuto){
-		for(Arete elem:tableauAuto){
+	public void ajouterAutoroute(List<Arete> listeAutoroute){
+		for(Arete elem:listeAutoroute){
 			dataAutouroute.add(elem);
 		}
 		fireIntervalAdded(this, 0, dataAutouroute.size());
 		
 	}
-	public void SupprimerA(){
+	public void viderModele(){
 		dataAutouroute.clear();
 	}
 }

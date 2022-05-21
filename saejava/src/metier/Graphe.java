@@ -49,14 +49,6 @@ public class Graphe {
             String[] infoSommetOrigine = séparationSommetArete[0].split(",");
 			String[] listeDestination = séparationSommetArete[1].split(";");
 			
-			/*
-			System.out.println("__________________________________________________________________");
-			
-            System.out.println("Info sommet origine : " +  Arrays.toString(infoSommetOrigine));
-			System.out.println("Liste destination : " + Arrays.toString(listeDestination));
-			System.out.println("Nombre de routes voisines : " + listeDestination.length);
-			*/
-			
 			Sommet origine=listeSommet.get(listeSommet.indexOf(new Sommet(infoSommetOrigine[0], infoSommetOrigine[1])));
 			//System.out.println(origine);
 			
@@ -144,57 +136,57 @@ public class Graphe {
 		return false;
 	}
 	
-	public List<Integer> infographe(){
-		List<Integer> listVal= new ArrayList<>();
-		int countNode = 0;
+	public List<Integer> comptageSommets(){
+		List<Integer> compte= new ArrayList<>();
+		int countSommets = 0;
 		int countVilles = 0;
-		int countResto = 0;
+		int countRestaurants = 0;
 		int countLoisir = 0;
 		for(Sommet item:listeSommet){
-			countNode++;
+			countSommets++;
 			if(item.getType().equals("V")){
 				countVilles++;
 			}
 			else if (item.getType().equals("R")) {
-				countResto++;
+				countRestaurants++;
 			}
 			else if(item.getType().equals("L")){
 				countLoisir++;
 			}
 		}
-		listVal.add(countNode);
-		listVal.add(countVilles);
-		listVal.add(countResto);
-		listVal.add(countLoisir);
-		return listVal;
+		compte.add(countSommets);
+		compte.add(countVilles);
+		compte.add(countRestaurants);
+		compte.add(countLoisir);
+		return compte;
 	}
 	
-	public List<Integer>infoarete(){
-		List<Integer> listArete= new ArrayList<>();
-		int CountLink = 0;
-		int CountAutoroute = 0;
-		int CountRnationnales = 0;
-		int CountRdepartementale = 0;
+	public List<Integer>comptageAretes(){
+		List<Integer> compte= new ArrayList<>();
+		int countAretes = 0;
+		int countAutoroutes = 0;
+		int countNationales = 0;
+		int countDepartementales = 0;
 		
 		for(Sommet s:listeSommet){
 			for(Arete elem:s.getSuccesseurs()){
-				CountLink++;
+				countAretes++;
 				if (elem.getType().equals("A")) {
-					CountAutoroute++;
+					countAutoroutes++;
 				}
 				else if (elem.getType().equals("N")) {
-					CountRnationnales++;
+					countNationales++;
 				}
 				else if (elem.getType().equals("D")) {
-					CountRdepartementale++;
+					countDepartementales++;
 				}
 			}
 		}
-		listArete.add(CountLink);
-		listArete.add(CountAutoroute);
-		listArete.add(CountRnationnales);
-		listArete.add(CountRdepartementale);
-		return listArete;
+		compte.add(countAretes);
+		compte.add(countAutoroutes);
+		compte.add(countNationales);
+		compte.add(countDepartementales);
+		return compte;
 	}
 	
 

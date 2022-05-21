@@ -60,13 +60,13 @@ public class Test {
 	
 		//TEST POUR NOMBRE NOEUD,VILLES,RETSTAURANT,LIEUX DE LOISIR
 		System.out.println("--------------------------------------------------------");
-		System.out.println(test.infographe());
+		System.out.println(test.comptageSommets());
 		
 		// TEST COMPARAISON VILLES
 		System.out.println("Comparaison 0 avec 29 : " + test.comparerOCG(test.getListeSommet().get(0), test.getListeSommet().get(29)).toString());
 		
 		//TEST POUR LE NOMBRE DE ARETE
 		System.out.println("---------------------------------------------------------");
-		System.out.println(test.infoarete());
+		System.out.println(test.comptageAretes());
     }
 }
