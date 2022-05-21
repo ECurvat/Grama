@@ -395,7 +395,7 @@ public class Accueil extends javax.swing.JFrame{
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonImporterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonImporterActionPerformed
+    private void jButtonImporterActionPerformed(java.awt.event.ActionEvent evt) {                                                
 		if (jButtonImporter.getText().equals("Importer un graphe")) {
 			JFileChooser choixFichier = new JFileChooser();
 			int option = choixFichier.showOpenDialog(null);
@@ -464,7 +464,7 @@ public class Accueil extends javax.swing.JFrame{
 			jButtonImporter.setText("Importer un graphe");
 		}
 		
-
+	}
     private void jComboBoxVilleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxVilleActionPerformed
        modelSommet.clear();
 	   for(Sommet s:graphePrincipal.getListeSommet()){
