@@ -4,9 +4,9 @@
  */
 package vue;
 
-import modeleJlist.ModeleListRestaurant;
-import modeleJlist.ModeleListLoisir;
-import modeleJlist.ModeleListLVille;
+import modele.ModeleListRestaurant;
+import modele.ModeleListLoisir;
+import modele.ModeleListLVille;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,9 +17,9 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
 import metier.*;
-import modeleJlist.ModeleListAutoroutes;
-import modeleJlist.ModeleListDepartementales;
-import modeleJlist.ModeleListNationales;
+import modele.ModeleListAutoroute;
+import modele.ModeleListDepartementale;
+import modele.ModeleListNationale;
 
 /**
  *
@@ -31,9 +31,9 @@ public class Accueil extends javax.swing.JFrame{
 	private ModeleListLVille modeleVille = new ModeleListLVille();
 	private ModeleListRestaurant modeleRestaurant = new ModeleListRestaurant();
 	private ModeleListLoisir modeleLoisir = new ModeleListLoisir();
-	private ModeleListAutoroutes modeleAuto = new ModeleListAutoroutes();
-	private ModeleListNationales modeleNatio = new ModeleListNationales();
-	private ModeleListDepartementales modeleDeparte = new ModeleListDepartementales();
+	private ModeleListAutoroute modeleAutoroutes = new ModeleListAutoroute();
+	private ModeleListNationale modeleNationales = new ModeleListNationale();
+	private ModeleListDepartementale modeleDepartementales = new ModeleListDepartementale();
 	
 	private DefaultComboBoxModel modeleVilleCombo = new DefaultComboBoxModel();
 	private DefaultComboBoxModel modeleRestoCombo = new DefaultComboBoxModel();
@@ -57,11 +57,10 @@ public class Accueil extends javax.swing.JFrame{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jTabbedPaneSelectionMenus = new javax.swing.JTabbedPane();
         jPanelAccueil = new javax.swing.JPanel();
         jButtonImporter = new javax.swing.JButton();
         jLabelMessageGraphe = new javax.swing.JLabel();
-        jButtonResetGraphe = new javax.swing.JButton();
         jPanelEcran0 = new javax.swing.JPanel();
         jPanel_resultat = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -104,7 +103,7 @@ public class Accueil extends javax.swing.JFrame{
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Accueil");
 
-        jTabbedPane1.setEnabled(false);
+        jTabbedPaneSelectionMenus.setEnabled(false);
 
         jButtonImporter.setText("Importer un graphe");
         jButtonImporter.addActionListener(new java.awt.event.ActionListener() {
@@ -114,14 +113,7 @@ public class Accueil extends javax.swing.JFrame{
         });
 
         jLabelMessageGraphe.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelMessageGraphe.setText("En attente d'importation d'un graphe...");
-
-        jButtonResetGraphe.setText("Reset graphe");
-        jButtonResetGraphe.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonResetGrapheActionPerformed(evt);
-            }
-        });
+        jLabelMessageGraphe.setText("En attente d'importation d'un graphe ...");
 
         javax.swing.GroupLayout jPanelAccueilLayout = new javax.swing.GroupLayout(jPanelAccueil);
         jPanelAccueil.setLayout(jPanelAccueilLayout);
@@ -129,10 +121,8 @@ public class Accueil extends javax.swing.JFrame{
             jPanelAccueilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabelMessageGraphe, javax.swing.GroupLayout.DEFAULT_SIZE, 794, Short.MAX_VALUE)
             .addGroup(jPanelAccueilLayout.createSequentialGroup()
-                .addGap(143, 143, 143)
+                .addGap(285, 285, 285)
                 .addComponent(jButtonImporter, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addComponent(jButtonResetGraphe, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelAccueilLayout.setVerticalGroup(
@@ -141,13 +131,11 @@ public class Accueil extends javax.swing.JFrame{
                 .addContainerGap(295, Short.MAX_VALUE)
                 .addComponent(jLabelMessageGraphe)
                 .addGap(127, 127, 127)
-                .addGroup(jPanelAccueilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonImporter)
-                    .addComponent(jButtonResetGraphe))
+                .addComponent(jButtonImporter)
                 .addGap(44, 44, 44))
         );
 
-        jTabbedPane1.addTab("Accueil", jPanelAccueil);
+        jTabbedPaneSelectionMenus.addTab("Accueil", jPanelAccueil);
 
         jPanelEcran0.setEnabled(false);
 
@@ -166,13 +154,13 @@ public class Accueil extends javax.swing.JFrame{
 
         jLabelLoisir.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        jList4.setModel(modeleAuto);
+        jList4.setModel(modeleAutoroutes);
         jScrollPane4.setViewportView(jList4);
 
-        jList5.setModel(modeleNatio);
+        jList5.setModel(modeleNationales);
         jScrollPane5.setViewportView(jList5);
 
-        jList6.setModel(modeleDeparte);
+        jList6.setModel(modeleDepartementales);
         jScrollPane6.setViewportView(jList6);
 
         jLabelAutoroutes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -260,11 +248,11 @@ public class Accueil extends javax.swing.JFrame{
                 .addContainerGap()
                 .addComponent(jLabelRecap, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel_resultat, javax.swing.GroupLayout.PREFERRED_SIZE, 459, Short.MAX_VALUE)
+                .addComponent(jPanel_resultat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("0-distance", jPanelEcran0);
+        jTabbedPaneSelectionMenus.addTab("0-distance", jPanelEcran0);
 
         jComboBoxVille.setModel(modeleVilleCombo);
         jComboBoxVille.addActionListener(new java.awt.event.ActionListener() {
@@ -337,7 +325,7 @@ public class Accueil extends javax.swing.JFrame{
             .addComponent(jTabbedPane3, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
-        jTabbedPane1.addTab("1-distance", jPanelEcran1);
+        jTabbedPaneSelectionMenus.addTab("1-distance", jPanelEcran1);
 
         javax.swing.GroupLayout jPanelEcran2Layout = new javax.swing.GroupLayout(jPanelEcran2);
         jPanelEcran2.setLayout(jPanelEcran2Layout);
@@ -350,7 +338,7 @@ public class Accueil extends javax.swing.JFrame{
             .addGap(0, 504, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("2-distance", jPanelEcran2);
+        jTabbedPaneSelectionMenus.addTab("2-distance", jPanelEcran2);
 
         javax.swing.GroupLayout jPanelEcran3Layout = new javax.swing.GroupLayout(jPanelEcran3);
         jPanelEcran3.setLayout(jPanelEcran3Layout);
@@ -363,7 +351,7 @@ public class Accueil extends javax.swing.JFrame{
             .addGap(0, 504, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab(">= 2-distance", jPanelEcran3);
+        jTabbedPaneSelectionMenus.addTab(">= 2-distance", jPanelEcran3);
 
         javax.swing.GroupLayout jPanelEcran4Layout = new javax.swing.GroupLayout(jPanelEcran4);
         jPanelEcran4.setLayout(jPanelEcran4Layout);
@@ -376,7 +364,7 @@ public class Accueil extends javax.swing.JFrame{
             .addGap(0, 504, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("p-distance", jPanelEcran4);
+        jTabbedPaneSelectionMenus.addTab("p-distance", jPanelEcran4);
 
         jMenuFichier.setText("Fichier");
 
@@ -397,71 +385,85 @@ public class Accueil extends javax.swing.JFrame{
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(jTabbedPaneSelectionMenus)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jTabbedPaneSelectionMenus, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonImporterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonImporterActionPerformed
-        
-		JFileChooser choixFichier = new JFileChooser();
-		int option = choixFichier.showOpenDialog(null);
-            if(option == JFileChooser.APPROVE_OPTION){
-               File file = choixFichier.getSelectedFile();
-			   jLabelMessageGraphe.setText("Graphe correctement importé : " + file.getName());
-			try {
-				graphePrincipal = new Graphe(file.getName());
-			} catch (IOException ex) {
-				Logger.getLogger(Accueil.class.getName()).log(Level.SEVERE, null, ex);
-			}
-			}
-		jTabbedPane1.setEnabled(true);
-		jButtonReinitialiser.setEnabled(true);
-		
-		if(jLabelNationales.getText().equals("")){
-			int nbNode = graphePrincipal.infographe().get(0);
-			int nbVilles = graphePrincipal.infographe().get(1);
-			int nbResto = graphePrincipal.infographe().get(2);
-			int nbLoisir = graphePrincipal.infographe().get(3);
-		
-			jLabelVilles.setText(nbVilles+" Villes");
-			jLabelRestaurant.setText(nbResto+" Restaurant");
-			jLabelLoisir.setText(nbLoisir+" lieux de loisir");
-		
-			int nbArete = graphePrincipal.infoarete().get(0);
-			int nbAutoroute = graphePrincipal.infoarete().get(1);
-			int nbNationales = graphePrincipal.infoarete().get(2);
-			int nbDepartment = graphePrincipal.infoarete().get(3);
-		
-			jLabelAutoroutes.setText(nbAutoroute+" Autoroutes");
-			jLabelNationales.setText(nbNationales+" Nationales");
-			jLabelDepartementales.setText(nbDepartment+" Departementales");
-		
-			jLabelRecap.setText("votre graphe posséde : "+nbNode+" noeuds"+" et "+nbArete+" arete");
+		if (jButtonImporter.getText().equals("Importer un graphe")) {
+			JFileChooser choixFichier = new JFileChooser();
+			int option = choixFichier.showOpenDialog(null);
+			if(option == JFileChooser.APPROVE_OPTION){
+				try {
+					File file = choixFichier.getSelectedFile();
+					jLabelMessageGraphe.setText("Graphe correctement importé : " + file.getName());
+					graphePrincipal = new Graphe(file.getName());
+					jTabbedPaneSelectionMenus.setEnabled(true);
+					jButtonReinitialiser.setEnabled(true);
 
-			modeleVille.ajouterVille(graphePrincipal.trouverSommetsParType("V"));
-			modeleRestaurant.ajouterRestaurant(graphePrincipal.trouverSommetsParType("R"));
-			modeleLoisir.ajouterLoisir(graphePrincipal.trouverSommetsParType("L"));
+					if(jLabelNationales.getText().equals("")){
+						int nbSommets = graphePrincipal.comptageSommets().get(0);
+						int nbVilles = graphePrincipal.comptageSommets().get(1);
+						int nbRestaurants = graphePrincipal.comptageSommets().get(2);
+						int nbLoisir = graphePrincipal.comptageSommets().get(3);
+
+						jLabelVilles.setText(nbVilles+" Villes");
+						jLabelRestaurant.setText(nbRestaurants+" Restaurant");
+						jLabelLoisir.setText(nbLoisir+" lieux de loisir");
+
+						int nbAretes = graphePrincipal.comptageAretes().get(0);
+						int nbAutoroutes = graphePrincipal.comptageAretes().get(1);
+						int nbNationales = graphePrincipal.comptageAretes().get(2);
+						int nbDepartmentales = graphePrincipal.comptageAretes().get(3);
+
+						jLabelAutoroutes.setText(nbAutoroutes+" Autoroutes");
+						jLabelNationales.setText(nbNationales+" Nationales");
+						jLabelDepartementales.setText(nbDepartmentales+" Departementales");
+
+						jLabelRecap.setText("votre graphe posséde : "+nbSommets+" noeuds"+" et "+nbAretes+" arete");
+
+						modeleVille.ajouterVille(graphePrincipal.trouverSommetsParType("V"));
+						modeleRestaurant.ajouterRestaurant(graphePrincipal.trouverSommetsParType("R"));
+						modeleLoisir.ajouterLoisir(graphePrincipal.trouverSommetsParType("L"));
+
+						modeleAutoroutes.ajouterAutoroute(graphePrincipal.trouverAretesParType("A"));
+						modeleNationales.ajouterNationales(graphePrincipal.trouverAretesParType("N"));
+						modeleDepartementales.ajouterDepartmentales(graphePrincipal.trouverAretesParType("D"));
+					}
+					for(Sommet elem :graphePrincipal.trouverSommetsParType("V")){
+						modeleVilleCombo.addElement(elem);
+					}
+					for(Sommet elem:graphePrincipal.trouverSommetsParType("R")){
+						modeleRestoCombo.addElement(elem);
+					}
+					for(Sommet elem:graphePrincipal.trouverSommetsParType("L")){
+						modeleLoisirCombo.addElement(elem);
+					}
+					jButtonImporter.setText("Supprimer le graphe");
+				} catch (IOException e) {
+					System.out.println("Erreur dans l'importation : " + e.getMessage());
+				}
+			}
+		} else {
+			jButtonReinitialiser.setEnabled(false);
+			jTabbedPaneSelectionMenus.setEnabled(false);
+
+			modeleVille.viderModele();
+			modeleLoisir.viderModele();
+			modeleRestaurant.viderModele();
+			modeleAutoroutes.viderModele();
+			modeleDepartementales.viderModele();
+			modeleNationales.viderModele();
+			jLabelMessageGraphe.setText("En attente d'importation d'un graphe ...");
+			jButtonImporter.setText("Importer un graphe");
+		}
 		
-			modeleAuto.ajouterAutoroute(graphePrincipal.trouverAretesParType("A"));
-			modeleNatio.ajouterNationales(graphePrincipal.trouverAretesParType("N"));
-			modeleDeparte.ajouterDepartmentales(graphePrincipal.trouverAretesParType("D"));
-		}
-		for(Sommet elem :graphePrincipal.getListeSommet()){
-			modeleVilleCombo.addElement(elem);
-		}
-		for(Sommet elem:graphePrincipal.trouverSommetsParType("R")){
-			modeleRestoCombo.addElement(elem);
-		}
-		for(Sommet elem:graphePrincipal.trouverSommetsParType("L")){
-			modeleLoisirCombo.addElement(elem);
-		}
-    }//GEN-LAST:event_jButtonImporterActionPerformed
 
     private void jComboBoxVilleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxVilleActionPerformed
        modelSommet.clear();
@@ -473,28 +475,6 @@ public class Accueil extends javax.swing.JFrame{
 		   }
 	   }
     }//GEN-LAST:event_jComboBoxVilleActionPerformed
-
-    private void jButtonResetGrapheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResetGrapheActionPerformed
-        
-		jButtonReinitialiser.setEnabled(false);
-		jTabbedPane1.setEnabled(false);
-		
-		modeleVille.SupprimerV();
-		modeleLoisir.SupprimerL();
-		modeleRestaurant.SupprimerR();
-		modeleAuto.SupprimerA();
-		modeleDeparte.SupprimerD();
-		modeleNatio.SupprimerN();
-			
-		jLabelRecap.setText("");
-		jLabelVilles.setText("");
-		jLabelRestaurant.setText("");
-		jLabelLoisir.setText("");
-		jLabelAutoroutes.setText("");
-		jLabelNationales.setText("");
-		jLabelDepartementales.setText("");
-			
-    }//GEN-LAST:event_jButtonResetGrapheActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -574,7 +554,7 @@ public class Accueil extends javax.swing.JFrame{
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane3;
+    private javax.swing.JTabbedPane jTabbedPaneSelectionMenus;
     // End of variables declaration//GEN-END:variables
 }

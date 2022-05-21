@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package modeleJlist;
+package modele;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,28 +13,27 @@ import metier.Sommet;
  *
  * @author frsgr
  */
-public class ModeleListLoisir extends AbstractListModel<String>{
+public class ModeleListLVille extends AbstractListModel<String>{
 	
-	private List<Sommet>dataLoisir=new ArrayList<>();
+	private List<Sommet> dataVille =new ArrayList<>();
 
 	@Override
 	public int getSize() {
-		return dataLoisir.size();
+		return dataVille.size();
 	}
 
 	@Override
 	public String getElementAt(int index) {
-		return dataLoisir.get(index).getNom();
+		return dataVille.get(index).getNom();
 	}
 	
-	public void ajouterLoisir(List<Sommet> tableauLoisir){
-		for(Sommet elem:tableauLoisir){
-			dataLoisir.add(elem);
+	public void ajouterVille(List<Sommet> listeVille){
+		for(Sommet elem:listeVille){
+			dataVille.add(elem);
 		}
-		fireIntervalAdded(this, 0, dataLoisir.size());
+		fireIntervalAdded(this, 0, dataVille.size());	
 	}
-	public void SupprimerL(){
-		dataLoisir.clear();
+	public void viderModele(){
+		dataVille.clear();
 	}
-	
 }
