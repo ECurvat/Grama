@@ -9,8 +9,6 @@ import modele.ModeleListLoisir;
 import modele.ModeleListLVille;
 import java.io.File;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFileChooser;
 import metier.*;
@@ -88,6 +86,14 @@ public class Accueil extends javax.swing.JFrame{
         jListResNoeuds = new javax.swing.JList<>();
         jPanelLiens = new javax.swing.JPanel();
         jPanelEcran2 = new javax.swing.JPanel();
+        jComboBoxEcran2Ville1 = new javax.swing.JComboBox<>();
+        jComboBoxEcran2Restaurant1 = new javax.swing.JComboBox<>();
+        jComboBoxEcran2Loisir1 = new javax.swing.JComboBox<>();
+        jComboBoxEcran2Ville2 = new javax.swing.JComboBox<>();
+        jComboBoxEcran2Restaurant2 = new javax.swing.JComboBox<>();
+        jComboBoxEcran2Loisir2 = new javax.swing.JComboBox<>();
+        jLabelEcran2ChoixSommet1 = new javax.swing.JLabel();
+        jLabelEcran2ChoixSommet2 = new javax.swing.JLabel();
         jPanelEcran3 = new javax.swing.JPanel();
         jPanelEcran4 = new javax.swing.JPanel();
         jMenuBar = new javax.swing.JMenuBar();
@@ -339,15 +345,74 @@ public class Accueil extends javax.swing.JFrame{
 
         jTabbedPaneSelectionMenus.addTab("1-distance", jPanelEcran1);
 
+        jComboBoxEcran2Ville1.setModel(modeleVilleCombo);
+        jComboBoxEcran2Ville1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxEcran2Ville1ActionPerformed(evt);
+            }
+        });
+
+        jComboBoxEcran2Restaurant1.setModel(modeleRestoCombo);
+
+        jComboBoxEcran2Loisir1.setModel(modeleLoisirCombo);
+
+        jComboBoxEcran2Ville2.setModel(modeleVilleCombo);
+        jComboBoxEcran2Ville2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxEcran2Ville2ActionPerformed(evt);
+            }
+        });
+
+        jComboBoxEcran2Restaurant2.setModel(modeleRestoCombo);
+
+        jComboBoxEcran2Loisir2.setModel(modeleLoisirCombo);
+
+        jLabelEcran2ChoixSommet1.setText("Choisir un premier sommet");
+
+        jLabelEcran2ChoixSommet2.setText("Choisir un second sommet");
+
         javax.swing.GroupLayout jPanelEcran2Layout = new javax.swing.GroupLayout(jPanelEcran2);
         jPanelEcran2.setLayout(jPanelEcran2Layout);
         jPanelEcran2Layout.setHorizontalGroup(
             jPanelEcran2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 794, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelEcran2Layout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addGroup(jPanelEcran2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelEcran2ChoixSommet1)
+                    .addGroup(jPanelEcran2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelEcran2Layout.createSequentialGroup()
+                            .addComponent(jComboBoxEcran2Ville1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(jComboBoxEcran2Restaurant1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(jComboBoxEcran2Loisir1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelEcran2Layout.createSequentialGroup()
+                            .addComponent(jComboBoxEcran2Ville2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(jComboBoxEcran2Restaurant2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(jComboBoxEcran2Loisir2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabelEcran2ChoixSommet2))
+                .addGap(16, 16, 16))
         );
         jPanelEcran2Layout.setVerticalGroup(
             jPanelEcran2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 504, Short.MAX_VALUE)
+            .addGroup(jPanelEcran2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelEcran2ChoixSommet1, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanelEcran2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBoxEcran2Ville1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxEcran2Restaurant1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxEcran2Loisir1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabelEcran2ChoixSommet2, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanelEcran2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBoxEcran2Ville2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxEcran2Restaurant2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxEcran2Loisir2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(378, Short.MAX_VALUE))
         );
 
         jTabbedPaneSelectionMenus.addTab("2-distance", jPanelEcran2);
@@ -482,6 +547,14 @@ public class Accueil extends javax.swing.JFrame{
         
     }//GEN-LAST:event_jComboBoxVilleActionPerformed
 
+    private void jComboBoxEcran2Ville1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxEcran2Ville1ActionPerformed
+        jComboBoxEcran2Loisir1.setEnabled(false);
+    }//GEN-LAST:event_jComboBoxEcran2Ville1ActionPerformed
+
+    private void jComboBoxEcran2Ville2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxEcran2Ville2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxEcran2Ville2ActionPerformed
+
 	/**
 	 * @param args the command line arguments
 	 */
@@ -521,11 +594,19 @@ public class Accueil extends javax.swing.JFrame{
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonImporter;
     private javax.swing.JButton jButtonReinitialiser;
+    private javax.swing.JComboBox<String> jComboBoxEcran2Loisir1;
+    private javax.swing.JComboBox<String> jComboBoxEcran2Loisir2;
+    private javax.swing.JComboBox<String> jComboBoxEcran2Restaurant1;
+    private javax.swing.JComboBox<String> jComboBoxEcran2Restaurant2;
+    private javax.swing.JComboBox<String> jComboBoxEcran2Ville1;
+    private javax.swing.JComboBox<String> jComboBoxEcran2Ville2;
     private javax.swing.JComboBox<String> jComboBoxLoisir;
     private javax.swing.JComboBox<String> jComboBoxRestaurant;
     private javax.swing.JComboBox<String> jComboBoxVille;
     private javax.swing.JLabel jLabelAutoroutes;
     private javax.swing.JLabel jLabelDepartementales;
+    private javax.swing.JLabel jLabelEcran2ChoixSommet1;
+    private javax.swing.JLabel jLabelEcran2ChoixSommet2;
     private javax.swing.JLabel jLabelLoisir;
     private javax.swing.JLabel jLabelMessageGraphe;
     private javax.swing.JLabel jLabelNationales;
