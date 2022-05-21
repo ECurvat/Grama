@@ -9,9 +9,12 @@ import modeleJlist.ModeleListLoisir;
 import modeleJlist.ModeleListLVille;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
 import metier.*;
 import modeleJlist.ModeleListAutoroutes;
@@ -35,6 +38,9 @@ public class Accueil extends javax.swing.JFrame{
 	private DefaultComboBoxModel modeleVilleCombo = new DefaultComboBoxModel();
 	private DefaultComboBoxModel modeleRestoCombo = new DefaultComboBoxModel();
 	private DefaultComboBoxModel modeleLoisirCombo = new DefaultComboBoxModel();
+	
+	private DefaultListModel  modelSommet=new DefaultListModel();
+	private List<Sommet> listeSommet = new ArrayList<>();
 	
 
 	/**
@@ -81,8 +87,6 @@ public class Accueil extends javax.swing.JFrame{
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanelNoeuds = new javax.swing.JPanel();
         jComboBoxVille = new javax.swing.JComboBox<>();
-        jComboBoxRestaurant = new javax.swing.JComboBox<>();
-        jComboBoxLoisir = new javax.swing.JComboBox<>();
         jLabelVoisin = new javax.swing.JLabel();
         jButtonReinitialiser = new javax.swing.JButton();
         jScrollPane7 = new javax.swing.JScrollPane();
@@ -269,20 +273,12 @@ public class Accueil extends javax.swing.JFrame{
             }
         });
 
-        jComboBoxRestaurant.setModel(modeleRestoCombo);
-
-        jComboBoxLoisir.setModel(modeleLoisirCombo);
-
         jLabelVoisin.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelVoisin.setText("Voisins direct :");
 
         jButtonReinitialiser.setText("Réinitialiser");
 
-        jListResNoeuds.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { " " };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
+        jListResNoeuds.setModel(modelSommet);
         jScrollPane7.setViewportView(jListResNoeuds);
 
         javax.swing.GroupLayout jPanelNoeudsLayout = new javax.swing.GroupLayout(jPanelNoeuds);
@@ -293,13 +289,8 @@ public class Accueil extends javax.swing.JFrame{
                 .addGap(24, 24, 24)
                 .addGroup(jPanelNoeudsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabelVoisin)
-                    .addGroup(jPanelNoeudsLayout.createSequentialGroup()
-                        .addComponent(jComboBoxVille, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jComboBoxRestaurant, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jComboBoxLoisir, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane7))
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 756, Short.MAX_VALUE)
+                    .addComponent(jComboBoxVille, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(14, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelNoeudsLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -310,10 +301,7 @@ public class Accueil extends javax.swing.JFrame{
             jPanelNoeudsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelNoeudsLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(jPanelNoeudsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBoxVille, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxRestaurant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxLoisir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jComboBoxVille, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelVoisin)
                 .addGap(18, 18, 18)
@@ -464,7 +452,7 @@ public class Accueil extends javax.swing.JFrame{
 			modeleNatio.ajouterNationales(graphePrincipal.trouverAretesParType("N"));
 			modeleDeparte.ajouterDepartmentales(graphePrincipal.trouverAretesParType("D"));
 		}
-		for(Sommet elem :graphePrincipal.trouverSommetsParType("V")){
+		for(Sommet elem :graphePrincipal.getListeSommet()){
 			modeleVilleCombo.addElement(elem);
 		}
 		for(Sommet elem:graphePrincipal.trouverSommetsParType("R")){
@@ -476,7 +464,14 @@ public class Accueil extends javax.swing.JFrame{
     }//GEN-LAST:event_jButtonImporterActionPerformed
 
     private void jComboBoxVilleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxVilleActionPerformed
-        
+       modelSommet.clear();
+	   for(Sommet s:graphePrincipal.getListeSommet()){
+		   if(jComboBoxVille.getSelectedItem()==s){
+			   for(Arete elem:s.getSuccesseurs()){
+					modelSommet.addElement(elem.getDestination());
+				}
+		   }
+	   }
     }//GEN-LAST:event_jComboBoxVilleActionPerformed
 
     private void jButtonResetGrapheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResetGrapheActionPerformed
@@ -541,8 +536,6 @@ public class Accueil extends javax.swing.JFrame{
     private javax.swing.JButton jButtonImporter;
     private javax.swing.JButton jButtonReinitialiser;
     private javax.swing.JButton jButtonResetGraphe;
-    private javax.swing.JComboBox<String> jComboBoxLoisir;
-    private javax.swing.JComboBox<String> jComboBoxRestaurant;
     private javax.swing.JComboBox<String> jComboBoxVille;
     private javax.swing.JLabel jLabelAutoroutes;
     private javax.swing.JLabel jLabelDepartementales;
