@@ -57,16 +57,14 @@ public class Test {
 		// TEST VERIFIER SI 2-DISTANCE
 		System.out.println("Test si deux sommets sont reliés à une 2-distance (Lyon et Chalon réellement reliés) : " + test.rechercher2Distance(test.getListeSommet().get(0), test.getListeSommet().get(2)));
 		System.out.println("Test si deux sommets sont reliés à une 2-distance (Lyon et Macon non reliés) : " + test.rechercher2Distance(test.getListeSommet().get(0), test.getListeSommet().get(1)));
-	
-		//TEST POUR NOMBRE NOEUD,VILLES,RETSTAURANT,LIEUX DE LOISIR
-		System.out.println("--------------------------------------------------------");
-		System.out.println(test.comptageSommets());
 		
 		// TEST COMPARAISON VILLES
 		System.out.println("Comparaison 0 avec 29 : " + test.comparerOCG(test.getListeSommet().get(0), test.getListeSommet().get(29)).toString());
 		
-		//TEST POUR LE NOMBRE DE ARETE
-		System.out.println("---------------------------------------------------------");
+		//TEST POUR NOMBRE NOEUD,VILLES,RETSTAURANT,LIEUX DE LOISIR
+		System.out.println(test.comptageSommets());
+		
+		//TEST POUR LE NOMBRE D'ARETE
 		System.out.println(test.comptageAretes());
     }
 }
