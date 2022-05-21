@@ -436,15 +436,10 @@ public class Accueil extends javax.swing.JFrame{
 						modeleNationales.ajouterNationales(graphePrincipal.trouverAretesParType("N"));
 						modeleDepartementales.ajouterDepartmentales(graphePrincipal.trouverAretesParType("D"));
 					}
-					for(Sommet elem :graphePrincipal.trouverSommetsParType("V")){
+					for(Sommet elem :graphePrincipal.getListeSommet()){
 						modeleVilleCombo.addElement(elem);
 					}
-					for(Sommet elem:graphePrincipal.trouverSommetsParType("R")){
-						modeleRestoCombo.addElement(elem);
-					}
-					for(Sommet elem:graphePrincipal.trouverSommetsParType("L")){
-						modeleLoisirCombo.addElement(elem);
-					}
+
 					jButtonImporter.setText("Supprimer le graphe");
 				} catch (IOException e) {
 					System.out.println("Erreur dans l'importation : " + e.getMessage());
