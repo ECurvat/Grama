@@ -134,24 +134,24 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanel_resultat" alignment="1" max="32767" attributes="0"/>
-                  <Component id="jLabelRecap" alignment="1" max="32767" attributes="0"/>
+                  <Component id="jPanelresultat" alignment="1" max="32767" attributes="0"/>
+                  <Component id="jLabelEcran0Recap" alignment="1" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabelRecap" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="jLabelEcran0Recap" min="-2" pref="27" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jPanel_resultat" max="32767" attributes="0"/>
+                      <Component id="jPanelresultat" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Container class="javax.swing.JPanel" name="jPanel_resultat">
+            <Container class="javax.swing.JPanel" name="jPanelresultat">
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -161,33 +161,33 @@
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="jLabelAutoroutes" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jScrollPane4" alignment="1" min="-2" pref="235" max="-2" attributes="0"/>
+                                      <Component id="jLabelEcran0Autoroutes" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jScrollPaneEcran0Autoutes" alignment="1" min="-2" pref="235" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jScrollPane5" pref="0" max="32767" attributes="0"/>
-                                      <Component id="jLabelNationales" min="-2" pref="235" max="-2" attributes="0"/>
+                                      <Component id="jScrollPaneEcran0Nationales" pref="0" max="32767" attributes="0"/>
+                                      <Component id="jLabelEcran0Nationales" min="-2" pref="235" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jScrollPane6" min="-2" pref="235" max="-2" attributes="0"/>
-                                      <Component id="jLabelDepartementales" alignment="0" min="-2" pref="235" max="-2" attributes="0"/>
+                                      <Component id="jScrollPaneEcran0Departementales" min="-2" pref="235" max="-2" attributes="0"/>
+                                      <Component id="jLabelEcran0Departementales" alignment="0" min="-2" pref="235" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jScrollPane1" min="-2" pref="235" max="-2" attributes="0"/>
+                                  <Component id="jScrollPaneEcran0Villes" min="-2" pref="235" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane2" min="-2" pref="235" max="-2" attributes="0"/>
+                                  <Component id="jScrollPaneEcran0Restaurants" min="-2" pref="235" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane3" min="-2" pref="235" max="-2" attributes="0"/>
+                                  <Component id="jScrollPaneEcran0Loisir" min="-2" pref="235" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jLabelVilles" min="-2" pref="235" max="-2" attributes="0"/>
+                                  <Component id="jLabelEcran0Villes" min="-2" pref="235" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jLabelRestaurant" min="-2" pref="235" max="-2" attributes="0"/>
+                                  <Component id="jLabelEcran0Restaurant" min="-2" pref="235" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jLabelLoisir" min="-2" pref="235" max="-2" attributes="0"/>
+                                  <Component id="jLabeEcran0lLoisir" min="-2" pref="235" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace pref="31" max="32767" attributes="0"/>
@@ -199,33 +199,33 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPane2" alignment="0" pref="165" max="32767" attributes="0"/>
-                              <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jScrollPane3" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jScrollPaneEcran0Restaurants" alignment="0" pref="165" max="32767" attributes="0"/>
+                              <Component id="jScrollPaneEcran0Villes" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jScrollPaneEcran0Loisir" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabelVilles" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelRestaurant" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelLoisir" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelEcran0Villes" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelEcran0Restaurant" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabeEcran0lLoisir" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jScrollPane5" pref="165" max="32767" attributes="0"/>
-                                      <Component id="jScrollPane6" max="32767" attributes="0"/>
+                                      <Component id="jScrollPaneEcran0Nationales" pref="165" max="32767" attributes="0"/>
+                                      <Component id="jScrollPaneEcran0Departementales" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane4" min="-2" pref="165" max="-2" attributes="0"/>
+                                  <Component id="jScrollPaneEcran0Autoutes" min="-2" pref="165" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="jLabelAutoroutes" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                                      <Component id="jLabelNationales" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                                      <Component id="jLabelDepartementales" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                                      <Component id="jLabelEcran0Autoroutes" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                                      <Component id="jLabelEcran0Nationales" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                                      <Component id="jLabelEcran0Departementales" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                               </Group>
@@ -235,14 +235,14 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+                <Container class="javax.swing.JScrollPane" name="jScrollPaneEcran0Villes">
                   <AuxValues>
                     <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                   </AuxValues>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JList" name="jList1">
+                    <Component class="javax.swing.JList" name="jListEcran0Villes">
                       <Properties>
                         <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                           <Connection code="modeleVille" type="code"/>
@@ -254,14 +254,14 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+                <Container class="javax.swing.JScrollPane" name="jScrollPaneEcran0Loisir">
                   <AuxValues>
                     <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                   </AuxValues>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JList" name="jList3">
+                    <Component class="javax.swing.JList" name="jListEcran0Loisirs">
                       <Properties>
                         <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                           <Connection code="modeleLoisir" type="code"/>
@@ -273,14 +273,14 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+                <Container class="javax.swing.JScrollPane" name="jScrollPaneEcran0Restaurants">
                   <AuxValues>
                     <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                   </AuxValues>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JList" name="jList2">
+                    <Component class="javax.swing.JList" name="jListEcran0Restaurants">
                       <Properties>
                         <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                           <Connection code="modeleRestaurant" type="code"/>
@@ -292,35 +292,35 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JLabel" name="jLabelVilles">
+                <Component class="javax.swing.JLabel" name="jLabelEcran0Villes">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabelRestaurant">
+                <Component class="javax.swing.JLabel" name="jLabelEcran0Restaurant">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabelLoisir">
+                <Component class="javax.swing.JLabel" name="jLabeEcran0lLoisir">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
                     </Property>
                   </Properties>
                 </Component>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+                <Container class="javax.swing.JScrollPane" name="jScrollPaneEcran0Autoutes">
                   <AuxValues>
                     <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                   </AuxValues>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JList" name="jList4">
+                    <Component class="javax.swing.JList" name="jListEcran0Autoroutes">
                       <Properties>
                         <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                           <Connection code="modeleAutoroutes" type="code"/>
@@ -332,14 +332,14 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane5">
+                <Container class="javax.swing.JScrollPane" name="jScrollPaneEcran0Nationales">
                   <AuxValues>
                     <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                   </AuxValues>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JList" name="jList5">
+                    <Component class="javax.swing.JList" name="jListEcran0Nationales">
                       <Properties>
                         <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                           <Connection code="modeleNationales" type="code"/>
@@ -351,14 +351,14 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JScrollPane" name="jScrollPane6">
+                <Container class="javax.swing.JScrollPane" name="jScrollPaneEcran0Departementales">
                   <AuxValues>
                     <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                   </AuxValues>
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JList" name="jList6">
+                    <Component class="javax.swing.JList" name="jListEcran0Departementales">
                       <Properties>
                         <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                           <Connection code="modeleDepartementales" type="code"/>
@@ -370,21 +370,21 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JLabel" name="jLabelAutoroutes">
+                <Component class="javax.swing.JLabel" name="jLabelEcran0Autoroutes">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabelNationales">
+                <Component class="javax.swing.JLabel" name="jLabelEcran0Nationales">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabelDepartementales">
+                <Component class="javax.swing.JLabel" name="jLabelEcran0Departementales">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -393,7 +393,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="jLabelRecap">
+            <Component class="javax.swing.JLabel" name="jLabelEcran0Recap">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="0"/>
@@ -414,21 +414,21 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jTabbedPane3" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jTabbedPaneEcran1" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jTabbedPane3" alignment="1" max="32767" attributes="0"/>
+                  <Component id="jTabbedPaneEcran1" alignment="1" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Container class="javax.swing.JTabbedPane" name="jTabbedPane3">
+            <Container class="javax.swing.JTabbedPane" name="jTabbedPaneEcran1">
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
               <SubComponents>
-                <Container class="javax.swing.JPanel" name="jPanelNoeuds">
+                <Container class="javax.swing.JPanel" name="jPanelSommets">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                       <JTabbedPaneConstraints tabName="Sommets">
@@ -443,16 +443,11 @@
                           <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jLabelVoisin" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jScrollPane7" alignment="0" pref="756" max="32767" attributes="0"/>
-                                  <Component id="jComboBoxVille" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jLabelEcran1Voisin" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jScrollPaneEcran1ResultatSommets" alignment="0" pref="756" max="32767" attributes="0"/>
+                                  <Component id="jComboBoxEcran1Ville" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace pref="14" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jButtonReinitialiser" min="-2" pref="150" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="321" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -460,33 +455,31 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="jComboBoxVille" min="-2" max="-2" attributes="0"/>
+                              <Component id="jComboBoxEcran1Ville" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jLabelVoisin" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelEcran1Voisin" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jScrollPane7" min="-2" pref="260" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButtonReinitialiser" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="66" max="32767" attributes="0"/>
+                              <Component id="jScrollPaneEcran1ResultatSommets" min="-2" pref="260" max="-2" attributes="0"/>
+                              <EmptySpace pref="120" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JComboBox" name="jComboBoxVille">
+                    <Component class="javax.swing.JComboBox" name="jComboBoxEcran1Ville">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                           <Connection code="modeleSommetsCombo" type="code"/>
                         </Property>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxVilleActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxEcran1VilleActionPerformed"/>
                       </Events>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                       </AuxValues>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabelVoisin">
+                    <Component class="javax.swing.JLabel" name="jLabelEcran1Voisin">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="18" style="0"/>
@@ -494,12 +487,7 @@
                         <Property name="text" type="java.lang.String" value="Voisins direct :"/>
                       </Properties>
                     </Component>
-                    <Component class="javax.swing.JButton" name="jButtonReinitialiser">
-                      <Properties>
-                        <Property name="text" type="java.lang.String" value="R&#xe9;initialiser"/>
-                      </Properties>
-                    </Component>
-                    <Container class="javax.swing.JScrollPane" name="jScrollPane7">
+                    <Container class="javax.swing.JScrollPane" name="jScrollPaneEcran1ResultatSommets">
                       <AuxValues>
                         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                       </AuxValues>
@@ -520,7 +508,7 @@
                     </Container>
                   </SubComponents>
                 </Container>
-                <Container class="javax.swing.JPanel" name="jPanelLiens">
+                <Container class="javax.swing.JPanel" name="jPanelAretes">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
                       <JTabbedPaneConstraints tabName="Aretes">
@@ -535,9 +523,9 @@
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace pref="24" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jLabel1" min="-2" pref="127" max="-2" attributes="0"/>
-                                  <Component id="jComboBoxArete" max="32767" attributes="0"/>
-                                  <Component id="jScrollPane8" alignment="0" pref="756" max="32767" attributes="0"/>
+                                  <Component id="jComboBoxEcran1Arete" max="32767" attributes="0"/>
+                                  <Component id="jScrollPaneEcran1ResultatAretes" alignment="0" pref="756" max="32767" attributes="0"/>
+                                  <Component id="jLabelEcran1SommetsRelies" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                           </Group>
@@ -547,39 +535,39 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                              <Component id="jComboBoxArete" min="-2" max="-2" attributes="0"/>
+                              <Component id="jComboBoxEcran1Arete" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelEcran1SommetsRelies" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jScrollPane8" min="-2" pref="260" max="-2" attributes="0"/>
-                              <EmptySpace pref="107" max="32767" attributes="0"/>
+                              <Component id="jScrollPaneEcran1ResultatAretes" min="-2" pref="260" max="-2" attributes="0"/>
+                              <EmptySpace pref="121" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                   </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JComboBox" name="jComboBoxArete">
+                    <Component class="javax.swing.JComboBox" name="jComboBoxEcran1Arete">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                           <Connection code="modeleAretesCombo" type="code"/>
                         </Property>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxAreteActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxEcran1AreteActionPerformed"/>
                       </Events>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                       </AuxValues>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="jLabel1">
+                    <Component class="javax.swing.JLabel" name="jLabelEcran1SommetsRelies">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Segoe UI" size="18" style="0"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" value="Noeuds reli&#xe9;es :"/>
+                        <Property name="text" type="java.lang.String" value="Sommets reli&#xe9;s :"/>
                       </Properties>
                     </Component>
-                    <Container class="javax.swing.JScrollPane" name="jScrollPane8">
+                    <Container class="javax.swing.JScrollPane" name="jScrollPaneEcran1ResultatAretes">
                       <AuxValues>
                         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                       </AuxValues>
