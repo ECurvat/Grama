@@ -134,7 +134,7 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanelresultat" alignment="1" max="32767" attributes="0"/>
+                  <Component id="jPanelresultat" alignment="1" pref="799" max="32767" attributes="0"/>
                   <Component id="jLabelEcran0Recap" alignment="1" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
@@ -169,11 +169,10 @@
                                       <Component id="jScrollPaneEcran0Nationales" pref="0" max="32767" attributes="0"/>
                                       <Component id="jLabelEcran0Nationales" min="-2" pref="235" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jScrollPaneEcran0Departementales" min="-2" pref="235" max="-2" attributes="0"/>
-                                      <Component id="jLabelEcran0Departementales" alignment="0" min="-2" pref="235" max="-2" attributes="0"/>
-                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jScrollPaneEcran0Departementales" min="-2" pref="235" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jLabelEcran0Departementales" min="-2" pref="235" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jScrollPaneEcran0Villes" min="-2" pref="235" max="-2" attributes="0"/>
@@ -190,7 +189,7 @@
                                   <Component id="jLabeEcran0lLoisir" min="-2" pref="235" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="31" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -210,24 +209,25 @@
                               <Component id="jLabeEcran0lLoisir" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jScrollPaneEcran0Nationales" pref="165" max="32767" attributes="0"/>
-                                      <Component id="jScrollPaneEcran0Departementales" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                              </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                  <Component id="jScrollPaneEcran0Autoutes" min="-2" pref="165" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="199" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabelEcran0Autoroutes" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                                       <Component id="jLabelEcran0Nationales" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                                       <Component id="jLabelEcran0Departementales" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="0" pref="36" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jScrollPaneEcran0Autoutes" min="-2" pref="165" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jScrollPaneEcran0Nationales" pref="165" max="32767" attributes="0"/>
+                                          <Component id="jScrollPaneEcran0Departementales" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -715,15 +715,99 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="794" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jLabelEcran3ResultatTouristique" max="32767" attributes="0"/>
+                          <Component id="jLabelEcran3ResultatGastonomie" max="32767" attributes="0"/>
+                          <Component id="jLabelEcran3ResultatCulture" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jLabelEcran2ChoixVille1" max="32767" attributes="0"/>
+                                  <Component id="jLabelEcran3Choixvile2" pref="150" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="44" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jComboBoxEcran3Ville2" min="-2" pref="500" max="-2" attributes="0"/>
+                                  <Component id="jComboBoxEcran3Ville1" min="-2" pref="500" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="504" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jComboBoxEcran3Ville1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelEcran2ChoixVille1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jComboBoxEcran3Ville2" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelEcran3Choixvile2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
+                      <Component id="jLabelEcran3ResultatCulture" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jLabelEcran3ResultatGastonomie" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jLabelEcran3ResultatTouristique" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="172" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
           </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JComboBox" name="jComboBoxEcran3Ville1">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="jComboBoxEcran3Ville2">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelEcran2ChoixVille1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Choix de la premi&#xe8;re ville :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelEcran3Choixvile2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Choix de la deuxi&#xe8;me ville :"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelEcran3ResultatCulture">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jLabel1"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelEcran3ResultatGastonomie">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jLabel1"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelEcran3ResultatTouristique">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jLabel1"/>
+              </Properties>
+            </Component>
+          </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanelEcran4">
           <Constraints>

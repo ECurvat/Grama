@@ -98,6 +98,13 @@ public class Accueil extends javax.swing.JFrame{
         jButtonEcran2Valider = new javax.swing.JButton();
         jLabelEcran2Resultat = new javax.swing.JLabel();
         jPanelEcran3 = new javax.swing.JPanel();
+        jComboBoxEcran3Ville1 = new javax.swing.JComboBox<>();
+        jComboBoxEcran3Ville2 = new javax.swing.JComboBox<>();
+        jLabelEcran2ChoixVille1 = new javax.swing.JLabel();
+        jLabelEcran3Choixvile2 = new javax.swing.JLabel();
+        jLabelEcran3ResultatCulture = new javax.swing.JLabel();
+        jLabelEcran3ResultatGastonomie = new javax.swing.JLabel();
+        jLabelEcran3ResultatTouristique = new javax.swing.JLabel();
         jPanelEcran4 = new javax.swing.JPanel();
         jMenuBar = new javax.swing.JMenuBar();
         jMenuFichier = new javax.swing.JMenu();
@@ -189,10 +196,10 @@ public class Accueil extends javax.swing.JFrame{
                         .addGroup(jPanelresultatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jScrollPaneEcran0Nationales, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addComponent(jLabelEcran0Nationales, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanelresultatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPaneEcran0Departementales, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelEcran0Departementales, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPaneEcran0Departementales, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelEcran0Departementales, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelresultatLayout.createSequentialGroup()
                         .addComponent(jScrollPaneEcran0Villes, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -205,7 +212,7 @@ public class Accueil extends javax.swing.JFrame{
                         .addComponent(jLabelEcran0Restaurant, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabeEcran0lLoisir, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelresultatLayout.setVerticalGroup(
             jPanelresultatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,21 +228,21 @@ public class Accueil extends javax.swing.JFrame{
                     .addComponent(jLabelEcran0Restaurant)
                     .addComponent(jLabeEcran0lLoisir))
                 .addGroup(jPanelresultatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelresultatLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanelresultatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPaneEcran0Nationales, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                            .addComponent(jScrollPaneEcran0Departementales))
-                        .addGap(84, 84, 84))
                     .addGroup(jPanelresultatLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jScrollPaneEcran0Autoutes, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(199, 199, 199)
                         .addGroup(jPanelresultatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabelEcran0Autoroutes, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabelEcran0Nationales, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabelEcran0Departementales, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(56, 56, 56))))
+                        .addGap(56, 56, 56))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelresultatLayout.createSequentialGroup()
+                        .addGap(0, 36, Short.MAX_VALUE)
+                        .addGroup(jPanelresultatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPaneEcran0Autoutes, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanelresultatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jScrollPaneEcran0Nationales, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                                .addComponent(jScrollPaneEcran0Departementales)))
+                        .addGap(84, 84, 84))))
         );
 
         jLabelEcran0Recap.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -244,7 +251,7 @@ public class Accueil extends javax.swing.JFrame{
         jPanelEcran0.setLayout(jPanelEcran0Layout);
         jPanelEcran0Layout.setHorizontalGroup(
             jPanelEcran0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelresultat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelresultat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 799, Short.MAX_VALUE)
             .addComponent(jLabelEcran0Recap, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanelEcran0Layout.setVerticalGroup(
@@ -420,15 +427,54 @@ public class Accueil extends javax.swing.JFrame{
 
         jTabbedPaneSelectionMenus.addTab("2-distance", jPanelEcran2);
 
+        jLabelEcran2ChoixVille1.setText("Choix de la première ville :");
+
+        jLabelEcran3Choixvile2.setText("Choix de la deuxième ville :");
+
+        jLabelEcran3ResultatCulture.setText("jLabel1");
+
+        jLabelEcran3ResultatGastonomie.setText("jLabel1");
+
+        jLabelEcran3ResultatTouristique.setText("jLabel1");
+
         javax.swing.GroupLayout jPanelEcran3Layout = new javax.swing.GroupLayout(jPanelEcran3);
         jPanelEcran3.setLayout(jPanelEcran3Layout);
         jPanelEcran3Layout.setHorizontalGroup(
             jPanelEcran3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 794, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelEcran3Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(jPanelEcran3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabelEcran3ResultatTouristique, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelEcran3ResultatGastonomie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelEcran3ResultatCulture, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanelEcran3Layout.createSequentialGroup()
+                        .addGroup(jPanelEcran3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabelEcran2ChoixVille1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabelEcran3Choixvile2, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                        .addGroup(jPanelEcran3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBoxEcran3Ville2, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBoxEcran3Ville1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(61, 61, 61))
         );
         jPanelEcran3Layout.setVerticalGroup(
             jPanelEcran3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 504, Short.MAX_VALUE)
+            .addGroup(jPanelEcran3Layout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addGroup(jPanelEcran3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBoxEcran3Ville1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelEcran2ChoixVille1))
+                .addGap(26, 26, 26)
+                .addGroup(jPanelEcran3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jComboBoxEcran3Ville2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelEcran3Choixvile2))
+                .addGap(145, 145, 145)
+                .addComponent(jLabelEcran3ResultatCulture)
+                .addGap(18, 18, 18)
+                .addComponent(jLabelEcran3ResultatGastonomie)
+                .addGap(18, 18, 18)
+                .addComponent(jLabelEcran3ResultatTouristique)
+                .addContainerGap(172, Short.MAX_VALUE))
         );
 
         jTabbedPaneSelectionMenus.addTab(">= 2-distance", jPanelEcran3);
@@ -623,6 +669,8 @@ public class Accueil extends javax.swing.JFrame{
     private javax.swing.JComboBox<String> jComboBoxEcran1Ville;
     private javax.swing.JComboBox<String> jComboBoxEcran2Sommets1;
     private javax.swing.JComboBox<String> jComboBoxEcran2Sommets2;
+    private javax.swing.JComboBox<String> jComboBoxEcran3Ville1;
+    private javax.swing.JComboBox<String> jComboBoxEcran3Ville2;
     private javax.swing.JLabel jLabeEcran0lLoisir;
     private javax.swing.JLabel jLabelEcran0Autoroutes;
     private javax.swing.JLabel jLabelEcran0Departementales;
@@ -634,7 +682,12 @@ public class Accueil extends javax.swing.JFrame{
     private javax.swing.JLabel jLabelEcran1Voisin;
     private javax.swing.JLabel jLabelEcran2ChoixSommet1;
     private javax.swing.JLabel jLabelEcran2ChoixSommet2;
+    private javax.swing.JLabel jLabelEcran2ChoixVille1;
     private javax.swing.JLabel jLabelEcran2Resultat;
+    private javax.swing.JLabel jLabelEcran3Choixvile2;
+    private javax.swing.JLabel jLabelEcran3ResultatCulture;
+    private javax.swing.JLabel jLabelEcran3ResultatGastonomie;
+    private javax.swing.JLabel jLabelEcran3ResultatTouristique;
     private javax.swing.JLabel jLabelMessageGraphe;
     private javax.swing.JList<String> jListEcran0Autoroutes;
     private javax.swing.JList<String> jListEcran0Departementales;

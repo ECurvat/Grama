@@ -11,7 +11,7 @@ import metier.Sommet;
 
 /**
  *
- * @author frsgr
+ * @author François, Elliot
  */
 public class ModeleListSommets extends AbstractListModel<String>{
 	
