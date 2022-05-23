@@ -29,7 +29,9 @@ public class Accueil extends javax.swing.JFrame{
 	
 	
 	// Selection pour combo box avec tous les sommets OU toutes les arêtes (quelque soit le type)
-	private DefaultComboBoxModel modeleSommetsCombo = new DefaultComboBoxModel();
+	private DefaultComboBoxModel modeleEcran1SommetsCombo = new DefaultComboBoxModel();
+	private DefaultComboBoxModel modeleEcran2SommetsChoix1Combo = new DefaultComboBoxModel();
+	private DefaultComboBoxModel modeleEcran2SommetsChoix2Combo = new DefaultComboBoxModel();
 	private DefaultComboBoxModel modeleAretesCombo = new DefaultComboBoxModel();
 	
 	// Resultat dans l'écran 1 de la recherche de voisins
@@ -91,6 +93,10 @@ public class Accueil extends javax.swing.JFrame{
         jPanelEcran2 = new javax.swing.JPanel();
         jLabelEcran2ChoixSommet1 = new javax.swing.JLabel();
         jLabelEcran2ChoixSommet2 = new javax.swing.JLabel();
+        jComboBoxEcran2Sommets1 = new javax.swing.JComboBox<>();
+        jComboBoxEcran2Sommets2 = new javax.swing.JComboBox<>();
+        jButtonEcran2Valider = new javax.swing.JButton();
+        jLabelEcran2Resultat = new javax.swing.JLabel();
         jPanelEcran3 = new javax.swing.JPanel();
         jPanelEcran4 = new javax.swing.JPanel();
         jMenuBar = new javax.swing.JMenuBar();
@@ -348,25 +354,69 @@ public class Accueil extends javax.swing.JFrame{
 
         jLabelEcran2ChoixSommet2.setText("Choisir un second sommet");
 
+        jComboBoxEcran2Sommets1.setModel(modeleEcran2SommetsChoix1Combo);
+        jComboBoxEcran2Sommets1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxEcran2Sommets1ActionPerformed(evt);
+            }
+        });
+
+        jComboBoxEcran2Sommets2.setModel(modeleEcran2SommetsChoix2Combo);
+        jComboBoxEcran2Sommets2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxEcran2Sommets2ActionPerformed(evt);
+            }
+        });
+
+        jButtonEcran2Valider.setText("Tester la 2-distance des sommets");
+        jButtonEcran2Valider.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEcran2ValiderActionPerformed(evt);
+            }
+        });
+
+        jLabelEcran2Resultat.setText("Les sommets X et X sont situés à une 2-distance exactement l'un de l'autre");
+
         javax.swing.GroupLayout jPanelEcran2Layout = new javax.swing.GroupLayout(jPanelEcran2);
         jPanelEcran2.setLayout(jPanelEcran2Layout);
         jPanelEcran2Layout.setHorizontalGroup(
             jPanelEcran2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelEcran2Layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
+            .addGroup(jPanelEcran2Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
                 .addGroup(jPanelEcran2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelEcran2ChoixSommet1)
-                    .addComponent(jLabelEcran2ChoixSommet2))
-                .addGap(615, 615, 615))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelEcran2Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanelEcran2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelEcran2ChoixSommet1)
+                            .addComponent(jLabelEcran2ChoixSommet2))
+                        .addGap(615, 615, 615))
+                    .addGroup(jPanelEcran2Layout.createSequentialGroup()
+                        .addGroup(jPanelEcran2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jComboBoxEcran2Sommets1, javax.swing.GroupLayout.Alignment.LEADING, 0, 754, Short.MAX_VALUE)
+                            .addComponent(jComboBoxEcran2Sommets2, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanelEcran2Layout.createSequentialGroup()
+                        .addGroup(jPanelEcran2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelEcran2Resultat, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonEcran2Valider))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanelEcran2Layout.setVerticalGroup(
             jPanelEcran2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelEcran2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabelEcran2ChoixSommet1, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jComboBoxEcran2Sommets1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabelEcran2ChoixSommet2, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(413, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBoxEcran2Sommets2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jButtonEcran2Valider)
+                .addGap(29, 29, 29)
+                .addComponent(jLabelEcran2Resultat, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(242, Short.MAX_VALUE))
         );
 
         jTabbedPaneSelectionMenus.addTab("2-distance", jPanelEcran2);
@@ -424,6 +474,7 @@ public class Accueil extends javax.swing.JFrame{
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonImporterActionPerformed(java.awt.event.ActionEvent evt) {                                                
@@ -467,7 +518,7 @@ public class Accueil extends javax.swing.JFrame{
 						modeleDepartementales.ajouterAretes(graphePrincipal.trouverAretesParType("D"));
 					}
 					for(Sommet elem :graphePrincipal.getListeSommet()){
-						modeleSommetsCombo.addElement(elem);
+						modeleEcran1SommetsCombo.addElement(elem);
 					}
 					for(Sommet elem:graphePrincipal.getListeSommet()){
 						for(Arete arete:elem.getSuccesseurs()){
@@ -513,6 +564,23 @@ public class Accueil extends javax.swing.JFrame{
 		}
     }//GEN-LAST:event_jComboBoxEcran1AreteActionPerformed
 
+    private void jComboBoxEcran2Sommets1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxEcran2Sommets1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxEcran2Sommets1ActionPerformed
+
+    private void jComboBoxEcran2Sommets2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxEcran2Sommets2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxEcran2Sommets2ActionPerformed
+
+    private void jButtonEcran2ValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEcran2ValiderActionPerformed
+        Sommet s1 = (Sommet) jComboBoxEcran2Sommets1.getSelectedItem();
+		Sommet s2 = (Sommet) jComboBoxEcran2Sommets2.getSelectedItem();
+		boolean resultat = graphePrincipal.rechercher2Distance(s1, s2);
+		if (resultat) jLabelEcran2Resultat.setText("Les sommets" + s1.getNom() + " et " + s2.getNom() + " sont situés à une 2-distance exactement l'un de l'autre");
+		else jLabelEcran2Resultat.setText("Les sommets" + s1.getNom() + " et " + s2.getNom() + " ne sont pas situés à une 2-distance exactement l'un de l'autre");
+		
+    }//GEN-LAST:event_jButtonEcran2ValiderActionPerformed
+
 	/**
 	 * @param args the command line arguments
 	 */
@@ -550,6 +618,7 @@ public class Accueil extends javax.swing.JFrame{
 	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonEcran2Valider;
     private javax.swing.JButton jButtonImporter;
     private javax.swing.JComboBox<String> jComboBoxEcran1Arete;
     private javax.swing.JComboBox<String> jComboBoxEcran1Ville;

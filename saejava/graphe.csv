@@ -1,7 +1,7 @@
-V,Lyon:A,78|V,Macon;D,80|R,BrasserieBourg;;
+V,Lyon:A,78|V,Macon;D,81|R,BrasserieBourg;;
 V,Macon:A,78|V,Lyon;D,59|V,ChalonSurSaone;N,36|R,BrasserieBourg;;
 V,ChalonSurSaone:D,59|V,Macon;A,71|V,Dijon;D,30|R,EcritVin;;
-R,BrasserieBourg:D,80|V,Lyon;N,36|V,Macon;N,153|V,Besancon;;
+R,BrasserieBourg:D,81|V,Lyon;N,36|V,Macon;N,153|V,Besancon;;
 V,Dijon:A,71|V,ChalonSurSaone;N,188|V,Troyes;D,193|V,Dijon;A,150|V,Auxerre;D,3|L,MuseumDijon;D,126|R,Excelsior;N,49|R,EcritVin;;
 R,EcritVin:D,30|V,ChalonSurSaone;N,49|V,Dijon;N,147|V,Auxerre;;
 V,Troyes:N,188|V,Dijon;A,252|V,Metz;D,127|V,Reims;N,174|L,DisneyLandParis;;
