@@ -32,7 +32,7 @@ public class Accueil extends javax.swing.JFrame{
 	private DefaultComboBoxModel modeleEcran1SommetsCombo = new DefaultComboBoxModel();
 	private DefaultComboBoxModel modeleEcran2SommetsChoix1Combo = new DefaultComboBoxModel();
 	private DefaultComboBoxModel modeleEcran2SommetsChoix2Combo = new DefaultComboBoxModel();
-	private DefaultComboBoxModel modeleAretesCombo = new DefaultComboBoxModel();
+	private DefaultComboBoxModel modeleEcran0AretesCombo = new DefaultComboBoxModel();
 	
 	// Resultat dans l'écran 1 de la recherche de voisins
 	private DefaultListModel  modeleSommet = new DefaultListModel();
@@ -259,7 +259,7 @@ public class Accueil extends javax.swing.JFrame{
 
         jTabbedPaneSelectionMenus.addTab("0-distance", jPanelEcran0);
 
-        jComboBoxEcran1Ville.setModel(modeleSommetsCombo);
+        jComboBoxEcran1Ville.setModel(modeleEcran1SommetsCombo);
         jComboBoxEcran1Ville.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxEcran1VilleActionPerformed(evt);
@@ -298,7 +298,7 @@ public class Accueil extends javax.swing.JFrame{
 
         jTabbedPaneEcran1.addTab("Sommets", jPanelSommets);
 
-        jComboBoxEcran1Arete.setModel(modeleAretesCombo);
+        jComboBoxEcran1Arete.setModel(modeleEcran0AretesCombo);
         jComboBoxEcran1Arete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxEcran1AreteActionPerformed(evt);
@@ -388,12 +388,11 @@ public class Accueil extends javax.swing.JFrame{
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanelEcran2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelEcran2ChoixSommet1)
-                            .addComponent(jLabelEcran2ChoixSommet2))
-                        .addGap(615, 615, 615))
+                            .addComponent(jLabelEcran2ChoixSommet2)
+                            .addComponent(jComboBoxEcran2Sommets1, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18))
                     .addGroup(jPanelEcran2Layout.createSequentialGroup()
-                        .addGroup(jPanelEcran2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jComboBoxEcran2Sommets1, javax.swing.GroupLayout.Alignment.LEADING, 0, 754, Short.MAX_VALUE)
-                            .addComponent(jComboBoxEcran2Sommets2, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jComboBoxEcran2Sommets2, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanelEcran2Layout.createSequentialGroup()
                         .addGroup(jPanelEcran2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -416,7 +415,7 @@ public class Accueil extends javax.swing.JFrame{
                 .addComponent(jButtonEcran2Valider)
                 .addGap(29, 29, 29)
                 .addComponent(jLabelEcran2Resultat, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(242, Short.MAX_VALUE))
+                .addContainerGap(254, Short.MAX_VALUE))
         );
 
         jTabbedPaneSelectionMenus.addTab("2-distance", jPanelEcran2);
@@ -522,7 +521,7 @@ public class Accueil extends javax.swing.JFrame{
 					}
 					for(Sommet elem:graphePrincipal.getListeSommet()){
 						for(Arete arete:elem.getSuccesseurs()){
-							modeleAretesCombo.addElement(arete);
+							modeleEcran0AretesCombo.addElement(arete);
 						}	
 					}
 
@@ -622,6 +621,8 @@ public class Accueil extends javax.swing.JFrame{
     private javax.swing.JButton jButtonImporter;
     private javax.swing.JComboBox<String> jComboBoxEcran1Arete;
     private javax.swing.JComboBox<String> jComboBoxEcran1Ville;
+    private javax.swing.JComboBox<String> jComboBoxEcran2Sommets1;
+    private javax.swing.JComboBox<String> jComboBoxEcran2Sommets2;
     private javax.swing.JLabel jLabeEcran0lLoisir;
     private javax.swing.JLabel jLabelEcran0Autoroutes;
     private javax.swing.JLabel jLabelEcran0Departementales;
@@ -633,6 +634,7 @@ public class Accueil extends javax.swing.JFrame{
     private javax.swing.JLabel jLabelEcran1Voisin;
     private javax.swing.JLabel jLabelEcran2ChoixSommet1;
     private javax.swing.JLabel jLabelEcran2ChoixSommet2;
+    private javax.swing.JLabel jLabelEcran2Resultat;
     private javax.swing.JLabel jLabelMessageGraphe;
     private javax.swing.JList<String> jListEcran0Autoroutes;
     private javax.swing.JList<String> jListEcran0Departementales;

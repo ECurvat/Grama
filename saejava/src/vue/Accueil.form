@@ -549,7 +549,7 @@
                     <Component class="javax.swing.JComboBox" name="jComboBoxEcran1Arete">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                          <Connection code="modeleAretesCombo" type="code"/>
+                          <Connection code="modeleEcran0AretesCombo" type="code"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -612,14 +612,12 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabelEcran2ChoixSommet1" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabelEcran2ChoixSommet2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jComboBoxEcran2Sommets1" min="-2" pref="754" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="615" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jComboBoxEcran2Sommets1" alignment="0" pref="754" max="32767" attributes="0"/>
-                                  <Component id="jComboBoxEcran2Sommets2" alignment="0" max="32767" attributes="0"/>
-                              </Group>
+                              <Component id="jComboBoxEcran2Sommets2" min="-2" pref="754" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
@@ -648,7 +646,7 @@
                       <Component id="jButtonEcran2Valider" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       <Component id="jLabelEcran2Resultat" min="-2" pref="64" max="-2" attributes="0"/>
-                      <EmptySpace pref="242" max="32767" attributes="0"/>
+                      <EmptySpace pref="254" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
