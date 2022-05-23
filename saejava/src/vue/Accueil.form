@@ -431,8 +431,8 @@
                 <Container class="javax.swing.JPanel" name="jPanelNoeuds">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Noeuds">
-                        <Property name="tabTitle" type="java.lang.String" value="Noeuds"/>
+                      <JTabbedPaneConstraints tabName="Sommets">
+                        <Property name="tabTitle" type="java.lang.String" value="Sommets"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -476,7 +476,7 @@
                     <Component class="javax.swing.JComboBox" name="jComboBoxVille">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                          <Connection code="modeleVilleCombo" type="code"/>
+                          <Connection code="modeleSommetsCombo" type="code"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -506,10 +506,10 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JList" name="jListResNoeuds">
+                        <Component class="javax.swing.JList" name="jListEcran1ResultatSommets">
                           <Properties>
                             <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                              <Connection code="modelSommet" type="code"/>
+                              <Connection code="modeleSommet" type="code"/>
                             </Property>
                           </Properties>
                           <AuxValues>
@@ -523,8 +523,8 @@
                 <Container class="javax.swing.JPanel" name="jPanelLiens">
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-                      <JTabbedPaneConstraints tabName="Liens">
-                        <Property name="tabTitle" type="java.lang.String" value="Liens"/>
+                      <JTabbedPaneConstraints tabName="Aretes">
+                        <Property name="tabTitle" type="java.lang.String" value="Aretes"/>
                       </JTabbedPaneConstraints>
                     </Constraint>
                   </Constraints>
@@ -561,7 +561,7 @@
                     <Component class="javax.swing.JComboBox" name="jComboBoxArete">
                       <Properties>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                          <Connection code="modeleComboArete" type="code"/>
+                          <Connection code="modeleAretesCombo" type="code"/>
                         </Property>
                       </Properties>
                       <Events>
@@ -586,7 +586,7 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JList" name="jList7">
+                        <Component class="javax.swing.JList" name="jListEcran1ResultatAretes">
                           <Properties>
                             <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                               <Connection code="modelArete" type="code"/>
@@ -620,25 +620,9 @@
                       <EmptySpace pref="22" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabelEcran2ChoixSommet1" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jComboBoxEcran2Ville1" min="-2" pref="240" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jComboBoxEcran2Restaurant1" min="-2" pref="240" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jComboBoxEcran2Loisir1" min="-2" pref="240" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jComboBoxEcran2Ville2" min="-2" pref="240" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jComboBoxEcran2Restaurant2" min="-2" pref="240" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jComboBoxEcran2Loisir2" min="-2" pref="240" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
                           <Component id="jLabelEcran2ChoixSommet2" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="615" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -647,92 +631,14 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabelEcran2ChoixSommet1" min="-2" pref="17" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jComboBoxEcran2Ville1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBoxEcran2Restaurant1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBoxEcran2Loisir1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                       <Component id="jLabelEcran2ChoixSommet2" min="-2" pref="17" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jComboBoxEcran2Ville2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBoxEcran2Restaurant2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBoxEcran2Loisir2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="378" max="32767" attributes="0"/>
+                      <EmptySpace pref="413" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JComboBox" name="jComboBoxEcran2Ville1">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="modeleVilleCombo" type="code"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxEcran2Ville1ActionPerformed"/>
-              </Events>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBoxEcran2Restaurant1">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="modeleRestoCombo" type="code"/>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBoxEcran2Loisir1">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="modeleLoisirCombo" type="code"/>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBoxEcran2Ville2">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="modeleVilleCombo" type="code"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxEcran2Ville2ActionPerformed"/>
-              </Events>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBoxEcran2Restaurant2">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="modeleRestoCombo" type="code"/>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JComboBox" name="jComboBoxEcran2Loisir2">
-              <Properties>
-                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="modeleLoisirCombo" type="code"/>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-              </AuxValues>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabelEcran2ChoixSommet1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Choisir un premier sommet"/>

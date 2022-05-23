@@ -31,12 +31,13 @@ public class Accueil extends javax.swing.JFrame{
 	private ModeleListNationale modeleNationales = new ModeleListNationale();
 	private ModeleListDepartementale modeleDepartementales = new ModeleListDepartementale();
 	
-	private DefaultComboBoxModel modeleVilleCombo = new DefaultComboBoxModel();
-	private DefaultComboBoxModel modeleRestoCombo = new DefaultComboBoxModel();
-	private DefaultComboBoxModel modeleLoisirCombo = new DefaultComboBoxModel();
-	private DefaultComboBoxModel modeleComboArete = new DefaultComboBoxModel();
 	
-	private DefaultListModel  modelSommet = new DefaultListModel();
+	// Selection pour combo box avec tous les sommets OU toutes les arêtes (quelque soit le type)
+	private DefaultComboBoxModel modeleSommetsCombo = new DefaultComboBoxModel();
+	private DefaultComboBoxModel modeleAretesCombo = new DefaultComboBoxModel();
+	
+	// Resultat dans l'écran 1 de la recherche de voisins
+	private DefaultListModel  modeleSommet = new DefaultListModel();
 	private DefaultListModel modelArete = new DefaultListModel();
 	
 
@@ -86,19 +87,13 @@ public class Accueil extends javax.swing.JFrame{
         jLabelVoisin = new javax.swing.JLabel();
         jButtonReinitialiser = new javax.swing.JButton();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jListResNoeuds = new javax.swing.JList<>();
+        jListEcran1ResultatSommets = new javax.swing.JList<>();
         jPanelLiens = new javax.swing.JPanel();
         jComboBoxArete = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
-        jList7 = new javax.swing.JList<>();
+        jListEcran1ResultatAretes = new javax.swing.JList<>();
         jPanelEcran2 = new javax.swing.JPanel();
-        jComboBoxEcran2Ville1 = new javax.swing.JComboBox<>();
-        jComboBoxEcran2Restaurant1 = new javax.swing.JComboBox<>();
-        jComboBoxEcran2Loisir1 = new javax.swing.JComboBox<>();
-        jComboBoxEcran2Ville2 = new javax.swing.JComboBox<>();
-        jComboBoxEcran2Restaurant2 = new javax.swing.JComboBox<>();
-        jComboBoxEcran2Loisir2 = new javax.swing.JComboBox<>();
         jLabelEcran2ChoixSommet1 = new javax.swing.JLabel();
         jLabelEcran2ChoixSommet2 = new javax.swing.JLabel();
         jPanelEcran3 = new javax.swing.JPanel();
@@ -263,7 +258,7 @@ public class Accueil extends javax.swing.JFrame{
 
         jTabbedPaneSelectionMenus.addTab("0-distance", jPanelEcran0);
 
-        jComboBoxVille.setModel(modeleVilleCombo);
+        jComboBoxVille.setModel(modeleSommetsCombo);
         jComboBoxVille.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxVilleActionPerformed(evt);
@@ -275,8 +270,8 @@ public class Accueil extends javax.swing.JFrame{
 
         jButtonReinitialiser.setText("Réinitialiser");
 
-        jListResNoeuds.setModel(modelSommet);
-        jScrollPane7.setViewportView(jListResNoeuds);
+        jListEcran1ResultatSommets.setModel(modeleSommet);
+        jScrollPane7.setViewportView(jListEcran1ResultatSommets);
 
         javax.swing.GroupLayout jPanelNoeudsLayout = new javax.swing.GroupLayout(jPanelNoeuds);
         jPanelNoeuds.setLayout(jPanelNoeudsLayout);
@@ -308,9 +303,9 @@ public class Accueil extends javax.swing.JFrame{
                 .addContainerGap(66, Short.MAX_VALUE))
         );
 
-        jTabbedPane3.addTab("Noeuds", jPanelNoeuds);
+        jTabbedPane3.addTab("Sommets", jPanelNoeuds);
 
-        jComboBoxArete.setModel(modeleComboArete);
+        jComboBoxArete.setModel(modeleAretesCombo);
         jComboBoxArete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxAreteActionPerformed(evt);
@@ -320,8 +315,8 @@ public class Accueil extends javax.swing.JFrame{
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("Noeuds reliées :");
 
-        jList7.setModel(modelArete);
-        jScrollPane8.setViewportView(jList7);
+        jListEcran1ResultatAretes.setModel(modelArete);
+        jScrollPane8.setViewportView(jListEcran1ResultatAretes);
 
         javax.swing.GroupLayout jPanelLiensLayout = new javax.swing.GroupLayout(jPanelLiens);
         jPanelLiens.setLayout(jPanelLiensLayout);
@@ -347,7 +342,7 @@ public class Accueil extends javax.swing.JFrame{
                 .addContainerGap(107, Short.MAX_VALUE))
         );
 
-        jTabbedPane3.addTab("Liens", jPanelLiens);
+        jTabbedPane3.addTab("Aretes", jPanelLiens);
 
         javax.swing.GroupLayout jPanelEcran1Layout = new javax.swing.GroupLayout(jPanelEcran1);
         jPanelEcran1.setLayout(jPanelEcran1Layout);
@@ -362,28 +357,6 @@ public class Accueil extends javax.swing.JFrame{
 
         jTabbedPaneSelectionMenus.addTab("1-distance", jPanelEcran1);
 
-        jComboBoxEcran2Ville1.setModel(modeleVilleCombo);
-        jComboBoxEcran2Ville1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxEcran2Ville1ActionPerformed(evt);
-            }
-        });
-
-        jComboBoxEcran2Restaurant1.setModel(modeleRestoCombo);
-
-        jComboBoxEcran2Loisir1.setModel(modeleLoisirCombo);
-
-        jComboBoxEcran2Ville2.setModel(modeleVilleCombo);
-        jComboBoxEcran2Ville2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxEcran2Ville2ActionPerformed(evt);
-            }
-        });
-
-        jComboBoxEcran2Restaurant2.setModel(modeleRestoCombo);
-
-        jComboBoxEcran2Loisir2.setModel(modeleLoisirCombo);
-
         jLabelEcran2ChoixSommet1.setText("Choisir un premier sommet");
 
         jLabelEcran2ChoixSommet2.setText("Choisir un second sommet");
@@ -396,40 +369,17 @@ public class Accueil extends javax.swing.JFrame{
                 .addContainerGap(22, Short.MAX_VALUE)
                 .addGroup(jPanelEcran2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelEcran2ChoixSommet1)
-                    .addGroup(jPanelEcran2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelEcran2Layout.createSequentialGroup()
-                            .addComponent(jComboBoxEcran2Ville1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(jComboBoxEcran2Restaurant1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(jComboBoxEcran2Loisir1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelEcran2Layout.createSequentialGroup()
-                            .addComponent(jComboBoxEcran2Ville2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(jComboBoxEcran2Restaurant2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(jComboBoxEcran2Loisir2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabelEcran2ChoixSommet2))
-                .addGap(16, 16, 16))
+                .addGap(615, 615, 615))
         );
         jPanelEcran2Layout.setVerticalGroup(
             jPanelEcran2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelEcran2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabelEcran2ChoixSommet1, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanelEcran2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBoxEcran2Ville1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxEcran2Restaurant1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxEcran2Loisir1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(53, 53, 53)
                 .addComponent(jLabelEcran2ChoixSommet2, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanelEcran2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBoxEcran2Ville2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxEcran2Restaurant2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxEcran2Loisir2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(378, Short.MAX_VALUE))
+                .addContainerGap(413, Short.MAX_VALUE))
         );
 
         jTabbedPaneSelectionMenus.addTab("2-distance", jPanelEcran2);
@@ -531,19 +481,12 @@ public class Accueil extends javax.swing.JFrame{
 						modeleDepartementales.ajouterDepartmentales(graphePrincipal.trouverAretesParType("D"));
 					}
 					for(Sommet elem :graphePrincipal.getListeSommet()){
-						modeleVilleCombo.addElement(elem);
-					}
-					for(Sommet elem:graphePrincipal.trouverSommetsParType("R")){
-						modeleRestoCombo.addElement(elem);
-					}
-					for(Sommet elem:graphePrincipal.trouverSommetsParType("L")){
-						modeleLoisirCombo.addElement(elem);
+						modeleSommetsCombo.addElement(elem);
 					}
 					for(Sommet elem:graphePrincipal.getListeSommet()){
 						for(Arete arete:elem.getSuccesseurs()){
-							modeleComboArete.addElement(arete);
-						}
-							
+							modeleAretesCombo.addElement(arete);
+						}	
 					}
 
 					jButtonImporter.setText("Supprimer le graphe");
@@ -567,23 +510,15 @@ public class Accueil extends javax.swing.JFrame{
 		
 	}
     private void jComboBoxVilleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxVilleActionPerformed
-       modelSommet.clear();
+       modeleSommet.clear();
 	   for(Sommet s:graphePrincipal.getListeSommet()){
 		   if(jComboBoxVille.getSelectedItem()==s){
 			   for(Arete elem:s.getSuccesseurs()){
-					modelSommet.addElement(elem.getDestination());
+					modeleSommet.addElement(elem.getDestination());
 				}
 		   }
 	   }
     }//GEN-LAST:event_jComboBoxVilleActionPerformed
-
-    private void jComboBoxEcran2Ville1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxEcran2Ville1ActionPerformed
-        jComboBoxEcran2Loisir1.setEnabled(false);
-    }//GEN-LAST:event_jComboBoxEcran2Ville1ActionPerformed
-
-    private void jComboBoxEcran2Ville2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxEcran2Ville2ActionPerformed
-        
-    }//GEN-LAST:event_jComboBoxEcran2Ville2ActionPerformed
 
     private void jComboBoxAreteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxAreteActionPerformed
         Object val = jComboBoxArete.getSelectedItem();
@@ -633,12 +568,6 @@ public class Accueil extends javax.swing.JFrame{
     private javax.swing.JButton jButtonImporter;
     private javax.swing.JButton jButtonReinitialiser;
     private javax.swing.JComboBox<String> jComboBoxArete;
-    private javax.swing.JComboBox<String> jComboBoxEcran2Loisir1;
-    private javax.swing.JComboBox<String> jComboBoxEcran2Loisir2;
-    private javax.swing.JComboBox<String> jComboBoxEcran2Restaurant1;
-    private javax.swing.JComboBox<String> jComboBoxEcran2Restaurant2;
-    private javax.swing.JComboBox<String> jComboBoxEcran2Ville1;
-    private javax.swing.JComboBox<String> jComboBoxEcran2Ville2;
     private javax.swing.JComboBox<String> jComboBoxVille;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelAutoroutes;
@@ -658,8 +587,8 @@ public class Accueil extends javax.swing.JFrame{
     private javax.swing.JList<String> jList4;
     private javax.swing.JList<String> jList5;
     private javax.swing.JList<String> jList6;
-    private javax.swing.JList<String> jList7;
-    private javax.swing.JList<String> jListResNoeuds;
+    private javax.swing.JList<String> jListEcran1ResultatAretes;
+    private javax.swing.JList<String> jListEcran1ResultatSommets;
     private javax.swing.JMenuBar jMenuBar;
     private javax.swing.JMenu jMenuFichier;
     private javax.swing.JMenuItem jMenuItemImporter;
