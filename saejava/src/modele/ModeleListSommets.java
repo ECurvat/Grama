@@ -13,7 +13,7 @@ import metier.Sommet;
  *
  * @author frsgr
  */
-public class ModeleListLVille extends AbstractListModel<String>{
+public class ModeleListSommets extends AbstractListModel<String>{
 	
 	private List<Sommet> dataVille =new ArrayList<>();
 
@@ -27,7 +27,7 @@ public class ModeleListLVille extends AbstractListModel<String>{
 		return dataVille.get(index).getNom();
 	}
 	
-	public void ajouterVille(List<Sommet> listeVille){
+	public void ajouterSommets(List<Sommet> listeVille){
 		for(Sommet elem:listeVille){
 			dataVille.add(elem);
 		}

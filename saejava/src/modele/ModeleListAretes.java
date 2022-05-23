@@ -13,29 +13,29 @@ import metier.Arete;
  *
  * @author frsgr
  */
-public class ModeleListNationale extends AbstractListModel<String>{
+public class ModeleListAretes extends AbstractListModel<String> {
 
-	private List<Arete> dataNationales =new ArrayList<>();
+	private List<Arete> dataAutouroute = new ArrayList<>();
 	
 	@Override
 	public int getSize() {
-		return dataNationales.size();
+		return dataAutouroute.size();
 	}
 
 	@Override
 	public String getElementAt(int index) {
-		String val = dataNationales.get(index).getType()+dataNationales.get(index).getLongueur();
+		String val = dataAutouroute.get(index).getType()+dataAutouroute.get(index).getLongueur();
 		return val;
 	}
 	
-	public void ajouterNationales(List<Arete> listeNationale){
-		for(Arete elem:listeNationale){
-			dataNationales.add(elem);
+	public void ajouterAretes(List<Arete> listeAutoroute){
+		for(Arete elem:listeAutoroute){
+			dataAutouroute.add(elem);
 		}
-		fireIntervalAdded(this, 0, dataNationales.size());
+		fireIntervalAdded(this, 0, dataAutouroute.size());
+		
 	}
-	
 	public void viderModele(){
-		dataNationales.clear();
+		dataAutouroute.clear();
 	}
 }

@@ -4,18 +4,14 @@
  */
 package vue;
 
-import modele.ModeleListRestaurant;
-import modele.ModeleListLoisir;
-import modele.ModeleListLVille;
+import modele.ModeleListSommets;
 import java.io.File;
 import java.io.IOException;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
 import metier.*;
-import modele.ModeleListAutoroute;
-import modele.ModeleListDepartementale;
-import modele.ModeleListNationale;
+import modele.ModeleListAretes;
 
 /**
  *
@@ -24,12 +20,12 @@ import modele.ModeleListNationale;
 public class Accueil extends javax.swing.JFrame{
 	
 	public Graphe graphePrincipal;
-	private ModeleListLVille modeleVille = new ModeleListLVille();
-	private ModeleListRestaurant modeleRestaurant = new ModeleListRestaurant();
-	private ModeleListLoisir modeleLoisir = new ModeleListLoisir();
-	private ModeleListAutoroute modeleAutoroutes = new ModeleListAutoroute();
-	private ModeleListNationale modeleNationales = new ModeleListNationale();
-	private ModeleListDepartementale modeleDepartementales = new ModeleListDepartementale();
+	private ModeleListSommets modeleVille = new ModeleListSommets();
+	private ModeleListSommets modeleRestaurant = new ModeleListSommets();
+	private ModeleListSommets modeleLoisir = new ModeleListSommets();
+	private ModeleListAretes modeleAutoroutes = new ModeleListAretes();
+	private ModeleListAretes modeleNationales = new ModeleListAretes();
+	private ModeleListAretes modeleDepartementales = new ModeleListAretes();
 	
 	
 	// Selection pour combo box avec tous les sommets OU toutes les arêtes (quelque soit le type)
@@ -472,13 +468,13 @@ public class Accueil extends javax.swing.JFrame{
 
 						jLabelRecap.setText("votre graphe posséde : "+nbSommets+" noeuds"+" et "+nbAretes+" arete");
 
-						modeleVille.ajouterVille(graphePrincipal.trouverSommetsParType("V"));
-						modeleRestaurant.ajouterRestaurant(graphePrincipal.trouverSommetsParType("R"));
-						modeleLoisir.ajouterLoisir(graphePrincipal.trouverSommetsParType("L"));
+						modeleVille.ajouterSommets(graphePrincipal.trouverSommetsParType("V"));
+						modeleRestaurant.ajouterSommets(graphePrincipal.trouverSommetsParType("R"));
+						modeleLoisir.ajouterSommets(graphePrincipal.trouverSommetsParType("L"));
 
-						modeleAutoroutes.ajouterAutoroute(graphePrincipal.trouverAretesParType("A"));
-						modeleNationales.ajouterNationales(graphePrincipal.trouverAretesParType("N"));
-						modeleDepartementales.ajouterDepartmentales(graphePrincipal.trouverAretesParType("D"));
+						modeleAutoroutes.ajouterAretes(graphePrincipal.trouverAretesParType("A"));
+						modeleNationales.ajouterAretes(graphePrincipal.trouverAretesParType("N"));
+						modeleDepartementales.ajouterAretes(graphePrincipal.trouverAretesParType("D"));
 					}
 					for(Sommet elem :graphePrincipal.getListeSommet()){
 						modeleSommetsCombo.addElement(elem);
