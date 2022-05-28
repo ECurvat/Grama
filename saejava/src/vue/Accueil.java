@@ -656,24 +656,43 @@ public class Accueil extends javax.swing.JFrame{
 		jLabelEcran3ResultatTouristique.setText("");
 		List<Integer>resultat= new ArrayList<>();
 		resultat=graphePrincipal.comparerOCG(((Sommet)jComboBoxEcran3Ville1.getSelectedItem()), ((Sommet)jComboBoxEcran3Ville2.getSelectedItem()));
-		if(resultat.get(0)==1){
-			jLabelEcran3ResultatCulture.setText("Ville 1 est plus ouverte en terme de ville a ville 2");
+		
+		System.out.println(resultat);
+		if(!(jComboBoxEcran3Ville1.getSelectedItem()==jComboBoxEcran3Ville2.getSelectedItem())){
+			if(resultat.get(0)==1){
+				jLabelEcran3ResultatCulture.setText(((Sommet)jComboBoxEcran3Ville1.getSelectedItem()).getNom()+" est plus ouverte en terme de culture que "+((Sommet)jComboBoxEcran3Ville2.getSelectedItem()).getNom());
+			}
+			else if(resultat.get(0)==-1){
+				jLabelEcran3ResultatCulture.setText(((Sommet)jComboBoxEcran3Ville2.getSelectedItem()).getNom()+" est plus ouverte en terme de culture que "+((Sommet)jComboBoxEcran3Ville1.getSelectedItem()).getNom());
+			}
+			else if(resultat.get(2)==0){
+				jLabelEcran3ResultatCulture.setText(((Sommet)jComboBoxEcran3Ville1.getSelectedItem()).getNom()+" et "+((Sommet)jComboBoxEcran3Ville2.getSelectedItem()).getNom()+" sont autant ouverte en terme de culture");
+			}
+			
+			if(resultat.get(1)==1){
+				jLabelEcran3ResultatGastonomie.setText(((Sommet)jComboBoxEcran3Ville1.getSelectedItem()).getNom()+" est plus ouverte en terme de gastronomie que "+((Sommet)jComboBoxEcran3Ville2.getSelectedItem()).getNom());
+			}
+			else if(resultat.get(1)==-1){
+				jLabelEcran3ResultatGastonomie.setText(((Sommet)jComboBoxEcran3Ville2.getSelectedItem()).getNom()+" est plus ouverte en terme de gastronomie que "+((Sommet)jComboBoxEcran3Ville1.getSelectedItem()).getNom());
+			}
+			else if(resultat.get(2)==0){
+				jLabelEcran3ResultatGastonomie.setText(((Sommet)jComboBoxEcran3Ville1.getSelectedItem()).getNom()+" et "+((Sommet)jComboBoxEcran3Ville2.getSelectedItem()).getNom()+" sont autant ouverte en terme de gastronomie");
+			}
+		
+			if(resultat.get(2)==1){
+				jLabelEcran3ResultatTouristique.setText(((Sommet)jComboBoxEcran3Ville1.getSelectedItem()).getNom()+" est plus ouverte en terme de tourisme que "+((Sommet)jComboBoxEcran3Ville2.getSelectedItem()).getNom());
+			}
+			else if(resultat.get(2)==-1){
+				jLabelEcran3ResultatTouristique.setText(((Sommet)jComboBoxEcran3Ville2.getSelectedItem()).getNom()+" est plus ouverte en terme de toursime que "+((Sommet)jComboBoxEcran3Ville1.getSelectedItem()).getNom());
+			}
+			else if(resultat.get(2)==0){
+				jLabelEcran3ResultatTouristique.setText(((Sommet)jComboBoxEcran3Ville1.getSelectedItem()).getNom()+" et "+((Sommet)jComboBoxEcran3Ville2.getSelectedItem()).getNom()+" sont autant ouverte en terme de tourisme");
+			}
 		}
 		else{
-			jLabelEcran3ResultatCulture.setText("Ville 2 est plus ouverte en terme de ville a ville 1");
+			jLabelEcran3ResultatCulture.setText("vous avez selectionné deux sommet identiques");
 		}
-		if(resultat.get(1)==1){
-			jLabelEcran3ResultatGastonomie.setText("Ville 1 est plus ouverte en terme de restaurant a ville 2");
-		}
-		else{
-			jLabelEcran3ResultatGastonomie.setText("Ville 2 est plus ouverte en terme de restaurant a ville 1");
-		}
-		if(resultat.get(2)==1){
-			jLabelEcran3ResultatTouristique.setText("Ville 1 est plus ouverte en terme de lieux de loisir a ville 2");
-		}
-		else{
-			jLabelEcran3ResultatTouristique.setText("Ville 2 est plus ouverte en terme de lieux de loisir a ville 1");
-		}
+		
 			
 			
 		
