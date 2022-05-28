@@ -7,6 +7,8 @@ package vue;
 import modele.ModeleListSommets;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
@@ -37,6 +39,10 @@ public class Accueil extends javax.swing.JFrame{
 	// Resultat dans l'écran 1 de la recherche de voisins
 	private DefaultListModel  modeleSommet = new DefaultListModel();
 	private DefaultListModel modelArete = new DefaultListModel();
+	//Resultat dans l'ecran 3 de la combo box
+	private DefaultComboBoxModel modeleEcran3Choix1Combo = new DefaultComboBoxModel();
+	private DefaultComboBoxModel modeleEcran3Choix2Combo = new DefaultComboBoxModel();
+	
 	
 
 	/**
@@ -105,6 +111,7 @@ public class Accueil extends javax.swing.JFrame{
         jLabelEcran3ResultatCulture = new javax.swing.JLabel();
         jLabelEcran3ResultatGastonomie = new javax.swing.JLabel();
         jLabelEcran3ResultatTouristique = new javax.swing.JLabel();
+        jButtonEcran3resultat = new javax.swing.JButton();
         jPanelEcran4 = new javax.swing.JPanel();
         jMenuBar = new javax.swing.JMenuBar();
         jMenuFichier = new javax.swing.JMenu();
@@ -427,15 +434,20 @@ public class Accueil extends javax.swing.JFrame{
 
         jTabbedPaneSelectionMenus.addTab("2-distance", jPanelEcran2);
 
+        jComboBoxEcran3Ville1.setModel(modeleEcran3Choix1Combo);
+
+        jComboBoxEcran3Ville2.setModel(modeleEcran3Choix2Combo);
+
         jLabelEcran2ChoixVille1.setText("Choix de la première ville :");
 
         jLabelEcran3Choixvile2.setText("Choix de la deuxième ville :");
 
-        jLabelEcran3ResultatCulture.setText("jLabel1");
-
-        jLabelEcran3ResultatGastonomie.setText("jLabel1");
-
-        jLabelEcran3ResultatTouristique.setText("jLabel1");
+        jButtonEcran3resultat.setText("resultat");
+        jButtonEcran3resultat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEcran3resultatActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelEcran3Layout = new javax.swing.GroupLayout(jPanelEcran3);
         jPanelEcran3.setLayout(jPanelEcran3Layout);
@@ -456,6 +468,10 @@ public class Accueil extends javax.swing.JFrame{
                             .addComponent(jComboBoxEcran3Ville2, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBoxEcran3Ville1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(61, 61, 61))
+            .addGroup(jPanelEcran3Layout.createSequentialGroup()
+                .addGap(346, 346, 346)
+                .addComponent(jButtonEcran3resultat)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelEcran3Layout.setVerticalGroup(
             jPanelEcran3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -468,12 +484,14 @@ public class Accueil extends javax.swing.JFrame{
                 .addGroup(jPanelEcran3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jComboBoxEcran3Ville2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelEcran3Choixvile2))
-                .addGap(145, 145, 145)
+                .addGap(136, 136, 136)
                 .addComponent(jLabelEcran3ResultatCulture)
                 .addGap(18, 18, 18)
                 .addComponent(jLabelEcran3ResultatGastonomie)
                 .addGap(18, 18, 18)
                 .addComponent(jLabelEcran3ResultatTouristique)
+                .addGap(35, 35, 35)
+                .addComponent(jButtonEcran3resultat)
                 .addContainerGap(172, Short.MAX_VALUE))
         );
 
@@ -570,6 +588,12 @@ public class Accueil extends javax.swing.JFrame{
 							modeleEcran0AretesCombo.addElement(arete);
 						}	
 					}
+					for(Sommet elem : graphePrincipal.getListeSommet()){
+						modeleEcran3Choix1Combo.addElement(elem);
+					}
+					for(Sommet elem :graphePrincipal.getListeSommet()){
+						modeleEcran3Choix2Combo.addElement(elem);
+					}
 
 					jButtonImporter.setText("Supprimer le graphe");
 				} catch (IOException e) {
@@ -626,6 +650,41 @@ public class Accueil extends javax.swing.JFrame{
 		
     }//GEN-LAST:event_jButtonEcran2ValiderActionPerformed
 
+    private void jButtonEcran3resultatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEcran3resultatActionPerformed
+		jLabelEcran3ResultatCulture.setText("");
+		jLabelEcran3ResultatGastonomie.setText("");
+		jLabelEcran3ResultatTouristique.setText("");
+		List<Integer>resultat= new ArrayList<>();
+		resultat=graphePrincipal.comparerOCG(((Sommet)jComboBoxEcran3Ville1.getSelectedItem()), ((Sommet)jComboBoxEcran3Ville2.getSelectedItem()));
+		if(resultat.get(0)==1){
+			jLabelEcran3ResultatCulture.setText("Ville 1 est plus ouverte en terme de ville a ville 2");
+		}
+		else{
+			jLabelEcran3ResultatCulture.setText("Ville 2 est plus ouverte en terme de ville a ville 1");
+		}
+		if(resultat.get(1)==1){
+			jLabelEcran3ResultatGastonomie.setText("Ville 1 est plus ouverte en terme de restaurant a ville 2");
+		}
+		else{
+			jLabelEcran3ResultatGastonomie.setText("Ville 2 est plus ouverte en terme de restaurant a ville 1");
+		}
+		if(resultat.get(2)==1){
+			jLabelEcran3ResultatTouristique.setText("Ville 1 est plus ouverte en terme de lieux de loisir a ville 2");
+		}
+		else{
+			jLabelEcran3ResultatTouristique.setText("Ville 2 est plus ouverte en terme de lieux de loisir a ville 1");
+		}
+			
+			
+		
+			
+			
+		
+		
+		
+		
+    }//GEN-LAST:event_jButtonEcran3resultatActionPerformed
+
 	/**
 	 * @param args the command line arguments
 	 */
@@ -637,7 +696,7 @@ public class Accueil extends javax.swing.JFrame{
 		 */
 		try {
 			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-				if ("Nimbus".equals(info.getName())) {
+				if ("Windows".equals(info.getName())) {
 					javax.swing.UIManager.setLookAndFeel(info.getClassName());
 					break;
 				}
@@ -664,6 +723,7 @@ public class Accueil extends javax.swing.JFrame{
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonEcran2Valider;
+    private javax.swing.JButton jButtonEcran3resultat;
     private javax.swing.JButton jButtonImporter;
     private javax.swing.JComboBox<String> jComboBoxEcran1Arete;
     private javax.swing.JComboBox<String> jComboBoxEcran1Ville;
