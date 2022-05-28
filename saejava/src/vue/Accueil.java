@@ -258,7 +258,7 @@ public class Accueil extends javax.swing.JFrame{
         jPanelEcran0.setLayout(jPanelEcran0Layout);
         jPanelEcran0Layout.setHorizontalGroup(
             jPanelEcran0Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelresultat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 799, Short.MAX_VALUE)
+            .addComponent(jPanelresultat, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 805, Short.MAX_VALUE)
             .addComponent(jLabelEcran0Recap, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanelEcran0Layout.setVerticalGroup(
@@ -399,17 +399,17 @@ public class Accueil extends javax.swing.JFrame{
                 .addGap(22, 22, 22)
                 .addGroup(jPanelEcran2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelEcran2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 11, Short.MAX_VALUE)
                         .addGroup(jPanelEcran2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelEcran2ChoixSommet1)
-                            .addComponent(jLabelEcran2ChoixSommet2)
-                            .addComponent(jComboBoxEcran2Sommets1, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18))
+                            .addComponent(jLabelEcran2ChoixSommet2))
+                        .addGap(615, 615, 615))
                     .addGroup(jPanelEcran2Layout.createSequentialGroup()
                         .addComponent(jComboBoxEcran2Sommets2, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanelEcran2Layout.createSequentialGroup()
                         .addGroup(jPanelEcran2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBoxEcran2Sommets1, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabelEcran2Resultat, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButtonEcran2Valider))
                         .addGap(0, 0, Short.MAX_VALUE))))
@@ -429,7 +429,7 @@ public class Accueil extends javax.swing.JFrame{
                 .addComponent(jButtonEcran2Valider)
                 .addGap(29, 29, 29)
                 .addComponent(jLabelEcran2Resultat, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(254, Short.MAX_VALUE))
+                .addContainerGap(265, Short.MAX_VALUE))
         );
 
         jTabbedPaneSelectionMenus.addTab("2-distance", jPanelEcran2);
@@ -462,7 +462,7 @@ public class Accueil extends javax.swing.JFrame{
                     .addGroup(jPanelEcran3Layout.createSequentialGroup()
                         .addGroup(jPanelEcran3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabelEcran2ChoixVille1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabelEcran3Choixvile2, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
+                            .addComponent(jLabelEcran3Choixvile2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                         .addGroup(jPanelEcran3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jComboBoxEcran3Ville2, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -582,6 +582,8 @@ public class Accueil extends javax.swing.JFrame{
 					}
 					for(Sommet elem :graphePrincipal.getListeSommet()){
 						modeleEcran1SommetsCombo.addElement(elem);
+						modeleEcran2SommetsChoix1Combo.addElement(elem);
+						modeleEcran2SommetsChoix2Combo.addElement(elem);
 					}
 					for(Sommet elem:graphePrincipal.getListeSommet()){
 						for(Arete arete:elem.getSuccesseurs()){
@@ -646,7 +648,7 @@ public class Accueil extends javax.swing.JFrame{
 		Sommet s2 = (Sommet) jComboBoxEcran2Sommets2.getSelectedItem();
 		boolean resultat = graphePrincipal.rechercher2Distance(s1, s2);
 		if (resultat) jLabelEcran2Resultat.setText("Les sommets" + s1.getNom() + " et " + s2.getNom() + " sont situés à une 2-distance exactement l'un de l'autre");
-		else jLabelEcran2Resultat.setText("Les sommets" + s1.getNom() + " et " + s2.getNom() + " ne sont pas situés à une 2-distance exactement l'un de l'autre");
+		else jLabelEcran2Resultat.setText("Les sommets " + s1.getNom() + " et " + s2.getNom() + " ne sont pas situés à une 2-distance exactement l'un de l'autre");
 		
     }//GEN-LAST:event_jButtonEcran2ValiderActionPerformed
 
