@@ -35,461 +35,459 @@ public class Fenetre extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel10 = new javax.swing.JPanel();
-        jPanel11 = new javax.swing.JPanel();
-        jPanel18 = new javax.swing.JPanel();
-        jPanel17 = new javax.swing.JPanel();
-        jPanel19 = new javax.swing.JPanel();
-        jPanel28 = new javax.swing.JPanel();
-        jPanel29 = new javax.swing.JPanel();
-        jPanel30 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel13 = new javax.swing.JPanel();
-        jPanel14 = new javax.swing.JPanel();
-        jPanel15 = new javax.swing.JPanel();
-        jPanel16 = new javax.swing.JPanel();
-        jPanel26 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jPanel27 = new javax.swing.JPanel();
-        jPanel20 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
-        jPanel21 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
-        jPanel23 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jList3 = new javax.swing.JList<>();
-        jPanel22 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jList4 = new javax.swing.JList<>();
-        jPanel25 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jList5 = new javax.swing.JList<>();
-        jPanel24 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jList6 = new javax.swing.JList<>();
-        jPanel5 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
-        jPanel8 = new javax.swing.JPanel();
-        jPanel9 = new javax.swing.JPanel();
-        jPanel31 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel10 = new javax.swing.JLabel();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        jList7 = new javax.swing.JList<>();
-        jPanel32 = new javax.swing.JPanel();
-        jPanel12 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jLabel16 = new javax.swing.JLabel();
-        jScrollPane9 = new javax.swing.JScrollPane();
-        jList9 = new javax.swing.JList<>();
-        jPanel35 = new javax.swing.JPanel();
-        jPanel33 = new javax.swing.JPanel();
-        jPanel34 = new javax.swing.JPanel();
-        jPanel36 = new javax.swing.JPanel();
-        jPanel37 = new javax.swing.JPanel();
-        jPanel38 = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
-        jPanel40 = new javax.swing.JPanel();
-        jLabel18 = new javax.swing.JLabel();
-        jPanel39 = new javax.swing.JPanel();
-        jPanel41 = new javax.swing.JPanel();
-        jPanel42 = new javax.swing.JPanel();
-        jPanel43 = new javax.swing.JPanel();
-        jPanel44 = new javax.swing.JPanel();
-        jPanel45 = new javax.swing.JPanel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jComboBox5 = new javax.swing.JComboBox<>();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jComboBox6 = new javax.swing.JComboBox<>();
-        jButton3 = new javax.swing.JButton();
-        jPanel46 = new javax.swing.JPanel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        jTabbedPanePrincipal = new javax.swing.JTabbedPane();
+        jPanelAccueil = new javax.swing.JPanel();
+        jPanelAccueilOuest = new javax.swing.JPanel();
+        jPanelAccueilEst = new javax.swing.JPanel();
+        jPanelAccueilSud = new javax.swing.JPanel();
+        jPanelAccueilCentre = new javax.swing.JPanel();
+        jPanelAccueilCentreHaut = new javax.swing.JPanel();
+        jPanelAccueilCentreBas = new javax.swing.JPanel();
+        jPanelAccueilCentreBasEst = new javax.swing.JPanel();
+        jPanelAccueilCentreBasOuest = new javax.swing.JPanel();
+        jPanelAccueilCentreBasNord = new javax.swing.JPanel();
+        jPanelAccueilCentreBasSud = new javax.swing.JPanel();
+        jButtonAccueilImporter = new javax.swing.JButton();
+        jPanelEcran0 = new javax.swing.JPanel();
+        jPanelEcran0Ouest = new javax.swing.JPanel();
+        jPanelEcran0Est = new javax.swing.JPanel();
+        jPanelEcran0Sud = new javax.swing.JPanel();
+        jPanelEcran0Centre = new javax.swing.JPanel();
+        jPanelEcran0CentreHaut = new javax.swing.JPanel();
+        jLabelEcran0Titre = new javax.swing.JLabel();
+        jPanelEcran0CentreBas = new javax.swing.JPanel();
+        jPanelEcran0Villes = new javax.swing.JPanel();
+        jLabelEcran0Villes = new javax.swing.JLabel();
+        jScrollPaneEcran0Villes = new javax.swing.JScrollPane();
+        jListEcran0Villes = new javax.swing.JList<>();
+        jPanelEcran0Loisirs = new javax.swing.JPanel();
+        jLabelEcran0Loisirs = new javax.swing.JLabel();
+        jScrollPaneEcran0Loisirs = new javax.swing.JScrollPane();
+        jListEcran0Loisirs = new javax.swing.JList<>();
+        jPanelEcran0Restaurants = new javax.swing.JPanel();
+        jLabelEcran0Restaurants = new javax.swing.JLabel();
+        jScrollPaneEcran0Restaurants = new javax.swing.JScrollPane();
+        jListEcran0Restaurants = new javax.swing.JList<>();
+        jPanelEcran0Autoroutes = new javax.swing.JPanel();
+        jLabelEcran0Autoroutes = new javax.swing.JLabel();
+        jScrollPaneEcran0Autoroutes = new javax.swing.JScrollPane();
+        jListEcran0Autoroutes = new javax.swing.JList<>();
+        jPanelEcran0Nationales = new javax.swing.JPanel();
+        jLabelEcran0Nationales = new javax.swing.JLabel();
+        jScrollPaneEcran0Nationales = new javax.swing.JScrollPane();
+        jListEcran0Nationales = new javax.swing.JList<>();
+        jPanelEcran0Departementales = new javax.swing.JPanel();
+        jLabelEcran0Departementales = new javax.swing.JLabel();
+        jScrollPaneEcran0Departementales = new javax.swing.JScrollPane();
+        jListEcran0Departementales = new javax.swing.JList<>();
+        jPanelEcran1 = new javax.swing.JPanel();
+        jPanelEcran1Est = new javax.swing.JPanel();
+        jPanelEcran1Ouest = new javax.swing.JPanel();
+        jPanelEcran1Sud = new javax.swing.JPanel();
+        jPanelEcran1Centre = new javax.swing.JPanel();
+        jPanelEcran1CentreGauche = new javax.swing.JPanel();
+        jLabelEcran1GaucheTitre = new javax.swing.JLabel();
+        jLabelEcran1GaucheChoix = new javax.swing.JLabel();
+        jComboBoxEcran1GaucheChoix = new javax.swing.JComboBox<>();
+        jLabelEcran1GaucheResultat = new javax.swing.JLabel();
+        jScrollPaneEcran1GaucheResultat = new javax.swing.JScrollPane();
+        jListEcran1GaucheResultat = new javax.swing.JList<>();
+        jPanelEcran1GaucheEspacement = new javax.swing.JPanel();
+        jPanelEcran1CentreDroite = new javax.swing.JPanel();
+        jLabelEcran1DroiteTitre = new javax.swing.JLabel();
+        jLabelEcran1DroiteChoix = new javax.swing.JLabel();
+        jComboBoxEcran1DroiteChoix = new javax.swing.JComboBox<>();
+        jLabelEcran1DroiteResultat = new javax.swing.JLabel();
+        jScrollPaneEcran1DroiteResultat = new javax.swing.JScrollPane();
+        jListEcran1DroiteResultat = new javax.swing.JList<>();
+        jPanelEcran1DroiteEspacement = new javax.swing.JPanel();
+        jPanelEcran2 = new javax.swing.JPanel();
+        jPanelEcran2Est = new javax.swing.JPanel();
+        jPanelEcran2Ouest = new javax.swing.JPanel();
+        jPanelEcran2Sud = new javax.swing.JPanel();
+        jPanelEcran2Centre = new javax.swing.JPanel();
+        jLabelEcran2Titre = new javax.swing.JLabel();
+        jLabelEcran2Choix1 = new javax.swing.JLabel();
+        jComboBoxEcran2Choix1 = new javax.swing.JComboBox<>();
+        jLabelEcran2Choix2 = new javax.swing.JLabel();
+        jComboBoxEcran2Choix2 = new javax.swing.JComboBox<>();
+        jButtonEcran2Valider = new javax.swing.JButton();
+        jLabelEcran2InfoResultat = new javax.swing.JLabel();
+        jLabelEcran2Resultat = new javax.swing.JLabel();
+        jPanelEcran2Espacement = new javax.swing.JPanel();
+        jPanelEcran3 = new javax.swing.JPanel();
+        jPanelEcran3Est = new javax.swing.JPanel();
+        jPanelEcran3Ouest = new javax.swing.JPanel();
+        jPanelEcran3Sud = new javax.swing.JPanel();
+        jPanelEcran3Centre = new javax.swing.JPanel();
+        jLabelEcran3Titre = new javax.swing.JLabel();
+        jLabelEcran3Choix1 = new javax.swing.JLabel();
+        jComboBoxEcran3Choix1 = new javax.swing.JComboBox<>();
+        jLabelEcran3Choix2 = new javax.swing.JLabel();
+        jComboBoxEcran3Choix2 = new javax.swing.JComboBox<>();
+        jButtonEcran3Valider = new javax.swing.JButton();
+        jLabelEcran3InfoResultat = new javax.swing.JLabel();
+        jLabelEcran3ResultatOuverture = new javax.swing.JLabel();
+        jLabelEcran3ResultatGastronomie = new javax.swing.JLabel();
+        jLabelEcran3ResultatCulture = new javax.swing.JLabel();
+        jPanelEcran3Espacement = new javax.swing.JPanel();
+        jMenuBarPrincipale = new javax.swing.JMenuBar();
+        jMenuFichier = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1000, 600));
 
-        jPanel1.setLayout(new java.awt.BorderLayout());
+        jPanelAccueil.setLayout(new java.awt.BorderLayout());
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanelAccueilOuestLayout = new javax.swing.GroupLayout(jPanelAccueilOuest);
+        jPanelAccueilOuest.setLayout(jPanelAccueilOuestLayout);
+        jPanelAccueilOuestLayout.setHorizontalGroup(
+            jPanelAccueilOuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanelAccueilOuestLayout.setVerticalGroup(
+            jPanelAccueilOuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 600, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel3, java.awt.BorderLayout.LINE_START);
+        jPanelAccueil.add(jPanelAccueilOuest, java.awt.BorderLayout.LINE_START);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanelAccueilEstLayout = new javax.swing.GroupLayout(jPanelAccueilEst);
+        jPanelAccueilEst.setLayout(jPanelAccueilEstLayout);
+        jPanelAccueilEstLayout.setHorizontalGroup(
+            jPanelAccueilEstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanelAccueilEstLayout.setVerticalGroup(
+            jPanelAccueilEstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 600, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel4, java.awt.BorderLayout.LINE_END);
+        jPanelAccueil.add(jPanelAccueilEst, java.awt.BorderLayout.LINE_END);
 
-        jPanel10.setLayout(new java.awt.BorderLayout());
-        jPanel1.add(jPanel10, java.awt.BorderLayout.PAGE_END);
+        jPanelAccueilSud.setLayout(new java.awt.BorderLayout());
+        jPanelAccueil.add(jPanelAccueilSud, java.awt.BorderLayout.PAGE_END);
 
-        jPanel11.setLayout(new javax.swing.BoxLayout(jPanel11, javax.swing.BoxLayout.PAGE_AXIS));
+        jPanelAccueilCentre.setLayout(new javax.swing.BoxLayout(jPanelAccueilCentre, javax.swing.BoxLayout.PAGE_AXIS));
 
-        jPanel18.setMinimumSize(new java.awt.Dimension(0, 450));
-        jPanel18.setPreferredSize(new java.awt.Dimension(800, 450));
+        jPanelAccueilCentreHaut.setMinimumSize(new java.awt.Dimension(0, 450));
+        jPanelAccueilCentreHaut.setPreferredSize(new java.awt.Dimension(800, 450));
 
-        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
-        jPanel18.setLayout(jPanel18Layout);
-        jPanel18Layout.setHorizontalGroup(
-            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanelAccueilCentreHautLayout = new javax.swing.GroupLayout(jPanelAccueilCentreHaut);
+        jPanelAccueilCentreHaut.setLayout(jPanelAccueilCentreHautLayout);
+        jPanelAccueilCentreHautLayout.setHorizontalGroup(
+            jPanelAccueilCentreHautLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel18Layout.setVerticalGroup(
-            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanelAccueilCentreHautLayout.setVerticalGroup(
+            jPanelAccueilCentreHautLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 450, Short.MAX_VALUE)
         );
 
-        jPanel11.add(jPanel18);
+        jPanelAccueilCentre.add(jPanelAccueilCentreHaut);
 
-        jPanel17.setMinimumSize(new java.awt.Dimension(278, 110));
-        jPanel17.setPreferredSize(new java.awt.Dimension(800, 110));
-        jPanel17.setLayout(new java.awt.BorderLayout());
+        jPanelAccueilCentreBas.setMinimumSize(new java.awt.Dimension(278, 110));
+        jPanelAccueilCentreBas.setPreferredSize(new java.awt.Dimension(800, 110));
+        jPanelAccueilCentreBas.setLayout(new java.awt.BorderLayout());
 
-        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
-        jPanel19.setLayout(jPanel19Layout);
-        jPanel19Layout.setHorizontalGroup(
-            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanelAccueilCentreBasEstLayout = new javax.swing.GroupLayout(jPanelAccueilCentreBasEst);
+        jPanelAccueilCentreBasEst.setLayout(jPanelAccueilCentreBasEstLayout);
+        jPanelAccueilCentreBasEstLayout.setHorizontalGroup(
+            jPanelAccueilCentreBasEstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
-        jPanel19Layout.setVerticalGroup(
-            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanelAccueilCentreBasEstLayout.setVerticalGroup(
+            jPanelAccueilCentreBasEstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 70, Short.MAX_VALUE)
         );
 
-        jPanel17.add(jPanel19, java.awt.BorderLayout.LINE_END);
+        jPanelAccueilCentreBas.add(jPanelAccueilCentreBasEst, java.awt.BorderLayout.LINE_END);
 
-        javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
-        jPanel28.setLayout(jPanel28Layout);
-        jPanel28Layout.setHorizontalGroup(
-            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanelAccueilCentreBasOuestLayout = new javax.swing.GroupLayout(jPanelAccueilCentreBasOuest);
+        jPanelAccueilCentreBasOuest.setLayout(jPanelAccueilCentreBasOuestLayout);
+        jPanelAccueilCentreBasOuestLayout.setHorizontalGroup(
+            jPanelAccueilCentreBasOuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
-        jPanel28Layout.setVerticalGroup(
-            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanelAccueilCentreBasOuestLayout.setVerticalGroup(
+            jPanelAccueilCentreBasOuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 70, Short.MAX_VALUE)
         );
 
-        jPanel17.add(jPanel28, java.awt.BorderLayout.LINE_START);
+        jPanelAccueilCentreBas.add(jPanelAccueilCentreBasOuest, java.awt.BorderLayout.LINE_START);
 
-        jPanel29.setPreferredSize(new java.awt.Dimension(800, 40));
+        jPanelAccueilCentreBasNord.setPreferredSize(new java.awt.Dimension(800, 40));
 
-        javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
-        jPanel29.setLayout(jPanel29Layout);
-        jPanel29Layout.setHorizontalGroup(
-            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanelAccueilCentreBasNordLayout = new javax.swing.GroupLayout(jPanelAccueilCentreBasNord);
+        jPanelAccueilCentreBasNord.setLayout(jPanelAccueilCentreBasNordLayout);
+        jPanelAccueilCentreBasNordLayout.setHorizontalGroup(
+            jPanelAccueilCentreBasNordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 800, Short.MAX_VALUE)
         );
-        jPanel29Layout.setVerticalGroup(
-            jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanelAccueilCentreBasNordLayout.setVerticalGroup(
+            jPanelAccueilCentreBasNordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        jPanel17.add(jPanel29, java.awt.BorderLayout.PAGE_START);
+        jPanelAccueilCentreBas.add(jPanelAccueilCentreBasNord, java.awt.BorderLayout.PAGE_START);
 
-        jPanel30.setPreferredSize(new java.awt.Dimension(800, 40));
-        jPanel30.setRequestFocusEnabled(false);
+        jPanelAccueilCentreBasSud.setPreferredSize(new java.awt.Dimension(800, 40));
+        jPanelAccueilCentreBasSud.setRequestFocusEnabled(false);
 
-        javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
-        jPanel30.setLayout(jPanel30Layout);
-        jPanel30Layout.setHorizontalGroup(
-            jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanelAccueilCentreBasSudLayout = new javax.swing.GroupLayout(jPanelAccueilCentreBasSud);
+        jPanelAccueilCentreBasSud.setLayout(jPanelAccueilCentreBasSudLayout);
+        jPanelAccueilCentreBasSudLayout.setHorizontalGroup(
+            jPanelAccueilCentreBasSudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 800, Short.MAX_VALUE)
         );
-        jPanel30Layout.setVerticalGroup(
-            jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanelAccueilCentreBasSudLayout.setVerticalGroup(
+            jPanelAccueilCentreBasSudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 40, Short.MAX_VALUE)
         );
 
-        jPanel17.add(jPanel30, java.awt.BorderLayout.PAGE_END);
+        jPanelAccueilCentreBas.add(jPanelAccueilCentreBasSud, java.awt.BorderLayout.PAGE_END);
 
-        jButton2.setText("Importer");
-        jButton2.setMaximumSize(new java.awt.Dimension(78, 20));
-        jButton2.setMinimumSize(new java.awt.Dimension(78, 20));
-        jButton2.setPreferredSize(new java.awt.Dimension(78, 20));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAccueilImporter.setText("Importer");
+        jButtonAccueilImporter.setMaximumSize(new java.awt.Dimension(78, 20));
+        jButtonAccueilImporter.setMinimumSize(new java.awt.Dimension(78, 20));
+        jButtonAccueilImporter.setPreferredSize(new java.awt.Dimension(78, 20));
+        jButtonAccueilImporter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButtonAccueilImporterActionPerformed(evt);
             }
         });
-        jPanel17.add(jButton2, java.awt.BorderLayout.CENTER);
+        jPanelAccueilCentreBas.add(jButtonAccueilImporter, java.awt.BorderLayout.CENTER);
 
-        jPanel11.add(jPanel17);
+        jPanelAccueilCentre.add(jPanelAccueilCentreBas);
 
-        jPanel1.add(jPanel11, java.awt.BorderLayout.CENTER);
+        jPanelAccueil.add(jPanelAccueilCentre, java.awt.BorderLayout.CENTER);
 
-        jTabbedPane1.addTab("tab1", jPanel1);
+        jTabbedPanePrincipal.addTab("tab1", jPanelAccueil);
 
-        jPanel2.setLayout(new java.awt.BorderLayout());
+        jPanelEcran0.setLayout(new java.awt.BorderLayout());
 
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanelEcran0OuestLayout = new javax.swing.GroupLayout(jPanelEcran0Ouest);
+        jPanelEcran0Ouest.setLayout(jPanelEcran0OuestLayout);
+        jPanelEcran0OuestLayout.setHorizontalGroup(
+            jPanelEcran0OuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanelEcran0OuestLayout.setVerticalGroup(
+            jPanelEcran0OuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 600, Short.MAX_VALUE)
         );
 
-        jPanel2.add(jPanel13, java.awt.BorderLayout.LINE_START);
+        jPanelEcran0.add(jPanelEcran0Ouest, java.awt.BorderLayout.LINE_START);
 
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanelEcran0EstLayout = new javax.swing.GroupLayout(jPanelEcran0Est);
+        jPanelEcran0Est.setLayout(jPanelEcran0EstLayout);
+        jPanelEcran0EstLayout.setHorizontalGroup(
+            jPanelEcran0EstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanelEcran0EstLayout.setVerticalGroup(
+            jPanelEcran0EstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 600, Short.MAX_VALUE)
         );
 
-        jPanel2.add(jPanel14, java.awt.BorderLayout.LINE_END);
+        jPanelEcran0.add(jPanelEcran0Est, java.awt.BorderLayout.LINE_END);
 
-        jPanel15.setLayout(new java.awt.BorderLayout());
-        jPanel2.add(jPanel15, java.awt.BorderLayout.PAGE_END);
+        jPanelEcran0Sud.setLayout(new java.awt.BorderLayout());
+        jPanelEcran0.add(jPanelEcran0Sud, java.awt.BorderLayout.PAGE_END);
 
-        jPanel16.setLayout(new javax.swing.BoxLayout(jPanel16, javax.swing.BoxLayout.PAGE_AXIS));
+        jPanelEcran0Centre.setLayout(new javax.swing.BoxLayout(jPanelEcran0Centre, javax.swing.BoxLayout.PAGE_AXIS));
 
-        jPanel26.setPreferredSize(new java.awt.Dimension(800, 50));
-        jPanel26.setLayout(new java.awt.BorderLayout());
+        jPanelEcran0CentreHaut.setPreferredSize(new java.awt.Dimension(800, 50));
+        jPanelEcran0CentreHaut.setLayout(new java.awt.BorderLayout());
 
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Informations sur le graphe");
-        jPanel26.add(jLabel8, java.awt.BorderLayout.CENTER);
+        jLabelEcran0Titre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelEcran0Titre.setText("Informations sur le graphe");
+        jPanelEcran0CentreHaut.add(jLabelEcran0Titre, java.awt.BorderLayout.CENTER);
 
-        jPanel16.add(jPanel26);
+        jPanelEcran0Centre.add(jPanelEcran0CentreHaut);
 
-        jPanel27.setPreferredSize(new java.awt.Dimension(800, 600));
-        jPanel27.setLayout(new java.awt.GridLayout(2, 3, 20, 20));
+        jPanelEcran0CentreBas.setPreferredSize(new java.awt.Dimension(800, 600));
+        jPanelEcran0CentreBas.setLayout(new java.awt.GridLayout(2, 3, 20, 20));
 
-        jPanel20.setLayout(new java.awt.BorderLayout());
+        jPanelEcran0Villes.setLayout(new java.awt.BorderLayout());
 
-        jLabel2.setText("jLabel2");
-        jPanel20.add(jLabel2, java.awt.BorderLayout.PAGE_END);
+        jLabelEcran0Villes.setText("Villes");
+        jPanelEcran0Villes.add(jLabelEcran0Villes, java.awt.BorderLayout.PAGE_END);
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        jListEcran0Villes.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPaneEcran0Villes.setViewportView(jListEcran0Villes);
 
-        jPanel20.add(jScrollPane1, java.awt.BorderLayout.CENTER);
+        jPanelEcran0Villes.add(jScrollPaneEcran0Villes, java.awt.BorderLayout.CENTER);
 
-        jPanel27.add(jPanel20);
+        jPanelEcran0CentreBas.add(jPanelEcran0Villes);
 
-        jPanel21.setLayout(new java.awt.BorderLayout());
+        jPanelEcran0Loisirs.setLayout(new java.awt.BorderLayout());
 
-        jLabel3.setText("jLabel3");
-        jPanel21.add(jLabel3, java.awt.BorderLayout.PAGE_END);
+        jLabelEcran0Loisirs.setText("Lieux de loisir");
+        jPanelEcran0Loisirs.add(jLabelEcran0Loisirs, java.awt.BorderLayout.PAGE_END);
 
-        jList2.setModel(new javax.swing.AbstractListModel<String>() {
+        jListEcran0Loisirs.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane2.setViewportView(jList2);
+        jScrollPaneEcran0Loisirs.setViewportView(jListEcran0Loisirs);
 
-        jPanel21.add(jScrollPane2, java.awt.BorderLayout.CENTER);
+        jPanelEcran0Loisirs.add(jScrollPaneEcran0Loisirs, java.awt.BorderLayout.CENTER);
 
-        jPanel27.add(jPanel21);
+        jPanelEcran0CentreBas.add(jPanelEcran0Loisirs);
 
-        jPanel23.setLayout(new java.awt.BorderLayout());
+        jPanelEcran0Restaurants.setLayout(new java.awt.BorderLayout());
 
-        jLabel4.setText("jLabel4");
-        jPanel23.add(jLabel4, java.awt.BorderLayout.PAGE_END);
+        jLabelEcran0Restaurants.setText("Restaurants");
+        jPanelEcran0Restaurants.add(jLabelEcran0Restaurants, java.awt.BorderLayout.PAGE_END);
 
-        jList3.setModel(new javax.swing.AbstractListModel<String>() {
+        jListEcran0Restaurants.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane3.setViewportView(jList3);
+        jScrollPaneEcran0Restaurants.setViewportView(jListEcran0Restaurants);
 
-        jPanel23.add(jScrollPane3, java.awt.BorderLayout.CENTER);
+        jPanelEcran0Restaurants.add(jScrollPaneEcran0Restaurants, java.awt.BorderLayout.CENTER);
 
-        jPanel27.add(jPanel23);
+        jPanelEcran0CentreBas.add(jPanelEcran0Restaurants);
 
-        jPanel22.setLayout(new java.awt.BorderLayout());
+        jPanelEcran0Autoroutes.setLayout(new java.awt.BorderLayout());
 
-        jLabel5.setText("jLabel5");
-        jPanel22.add(jLabel5, java.awt.BorderLayout.PAGE_END);
+        jLabelEcran0Autoroutes.setText("Autoroutes");
+        jPanelEcran0Autoroutes.add(jLabelEcran0Autoroutes, java.awt.BorderLayout.PAGE_END);
 
-        jList4.setModel(new javax.swing.AbstractListModel<String>() {
+        jListEcran0Autoroutes.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane4.setViewportView(jList4);
+        jScrollPaneEcran0Autoroutes.setViewportView(jListEcran0Autoroutes);
 
-        jPanel22.add(jScrollPane4, java.awt.BorderLayout.CENTER);
+        jPanelEcran0Autoroutes.add(jScrollPaneEcran0Autoroutes, java.awt.BorderLayout.CENTER);
 
-        jPanel27.add(jPanel22);
+        jPanelEcran0CentreBas.add(jPanelEcran0Autoroutes);
 
-        jPanel25.setLayout(new java.awt.BorderLayout());
+        jPanelEcran0Nationales.setLayout(new java.awt.BorderLayout());
 
-        jLabel6.setText("jLabel6");
-        jPanel25.add(jLabel6, java.awt.BorderLayout.PAGE_END);
+        jLabelEcran0Nationales.setText("Nationales");
+        jPanelEcran0Nationales.add(jLabelEcran0Nationales, java.awt.BorderLayout.PAGE_END);
 
-        jList5.setModel(new javax.swing.AbstractListModel<String>() {
+        jListEcran0Nationales.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane5.setViewportView(jList5);
+        jScrollPaneEcran0Nationales.setViewportView(jListEcran0Nationales);
 
-        jPanel25.add(jScrollPane5, java.awt.BorderLayout.CENTER);
+        jPanelEcran0Nationales.add(jScrollPaneEcran0Nationales, java.awt.BorderLayout.CENTER);
 
-        jPanel27.add(jPanel25);
+        jPanelEcran0CentreBas.add(jPanelEcran0Nationales);
 
-        jPanel24.setLayout(new java.awt.BorderLayout());
+        jPanelEcran0Departementales.setLayout(new java.awt.BorderLayout());
 
-        jLabel7.setText("jLabel7");
-        jPanel24.add(jLabel7, java.awt.BorderLayout.PAGE_END);
+        jLabelEcran0Departementales.setText("Departementales");
+        jPanelEcran0Departementales.add(jLabelEcran0Departementales, java.awt.BorderLayout.PAGE_END);
 
-        jList6.setModel(new javax.swing.AbstractListModel<String>() {
+        jListEcran0Departementales.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane6.setViewportView(jList6);
+        jScrollPaneEcran0Departementales.setViewportView(jListEcran0Departementales);
 
-        jPanel24.add(jScrollPane6, java.awt.BorderLayout.CENTER);
+        jPanelEcran0Departementales.add(jScrollPaneEcran0Departementales, java.awt.BorderLayout.CENTER);
 
-        jPanel27.add(jPanel24);
+        jPanelEcran0CentreBas.add(jPanelEcran0Departementales);
 
-        jPanel16.add(jPanel27);
+        jPanelEcran0Centre.add(jPanelEcran0CentreBas);
 
-        jPanel2.add(jPanel16, java.awt.BorderLayout.CENTER);
+        jPanelEcran0.add(jPanelEcran0Centre, java.awt.BorderLayout.CENTER);
 
-        jTabbedPane1.addTab("tab2", jPanel2);
+        jTabbedPanePrincipal.addTab("tab2", jPanelEcran0);
 
-        jPanel5.setLayout(new java.awt.BorderLayout());
+        jPanelEcran1.setLayout(new java.awt.BorderLayout());
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanelEcran1EstLayout = new javax.swing.GroupLayout(jPanelEcran1Est);
+        jPanelEcran1Est.setLayout(jPanelEcran1EstLayout);
+        jPanelEcran1EstLayout.setHorizontalGroup(
+            jPanelEcran1EstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanelEcran1EstLayout.setVerticalGroup(
+            jPanelEcran1EstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 600, Short.MAX_VALUE)
         );
 
-        jPanel5.add(jPanel6, java.awt.BorderLayout.LINE_END);
+        jPanelEcran1.add(jPanelEcran1Est, java.awt.BorderLayout.LINE_END);
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanelEcran1OuestLayout = new javax.swing.GroupLayout(jPanelEcran1Ouest);
+        jPanelEcran1Ouest.setLayout(jPanelEcran1OuestLayout);
+        jPanelEcran1OuestLayout.setHorizontalGroup(
+            jPanelEcran1OuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanelEcran1OuestLayout.setVerticalGroup(
+            jPanelEcran1OuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 600, Short.MAX_VALUE)
         );
 
-        jPanel5.add(jPanel7, java.awt.BorderLayout.LINE_START);
+        jPanelEcran1.add(jPanelEcran1Ouest, java.awt.BorderLayout.LINE_START);
 
-        jPanel8.setLayout(new java.awt.BorderLayout());
-        jPanel5.add(jPanel8, java.awt.BorderLayout.PAGE_END);
+        jPanelEcran1Sud.setLayout(new java.awt.BorderLayout());
+        jPanelEcran1.add(jPanelEcran1Sud, java.awt.BorderLayout.PAGE_END);
 
-        jPanel9.setLayout(new java.awt.GridLayout(1, 1, 20, 0));
+        jPanelEcran1Centre.setLayout(new java.awt.GridLayout(1, 1, 20, 0));
 
         java.awt.GridBagLayout jPanel31Layout = new java.awt.GridBagLayout();
         jPanel31Layout.rowHeights = new int[] {100};
-        jPanel31.setLayout(jPanel31Layout);
+        jPanelEcran1CentreGauche.setLayout(jPanel31Layout);
 
-        jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Voisins directs d'un sommet");
+        jLabelEcran1GaucheTitre.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        jLabelEcran1GaucheTitre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelEcran1GaucheTitre.setText("Voisins directs d'un sommet");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 5.0;
-        jPanel31.add(jLabel1, gridBagConstraints);
+        jPanelEcran1CentreGauche.add(jLabelEcran1GaucheTitre, gridBagConstraints);
 
-        jLabel9.setText("Choisir le sommet :");
+        jLabelEcran1GaucheChoix.setText("Choisir le sommet :");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 1.0;
-        jPanel31.add(jLabel9, gridBagConstraints);
+        jPanelEcran1CentreGauche.add(jLabelEcran1GaucheChoix, gridBagConstraints);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxEcran1GaucheChoix.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 1.0;
-        jPanel31.add(jComboBox1, gridBagConstraints);
+        jPanelEcran1CentreGauche.add(jComboBoxEcran1GaucheChoix, gridBagConstraints);
 
-        jLabel10.setText("Voisins directs :");
+        jLabelEcran1GaucheResultat.setText("Voisins directs :");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 1.0;
-        jPanel31.add(jLabel10, gridBagConstraints);
+        jPanelEcran1CentreGauche.add(jLabelEcran1GaucheResultat, gridBagConstraints);
 
-        jList7.setModel(new javax.swing.AbstractListModel<String>() {
+        jListEcran1GaucheResultat.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane7.setViewportView(jList7);
+        jScrollPaneEcran1GaucheResultat.setViewportView(jListEcran1GaucheResultat);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -497,16 +495,16 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 0.1;
         gridBagConstraints.weighty = 1.0;
-        jPanel31.add(jScrollPane7, gridBagConstraints);
+        jPanelEcran1CentreGauche.add(jScrollPaneEcran1GaucheResultat, gridBagConstraints);
 
-        javax.swing.GroupLayout jPanel32Layout = new javax.swing.GroupLayout(jPanel32);
-        jPanel32.setLayout(jPanel32Layout);
-        jPanel32Layout.setHorizontalGroup(
-            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanelEcran1GaucheEspacementLayout = new javax.swing.GroupLayout(jPanelEcran1GaucheEspacement);
+        jPanelEcran1GaucheEspacement.setLayout(jPanelEcran1GaucheEspacementLayout);
+        jPanelEcran1GaucheEspacementLayout.setHorizontalGroup(
+            jPanelEcran1GaucheEspacementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel32Layout.setVerticalGroup(
-            jPanel32Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanelEcran1GaucheEspacementLayout.setVerticalGroup(
+            jPanelEcran1GaucheEspacementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
@@ -514,53 +512,53 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
         gridBagConstraints.weighty = 3.0;
-        jPanel31.add(jPanel32, gridBagConstraints);
+        jPanelEcran1CentreGauche.add(jPanelEcran1GaucheEspacement, gridBagConstraints);
 
-        jPanel9.add(jPanel31);
+        jPanelEcran1Centre.add(jPanelEcran1CentreGauche);
 
-        jPanel12.setLayout(new java.awt.GridBagLayout());
+        jPanelEcran1CentreDroite.setLayout(new java.awt.GridBagLayout());
 
-        jLabel11.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("Sommets reliés par une arête");
+        jLabelEcran1DroiteTitre.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        jLabelEcran1DroiteTitre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelEcran1DroiteTitre.setText("Sommets reliés par une arête");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.ipady = 70;
         gridBagConstraints.weighty = 5.0;
-        jPanel12.add(jLabel11, gridBagConstraints);
+        jPanelEcran1CentreDroite.add(jLabelEcran1DroiteTitre, gridBagConstraints);
 
-        jLabel15.setText("jLabel15");
+        jLabelEcran1DroiteChoix.setText("jLabel15");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 1.0;
-        jPanel12.add(jLabel15, gridBagConstraints);
+        jPanelEcran1CentreDroite.add(jLabelEcran1DroiteChoix, gridBagConstraints);
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxEcran1DroiteChoix.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 1.0;
-        jPanel12.add(jComboBox3, gridBagConstraints);
+        jPanelEcran1CentreDroite.add(jComboBoxEcran1DroiteChoix, gridBagConstraints);
 
-        jLabel16.setText("jLabel16");
+        jLabelEcran1DroiteResultat.setText("jLabel16");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 1.0;
-        jPanel12.add(jLabel16, gridBagConstraints);
+        jPanelEcran1CentreDroite.add(jLabelEcran1DroiteResultat, gridBagConstraints);
 
-        jList9.setModel(new javax.swing.AbstractListModel<String>() {
+        jListEcran1DroiteResultat.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane9.setViewportView(jList9);
+        jScrollPaneEcran1DroiteResultat.setViewportView(jListEcran1DroiteResultat);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -568,18 +566,18 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 0.1;
         gridBagConstraints.weighty = 1.0;
-        jPanel12.add(jScrollPane9, gridBagConstraints);
+        jPanelEcran1CentreDroite.add(jScrollPaneEcran1DroiteResultat, gridBagConstraints);
 
-        jPanel35.setMaximumSize(new java.awt.Dimension(32767, 0));
+        jPanelEcran1DroiteEspacement.setMaximumSize(new java.awt.Dimension(32767, 0));
 
-        javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
-        jPanel35.setLayout(jPanel35Layout);
-        jPanel35Layout.setHorizontalGroup(
-            jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanelEcran1DroiteEspacementLayout = new javax.swing.GroupLayout(jPanelEcran1DroiteEspacement);
+        jPanelEcran1DroiteEspacement.setLayout(jPanelEcran1DroiteEspacementLayout);
+        jPanelEcran1DroiteEspacementLayout.setHorizontalGroup(
+            jPanelEcran1DroiteEspacementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel35Layout.setVerticalGroup(
-            jPanel35Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanelEcran1DroiteEspacementLayout.setVerticalGroup(
+            jPanelEcran1DroiteEspacementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
@@ -587,117 +585,124 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
         gridBagConstraints.weighty = 3.0;
-        jPanel12.add(jPanel35, gridBagConstraints);
+        jPanelEcran1CentreDroite.add(jPanelEcran1DroiteEspacement, gridBagConstraints);
 
-        jPanel9.add(jPanel12);
+        jPanelEcran1Centre.add(jPanelEcran1CentreDroite);
 
-        jPanel5.add(jPanel9, java.awt.BorderLayout.CENTER);
+        jPanelEcran1.add(jPanelEcran1Centre, java.awt.BorderLayout.CENTER);
 
-        jTabbedPane1.addTab("tab3", jPanel5);
+        jTabbedPanePrincipal.addTab("tab3", jPanelEcran1);
 
-        jPanel33.setLayout(new java.awt.BorderLayout());
+        jPanelEcran2.setLayout(new java.awt.BorderLayout());
 
-        javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
-        jPanel34.setLayout(jPanel34Layout);
-        jPanel34Layout.setHorizontalGroup(
-            jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanelEcran2EstLayout = new javax.swing.GroupLayout(jPanelEcran2Est);
+        jPanelEcran2Est.setLayout(jPanelEcran2EstLayout);
+        jPanelEcran2EstLayout.setHorizontalGroup(
+            jPanelEcran2EstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
-        jPanel34Layout.setVerticalGroup(
-            jPanel34Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanelEcran2EstLayout.setVerticalGroup(
+            jPanelEcran2EstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 600, Short.MAX_VALUE)
         );
 
-        jPanel33.add(jPanel34, java.awt.BorderLayout.LINE_END);
+        jPanelEcran2.add(jPanelEcran2Est, java.awt.BorderLayout.LINE_END);
 
-        javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
-        jPanel36.setLayout(jPanel36Layout);
-        jPanel36Layout.setHorizontalGroup(
-            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanelEcran2OuestLayout = new javax.swing.GroupLayout(jPanelEcran2Ouest);
+        jPanelEcran2Ouest.setLayout(jPanelEcran2OuestLayout);
+        jPanelEcran2OuestLayout.setHorizontalGroup(
+            jPanelEcran2OuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
-        jPanel36Layout.setVerticalGroup(
-            jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanelEcran2OuestLayout.setVerticalGroup(
+            jPanelEcran2OuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 600, Short.MAX_VALUE)
         );
 
-        jPanel33.add(jPanel36, java.awt.BorderLayout.LINE_START);
+        jPanelEcran2.add(jPanelEcran2Ouest, java.awt.BorderLayout.LINE_START);
 
-        jPanel37.setLayout(new java.awt.BorderLayout());
-        jPanel33.add(jPanel37, java.awt.BorderLayout.PAGE_END);
+        jPanelEcran2Sud.setLayout(new java.awt.BorderLayout());
+        jPanelEcran2.add(jPanelEcran2Sud, java.awt.BorderLayout.PAGE_END);
 
-        jPanel38.setLayout(new java.awt.GridBagLayout());
+        jPanelEcran2Centre.setLayout(new java.awt.GridBagLayout());
 
-        jLabel12.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("2-distance exacte entre deux sommets");
+        jLabelEcran2Titre.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
+        jLabelEcran2Titre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelEcran2Titre.setText("2-distance exacte entre deux sommets");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 5.0;
-        jPanel38.add(jLabel12, gridBagConstraints);
+        jPanelEcran2Centre.add(jLabelEcran2Titre, gridBagConstraints);
 
-        jLabel13.setText("Choisir le premier sommet :");
+        jLabelEcran2Choix1.setText("Choisir le premier sommet :");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 1.0;
-        jPanel38.add(jLabel13, gridBagConstraints);
+        jPanelEcran2Centre.add(jLabelEcran2Choix1, gridBagConstraints);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxEcran2Choix1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 1.0;
-        jPanel38.add(jComboBox2, gridBagConstraints);
+        jPanelEcran2Centre.add(jComboBoxEcran2Choix1, gridBagConstraints);
 
-        jLabel14.setText("Résultat :");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.weighty = 1.0;
-        jPanel38.add(jLabel14, gridBagConstraints);
-
-        jLabel17.setText("Choisir le deuxième sommet :");
+        jLabelEcran2Choix2.setText("Choisir le deuxième sommet :");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 1.0;
-        jPanel38.add(jLabel17, gridBagConstraints);
+        jPanelEcran2Centre.add(jLabelEcran2Choix2, gridBagConstraints);
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxEcran2Choix2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 1.0;
-        jPanel38.add(jComboBox4, gridBagConstraints);
+        jPanelEcran2Centre.add(jComboBoxEcran2Choix2, gridBagConstraints);
 
-        jButton1.setText("Vérifier la 2-distance");
+        jButtonEcran2Valider.setText("Vérifier la 2-distance");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
         gridBagConstraints.weighty = 1.0;
-        jPanel38.add(jButton1, gridBagConstraints);
+        jPanelEcran2Centre.add(jButtonEcran2Valider, gridBagConstraints);
 
-        jPanel40.setMaximumSize(new java.awt.Dimension(32767, 0));
-        jPanel40.setMinimumSize(new java.awt.Dimension(100, 0));
-        jPanel40.setPreferredSize(new java.awt.Dimension(100, 0));
-        jPanel40.setSize(new java.awt.Dimension(100, 0));
+        jLabelEcran2InfoResultat.setText("Résultat :");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weighty = 1.0;
+        jPanelEcran2Centre.add(jLabelEcran2InfoResultat, gridBagConstraints);
 
-        javax.swing.GroupLayout jPanel40Layout = new javax.swing.GroupLayout(jPanel40);
-        jPanel40.setLayout(jPanel40Layout);
-        jPanel40Layout.setHorizontalGroup(
-            jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jLabelEcran2Resultat.setText("X et X sont à une 2-distance / ne sont pas à une 2-distance");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weighty = 1.0;
+        jPanelEcran2Centre.add(jLabelEcran2Resultat, gridBagConstraints);
+
+        jPanelEcran2Espacement.setMaximumSize(new java.awt.Dimension(32767, 0));
+        jPanelEcran2Espacement.setMinimumSize(new java.awt.Dimension(100, 0));
+        jPanelEcran2Espacement.setPreferredSize(new java.awt.Dimension(100, 0));
+
+        javax.swing.GroupLayout jPanelEcran2EspacementLayout = new javax.swing.GroupLayout(jPanelEcran2Espacement);
+        jPanelEcran2Espacement.setLayout(jPanelEcran2EspacementLayout);
+        jPanelEcran2EspacementLayout.setHorizontalGroup(
+            jPanelEcran2EspacementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
-        jPanel40Layout.setVerticalGroup(
-            jPanel40Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanelEcran2EspacementLayout.setVerticalGroup(
+            jPanelEcran2EspacementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
@@ -705,121 +710,138 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 8;
         gridBagConstraints.weighty = 3.0;
-        jPanel38.add(jPanel40, gridBagConstraints);
+        jPanelEcran2Centre.add(jPanelEcran2Espacement, gridBagConstraints);
 
-        jLabel18.setText("jLabel18");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.weighty = 1.0;
-        jPanel38.add(jLabel18, gridBagConstraints);
+        jPanelEcran2.add(jPanelEcran2Centre, java.awt.BorderLayout.CENTER);
 
-        jPanel33.add(jPanel38, java.awt.BorderLayout.CENTER);
+        jTabbedPanePrincipal.addTab("tab4", jPanelEcran2);
 
-        jTabbedPane1.addTab("tab4", jPanel33);
+        jPanelEcran3.setLayout(new java.awt.BorderLayout());
 
-        jPanel39.setLayout(new java.awt.BorderLayout());
-
-        javax.swing.GroupLayout jPanel41Layout = new javax.swing.GroupLayout(jPanel41);
-        jPanel41.setLayout(jPanel41Layout);
-        jPanel41Layout.setHorizontalGroup(
-            jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanelEcran3EstLayout = new javax.swing.GroupLayout(jPanelEcran3Est);
+        jPanelEcran3Est.setLayout(jPanelEcran3EstLayout);
+        jPanelEcran3EstLayout.setHorizontalGroup(
+            jPanelEcran3EstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
-        jPanel41Layout.setVerticalGroup(
-            jPanel41Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanelEcran3EstLayout.setVerticalGroup(
+            jPanelEcran3EstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 600, Short.MAX_VALUE)
         );
 
-        jPanel39.add(jPanel41, java.awt.BorderLayout.LINE_END);
+        jPanelEcran3.add(jPanelEcran3Est, java.awt.BorderLayout.LINE_END);
 
-        javax.swing.GroupLayout jPanel42Layout = new javax.swing.GroupLayout(jPanel42);
-        jPanel42.setLayout(jPanel42Layout);
-        jPanel42Layout.setHorizontalGroup(
-            jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanelEcran3OuestLayout = new javax.swing.GroupLayout(jPanelEcran3Ouest);
+        jPanelEcran3Ouest.setLayout(jPanelEcran3OuestLayout);
+        jPanelEcran3OuestLayout.setHorizontalGroup(
+            jPanelEcran3OuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
-        jPanel42Layout.setVerticalGroup(
-            jPanel42Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanelEcran3OuestLayout.setVerticalGroup(
+            jPanelEcran3OuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 600, Short.MAX_VALUE)
         );
 
-        jPanel39.add(jPanel42, java.awt.BorderLayout.LINE_START);
+        jPanelEcran3.add(jPanelEcran3Ouest, java.awt.BorderLayout.LINE_START);
 
-        jPanel43.setLayout(new java.awt.BorderLayout());
-        jPanel39.add(jPanel43, java.awt.BorderLayout.PAGE_END);
+        jPanelEcran3Sud.setLayout(new java.awt.BorderLayout());
+        jPanelEcran3.add(jPanelEcran3Sud, java.awt.BorderLayout.PAGE_END);
 
-        jPanel45.setLayout(new java.awt.GridBagLayout());
+        jPanelEcran3Centre.setLayout(new java.awt.GridBagLayout());
 
-        jLabel19.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
-        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel19.setText("Comparer deux sommets");
+        jLabelEcran3Titre.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
+        jLabelEcran3Titre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelEcran3Titre.setText("Comparer deux sommets");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 5.0;
-        jPanel45.add(jLabel19, gridBagConstraints);
+        jPanelEcran3Centre.add(jLabelEcran3Titre, gridBagConstraints);
 
-        jLabel20.setText("Choisir le premier sommet :");
+        jLabelEcran3Choix1.setText("Choisir le premier sommet :");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 1.0;
-        jPanel45.add(jLabel20, gridBagConstraints);
+        jPanelEcran3Centre.add(jLabelEcran3Choix1, gridBagConstraints);
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxEcran3Choix1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 1.0;
-        jPanel45.add(jComboBox5, gridBagConstraints);
+        jPanelEcran3Centre.add(jComboBoxEcran3Choix1, gridBagConstraints);
 
-        jLabel21.setText("Résultat :");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.weighty = 1.0;
-        jPanel45.add(jLabel21, gridBagConstraints);
-
-        jLabel22.setText("Choisir le deuxième sommet :");
+        jLabelEcran3Choix2.setText("Choisir le deuxième sommet :");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 1.0;
-        jPanel45.add(jLabel22, gridBagConstraints);
+        jPanelEcran3Centre.add(jLabelEcran3Choix2, gridBagConstraints);
 
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxEcran3Choix2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 1.0;
-        jPanel45.add(jComboBox6, gridBagConstraints);
+        jPanelEcran3Centre.add(jComboBoxEcran3Choix2, gridBagConstraints);
 
-        jButton3.setText("Comparer");
+        jButtonEcran3Valider.setText("Comparer");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
         gridBagConstraints.weighty = 1.0;
-        jPanel45.add(jButton3, gridBagConstraints);
+        jPanelEcran3Centre.add(jButtonEcran3Valider, gridBagConstraints);
 
-        jPanel46.setMaximumSize(new java.awt.Dimension(32767, 0));
-        jPanel46.setMinimumSize(new java.awt.Dimension(100, 0));
+        jLabelEcran3InfoResultat.setText("Résultat :");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weighty = 1.0;
+        jPanelEcran3Centre.add(jLabelEcran3InfoResultat, gridBagConstraints);
 
-        javax.swing.GroupLayout jPanel46Layout = new javax.swing.GroupLayout(jPanel46);
-        jPanel46.setLayout(jPanel46Layout);
-        jPanel46Layout.setHorizontalGroup(
-            jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jLabelEcran3ResultatOuverture.setText("ouverture");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weighty = 1.0;
+        jPanelEcran3Centre.add(jLabelEcran3ResultatOuverture, gridBagConstraints);
+
+        jLabelEcran3ResultatGastronomie.setText("gastronomie");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.weighty = 1.0;
+        jPanelEcran3Centre.add(jLabelEcran3ResultatGastronomie, gridBagConstraints);
+
+        jLabelEcran3ResultatCulture.setText("culture");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weighty = 1.0;
+        jPanelEcran3Centre.add(jLabelEcran3ResultatCulture, gridBagConstraints);
+
+        jPanelEcran3Espacement.setMaximumSize(new java.awt.Dimension(32767, 0));
+        jPanelEcran3Espacement.setMinimumSize(new java.awt.Dimension(100, 0));
+
+        javax.swing.GroupLayout jPanelEcran3EspacementLayout = new javax.swing.GroupLayout(jPanelEcran3Espacement);
+        jPanelEcran3Espacement.setLayout(jPanelEcran3EspacementLayout);
+        jPanelEcran3EspacementLayout.setHorizontalGroup(
+            jPanelEcran3EspacementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
-        jPanel46Layout.setVerticalGroup(
-            jPanel46Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanelEcran3EspacementLayout.setVerticalGroup(
+            jPanelEcran3EspacementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
@@ -827,76 +849,27 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 10;
         gridBagConstraints.weighty = 3.0;
-        jPanel45.add(jPanel46, gridBagConstraints);
+        jPanelEcran3Centre.add(jPanelEcran3Espacement, gridBagConstraints);
 
-        jLabel23.setText("ouverture");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.weighty = 1.0;
-        jPanel45.add(jLabel23, gridBagConstraints);
+        jPanelEcran3.add(jPanelEcran3Centre, java.awt.BorderLayout.CENTER);
 
-        jLabel24.setText("gastronomie");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.weightx = 0.1;
-        gridBagConstraints.weighty = 1.0;
-        jPanel45.add(jLabel24, gridBagConstraints);
+        jTabbedPanePrincipal.addTab("tab5", jPanelEcran3);
 
-        jLabel25.setText("culture");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 9;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.weighty = 1.0;
-        jPanel45.add(jLabel25, gridBagConstraints);
+        getContentPane().add(jTabbedPanePrincipal, java.awt.BorderLayout.CENTER);
 
-        javax.swing.GroupLayout jPanel44Layout = new javax.swing.GroupLayout(jPanel44);
-        jPanel44.setLayout(jPanel44Layout);
-        jPanel44Layout.setHorizontalGroup(
-            jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
-            .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel44Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel45, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        jPanel44Layout.setVerticalGroup(
-            jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-            .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel44Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel45, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        jMenuFichier.setText("Fichier");
+        jMenuBarPrincipale.add(jMenuFichier);
 
-        jPanel39.add(jPanel44, java.awt.BorderLayout.CENTER);
-
-        jTabbedPane1.addTab("tab5", jPanel39);
-
-        getContentPane().add(jTabbedPane1, java.awt.BorderLayout.CENTER);
-
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
-
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(jMenuBarPrincipale);
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButtonAccueilImporterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAccueilImporterActionPerformed
         int centerX = 400;    
 		int centerY = 225; 
-		Graphics2D drawFx = (Graphics2D)jPanel18.getGraphics();
+		Graphics2D drawFx = (Graphics2D)jPanelAccueilCentreHaut.getGraphics();
 		
 		
 		int r = 200;
@@ -932,7 +905,7 @@ public class Fenetre extends javax.swing.JFrame {
 			int posY = (int) (r * Math.sin(angle));
 			System.out.println(angle + " " + posX + " " + posY);
 			JLabel sommetEnCours = new JLabel();
-			jPanel18.add(sommetEnCours);
+			jPanelAccueilCentreHaut.add(sommetEnCours);
 			sommetEnCours.setText(graphe.get(i));
 			sommetEnCours.setFont(new Font("Helvetica Neue", Font.PLAIN, 10));
 			sommetEnCours.setVisible(true);
@@ -941,7 +914,7 @@ public class Fenetre extends javax.swing.JFrame {
 			sommetEnCours.setHorizontalAlignment(JLabel.CENTER);
 		}
 
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButtonAccueilImporterActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -979,105 +952,103 @@ public class Fenetre extends javax.swing.JFrame {
 	}
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
-    private javax.swing.JComboBox<String> jComboBox6;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList2;
-    private javax.swing.JList<String> jList3;
-    private javax.swing.JList<String> jList4;
-    private javax.swing.JList<String> jList5;
-    private javax.swing.JList<String> jList6;
-    private javax.swing.JList<String> jList7;
-    private javax.swing.JList<String> jList9;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel18;
-    private javax.swing.JPanel jPanel19;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel20;
-    private javax.swing.JPanel jPanel21;
-    private javax.swing.JPanel jPanel22;
-    private javax.swing.JPanel jPanel23;
-    private javax.swing.JPanel jPanel24;
-    private javax.swing.JPanel jPanel25;
-    private javax.swing.JPanel jPanel26;
-    private javax.swing.JPanel jPanel27;
-    private javax.swing.JPanel jPanel28;
-    private javax.swing.JPanel jPanel29;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel30;
-    private javax.swing.JPanel jPanel31;
-    private javax.swing.JPanel jPanel32;
-    private javax.swing.JPanel jPanel33;
-    private javax.swing.JPanel jPanel34;
-    private javax.swing.JPanel jPanel35;
-    private javax.swing.JPanel jPanel36;
-    private javax.swing.JPanel jPanel37;
-    private javax.swing.JPanel jPanel38;
-    private javax.swing.JPanel jPanel39;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel40;
-    private javax.swing.JPanel jPanel41;
-    private javax.swing.JPanel jPanel42;
-    private javax.swing.JPanel jPanel43;
-    private javax.swing.JPanel jPanel44;
-    private javax.swing.JPanel jPanel45;
-    private javax.swing.JPanel jPanel46;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JScrollPane jScrollPane9;
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JButton jButtonAccueilImporter;
+    private javax.swing.JButton jButtonEcran2Valider;
+    private javax.swing.JButton jButtonEcran3Valider;
+    private javax.swing.JComboBox<String> jComboBoxEcran1DroiteChoix;
+    private javax.swing.JComboBox<String> jComboBoxEcran1GaucheChoix;
+    private javax.swing.JComboBox<String> jComboBoxEcran2Choix1;
+    private javax.swing.JComboBox<String> jComboBoxEcran2Choix2;
+    private javax.swing.JComboBox<String> jComboBoxEcran3Choix1;
+    private javax.swing.JComboBox<String> jComboBoxEcran3Choix2;
+    private javax.swing.JLabel jLabelEcran0Autoroutes;
+    private javax.swing.JLabel jLabelEcran0Departementales;
+    private javax.swing.JLabel jLabelEcran0Loisirs;
+    private javax.swing.JLabel jLabelEcran0Nationales;
+    private javax.swing.JLabel jLabelEcran0Restaurants;
+    private javax.swing.JLabel jLabelEcran0Titre;
+    private javax.swing.JLabel jLabelEcran0Villes;
+    private javax.swing.JLabel jLabelEcran1DroiteChoix;
+    private javax.swing.JLabel jLabelEcran1DroiteResultat;
+    private javax.swing.JLabel jLabelEcran1DroiteTitre;
+    private javax.swing.JLabel jLabelEcran1GaucheChoix;
+    private javax.swing.JLabel jLabelEcran1GaucheResultat;
+    private javax.swing.JLabel jLabelEcran1GaucheTitre;
+    private javax.swing.JLabel jLabelEcran2Choix1;
+    private javax.swing.JLabel jLabelEcran2Choix2;
+    private javax.swing.JLabel jLabelEcran2InfoResultat;
+    private javax.swing.JLabel jLabelEcran2Resultat;
+    private javax.swing.JLabel jLabelEcran2Titre;
+    private javax.swing.JLabel jLabelEcran3Choix1;
+    private javax.swing.JLabel jLabelEcran3Choix2;
+    private javax.swing.JLabel jLabelEcran3InfoResultat;
+    private javax.swing.JLabel jLabelEcran3ResultatCulture;
+    private javax.swing.JLabel jLabelEcran3ResultatGastronomie;
+    private javax.swing.JLabel jLabelEcran3ResultatOuverture;
+    private javax.swing.JLabel jLabelEcran3Titre;
+    private javax.swing.JList<String> jListEcran0Autoroutes;
+    private javax.swing.JList<String> jListEcran0Departementales;
+    private javax.swing.JList<String> jListEcran0Loisirs;
+    private javax.swing.JList<String> jListEcran0Nationales;
+    private javax.swing.JList<String> jListEcran0Restaurants;
+    private javax.swing.JList<String> jListEcran0Villes;
+    private javax.swing.JList<String> jListEcran1DroiteResultat;
+    private javax.swing.JList<String> jListEcran1GaucheResultat;
+    private javax.swing.JMenuBar jMenuBarPrincipale;
+    private javax.swing.JMenu jMenuFichier;
+    private javax.swing.JPanel jPanelAccueil;
+    private javax.swing.JPanel jPanelAccueilCentre;
+    private javax.swing.JPanel jPanelAccueilCentreBas;
+    private javax.swing.JPanel jPanelAccueilCentreBasEst;
+    private javax.swing.JPanel jPanelAccueilCentreBasNord;
+    private javax.swing.JPanel jPanelAccueilCentreBasOuest;
+    private javax.swing.JPanel jPanelAccueilCentreBasSud;
+    private javax.swing.JPanel jPanelAccueilCentreHaut;
+    private javax.swing.JPanel jPanelAccueilEst;
+    private javax.swing.JPanel jPanelAccueilOuest;
+    private javax.swing.JPanel jPanelAccueilSud;
+    private javax.swing.JPanel jPanelEcran0;
+    private javax.swing.JPanel jPanelEcran0Autoroutes;
+    private javax.swing.JPanel jPanelEcran0Centre;
+    private javax.swing.JPanel jPanelEcran0CentreBas;
+    private javax.swing.JPanel jPanelEcran0CentreHaut;
+    private javax.swing.JPanel jPanelEcran0Departementales;
+    private javax.swing.JPanel jPanelEcran0Est;
+    private javax.swing.JPanel jPanelEcran0Loisirs;
+    private javax.swing.JPanel jPanelEcran0Nationales;
+    private javax.swing.JPanel jPanelEcran0Ouest;
+    private javax.swing.JPanel jPanelEcran0Restaurants;
+    private javax.swing.JPanel jPanelEcran0Sud;
+    private javax.swing.JPanel jPanelEcran0Villes;
+    private javax.swing.JPanel jPanelEcran1;
+    private javax.swing.JPanel jPanelEcran1Centre;
+    private javax.swing.JPanel jPanelEcran1CentreDroite;
+    private javax.swing.JPanel jPanelEcran1CentreGauche;
+    private javax.swing.JPanel jPanelEcran1DroiteEspacement;
+    private javax.swing.JPanel jPanelEcran1Est;
+    private javax.swing.JPanel jPanelEcran1GaucheEspacement;
+    private javax.swing.JPanel jPanelEcran1Ouest;
+    private javax.swing.JPanel jPanelEcran1Sud;
+    private javax.swing.JPanel jPanelEcran2;
+    private javax.swing.JPanel jPanelEcran2Centre;
+    private javax.swing.JPanel jPanelEcran2Espacement;
+    private javax.swing.JPanel jPanelEcran2Est;
+    private javax.swing.JPanel jPanelEcran2Ouest;
+    private javax.swing.JPanel jPanelEcran2Sud;
+    private javax.swing.JPanel jPanelEcran3;
+    private javax.swing.JPanel jPanelEcran3Centre;
+    private javax.swing.JPanel jPanelEcran3Espacement;
+    private javax.swing.JPanel jPanelEcran3Est;
+    private javax.swing.JPanel jPanelEcran3Ouest;
+    private javax.swing.JPanel jPanelEcran3Sud;
+    private javax.swing.JScrollPane jScrollPaneEcran0Autoroutes;
+    private javax.swing.JScrollPane jScrollPaneEcran0Departementales;
+    private javax.swing.JScrollPane jScrollPaneEcran0Loisirs;
+    private javax.swing.JScrollPane jScrollPaneEcran0Nationales;
+    private javax.swing.JScrollPane jScrollPaneEcran0Restaurants;
+    private javax.swing.JScrollPane jScrollPaneEcran0Villes;
+    private javax.swing.JScrollPane jScrollPaneEcran1DroiteResultat;
+    private javax.swing.JScrollPane jScrollPaneEcran1GaucheResultat;
+    private javax.swing.JTabbedPane jTabbedPanePrincipal;
     // End of variables declaration//GEN-END:variables
 }
