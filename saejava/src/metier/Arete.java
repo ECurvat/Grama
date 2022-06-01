@@ -21,7 +21,7 @@ public class Arete {
 	
 	@Override
 	public String toString() {
-		return "Arête : " + "Type = " + type + ", Longueur = " + longueur + "km";
+		return type + ", " + longueur;
 	}
 
 	public String getType() {

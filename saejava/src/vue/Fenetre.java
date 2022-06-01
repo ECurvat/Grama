@@ -5,6 +5,7 @@ import java.awt.Graphics2D;
 import java.io.File;
 import java.io.IOException;
 import static java.lang.Math.PI;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
@@ -49,6 +50,104 @@ public class Fenetre extends javax.swing.JFrame {
 	
 	public Fenetre() {
 		initComponents();
+	}
+	
+	public void importer() {
+		if (jButtonAccueilImporter.getText().equals("Importer un graphe")) {
+			JFileChooser choixFichier = new JFileChooser();
+			int option = choixFichier.showOpenDialog(null);
+			if(option == JFileChooser.APPROVE_OPTION){
+				try {
+					File file = choixFichier.getSelectedFile();
+					graphePrincipal = new Graphe(file.getName());
+					jTabbedPanePrincipal.setEnabled(true);
+
+					int nbSommets = graphePrincipal.comptageSommets().get(0);
+					int nbVilles = graphePrincipal.comptageSommets().get(1);
+					int nbRestaurants = graphePrincipal.comptageSommets().get(2);
+					int nbLoisir = graphePrincipal.comptageSommets().get(3);
+
+					jLabelEcran0Villes.setText(nbVilles+" villes");
+					jLabelEcran0Restaurants.setText(nbRestaurants+" restaurants");
+					jLabelEcran0Loisirs.setText(nbLoisir+" lieux de loisir");
+
+					int nbAretes = graphePrincipal.comptageAretes().get(0);
+					int nbAutoroutes = graphePrincipal.comptageAretes().get(1);
+					int nbNationales = graphePrincipal.comptageAretes().get(2);
+					int nbDepartmentales = graphePrincipal.comptageAretes().get(3);
+
+					jLabelEcran0Autoroutes.setText(nbAutoroutes+" Autoroutes");
+					jLabelEcran0Nationales.setText(nbNationales+" Nationales");
+					jLabelEcran0Departementales.setText(nbDepartmentales+" Departementales");
+
+					jLabelEcran0Titre.setText("Informations sur le graphe : " + nbSommets + " sommets et " + nbAretes + " arêtes");
+
+					modeleVilles.ajouterSommets(graphePrincipal.trouverSommetsParType("V"));
+					modeleRestaurants.ajouterSommets(graphePrincipal.trouverSommetsParType("R"));
+					modeleLoisirs.ajouterSommets(graphePrincipal.trouverSommetsParType("L"));
+
+					modeleAutoroutes.ajouterAretes(graphePrincipal.trouverAretesParType("A"));
+					modeleNationales.ajouterAretes(graphePrincipal.trouverAretesParType("N"));
+					modeleDepartementales.ajouterAretes(graphePrincipal.trouverAretesParType("D"));
+					
+					for(Sommet elem :graphePrincipal.getListeSommet()){
+						modeleEcran1SommetsCombo.addElement(elem);
+						modeleEcran2SommetsChoix1Combo.addElement(elem);
+						modeleEcran2SommetsChoix2Combo.addElement(elem);
+					}
+					
+					for(Sommet elem:graphePrincipal.getListeSommet()){
+						for(Arete arete:elem.getSuccesseurs()){
+							modeleEcran1AretesCombo.addElement(arete);
+						}	
+					}
+					
+					for(Sommet elem : graphePrincipal.getListeSommet()){
+						modeleEcran3Choix1Combo.addElement(elem);
+					}
+					
+					for(Sommet elem :graphePrincipal.getListeSommet()){
+						modeleEcran3Choix2Combo.addElement(elem);
+					}
+					
+					int centerX = 400;    
+					int centerY = 225; 
+					int r = 200;
+					Graphics2D drawFx = (Graphics2D)jPanelAccueilCentreHaut.getGraphics();
+					List<Sommet> graphe = graphePrincipal.getListeSommet();
+
+					drawFx.drawOval(centerX-200, centerY-200, 400, 400);
+					for(int i = 0; i < graphe.size(); i++) {
+						double angle = (PI * 2 / graphe.size() * i);
+						int posX = (int) (r * Math.cos(angle));
+						int posY = (int) (r * Math.sin(angle));
+						System.out.println(angle + " " + posX + " " + posY);
+						JLabel sommetEnCours = new JLabel();
+						jPanelAccueilCentreHaut.add(sommetEnCours);
+						sommetEnCours.setText(graphe.get(i).getNom());
+						sommetEnCours.setFont(new Font("Helvetica Neue", Font.PLAIN, 10));
+						sommetEnCours.setVisible(true);
+						sommetEnCours.setLocation(centerX + posX - 50, centerY + posY - 15);
+						sommetEnCours.setSize(100, 30);
+						sommetEnCours.setHorizontalAlignment(JLabel.CENTER);
+					}
+					jButtonAccueilImporter.setText("Supprimer le graphe");
+					jMenuItemFichierImporter.setEnabled(false);
+				} catch (IOException e) {
+					System.out.println("Erreur dans l'importation : " + e.getMessage());
+				}
+			}
+		} else {
+			jTabbedPanePrincipal.setEnabled(false);
+			modeleVilles.viderModele();
+			modeleLoisirs.viderModele();
+			modeleRestaurants.viderModele();
+			modeleAutoroutes.viderModele();
+			modeleDepartementales.viderModele();
+			modeleNationales.viderModele();
+			jButtonAccueilImporter.setText("Importer un graphe");
+			jMenuItemFichierImporter.setEnabled(true);
+		}
 	}
 
 	/**
@@ -157,6 +256,7 @@ public class Fenetre extends javax.swing.JFrame {
         jPanelEcran3Espacement = new javax.swing.JPanel();
         jMenuBarPrincipale = new javax.swing.JMenuBar();
         jMenuFichier = new javax.swing.JMenu();
+        jMenuItemFichierImporter = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1000, 600));
@@ -469,6 +569,11 @@ public class Fenetre extends javax.swing.JFrame {
         jPanelEcran1CentreGauche.add(jLabelEcran1GaucheChoix, gridBagConstraints);
 
         jComboBoxEcran1GaucheChoix.setModel(modeleEcran1SommetsCombo);
+        jComboBoxEcran1GaucheChoix.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBoxEcran1GaucheChoixItemStateChanged(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -536,6 +641,11 @@ public class Fenetre extends javax.swing.JFrame {
         jPanelEcran1CentreDroite.add(jLabelEcran1DroiteChoix, gridBagConstraints);
 
         jComboBoxEcran1DroiteChoix.setModel(modeleEcran1AretesCombo);
+        jComboBoxEcran1DroiteChoix.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBoxEcran1DroiteChoixItemStateChanged(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -585,7 +695,7 @@ public class Fenetre extends javax.swing.JFrame {
 
         jPanelEcran1.add(jPanelEcran1Centre, java.awt.BorderLayout.CENTER);
 
-        jTabbedPanePrincipal.addTab("0-distance", jPanelEcran1);
+        jTabbedPanePrincipal.addTab("1-distance", jPanelEcran1);
 
         jPanelEcran2.setLayout(new java.awt.BorderLayout());
 
@@ -638,7 +748,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelEcran2Centre.add(jLabelEcran2Choix1, gridBagConstraints);
 
-        jComboBoxEcran2Choix1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxEcran2Choix1.setModel(modeleEcran2SommetsChoix1Combo);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -654,7 +764,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelEcran2Centre.add(jLabelEcran2Choix2, gridBagConstraints);
 
-        jComboBoxEcran2Choix2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxEcran2Choix2.setModel(modeleEcran2SommetsChoix2Combo);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
@@ -663,6 +773,11 @@ public class Fenetre extends javax.swing.JFrame {
         jPanelEcran2Centre.add(jComboBoxEcran2Choix2, gridBagConstraints);
 
         jButtonEcran2Valider.setText("Vérifier la 2-distance");
+        jButtonEcran2Valider.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEcran2ValiderActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
@@ -676,8 +791,6 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 1.0;
         jPanelEcran2Centre.add(jLabelEcran2InfoResultat, gridBagConstraints);
-
-        jLabelEcran2Resultat.setText("X et X sont à une 2-distance / ne sont pas à une 2-distance");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 7;
@@ -761,7 +874,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelEcran3Centre.add(jLabelEcran3Choix1, gridBagConstraints);
 
-        jComboBoxEcran3Choix1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxEcran3Choix1.setModel(modeleEcran3Choix1Combo);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
@@ -777,7 +890,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelEcran3Centre.add(jLabelEcran3Choix2, gridBagConstraints);
 
-        jComboBoxEcran3Choix2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxEcran3Choix2.setModel(modeleEcran3Choix2Combo);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
@@ -786,6 +899,11 @@ public class Fenetre extends javax.swing.JFrame {
         jPanelEcran3Centre.add(jComboBoxEcran3Choix2, gridBagConstraints);
 
         jButtonEcran3Valider.setText("Comparer");
+        jButtonEcran3Valider.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEcran3ValiderActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
@@ -799,16 +917,12 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 1.0;
         jPanelEcran3Centre.add(jLabelEcran3InfoResultat, gridBagConstraints);
-
-        jLabelEcran3ResultatOuverture.setText("ouverture");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 7;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 1.0;
         jPanelEcran3Centre.add(jLabelEcran3ResultatOuverture, gridBagConstraints);
-
-        jLabelEcran3ResultatGastronomie.setText("gastronomie");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 8;
@@ -816,8 +930,6 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weightx = 0.1;
         gridBagConstraints.weighty = 1.0;
         jPanelEcran3Centre.add(jLabelEcran3ResultatGastronomie, gridBagConstraints);
-
-        jLabelEcran3ResultatCulture.setText("culture");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 9;
@@ -852,6 +964,15 @@ public class Fenetre extends javax.swing.JFrame {
         getContentPane().add(jTabbedPanePrincipal, java.awt.BorderLayout.CENTER);
 
         jMenuFichier.setText("Fichier");
+
+        jMenuItemFichierImporter.setText("Importer");
+        jMenuItemFichierImporter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemFichierImporterActionPerformed(evt);
+            }
+        });
+        jMenuFichier.add(jMenuItemFichierImporter);
+
         jMenuBarPrincipale.add(jMenuFichier);
 
         setJMenuBar(jMenuBarPrincipale);
@@ -861,100 +982,81 @@ public class Fenetre extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonAccueilImporterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAccueilImporterActionPerformed
-		if (jButtonAccueilImporter.getText().equals("Importer un graphe")) {
-			JFileChooser choixFichier = new JFileChooser();
-			int option = choixFichier.showOpenDialog(null);
-			if(option == JFileChooser.APPROVE_OPTION){
-				try {
-					File file = choixFichier.getSelectedFile();
-					graphePrincipal = new Graphe(file.getName());
-					jTabbedPanePrincipal.setEnabled(true);
+		importer();
+    }//GEN-LAST:event_jButtonAccueilImporterActionPerformed
 
-					int nbSommets = graphePrincipal.comptageSommets().get(0);
-					int nbVilles = graphePrincipal.comptageSommets().get(1);
-					int nbRestaurants = graphePrincipal.comptageSommets().get(2);
-					int nbLoisir = graphePrincipal.comptageSommets().get(3);
-
-					jLabelEcran0Villes.setText(nbVilles+" villes");
-					jLabelEcran0Restaurants.setText(nbRestaurants+" restaurants");
-					jLabelEcran0Loisirs.setText(nbLoisir+" lieux de loisir");
-
-					int nbAretes = graphePrincipal.comptageAretes().get(0);
-					int nbAutoroutes = graphePrincipal.comptageAretes().get(1);
-					int nbNationales = graphePrincipal.comptageAretes().get(2);
-					int nbDepartmentales = graphePrincipal.comptageAretes().get(3);
-
-					jLabelEcran0Autoroutes.setText(nbAutoroutes+" Autoroutes");
-					jLabelEcran0Nationales.setText(nbNationales+" Nationales");
-					jLabelEcran0Departementales.setText(nbDepartmentales+" Departementales");
-
-					jLabelEcran0Titre.setText("Informations sur le graphe : " + nbSommets + " sommets et " + nbAretes + " arêtes");
-
-					modeleVilles.ajouterSommets(graphePrincipal.trouverSommetsParType("V"));
-					modeleRestaurants.ajouterSommets(graphePrincipal.trouverSommetsParType("R"));
-					modeleLoisirs.ajouterSommets(graphePrincipal.trouverSommetsParType("L"));
-
-					modeleAutoroutes.ajouterAretes(graphePrincipal.trouverAretesParType("A"));
-					modeleNationales.ajouterAretes(graphePrincipal.trouverAretesParType("N"));
-					modeleDepartementales.ajouterAretes(graphePrincipal.trouverAretesParType("D"));
-					
-					for(Sommet elem :graphePrincipal.getListeSommet()){
-						modeleEcran1SommetsCombo.addElement(elem);
-						modeleEcran2SommetsChoix1Combo.addElement(elem);
-						modeleEcran2SommetsChoix2Combo.addElement(elem);
-					}
-					
-					for(Sommet elem:graphePrincipal.getListeSommet()){
-						for(Arete arete:elem.getSuccesseurs()){
-							modeleEcran1AretesCombo.addElement(arete);
-						}	
-					}
-					
-					for(Sommet elem : graphePrincipal.getListeSommet()){
-						modeleEcran3Choix1Combo.addElement(elem);
-					}
-					
-					for(Sommet elem :graphePrincipal.getListeSommet()){
-						modeleEcran3Choix2Combo.addElement(elem);
-					}
-					
-					int centerX = 400;    
-					int centerY = 225; 
-					int r = 200;
-					Graphics2D drawFx = (Graphics2D)jPanelAccueilCentreHaut.getGraphics();
-					List<Sommet> graphe = graphePrincipal.getListeSommet();
-
-					drawFx.drawOval(centerX-200, centerY-200, 400, 400);
-					for(int i = 0; i < graphe.size(); i++) {
-						double angle = (PI * 2 / graphe.size() * i);
-						int posX = (int) (r * Math.cos(angle));
-						int posY = (int) (r * Math.sin(angle));
-						System.out.println(angle + " " + posX + " " + posY);
-						JLabel sommetEnCours = new JLabel();
-						jPanelAccueilCentreHaut.add(sommetEnCours);
-						sommetEnCours.setText(graphe.get(i).getNom());
-						sommetEnCours.setFont(new Font("Helvetica Neue", Font.PLAIN, 10));
-						sommetEnCours.setVisible(true);
-						sommetEnCours.setLocation(centerX + posX - 50, centerY + posY - 15);
-						sommetEnCours.setSize(100, 30);
-						sommetEnCours.setHorizontalAlignment(JLabel.CENTER);
-					}
-					jButtonAccueilImporter.setText("Supprimer le graphe");
-				} catch (IOException e) {
-					System.out.println("Erreur dans l'importation : " + e.getMessage());
+    private void jComboBoxEcran1GaucheChoixItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxEcran1GaucheChoixItemStateChanged
+        modeleEcran1Sommets.clear();
+		for(Sommet s:graphePrincipal.getListeSommet()){
+		   if(jComboBoxEcran1GaucheChoix.getSelectedItem()==s){
+			   for(Arete elem:s.getSuccesseurs()){
+					modeleEcran1Sommets.addElement(elem.getDestination());
 				}
 			}
-		} else {
-			jTabbedPanePrincipal.setEnabled(false);
-			modeleVilles.viderModele();
-			modeleLoisirs.viderModele();
-			modeleRestaurants.viderModele();
-			modeleAutoroutes.viderModele();
-			modeleDepartementales.viderModele();
-			modeleNationales.viderModele();
-			jButtonAccueilImporter.setText("Importer un graphe");
 		}
-    }//GEN-LAST:event_jButtonAccueilImporterActionPerformed
+    }//GEN-LAST:event_jComboBoxEcran1GaucheChoixItemStateChanged
+
+    private void jComboBoxEcran1DroiteChoixItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxEcran1DroiteChoixItemStateChanged
+		Object val = jComboBoxEcran1DroiteChoix.getSelectedItem();
+		modeleEcran1Aretes.clear();
+		for(Sommet elem:graphePrincipal.trouverSommetsRelies((Arete) val)){
+			modeleEcran1Aretes.addElement(elem);
+		}
+    }//GEN-LAST:event_jComboBoxEcran1DroiteChoixItemStateChanged
+
+    private void jButtonEcran2ValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEcran2ValiderActionPerformed
+        Sommet s1 = (Sommet) jComboBoxEcran2Choix1.getSelectedItem();
+		Sommet s2 = (Sommet) jComboBoxEcran2Choix2.getSelectedItem();
+		boolean resultat = graphePrincipal.rechercher2Distance(s1, s2);
+		String completion;
+		if (resultat) completion = "sont";
+		else completion = "ne sont pas";
+		jLabelEcran2Resultat.setText("Les sommets " + s1.getNom() + " et " + s2.getNom() + " " + completion + " situés à une 2-distance exactement l'un de l'autre");
+    }//GEN-LAST:event_jButtonEcran2ValiderActionPerformed
+
+    private void jButtonEcran3ValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEcran3ValiderActionPerformed
+        List<Integer> resultat = new ArrayList<>();
+		Sommet choix1 = (Sommet)jComboBoxEcran3Choix1.getSelectedItem();
+		Sommet choix2 = (Sommet)jComboBoxEcran3Choix2.getSelectedItem();
+		resultat = graphePrincipal.comparerOCG(choix1, choix2);
+		int resultatOuverture = resultat.get(0);
+		int resultatGastronomie = resultat.get(1);
+		int resultatCulture = resultat.get(2);
+		String comparaisonOuverture = "";
+		String comparaisonGastronomie = "";
+		String comparaisonCulture = "";
+		switch (resultatOuverture) {
+			case -1: comparaisonOuverture = "est moins";
+				break;
+			case 0: comparaisonOuverture = "est autant";
+				break;
+			case 1: comparaisonOuverture = "est plus";
+				break;
+		}
+		switch (resultatGastronomie) {
+			case -1: comparaisonGastronomie = "est moins";
+				break;
+			case 0: comparaisonGastronomie = "est autant";
+				break;
+			case 1: comparaisonGastronomie = "est plus";
+				break;
+		}
+		switch (resultatCulture) {
+			case -1: comparaisonCulture = "est moins";
+				break;
+			case 0: comparaisonCulture = "est autant";
+				break;
+			case 1: comparaisonCulture = "est plus";
+				break;
+		}
+		jLabelEcran3ResultatOuverture.setText(choix1.getNom() + " " + comparaisonOuverture + " ouvert que " + choix2.getNom());
+		jLabelEcran3ResultatGastronomie.setText(choix1.getNom() + " " + comparaisonGastronomie + " gastronomique que " + choix2.getNom());
+		jLabelEcran3ResultatCulture.setText(choix1.getNom() + " " + comparaisonCulture + " culturel que " + choix2.getNom());
+    }//GEN-LAST:event_jButtonEcran3ValiderActionPerformed
+
+    private void jMenuItemFichierImporterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemFichierImporterActionPerformed
+        importer();
+    }//GEN-LAST:event_jMenuItemFichierImporterActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -1036,6 +1138,7 @@ public class Fenetre extends javax.swing.JFrame {
     private javax.swing.JList<String> jListEcran1GaucheResultat;
     private javax.swing.JMenuBar jMenuBarPrincipale;
     private javax.swing.JMenu jMenuFichier;
+    private javax.swing.JMenuItem jMenuItemFichierImporter;
     private javax.swing.JPanel jPanelAccueil;
     private javax.swing.JPanel jPanelAccueilCentre;
     private javax.swing.JPanel jPanelAccueilCentreBas;

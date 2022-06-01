@@ -23,7 +23,7 @@ public class Sommet {
 	
 	@Override
 	public String toString() {
-		return "Sommet : " + "Type = " + type + ", Nom = " + nom;
+		return type + ", " + nom;
 	}
 
 	@Override
