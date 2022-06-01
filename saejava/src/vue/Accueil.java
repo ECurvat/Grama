@@ -159,6 +159,7 @@ public class Accueil extends javax.swing.JFrame{
         jPanelEcran0.setEnabled(false);
 
         jListEcran0Villes.setModel(modeleVille);
+        jListEcran0Villes.setToolTipText("");
         jScrollPaneEcran0Villes.setViewportView(jListEcran0Villes);
 
         jListEcran0Loisirs.setModel(modeleLoisir);
@@ -694,16 +695,6 @@ public class Accueil extends javax.swing.JFrame{
 		else{
 			jLabelEcran3ResultatCulture.setText("vous avez selectionné deux sommet identiques");
 		}
-		
-			
-			
-		
-			
-			
-		
-		
-		
-		
     }//GEN-LAST:event_jButtonEcran3resultatActionPerformed
 
 	/**
