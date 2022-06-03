@@ -1,5 +1,6 @@
 package vue;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.io.File;
@@ -114,6 +115,7 @@ public class Fenetre extends javax.swing.JFrame {
 					int centerY = 225; 
 					int r = 200;
 					Graphics2D drawFx = (Graphics2D)jPanelAccueilCentreHaut.getGraphics();
+					Graphics2D drawFx2 = (Graphics2D)jPanelAccueilCentreHaut.getGraphics();					
 					List<Sommet> graphe = graphePrincipal.getListeSommet();
 
 					drawFx.drawOval(centerX-200, centerY-200, 400, 400);
@@ -121,7 +123,6 @@ public class Fenetre extends javax.swing.JFrame {
 						double angle = (PI * 2 / graphe.size() * i);
 						int posX = (int) (r * Math.cos(angle));
 						int posY = (int) (r * Math.sin(angle));
-						System.out.println(angle + " " + posX + " " + posY);
 						JLabel sommetEnCours = new JLabel();
 						jPanelAccueilCentreHaut.add(sommetEnCours);
 						sommetEnCours.setText(graphe.get(i).getNom());
@@ -130,7 +131,17 @@ public class Fenetre extends javax.swing.JFrame {
 						sommetEnCours.setLocation(centerX + posX - 50, centerY + posY - 15);
 						sommetEnCours.setSize(100, 30);
 						sommetEnCours.setHorizontalAlignment(JLabel.CENTER);
+						graphe.get(i).setPositionX(centerX + posX - 50);
+						graphe.get(i).setPositionY(centerY + posY - 15);
 					}
+					
+					for(Arete item : graphePrincipal.trouverAretesParType("A")) {
+						Sommet debut = graphePrincipal.trouverSommetsRelies(item).get(0);
+						Sommet fin = graphePrincipal.trouverSommetsRelies(item).get(1);
+						drawFx2.setColor(Color.RED);
+						drawFx2.drawLine(debut.getPositionX(), debut.getPositionY(), fin.getPositionX(), fin.getPositionY());
+					}
+					
 					jButtonAccueilImporter.setText("Supprimer le graphe");
 					jMenuItemFichierImporter.setEnabled(false);
 				} catch (IOException e) {

@@ -129,8 +129,12 @@ public class Graphe {
 			return false;
 		}
 		for(Arete item : premier.getSuccesseurs()) {
-			if(rechercher1Distance(item.getDestination(), deuxieme)) {
-				return true;
+			// parcourir les aretes de item.getDestination
+			// si la destination n'est pas égale à premier et égale à deuxieme alors true
+			for(Arete deuxiemeSaut : item.getDestination().getSuccesseurs()) {
+				if(!(deuxiemeSaut.getDestination().equals(premier)) && deuxiemeSaut.getDestination().equals(deuxieme)) {
+					return true;
+				}
 			}
 		}
 		return false;

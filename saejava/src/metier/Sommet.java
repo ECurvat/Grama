@@ -11,6 +11,8 @@ public class Sommet {
 	private String type;
 	private String nom;
 	private List<Arete> successeurs = new ArrayList<>();
+	private int positionX;
+	private int positionY;
 
 	public Sommet(String type, String nom) {
 		this.type = type;
@@ -41,4 +43,21 @@ public class Sommet {
 	public String getNom() {
 		return nom;
 	}
+	
+	public void setPositionX(int positionX) {
+		this.positionX = positionX;
+	}
+
+	public void setPositionY(int positionY) {
+		this.positionY = positionY;
+	}
+
+	public int getPositionX() {
+		return positionX;
+	}
+
+	public int getPositionY() {
+		return positionY;
+	}
+	
 }

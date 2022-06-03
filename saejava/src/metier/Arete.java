@@ -40,4 +40,7 @@ public class Arete {
 		Arete p = (Arete) o;
 		return this.type.equals(p.type) && this.longueur == p.longueur;
 	}
+
+	
+	
 }
