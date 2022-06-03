@@ -197,6 +197,7 @@ public class Graphe {
 	//pour le sommet en question on regarde tous ses voisins puis on regarde les voisins de ces voisins
 	
 	public List<Integer> comparerOCG(Sommet premier, Sommet deuxieme) {
+		System.out.println("PREMIER");
 		List<Integer> resultat = new ArrayList<>();
 		List<Sommet> eviterLesDoublons1 = new ArrayList<>();
 		eviterLesDoublons1.add(premier);
@@ -212,11 +213,27 @@ public class Graphe {
 						case "L" : nbLPremier++;
 									break;
 					}
+					System.out.println(parcours.getDestination());
 					eviterLesDoublons1.add(parcours.getDestination());
 				}
 			}
 		}
+		for(Arete item : premier.getSuccesseurs()) {
+			if(!eviterLesDoublons1.contains(item.getDestination())) {
+				switch (item.getDestination().getType()) {
+					case "V" : nbVPremier++;
+								break;
+					case "R" : nbRPremier++;
+								break;
+					case "L" : nbLPremier++;
+								break;
+				}
+				System.out.println(item.getDestination());
+				eviterLesDoublons1.add(item.getDestination());
+			}
+		}
 		
+		System.out.println("DEUXIEME");
 		List<Sommet> eviterLesDoublons2 = new ArrayList<>();
 		eviterLesDoublons2.add(deuxieme);
 		int nbVDeuxieme = 0, nbRDeuxieme = 0, nbLDeuxieme = 0;
@@ -231,8 +248,23 @@ public class Graphe {
 						case "L" : nbLDeuxieme++;
 									break;
 					}
+					System.out.println(parcours.getDestination());
 					eviterLesDoublons2.add(parcours.getDestination());
 				}
+			}
+		}
+		for(Arete item : deuxieme.getSuccesseurs()) {
+			if(!eviterLesDoublons2.contains(item.getDestination())) {
+				switch (item.getDestination().getType()) {
+					case "V" : nbVDeuxieme++;
+									break;
+					case "R" : nbRDeuxieme++;
+								break;
+					case "L" : nbLDeuxieme++;
+								break;
+				}
+				System.out.println(item.getDestination());
+				eviterLesDoublons2.add(item.getDestination());
 			}
 		}
 		

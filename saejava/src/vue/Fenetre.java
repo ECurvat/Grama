@@ -1019,7 +1019,7 @@ public class Fenetre extends javax.swing.JFrame {
         Sommet s1 = (Sommet) jComboBoxEcran2Choix1.getSelectedItem();
 		Sommet s2 = (Sommet) jComboBoxEcran2Choix2.getSelectedItem();
 		boolean resultat = graphePrincipal.rechercher2Distance(s1, s2);
-		String completion;
+		String completion;		
 		if (resultat) completion = "sont";
 		else completion = "ne sont pas";
 		jLabelEcran2Resultat.setText("Les sommets " + s1.getNom() + " et " + s2.getNom() + " " + completion + " situés à une 2-distance exactement l'un de l'autre");
