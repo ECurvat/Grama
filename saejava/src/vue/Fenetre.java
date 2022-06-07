@@ -1,17 +1,12 @@
 package vue;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics2D;
 import java.io.File;
 import java.io.IOException;
-import static java.lang.Math.PI;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
-import javax.swing.JLabel;
 import metier.Arete;
 import metier.Graphe;
 import metier.Sommet;
@@ -111,36 +106,34 @@ public class Fenetre extends javax.swing.JFrame {
 						modeleEcran3Choix2Combo.addElement(elem);
 					}
 					
-					int centerX = 400;    
-					int centerY = 225; 
-					int r = 200;
-					Graphics2D drawFx = (Graphics2D)jPanelAccueilCentreHaut.getGraphics();
-					Graphics2D drawFx2 = (Graphics2D)jPanelAccueilCentreHaut.getGraphics();					
-					List<Sommet> graphe = graphePrincipal.getListeSommet();
-
-					drawFx.drawOval(centerX-200, centerY-200, 400, 400);
-					for(int i = 0; i < graphe.size(); i++) {
-						double angle = (PI * 2 / graphe.size() * i);
-						int posX = (int) (r * Math.cos(angle));
-						int posY = (int) (r * Math.sin(angle));
-						JLabel sommetEnCours = new JLabel();
-						jPanelAccueilCentreHaut.add(sommetEnCours);
-						sommetEnCours.setText(graphe.get(i).getNom());
-						sommetEnCours.setFont(new Font("Helvetica Neue", Font.PLAIN, 10));
-						sommetEnCours.setVisible(true);
-						sommetEnCours.setLocation(centerX + posX - 50, centerY + posY - 15);
-						sommetEnCours.setSize(100, 30);
-						sommetEnCours.setHorizontalAlignment(JLabel.CENTER);
-						graphe.get(i).setPositionX(centerX + posX - 50);
-						graphe.get(i).setPositionY(centerY + posY - 15);
-					}
+					jPanelAccueilCentreHautSchema.setGraphePrincipal(graphePrincipal);
+//					Graphics2D drawFx = (Graphics2D)jPanelAccueilCentreHaut.getGraphics();
+//					Graphics2D drawFx2 = (Graphics2D)jPanelAccueilCentreHaut.getGraphics();					
+//					List<Sommet> graphe = graphePrincipal.getListeSommet();
+//
+//					drawFx.drawOval(centerX-200, centerY-200, 400, 400);
+//					for(int i = 0; i < graphe.size(); i++) {
+//						double angle = (PI * 2 / graphe.size() * i);
+//						int posX = (int) (r * Math.cos(angle));
+//						int posY = (int) (r * Math.sin(angle));
+//						JLabel sommetEnCours = new JLabel();
+//						jPanelAccueilCentreHaut.add(sommetEnCours);
+//						sommetEnCours.setText(graphe.get(i).getNom());
+//						sommetEnCours.setFont(new Font("Helvetica Neue", Font.PLAIN, 10));
+//						sommetEnCours.setVisible(true);
+//						sommetEnCours.setLocation(centerX + posX - 50, centerY + posY - 15);
+//						sommetEnCours.setSize(100, 30);
+//						sommetEnCours.setHorizontalAlignment(JLabel.CENTER);
+//						graphe.get(i).setPositionX(centerX + posX - 50);
+//						graphe.get(i).setPositionY(centerY + posY - 15);
+//					}
 					
-					for(Arete item : graphePrincipal.trouverAretesParType("A")) {
-						Sommet debut = graphePrincipal.trouverSommetsRelies(item).get(0);
-						Sommet fin = graphePrincipal.trouverSommetsRelies(item).get(1);
-						drawFx2.setColor(Color.RED);
-						drawFx2.drawLine(debut.getPositionX(), debut.getPositionY(), fin.getPositionX(), fin.getPositionY());
-					}
+//					for(Arete item : graphePrincipal.trouverAretesParType("A")) {
+//						Sommet debut = graphePrincipal.trouverSommetsRelies(item).get(0);
+//						Sommet fin = graphePrincipal.trouverSommetsRelies(item).get(1);
+//						drawFx2.setColor(Color.RED);
+//						drawFx2.drawLine(debut.getPositionX(), debut.getPositionY(), fin.getPositionX(), fin.getPositionY());
+//					}
 					
 					jButtonAccueilImporter.setText("Supprimer le graphe");
 					jMenuItemFichierImporter.setEnabled(false);
@@ -175,7 +168,7 @@ public class Fenetre extends javax.swing.JFrame {
         jPanelAccueilEst = new javax.swing.JPanel();
         jPanelAccueilSud = new javax.swing.JPanel();
         jPanelAccueilCentre = new javax.swing.JPanel();
-        jPanelAccueilCentreHaut = new javax.swing.JPanel();
+        jPanelAccueilCentreHautSchema = new vue.Schema();
         jPanelAccueilCentreBas = new javax.swing.JPanel();
         jPanelAccueilCentreBasEst = new javax.swing.JPanel();
         jPanelAccueilCentreBasOuest = new javax.swing.JPanel();
@@ -307,24 +300,25 @@ public class Fenetre extends javax.swing.JFrame {
 
         jPanelAccueilCentre.setLayout(new javax.swing.BoxLayout(jPanelAccueilCentre, javax.swing.BoxLayout.PAGE_AXIS));
 
-        jPanelAccueilCentreHaut.setMinimumSize(new java.awt.Dimension(0, 450));
-        jPanelAccueilCentreHaut.setPreferredSize(new java.awt.Dimension(800, 450));
+        jPanelAccueilCentreHautSchema.setMinimumSize(new java.awt.Dimension(0, 400));
+        jPanelAccueilCentreHautSchema.setPreferredSize(new java.awt.Dimension(800, 500));
 
-        javax.swing.GroupLayout jPanelAccueilCentreHautLayout = new javax.swing.GroupLayout(jPanelAccueilCentreHaut);
-        jPanelAccueilCentreHaut.setLayout(jPanelAccueilCentreHautLayout);
-        jPanelAccueilCentreHautLayout.setHorizontalGroup(
-            jPanelAccueilCentreHautLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanelAccueilCentreHautSchemaLayout = new javax.swing.GroupLayout(jPanelAccueilCentreHautSchema);
+        jPanelAccueilCentreHautSchema.setLayout(jPanelAccueilCentreHautSchemaLayout);
+        jPanelAccueilCentreHautSchemaLayout.setHorizontalGroup(
+            jPanelAccueilCentreHautSchemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanelAccueilCentreHautLayout.setVerticalGroup(
-            jPanelAccueilCentreHautLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 450, Short.MAX_VALUE)
+        jPanelAccueilCentreHautSchemaLayout.setVerticalGroup(
+            jPanelAccueilCentreHautSchemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 500, Short.MAX_VALUE)
         );
 
-        jPanelAccueilCentre.add(jPanelAccueilCentreHaut);
+        jPanelAccueilCentre.add(jPanelAccueilCentreHautSchema);
 
-        jPanelAccueilCentreBas.setMinimumSize(new java.awt.Dimension(278, 110));
-        jPanelAccueilCentreBas.setPreferredSize(new java.awt.Dimension(800, 110));
+        jPanelAccueilCentreBas.setMaximumSize(new java.awt.Dimension(2147483647, 100));
+        jPanelAccueilCentreBas.setMinimumSize(new java.awt.Dimension(278, 100));
+        jPanelAccueilCentreBas.setPreferredSize(new java.awt.Dimension(800, 100));
         jPanelAccueilCentreBas.setLayout(new java.awt.BorderLayout());
 
         javax.swing.GroupLayout jPanelAccueilCentreBasEstLayout = new javax.swing.GroupLayout(jPanelAccueilCentreBasEst);
@@ -335,7 +329,7 @@ public class Fenetre extends javax.swing.JFrame {
         );
         jPanelAccueilCentreBasEstLayout.setVerticalGroup(
             jPanelAccueilCentreBasEstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 70, Short.MAX_VALUE)
+            .addGap(0, 20, Short.MAX_VALUE)
         );
 
         jPanelAccueilCentreBas.add(jPanelAccueilCentreBasEst, java.awt.BorderLayout.LINE_END);
@@ -348,7 +342,7 @@ public class Fenetre extends javax.swing.JFrame {
         );
         jPanelAccueilCentreBasOuestLayout.setVerticalGroup(
             jPanelAccueilCentreBasOuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 70, Short.MAX_VALUE)
+            .addGap(0, 20, Short.MAX_VALUE)
         );
 
         jPanelAccueilCentreBas.add(jPanelAccueilCentreBasOuest, java.awt.BorderLayout.LINE_START);
@@ -992,10 +986,6 @@ public class Fenetre extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonAccueilImporterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAccueilImporterActionPerformed
-		importer();
-    }//GEN-LAST:event_jButtonAccueilImporterActionPerformed
-
     private void jComboBoxEcran1GaucheChoixItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxEcran1GaucheChoixItemStateChanged
         modeleEcran1Sommets.clear();
 		for(Sommet s:graphePrincipal.getListeSommet()){
@@ -1068,6 +1058,10 @@ public class Fenetre extends javax.swing.JFrame {
     private void jMenuItemFichierImporterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemFichierImporterActionPerformed
         importer();
     }//GEN-LAST:event_jMenuItemFichierImporterActionPerformed
+
+    private void jButtonAccueilImporterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAccueilImporterActionPerformed
+        importer();
+    }//GEN-LAST:event_jButtonAccueilImporterActionPerformed
 
 	/**
 	 * @param args the command line arguments
@@ -1157,7 +1151,7 @@ public class Fenetre extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelAccueilCentreBasNord;
     private javax.swing.JPanel jPanelAccueilCentreBasOuest;
     private javax.swing.JPanel jPanelAccueilCentreBasSud;
-    private javax.swing.JPanel jPanelAccueilCentreHaut;
+    private vue.Schema jPanelAccueilCentreHautSchema;
     private javax.swing.JPanel jPanelAccueilEst;
     private javax.swing.JPanel jPanelAccueilOuest;
     private javax.swing.JPanel jPanelAccueilSud;
