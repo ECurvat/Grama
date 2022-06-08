@@ -66,5 +66,7 @@ public class Test {
 		
 		//TEST POUR LE NOMBRE D'ARETE
 		System.out.println(test.comptageAretes());
-    }
+		//TEST POUR TROUVER L'ARETE AVEC UN POIDS MINIMAL D'UN SOMMET
+		System.out.println(test.touveMinSommet(test.getListeSommet()));
+	}
 }

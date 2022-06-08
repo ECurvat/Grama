@@ -279,4 +279,71 @@ public class Graphe {
 		resultat.add(comparaison);
 		return resultat;
 	}
+	
+	
+	public Sommet touveMinSommet(List<Sommet> list){
+		double mini = Double.POSITIVE_INFINITY;
+		Sommet sommetSelectione= null;
+		for(Sommet elem:list){
+			for(Arete ArreteDist:elem.getSuccesseurs()){
+				if(ArreteDist.getLongueur()<mini){
+					mini=ArreteDist.getLongueur();
+					sommetSelectione=elem;
+				}
+			}
+			
+		}
+		return sommetSelectione;
+	}
+	
+	public List<Arete> pDistanceSimple(Sommet depart,Sommet arrive){
+		
+		List<Double>listDistanceSommet=new ArrayList<>();
+		List<Sommet> listeSommetBase = new ArrayList<>();
+		List<Arete> areteGarder=new ArrayList<>();
+		List<Sommet>predecesseur=new ArrayList<>();
+		
+		areteGarder=null;
+		Sommet minS = null;
+		
+		boolean testEnd = false;
+		for(Sommet elem:listeSommet){
+			listDistanceSommet.add(Double.POSITIVE_INFINITY);
+		}
+		int conteur1 = 0;
+		for(Sommet elemS:listeSommet){
+			conteur1++;
+			if(elemS==depart){
+				listDistanceSommet.set(conteur1, 0.0);
+			}
+		}
+		listeSommetBase=listeSommet;
+		while(!(listeSommetBase==null)&&!testEnd){
+			minS = touveMinSommet(listeSommetBase);
+			predecesseur.add(minS);
+			
+			if(minS==arrive){
+				 testEnd = true;
+			}
+			int conteur2=0;
+			for(Sommet elem:listeSommetBase){
+				conteur2++;
+				if(elem==minS){
+					int conteur3=0;
+					for(Arete elemSucc:elem.getSuccesseurs()){
+						int conteur4=0;
+						for(Sommet SommetL:listeSommetBase){
+							conteur4++;
+							if(elemSucc.getDestination()==SommetL){
+								
+							}
+						}
+						
+					}
+				}
+			}
+			listeSommetBase.remove(minS);
+		}
+		return areteGarder;
+	}
 }
