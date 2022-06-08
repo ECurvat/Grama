@@ -14,6 +14,7 @@ import java.util.List;
 public class Graphe {
 	private final List<Sommet> listeSommet = new ArrayList<>();
 	private final String nomFichier;
+	private Sommet survol;
 
 	public Graphe(String nomFichier) throws IOException {
 		this.nomFichier = nomFichier;
@@ -279,4 +280,14 @@ public class Graphe {
 		resultat.add(comparaison);
 		return resultat;
 	}
+
+	public Sommet getSurvol() {
+		return survol;
+	}
+
+	public void setSurvol(Sommet survol) {
+		this.survol = survol;
+	}
+	
+	
 }
