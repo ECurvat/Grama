@@ -1,7 +1,5 @@
 package metier;
 
-import java.util.Objects;
-
 /**
  *
  * @author François, Elliot

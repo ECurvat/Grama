@@ -2,6 +2,9 @@ package application;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.ListIterator;
 import java.util.Map;
 import java.util.Set;
 import metier.*;
@@ -64,14 +67,21 @@ public class Test {
 		System.out.println(test.comptageAretes());
 		
 		
-		Set<Map.Entry<Sommet, Integer> > parcours=test.itineraire(test.getListeSommet().get(0), test.getListeSommet().get(3)).get(0).entrySet();
-		for (Map.Entry<Sommet, Integer> entree : parcours){
-			// affichage des clés
-			System.out.println("\nclé : " + entree.getKey()); 
-			// affichage des valeurs 
-			System.out.print(entree.getValue());
+//		Set<Map.Entry<Sommet, Integer> > parcours= test.itineraire(test.getListeSommet().get(0), test.getListeSommet().get(3)).get(0).entrySet();
+//		for (Map.Entry<Sommet, Integer> entree : parcours){
+//			// affichage des clés
+//			System.out.println("\nclé : " + entree.getKey()); 
+//			// affichage des valeurs 
+//			System.out.print(entree.getValue());
+//		}
+
+		Map<Sommet, Arete> iti = test.itineraire(test.getListeSommet().get(0), test.getListeSommet().get(9));
+
+		ListIterator<Map.Entry<Sommet, Arete>> iterator = new ArrayList<>(iti.entrySet()).listIterator(iti.size());
+		while (iterator.hasPrevious()) {
+			Map.Entry<Sommet, Arete> entry = iterator.previous();
+			System.out.println("clé : " + entry.getKey() + "\tvaleur : " + entry.getValue());
 		}
-		
     }
 	
 }

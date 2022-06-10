@@ -6,7 +6,10 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  *
@@ -284,9 +287,19 @@ public class Graphe {
 		this.survol = survol;
 	}
 	
-	public List<HashMap> itineraire(Sommet depart, Sommet arrivee) {
+	public Arete trouverAreteEntreSommets(Sommet premier, Sommet deuxieme) {
+		for(Arete item : premier.getSuccesseurs()) {
+			for(Arete elem : deuxieme.getSuccesseurs()) {
+				if(item.equals(elem)) {
+					return elem;
+				}
+			}
+		}		
+		return null;
+	}
+	
+	public Map<Sommet, Arete> itineraire(Sommet depart, Sommet arrivee) {
 		// Dijkstra :
-		List<HashMap> retour = new ArrayList<>();
 		
 		List<Sommet> listeSommetsNonTraites = listeSommet;
 		HashMap<Sommet, Integer> distance = new HashMap<>();
@@ -300,7 +313,9 @@ public class Graphe {
 			} else {
 				distance.put(item, Integer.MAX_VALUE);
 			}
+			predecesseur.put(item, item);
 		}
+		
 		
 		while(!listeSommetsNonTraites.isEmpty()) {
 			int minimumTrouve = Integer.MAX_VALUE;
@@ -324,9 +339,17 @@ public class Graphe {
 				}
 			}
 		}
-		retour.add(distance);
-		retour.add(predecesseur);
-		return retour;
+		
+		Map<Sommet, Arete> decodage = new LinkedHashMap<>();
+		
+		Sommet predDernier = predecesseur.get(arrivee);
+		Sommet dernier = arrivee;
+		if(!predDernier.equals(depart)) {
+			do {
+				decodage.put(dernier, trouverAreteEntreSommets(dernier, predecesseur.get(dernier)));
+				dernier = predecesseur.get(dernier);
+			} while (!dernier.equals(depart));
+		}
+		return decodage;
 	}
-	
 }
