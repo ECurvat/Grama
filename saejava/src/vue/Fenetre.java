@@ -298,6 +298,7 @@ public class Fenetre extends javax.swing.JFrame {
         jLabelEcran3ResultatGastronomie = new javax.swing.JLabel();
         jLabelEcran3ResultatCulture = new javax.swing.JLabel();
         jPanelEcran3Espacement = new javax.swing.JPanel();
+        jPanelEcran4 = new javax.swing.JPanel();
         jMenuBarPrincipale = new javax.swing.JMenuBar();
         jMenuFichier = new javax.swing.JMenu();
         jMenuItemFichierImporter = new javax.swing.JMenuItem();
@@ -305,9 +306,7 @@ public class Fenetre extends javax.swing.JFrame {
         jMenuItemFichierInformations = new javax.swing.JMenuItem();
         jMenuItemFichierQuitter = new javax.swing.JMenuItem();
 
-        jDialogInformations.setMaximumSize(new java.awt.Dimension(550, 400));
         jDialogInformations.setMinimumSize(new java.awt.Dimension(550, 400));
-        jDialogInformations.setPreferredSize(new java.awt.Dimension(550, 400));
 
         javax.swing.GroupLayout jPanelInformationsEstLayout = new javax.swing.GroupLayout(jPanelInformationsEst);
         jPanelInformationsEst.setLayout(jPanelInformationsEstLayout);
@@ -507,9 +506,7 @@ public class Fenetre extends javax.swing.JFrame {
 
         jDialogInformations.getContentPane().add(jPanelInformationsCentre, java.awt.BorderLayout.CENTER);
 
-        jDialogLegende.setMaximumSize(new java.awt.Dimension(550, 400));
         jDialogLegende.setMinimumSize(new java.awt.Dimension(550, 400));
-        jDialogLegende.setPreferredSize(new java.awt.Dimension(550, 400));
 
         javax.swing.GroupLayout jPanelLegendeNordLayout = new javax.swing.GroupLayout(jPanelLegendeNord);
         jPanelLegendeNord.setLayout(jPanelLegendeNordLayout);
@@ -1354,6 +1351,9 @@ public class Fenetre extends javax.swing.JFrame {
 
         jTabbedPanePrincipal.addTab("Comparaisons", jPanelEcran3);
 
+        jPanelEcran4.setLayout(new java.awt.BorderLayout());
+        jTabbedPanePrincipal.addTab("Itinéraire", jPanelEcran4);
+
         getContentPane().add(jTabbedPanePrincipal, java.awt.BorderLayout.CENTER);
 
         jMenuFichier.setText("Fichier");
@@ -1672,6 +1672,7 @@ public class Fenetre extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelEcran3Est;
     private javax.swing.JPanel jPanelEcran3Ouest;
     private javax.swing.JPanel jPanelEcran3Sud;
+    private javax.swing.JPanel jPanelEcran4;
     private javax.swing.JPanel jPanelInformationsCentre;
     private javax.swing.JPanel jPanelInformationsEspace;
     private javax.swing.JPanel jPanelInformationsEst;

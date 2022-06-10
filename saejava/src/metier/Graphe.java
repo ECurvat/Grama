@@ -299,57 +299,60 @@ public class Graphe {
 	}
 	
 	public Map<Sommet, Arete> itineraire(Sommet depart, Sommet arrivee) {
-		// Dijkstra :
-		
-		List<Sommet> listeSommetsNonTraites = listeSommet;
-		HashMap<Sommet, Integer> distance = new HashMap<>();
-		// premier dans la hashmap = sommet qu on regarde /////////// deuxieme = predecesseur dans l'itinéraire du sommet en première position
-		HashMap<Sommet, Sommet> predecesseur = new HashMap<>();
-		
-		// initialisation de toutes les distances
-		for(Sommet item : listeSommetsNonTraites) {
-			if(item.equals(depart)) {
-				distance.put(item, 0);
-			} else {
-				distance.put(item, Integer.MAX_VALUE);
-			}
-			predecesseur.put(item, item);
-		}
-		
-		
-		while(!listeSommetsNonTraites.isEmpty()) {
-			int minimumTrouve = Integer.MAX_VALUE;
-			Sommet si = null;
-			for(Sommet elem : listeSommetsNonTraites) {
-				// si la distance dans la hashmap distance à la position du sommet elem est inférieur à minimumTrouve alors on remplace minimultrouve et pluspetitedistance
-				if(distance.get(elem) < minimumTrouve) {
-					minimumTrouve = distance.get(elem);
-					si = elem;
-				}
-			}
-			listeSommetsNonTraites.remove(si);
+		if(!depart.equals(arrivee)) {
+			// Dijkstra :
+			List<Sommet> listeSommetsNonTraites = listeSommet;
+			HashMap<Sommet, Integer> distance = new HashMap<>();
+			// premier dans la hashmap = sommet qu on regarde /////////// deuxieme = predecesseur dans l'itinéraire du sommet en première position
+			HashMap<Sommet, Sommet> predecesseur = new HashMap<>();
 
-			if(!(si == null)) {
-				for(Arete suivantes : si.getSuccesseurs()) {
-					Sommet sj = suivantes.getDestination();
-					if(distance.get(sj) > minimumTrouve + suivantes.getLongueur()) {
-						distance.replace(sj, minimumTrouve + suivantes.getLongueur());
-						predecesseur.replace(sj, si);
-					}					
+			// initialisation de toutes les distances
+			for(Sommet item : listeSommetsNonTraites) {
+				if(item.equals(depart)) {
+					distance.put(item, 0);
+				} else {
+					distance.put(item, Integer.MAX_VALUE);
+				}
+				predecesseur.put(item, item);
+			}
+
+
+			while(!listeSommetsNonTraites.isEmpty()) {
+				int minimumTrouve = Integer.MAX_VALUE;
+				Sommet si = null;
+				for(Sommet elem : listeSommetsNonTraites) {
+					// si la distance dans la hashmap distance à la position du sommet elem est inférieur à minimumTrouve alors on remplace minimultrouve et pluspetitedistance
+					if(distance.get(elem) < minimumTrouve) {
+						minimumTrouve = distance.get(elem);
+						si = elem;
+					}
+				}
+				listeSommetsNonTraites.remove(si);
+
+				if(!(si == null)) {
+					for(Arete suivantes : si.getSuccesseurs()) {
+						Sommet sj = suivantes.getDestination();
+						if(distance.get(sj) > minimumTrouve + suivantes.getLongueur()) {
+							distance.replace(sj, minimumTrouve + suivantes.getLongueur());
+							predecesseur.replace(sj, si);
+						}					
+					}
 				}
 			}
+
+			Map<Sommet, Arete> decodage = new LinkedHashMap<>();
+
+			Sommet predDernier = predecesseur.get(arrivee);
+			Sommet dernier = arrivee;
+			if(!predDernier.equals(depart)) {
+				do {
+					decodage.put(dernier, trouverAreteEntreSommets(dernier, predecesseur.get(dernier)));
+					dernier = predecesseur.get(dernier);
+				} while (!dernier.equals(depart));
+			}
+			return decodage;
+		} else {
+			return null;
 		}
-		
-		Map<Sommet, Arete> decodage = new LinkedHashMap<>();
-		
-		Sommet predDernier = predecesseur.get(arrivee);
-		Sommet dernier = arrivee;
-		if(!predDernier.equals(depart)) {
-			do {
-				decodage.put(dernier, trouverAreteEntreSommets(dernier, predecesseur.get(dernier)));
-				dernier = predecesseur.get(dernier);
-			} while (!dernier.equals(depart));
-		}
-		return decodage;
 	}
 }
