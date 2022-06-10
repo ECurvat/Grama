@@ -5,7 +5,10 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  *
@@ -289,5 +292,62 @@ public class Graphe {
 		this.survol = survol;
 	}
 	
-	
+	public List<HashMap> itineraire(Sommet depart, Sommet arrivee) {
+		List<Sommet> listeSommetsNonTraites = listeSommet;
+		List<HashMap> retour = new ArrayList<>();
+		HashMap<Sommet, Integer> distance = new HashMap<>();
+		// premier dans la hashmap = sommet qu on regarde /////////// deuxieme = predecesseur dans l'itinéraire
+		HashMap<Sommet, Sommet> predecesseur = new HashMap<>();
+		
+		// initialisation de toutes les distances
+		for(Sommet item : listeSommetsNonTraites) {
+			if(item.equals(depart)) {
+				distance.put(item, 0);
+			} else {
+				distance.put(item, Integer.MAX_VALUE);
+			}
+		}
+		Set<Map.Entry<Sommet, Integer>> parcours = distance.entrySet();
+		while(!listeSommetsNonTraites.isEmpty()) {
+			int minimumTrouve = Integer.MAX_VALUE;
+			Sommet si = null;
+			for(Sommet elem : listeSommetsNonTraites) {
+				// si la distance dans la hashmap distance à la position du sommet elem est inférieur à minimumTrouve alors on remplace minimultrouve et pluspetitedistance
+				for (Map.Entry<Sommet, Integer> entree : parcours){
+//					System.out.println(entree.getKey() + " " + entree.getValue());
+					if(entree.getKey().equals(elem)) {
+						if(entree.getValue() < minimumTrouve) {
+							minimumTrouve = entree.getValue();
+							si = entree.getKey();
+						}
+					}
+				}
+			}
+			listeSommetsNonTraites.remove(si);
+			System.out.println(si);
+
+			if(!(si == null)) {
+				System.out.println("coucou");
+				for(Arete suivantes : si.getSuccesseurs()) {
+					Sommet sj = suivantes.getDestination();
+					for (Map.Entry<Sommet, Integer> entree : parcours){
+						if(entree.getKey().equals(sj)) {
+							if(entree.getValue() > minimumTrouve + suivantes.getLongueur()) {
+								Set<Map.Entry<Sommet, Integer>> parcoursRechercheSj = distance.entrySet();
+								for(Map.Entry<Sommet, Integer> entree2 : parcoursRechercheSj) {
+									if(entree2.getKey().equals(sj)) {
+										distance.replace(sj, minimumTrouve + suivantes.getLongueur());
+										predecesseur.replace(sj, si);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		retour.add(distance);
+		retour.add(predecesseur);
+		return retour;
+	}
 }

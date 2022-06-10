@@ -2,6 +2,10 @@ package application;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import metier.*;
 
 /**
@@ -66,5 +70,14 @@ public class Test {
 		
 		//TEST POUR LE NOMBRE D'ARETE
 		System.out.println(test.comptageAretes());
+		
+		
+		Set<Map.Entry<Sommet, Integer> > parcours=test.itineraire(test.getListeSommet().get(0), test.getListeSommet().get(3)).get(0).entrySet();
+		for (Map.Entry<Sommet, Integer> entree : parcours){
+			// affichage des clés
+			System.out.println("\nclé : " + entree.getKey()); 
+			// affichage des valeurs 
+			System.out.print(entree.getValue());
+		}
     }
 }
