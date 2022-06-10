@@ -355,4 +355,14 @@ public class Graphe {
 			return null;
 		}
 	}
+	
+	public int longueurItineraire(Map<Sommet, Arete> resultat) {
+		int total = 0;
+		for(Map.Entry<Sommet, Arete> elem : resultat.entrySet()) {
+			if(!(elem.getValue() == null)) {
+				total += elem.getValue().getLongueur();
+			}
+		}
+		return total;
+	}
 }

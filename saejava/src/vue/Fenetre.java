@@ -10,11 +10,8 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
@@ -47,14 +44,17 @@ public class Fenetre extends javax.swing.JFrame {
 	private DefaultComboBoxModel modeleEcran1AretesCombo = new DefaultComboBoxModel();
 	private DefaultComboBoxModel modeleEcran2SommetsChoix1Combo = new DefaultComboBoxModel();
 	private DefaultComboBoxModel modeleEcran2SommetsChoix2Combo = new DefaultComboBoxModel();
+	private DefaultComboBoxModel modeleEcran3Choix1Combo = new DefaultComboBoxModel();
+	private DefaultComboBoxModel modeleEcran3Choix2Combo = new DefaultComboBoxModel();
+	private DefaultComboBoxModel modeleEcran4Choix1Combo = new DefaultComboBoxModel();
+	private DefaultComboBoxModel modeleEcran4Choix2Combo = new DefaultComboBoxModel();
 
 	
 	// Resultat dans l'écran 1 de la recherche de voisins
 	private DefaultListModel  modeleEcran1Sommets = new DefaultListModel();
 	private DefaultListModel modeleEcran1Aretes = new DefaultListModel();
-	//Resultat dans l'ecran 3 de la combo box
-	private DefaultComboBoxModel modeleEcran3Choix1Combo = new DefaultComboBoxModel();
-	private DefaultComboBoxModel modeleEcran3Choix2Combo = new DefaultComboBoxModel();
+
+	
 	
 	public Fenetre() {
 		initComponents();
@@ -120,20 +120,16 @@ public class Fenetre extends javax.swing.JFrame {
 						modeleEcran1SommetsCombo.addElement(elem);
 						modeleEcran2SommetsChoix1Combo.addElement(elem);
 						modeleEcran2SommetsChoix2Combo.addElement(elem);
+						modeleEcran3Choix1Combo.addElement(elem);
+						modeleEcran3Choix2Combo.addElement(elem);
+						modeleEcran4Choix1Combo.addElement(elem);
+						modeleEcran4Choix2Combo.addElement(elem);
 					}
 					
 					for(Sommet elem:graphePrincipal.getListeSommet()){
 						for(Arete arete:elem.getSuccesseurs()){
 							modeleEcran1AretesCombo.addElement(arete);
 						}	
-					}
-					
-					for(Sommet elem : graphePrincipal.getListeSommet()){
-						modeleEcran3Choix1Combo.addElement(elem);
-					}
-					
-					for(Sommet elem :graphePrincipal.getListeSommet()){
-						modeleEcran3Choix2Combo.addElement(elem);
 					}
 					
 					jPanelAccueilCentreHautSchema.setGraphePrincipal(graphePrincipal);
@@ -206,7 +202,6 @@ public class Fenetre extends javax.swing.JFrame {
         jPanelAccueil = new javax.swing.JPanel();
         jPanelAccueilOuest = new javax.swing.JPanel();
         jPanelAccueilEst = new javax.swing.JPanel();
-        jPanelAccueilSud = new javax.swing.JPanel();
         jPanelAccueilCentre = new javax.swing.JPanel();
         jPanelAccueilCentreHautSchema = new vue.Schema();
         jPanelAccueilCentreBas = new javax.swing.JPanel();
@@ -218,7 +213,6 @@ public class Fenetre extends javax.swing.JFrame {
         jPanelEcran0 = new javax.swing.JPanel();
         jPanelEcran0Ouest = new javax.swing.JPanel();
         jPanelEcran0Est = new javax.swing.JPanel();
-        jPanelEcran0Sud = new javax.swing.JPanel();
         jPanelEcran0Centre = new javax.swing.JPanel();
         jPanelEcran0CentreHaut = new javax.swing.JPanel();
         jLabelEcran0Titre = new javax.swing.JLabel();
@@ -250,7 +244,6 @@ public class Fenetre extends javax.swing.JFrame {
         jPanelEcran1 = new javax.swing.JPanel();
         jPanelEcran1Est = new javax.swing.JPanel();
         jPanelEcran1Ouest = new javax.swing.JPanel();
-        jPanelEcran1Sud = new javax.swing.JPanel();
         jPanelEcran1Centre = new javax.swing.JPanel();
         jPanelEcran1CentreGauche = new javax.swing.JPanel();
         jLabelEcran1GaucheTitre = new javax.swing.JLabel();
@@ -271,7 +264,6 @@ public class Fenetre extends javax.swing.JFrame {
         jPanelEcran2 = new javax.swing.JPanel();
         jPanelEcran2Est = new javax.swing.JPanel();
         jPanelEcran2Ouest = new javax.swing.JPanel();
-        jPanelEcran2Sud = new javax.swing.JPanel();
         jPanelEcran2Centre = new javax.swing.JPanel();
         jLabelEcran2Titre = new javax.swing.JLabel();
         jLabelEcran2Choix1 = new javax.swing.JLabel();
@@ -285,7 +277,6 @@ public class Fenetre extends javax.swing.JFrame {
         jPanelEcran3 = new javax.swing.JPanel();
         jPanelEcran3Est = new javax.swing.JPanel();
         jPanelEcran3Ouest = new javax.swing.JPanel();
-        jPanelEcran3Sud = new javax.swing.JPanel();
         jPanelEcran3Centre = new javax.swing.JPanel();
         jLabelEcran3Titre = new javax.swing.JLabel();
         jLabelEcran3Choix1 = new javax.swing.JLabel();
@@ -299,6 +290,17 @@ public class Fenetre extends javax.swing.JFrame {
         jLabelEcran3ResultatCulture = new javax.swing.JLabel();
         jPanelEcran3Espacement = new javax.swing.JPanel();
         jPanelEcran4 = new javax.swing.JPanel();
+        jPanelEcran4Ouest = new javax.swing.JPanel();
+        jPanelEcran4Est = new javax.swing.JPanel();
+        jPanelEcran4Centre1 = new javax.swing.JPanel();
+        jLabelEcran4Titre = new javax.swing.JLabel();
+        jLabelEcran4Choix1 = new javax.swing.JLabel();
+        jComboBoxEcran4Choix1 = new javax.swing.JComboBox<>();
+        jLabelEcran4Choix2 = new javax.swing.JLabel();
+        jComboBoxEcran4Choix2 = new javax.swing.JComboBox<>();
+        jButtonEcran4Valider = new javax.swing.JButton();
+        jLabelEcran4InfoResultat = new javax.swing.JLabel();
+        jPanelEcran4Espacement = new javax.swing.JPanel();
         jMenuBarPrincipale = new javax.swing.JMenuBar();
         jMenuFichier = new javax.swing.JMenu();
         jMenuItemFichierImporter = new javax.swing.JMenuItem();
@@ -680,9 +682,6 @@ public class Fenetre extends javax.swing.JFrame {
 
         jPanelAccueil.add(jPanelAccueilEst, java.awt.BorderLayout.LINE_END);
 
-        jPanelAccueilSud.setLayout(new java.awt.BorderLayout());
-        jPanelAccueil.add(jPanelAccueilSud, java.awt.BorderLayout.PAGE_END);
-
         jPanelAccueilCentre.setLayout(new javax.swing.BoxLayout(jPanelAccueilCentre, javax.swing.BoxLayout.PAGE_AXIS));
 
         jPanelAccueilCentreHautSchema.setMinimumSize(new java.awt.Dimension(0, 400));
@@ -808,9 +807,6 @@ public class Fenetre extends javax.swing.JFrame {
 
         jPanelEcran0.add(jPanelEcran0Est, java.awt.BorderLayout.LINE_END);
 
-        jPanelEcran0Sud.setLayout(new java.awt.BorderLayout());
-        jPanelEcran0.add(jPanelEcran0Sud, java.awt.BorderLayout.PAGE_END);
-
         jPanelEcran0Centre.setLayout(new javax.swing.BoxLayout(jPanelEcran0Centre, javax.swing.BoxLayout.PAGE_AXIS));
 
         jPanelEcran0CentreHaut.setPreferredSize(new java.awt.Dimension(800, 50));
@@ -930,9 +926,6 @@ public class Fenetre extends javax.swing.JFrame {
         );
 
         jPanelEcran1.add(jPanelEcran1Ouest, java.awt.BorderLayout.LINE_START);
-
-        jPanelEcran1Sud.setLayout(new java.awt.BorderLayout());
-        jPanelEcran1.add(jPanelEcran1Sud, java.awt.BorderLayout.PAGE_END);
 
         jPanelEcran1Centre.setLayout(new java.awt.GridLayout(1, 1, 20, 0));
 
@@ -1115,9 +1108,6 @@ public class Fenetre extends javax.swing.JFrame {
 
         jPanelEcran2.add(jPanelEcran2Ouest, java.awt.BorderLayout.LINE_START);
 
-        jPanelEcran2Sud.setLayout(new java.awt.BorderLayout());
-        jPanelEcran2.add(jPanelEcran2Sud, java.awt.BorderLayout.PAGE_END);
-
         jPanelEcran2Centre.setLayout(new java.awt.GridBagLayout());
 
         jLabelEcran2Titre.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
@@ -1241,9 +1231,6 @@ public class Fenetre extends javax.swing.JFrame {
 
         jPanelEcran3.add(jPanelEcran3Ouest, java.awt.BorderLayout.LINE_START);
 
-        jPanelEcran3Sud.setLayout(new java.awt.BorderLayout());
-        jPanelEcran3.add(jPanelEcran3Sud, java.awt.BorderLayout.PAGE_END);
-
         jPanelEcran3Centre.setLayout(new java.awt.GridBagLayout());
 
         jLabelEcran3Titre.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
@@ -1352,6 +1339,120 @@ public class Fenetre extends javax.swing.JFrame {
         jTabbedPanePrincipal.addTab("Comparaisons", jPanelEcran3);
 
         jPanelEcran4.setLayout(new java.awt.BorderLayout());
+
+        javax.swing.GroupLayout jPanelEcran4OuestLayout = new javax.swing.GroupLayout(jPanelEcran4Ouest);
+        jPanelEcran4Ouest.setLayout(jPanelEcran4OuestLayout);
+        jPanelEcran4OuestLayout.setHorizontalGroup(
+            jPanelEcran4OuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanelEcran4OuestLayout.setVerticalGroup(
+            jPanelEcran4OuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
+        );
+
+        jPanelEcran4.add(jPanelEcran4Ouest, java.awt.BorderLayout.LINE_START);
+
+        javax.swing.GroupLayout jPanelEcran4EstLayout = new javax.swing.GroupLayout(jPanelEcran4Est);
+        jPanelEcran4Est.setLayout(jPanelEcran4EstLayout);
+        jPanelEcran4EstLayout.setHorizontalGroup(
+            jPanelEcran4EstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanelEcran4EstLayout.setVerticalGroup(
+            jPanelEcran4EstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
+        );
+
+        jPanelEcran4.add(jPanelEcran4Est, java.awt.BorderLayout.LINE_END);
+
+        jPanelEcran4Centre1.setLayout(new java.awt.GridBagLayout());
+
+        jLabelEcran4Titre.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
+        jLabelEcran4Titre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelEcran4Titre.setText("Trouver un itinéraire");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weighty = 5.0;
+        jPanelEcran4Centre1.add(jLabelEcran4Titre, gridBagConstraints);
+
+        jLabelEcran4Choix1.setText("Choisir le premier sommet :");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weighty = 1.0;
+        jPanelEcran4Centre1.add(jLabelEcran4Choix1, gridBagConstraints);
+
+        jComboBoxEcran4Choix1.setModel(modeleEcran4Choix1Combo);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weighty = 1.0;
+        jPanelEcran4Centre1.add(jComboBoxEcran4Choix1, gridBagConstraints);
+
+        jLabelEcran4Choix2.setText("Choisir le deuxième sommet :");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weighty = 1.0;
+        jPanelEcran4Centre1.add(jLabelEcran4Choix2, gridBagConstraints);
+
+        jComboBoxEcran4Choix2.setModel(modeleEcran4Choix2Combo);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.weighty = 1.0;
+        jPanelEcran4Centre1.add(jComboBoxEcran4Choix2, gridBagConstraints);
+
+        jButtonEcran4Valider.setText("Valider");
+        jButtonEcran4Valider.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEcran4ValiderActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.weighty = 1.0;
+        jPanelEcran4Centre1.add(jButtonEcran4Valider, gridBagConstraints);
+
+        jLabelEcran4InfoResultat.setText("Résultat :");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weighty = 1.0;
+        jPanelEcran4Centre1.add(jLabelEcran4InfoResultat, gridBagConstraints);
+
+        jPanelEcran4Espacement.setMaximumSize(new java.awt.Dimension(32767, 0));
+        jPanelEcran4Espacement.setMinimumSize(new java.awt.Dimension(100, 0));
+
+        javax.swing.GroupLayout jPanelEcran4EspacementLayout = new javax.swing.GroupLayout(jPanelEcran4Espacement);
+        jPanelEcran4Espacement.setLayout(jPanelEcran4EspacementLayout);
+        jPanelEcran4EspacementLayout.setHorizontalGroup(
+            jPanelEcran4EspacementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanelEcran4EspacementLayout.setVerticalGroup(
+            jPanelEcran4EspacementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.weighty = 3.0;
+        jPanelEcran4Centre1.add(jPanelEcran4Espacement, gridBagConstraints);
+
+        jPanelEcran4.add(jPanelEcran4Centre1, java.awt.BorderLayout.CENTER);
+
         jTabbedPanePrincipal.addTab("Itinéraire", jPanelEcran4);
 
         getContentPane().add(jTabbedPanePrincipal, java.awt.BorderLayout.CENTER);
@@ -1524,6 +1625,10 @@ public class Fenetre extends javax.swing.JFrame {
 		}
     }//GEN-LAST:event_jButtonInformationsGithubProjetActionPerformed
 
+    private void jButtonEcran4ValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEcran4ValiderActionPerformed
+        
+    }//GEN-LAST:event_jButtonEcran4ValiderActionPerformed
+
 	/**
 	 * @param args the command line arguments
 	 */
@@ -1563,6 +1668,7 @@ public class Fenetre extends javax.swing.JFrame {
     private javax.swing.JButton jButtonAccueilImporter;
     private javax.swing.JButton jButtonEcran2Valider;
     private javax.swing.JButton jButtonEcran3Valider;
+    private javax.swing.JButton jButtonEcran4Valider;
     private javax.swing.JButton jButtonInformationsGithubElliot;
     private javax.swing.JButton jButtonInformationsGithubFrancois;
     private javax.swing.JButton jButtonInformationsGithubProjet;
@@ -1572,6 +1678,8 @@ public class Fenetre extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxEcran2Choix2;
     private javax.swing.JComboBox<String> jComboBoxEcran3Choix1;
     private javax.swing.JComboBox<String> jComboBoxEcran3Choix2;
+    private javax.swing.JComboBox<String> jComboBoxEcran4Choix1;
+    private javax.swing.JComboBox<String> jComboBoxEcran4Choix2;
     private javax.swing.JDialog jDialogInformations;
     private javax.swing.JDialog jDialogLegende;
     private javax.swing.JLabel jLabelEcran0Autoroutes;
@@ -1599,6 +1707,10 @@ public class Fenetre extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelEcran3ResultatGastronomie;
     private javax.swing.JLabel jLabelEcran3ResultatOuverture;
     private javax.swing.JLabel jLabelEcran3Titre;
+    private javax.swing.JLabel jLabelEcran4Choix1;
+    private javax.swing.JLabel jLabelEcran4Choix2;
+    private javax.swing.JLabel jLabelEcran4InfoResultat;
+    private javax.swing.JLabel jLabelEcran4Titre;
     private javax.swing.JLabel jLabelInformationsAuteurs;
     private javax.swing.JLabel jLabelInformationsDescription;
     private javax.swing.JLabel jLabelInformationsGithubElliot;
@@ -1637,7 +1749,6 @@ public class Fenetre extends javax.swing.JFrame {
     private vue.Schema jPanelAccueilCentreHautSchema;
     private javax.swing.JPanel jPanelAccueilEst;
     private javax.swing.JPanel jPanelAccueilOuest;
-    private javax.swing.JPanel jPanelAccueilSud;
     private javax.swing.JPanel jPanelEcran0;
     private javax.swing.JPanel jPanelEcran0Autoroutes;
     private javax.swing.JPanel jPanelEcran0Centre;
@@ -1649,7 +1760,6 @@ public class Fenetre extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelEcran0Nationales;
     private javax.swing.JPanel jPanelEcran0Ouest;
     private javax.swing.JPanel jPanelEcran0Restaurants;
-    private javax.swing.JPanel jPanelEcran0Sud;
     private javax.swing.JPanel jPanelEcran0Villes;
     private javax.swing.JPanel jPanelEcran1;
     private javax.swing.JPanel jPanelEcran1Centre;
@@ -1659,20 +1769,21 @@ public class Fenetre extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelEcran1Est;
     private javax.swing.JPanel jPanelEcran1GaucheEspacement;
     private javax.swing.JPanel jPanelEcran1Ouest;
-    private javax.swing.JPanel jPanelEcran1Sud;
     private javax.swing.JPanel jPanelEcran2;
     private javax.swing.JPanel jPanelEcran2Centre;
     private javax.swing.JPanel jPanelEcran2Espacement;
     private javax.swing.JPanel jPanelEcran2Est;
     private javax.swing.JPanel jPanelEcran2Ouest;
-    private javax.swing.JPanel jPanelEcran2Sud;
     private javax.swing.JPanel jPanelEcran3;
     private javax.swing.JPanel jPanelEcran3Centre;
     private javax.swing.JPanel jPanelEcran3Espacement;
     private javax.swing.JPanel jPanelEcran3Est;
     private javax.swing.JPanel jPanelEcran3Ouest;
-    private javax.swing.JPanel jPanelEcran3Sud;
     private javax.swing.JPanel jPanelEcran4;
+    private javax.swing.JPanel jPanelEcran4Centre1;
+    private javax.swing.JPanel jPanelEcran4Espacement;
+    private javax.swing.JPanel jPanelEcran4Est;
+    private javax.swing.JPanel jPanelEcran4Ouest;
     private javax.swing.JPanel jPanelInformationsCentre;
     private javax.swing.JPanel jPanelInformationsEspace;
     private javax.swing.JPanel jPanelInformationsEst;

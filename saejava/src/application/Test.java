@@ -82,6 +82,7 @@ public class Test {
 			Map.Entry<Sommet, Arete> entry = iterator.previous();
 			System.out.println("clé : " + entry.getKey() + "\tvaleur : " + entry.getValue());
 		}
+		System.out.println(test.longueurItineraire(iti) + "km");
     }
 	
 }
