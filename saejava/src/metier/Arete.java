@@ -1,13 +1,16 @@
 package metier;
 
+import java.util.Objects;
+
 /**
  *
  * @author François, Elliot
  */
 public class Arete {
+	
 	private final String type;
 	private final int longueur;
-	private Sommet destination;
+	private final Sommet destination;
 
 	public Sommet getDestination() {
 		return destination;
@@ -41,6 +44,4 @@ public class Arete {
 		return this.type.equals(p.type) && this.longueur == p.longueur;
 	}
 
-	
-	
 }

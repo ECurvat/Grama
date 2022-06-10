@@ -2,8 +2,6 @@ package application;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import metier.*;
@@ -13,7 +11,9 @@ import metier.*;
  * @author François, Elliot
  */
 public class Test {
+	
 	public static void main(String[] args) throws FileNotFoundException, IOException {
+		
 		Graphe test = new Graphe("graphe.csv");
 		
 		for (Sommet e : test.getListeSommet()){
@@ -25,20 +25,12 @@ public class Test {
 		}
 		
 		// TESTS TROUVER SOMMETS
-		System.out.println("Tests recherche sommet par type inconnu : ");
-		for(Sommet item : test.trouverSommetsParType("U")) {
-			System.out.println("\t" + item);
-		}
 		System.out.println("Tests recherche sommet par type connu : ");
 		for(Sommet item : test.trouverSommetsParType("L")) {
 			System.out.println("\t" + item);
 		}
 		
 		// TESTS TROUVER ARETES
-		System.out.println("Tests recherche arête par type inconnu : ");
-		for(Arete item : test.trouverAretesParType("P")) {
-			System.out.println("\t" + item);
-		}
 		System.out.println("Tests recherche arête par type connu : ");
 		for(Arete item : test.trouverAretesParType("A")) {
 			System.out.println("\t" + item);
@@ -79,5 +71,7 @@ public class Test {
 			// affichage des valeurs 
 			System.out.print(entree.getValue());
 		}
+		
     }
+	
 }

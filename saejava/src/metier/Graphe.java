@@ -7,14 +7,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 /**
  *
- * @author François
+ * @author François, Elliot
  */
 public class Graphe {
+	
 	private final List<Sommet> listeSommet = new ArrayList<>();
 	private final String nomFichier;
 	private Sommet survol;
@@ -31,22 +30,19 @@ public class Graphe {
 	
 	private void ouvrir() throws FileNotFoundException, IOException{
 		
-		BufferedReader scanSommets = new BufferedReader(new FileReader(nomFichier));
-        
-        String ligneActuelle;
-        while ((ligneActuelle = scanSommets.readLine()) != null) {
-			//System.out.println(ligneActuelle);
-            String sommet = ligneActuelle.split(":")[0];
-            String[] sommetSplit = sommet.split(",");
-            listeSommet.add(new Sommet(sommetSplit[0], sommetSplit[1]));
-        }
-        scanSommets.close(); 
+		String ligneActuelle;
+		try (BufferedReader scanSommets = new BufferedReader(new FileReader(nomFichier))) {
+			while ((ligneActuelle = scanSommets.readLine()) != null) {
+				//System.out.println(ligneActuelle);
+				String sommet = ligneActuelle.split(":")[0];
+				String[] sommetSplit = sommet.split(",");
+				listeSommet.add(new Sommet(sommetSplit[0], sommetSplit[1]));
+			}
+		} 
       
 		BufferedReader scanAretes = new BufferedReader(new FileReader(nomFichier));
    
-        while ((ligneActuelle = scanAretes.readLine()) != null) {
-            ligneActuelle.replace(";;", "");
-            
+        while ((ligneActuelle = scanAretes.readLine()) != null) {            
             String[] séparationSommetArete = ligneActuelle.split(":");
             
            
@@ -54,7 +50,6 @@ public class Graphe {
 			String[] listeDestination = séparationSommetArete[1].split(";");
 			
 			Sommet origine=listeSommet.get(listeSommet.indexOf(new Sommet(infoSommetOrigine[0], infoSommetOrigine[1])));
-			//System.out.println(origine);
 			
             for(String item:listeDestination) {
 				
@@ -69,38 +64,27 @@ public class Graphe {
 	
 	public List<Sommet> trouverSommetsParType(String type) {
 		List<Sommet> trouvailles = new ArrayList<>();
-		try {
-			if (type.equalsIgnoreCase("V") || type.equalsIgnoreCase("R") || type.equalsIgnoreCase("L")) {
-				for(Sommet item : listeSommet) {
-					if(item.getType().equalsIgnoreCase(type)) {
-						trouvailles.add(item);
-					}
+
+		if (type.equalsIgnoreCase("V") || type.equalsIgnoreCase("R") || type.equalsIgnoreCase("L")) {
+			for(Sommet item : listeSommet) {
+				if(item.getType().equalsIgnoreCase(type)) {
+					trouvailles.add(item);
 				}
-			} else {
-				throw new TypeInconnuException();
 			}
-		} catch (TypeInconnuException e) {
-			System.out.println("Erreur de recherche : " + e.getMessage());
 		}
 		return trouvailles;
 	}
 	
 	public List<Arete> trouverAretesParType(String type) {
 		List<Arete> trouvailles = new ArrayList<>();
-		try {
-			if (type.equalsIgnoreCase("A") || type.equalsIgnoreCase("N") || type.equalsIgnoreCase("D")) {
-				for(Sommet item : listeSommet) {
-					for(Arete parcours : item.getSuccesseurs()) {
-						if(parcours.getType().equalsIgnoreCase(type) && !trouvailles.contains(parcours)) {
-							trouvailles.add(parcours);
-						}
+		if (type.equalsIgnoreCase("A") || type.equalsIgnoreCase("N") || type.equalsIgnoreCase("D")) {
+			for(Sommet item : listeSommet) {
+				for(Arete parcours : item.getSuccesseurs()) {
+					if(parcours.getType().equalsIgnoreCase(type) && !trouvailles.contains(parcours)) {
+						trouvailles.add(parcours);
 					}
 				}
-			} else {
-				throw new TypeInconnuException();
 			}
-		} catch (TypeInconnuException e) {
-			System.out.println("Erreur de recherche : " + e.getMessage());
 		}
 		return trouvailles;
 	}
@@ -152,14 +136,18 @@ public class Graphe {
 		int countLoisir = 0;
 		for(Sommet item:listeSommet){
 			countSommets++;
-			if(item.getType().equals("V")){
-				countVilles++;
-			}
-			else if (item.getType().equals("R")) {
-				countRestaurants++;
-			}
-			else if(item.getType().equals("L")){
-				countLoisir++;
+			switch (item.getType()) {
+				case "V":
+					countVilles++;
+					break;
+				case "R":
+					countRestaurants++;
+					break;
+				case "L":
+					countLoisir++;
+					break;
+				default:
+					break;
 			}
 		}
 		compte.add(countSommets);
@@ -179,14 +167,18 @@ public class Graphe {
 		for(Sommet s:listeSommet){
 			for(Arete elem:s.getSuccesseurs()){
 				countAretes++;
-				if (elem.getType().equals("A")) {
-					countAutoroutes++;
-				}
-				else if (elem.getType().equals("N")) {
-					countNationales++;
-				}
-				else if (elem.getType().equals("D")) {
-					countDepartementales++;
+				switch (elem.getType()) {
+					case "A":
+						countAutoroutes++;
+						break;
+					case "N":
+						countNationales++;
+						break;
+					case "D":
+						countDepartementales++;
+						break;
+					default:
+						break;
 				}
 			}
 		}
@@ -334,9 +326,7 @@ public class Graphe {
 		}
 		retour.add(distance);
 		retour.add(predecesseur);
-		
-		
-		
 		return retour;
 	}
+	
 }

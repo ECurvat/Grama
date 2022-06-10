@@ -2,15 +2,17 @@ package metier;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  *
  * @author François, Elliot
  */
 public class Sommet {
-	private String type;
-	private String nom;
-	private List<Arete> successeurs = new ArrayList<>();
+	
+	private final String type;
+	private final String nom;
+	private final List<Arete> successeurs = new ArrayList<>();
 	private int positionX;
 	private int positionY;
 

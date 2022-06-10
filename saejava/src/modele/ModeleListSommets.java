@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package modele;
 
 import java.util.ArrayList;
@@ -15,7 +11,7 @@ import metier.Sommet;
  */
 public class ModeleListSommets extends AbstractListModel<String>{
 	
-	private List<Sommet> dataVille =new ArrayList<>();
+	private final List<Sommet> dataVille =new ArrayList<>();
 
 	@Override
 	public int getSize() {
@@ -33,7 +29,9 @@ public class ModeleListSommets extends AbstractListModel<String>{
 		}
 		fireIntervalAdded(this, 0, dataVille.size());	
 	}
+	
 	public void viderModele(){
 		dataVille.clear();
 	}
+	
 }
