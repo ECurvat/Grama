@@ -12,6 +12,8 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
+import java.util.Map;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
@@ -181,9 +183,6 @@ public class Fenetre extends javax.swing.JFrame {
         jLabelInformationsGithubElliot = new javax.swing.JLabel();
         jLabelInformationsGithubFrancois = new javax.swing.JLabel();
         jLabelInformationsGithubProjet = new javax.swing.JLabel();
-        jButtonInformationsGithubElliot = new javax.swing.JButton();
-        jButtonInformationsGithubFrancois = new javax.swing.JButton();
-        jButtonInformationsGithubProjet = new javax.swing.JButton();
         jPanelInformationsEspace = new javax.swing.JPanel();
         jDialogLegende = new javax.swing.JDialog();
         jPanelLegendeNord = new javax.swing.JPanel();
@@ -300,6 +299,7 @@ public class Fenetre extends javax.swing.JFrame {
         jComboBoxEcran4Choix2 = new javax.swing.JComboBox<>();
         jButtonEcran4Valider = new javax.swing.JButton();
         jLabelEcran4InfoResultat = new javax.swing.JLabel();
+        jLabelEcran4Resultat = new javax.swing.JLabel();
         jPanelEcran4Espacement = new javax.swing.JPanel();
         jMenuBarPrincipale = new javax.swing.JMenuBar();
         jMenuFichier = new javax.swing.JMenu();
@@ -308,20 +308,26 @@ public class Fenetre extends javax.swing.JFrame {
         jMenuItemFichierInformations = new javax.swing.JMenuItem();
         jMenuItemFichierQuitter = new javax.swing.JMenuItem();
 
-        jDialogInformations.setMinimumSize(new java.awt.Dimension(550, 400));
+        jDialogInformations.setMaximumSize(new java.awt.Dimension(800, 400));
+        jDialogInformations.setMinimumSize(new java.awt.Dimension(800, 400));
+        jDialogInformations.setPreferredSize(new java.awt.Dimension(800, 400));
+
+        jPanelInformationsEst.setPreferredSize(new java.awt.Dimension(50, 425));
 
         javax.swing.GroupLayout jPanelInformationsEstLayout = new javax.swing.GroupLayout(jPanelInformationsEst);
         jPanelInformationsEst.setLayout(jPanelInformationsEstLayout);
         jPanelInformationsEstLayout.setHorizontalGroup(
             jPanelInformationsEstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 50, Short.MAX_VALUE)
         );
         jPanelInformationsEstLayout.setVerticalGroup(
             jPanelInformationsEstLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 265, Short.MAX_VALUE)
+            .addGap(0, 425, Short.MAX_VALUE)
         );
 
         jDialogInformations.getContentPane().add(jPanelInformationsEst, java.awt.BorderLayout.LINE_END);
+
+        jPanelInformationsNord.setPreferredSize(new java.awt.Dimension(759, 20));
 
         javax.swing.GroupLayout jPanelInformationsNordLayout = new javax.swing.GroupLayout(jPanelInformationsNord);
         jPanelInformationsNord.setLayout(jPanelInformationsNordLayout);
@@ -331,23 +337,27 @@ public class Fenetre extends javax.swing.JFrame {
         );
         jPanelInformationsNordLayout.setVerticalGroup(
             jPanelInformationsNordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 20, Short.MAX_VALUE)
         );
 
         jDialogInformations.getContentPane().add(jPanelInformationsNord, java.awt.BorderLayout.PAGE_START);
+
+        jPanelInformationsOuest.setPreferredSize(new java.awt.Dimension(50, 425));
 
         javax.swing.GroupLayout jPanelInformationsOuestLayout = new javax.swing.GroupLayout(jPanelInformationsOuest);
         jPanelInformationsOuest.setLayout(jPanelInformationsOuestLayout);
         jPanelInformationsOuestLayout.setHorizontalGroup(
             jPanelInformationsOuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 50, Short.MAX_VALUE)
         );
         jPanelInformationsOuestLayout.setVerticalGroup(
             jPanelInformationsOuestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 265, Short.MAX_VALUE)
+            .addGap(0, 425, Short.MAX_VALUE)
         );
 
         jDialogInformations.getContentPane().add(jPanelInformationsOuest, java.awt.BorderLayout.LINE_START);
+
+        jPanelInformationsSud.setPreferredSize(new java.awt.Dimension(759, 20));
 
         javax.swing.GroupLayout jPanelInformationsSudLayout = new javax.swing.GroupLayout(jPanelInformationsSud);
         jPanelInformationsSud.setLayout(jPanelInformationsSudLayout);
@@ -357,7 +367,7 @@ public class Fenetre extends javax.swing.JFrame {
         );
         jPanelInformationsSudLayout.setVerticalGroup(
             jPanelInformationsSudLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGap(0, 20, Short.MAX_VALUE)
         );
 
         jDialogInformations.getContentPane().add(jPanelInformationsSud, java.awt.BorderLayout.PAGE_END);
@@ -370,7 +380,6 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 0.1;
         gridBagConstraints.weighty = 2.0;
@@ -381,23 +390,20 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 0.1;
         gridBagConstraints.weighty = 1.0;
         jPanelInformationsCentre.add(jLabelInformationsVersion, gridBagConstraints);
 
         jLabelInformationsDescription.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelInformationsDescription.setText("Une application Java de manipulation de graphe, calcul de distances... développée dans le cadre d'un projet de fin de semestre.");
+        jLabelInformationsDescription.setText("<html><p>Une application Java de manipulation de graphe, calcul de distances... développée dans le cadre d'un projet de fin de semestre.</p></html>");
         jLabelInformationsDescription.setPreferredSize(new java.awt.Dimension(759, 50));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 0.1;
-        gridBagConstraints.weighty = 4.0;
+        gridBagConstraints.weighty = 1.0;
         jPanelInformationsCentre.add(jLabelInformationsDescription, gridBagConstraints);
 
         jLabelInformationsAuteurs.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
@@ -406,14 +412,18 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 0.1;
         gridBagConstraints.weighty = 1.0;
         jPanelInformationsCentre.add(jLabelInformationsAuteurs, gridBagConstraints);
 
         jLabelInformationsGithubElliot.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelInformationsGithubElliot.setText("Elliot Curvat :");
+        jLabelInformationsGithubElliot.setText("Elliot Curvat");
+        jLabelInformationsGithubElliot.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelInformationsGithubElliotMouseClicked(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
@@ -423,7 +433,12 @@ public class Fenetre extends javax.swing.JFrame {
         jPanelInformationsCentre.add(jLabelInformationsGithubElliot, gridBagConstraints);
 
         jLabelInformationsGithubFrancois.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelInformationsGithubFrancois.setText("François Graux :");
+        jLabelInformationsGithubFrancois.setText("François Graux");
+        jLabelInformationsGithubFrancois.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelInformationsGithubFrancoisMouseClicked(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 7;
@@ -433,56 +448,19 @@ public class Fenetre extends javax.swing.JFrame {
         jPanelInformationsCentre.add(jLabelInformationsGithubFrancois, gridBagConstraints);
 
         jLabelInformationsGithubProjet.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelInformationsGithubProjet.setText("Projet :");
+        jLabelInformationsGithubProjet.setText("Projet");
+        jLabelInformationsGithubProjet.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelInformationsGithubProjetMouseClicked(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 9;
+        gridBagConstraints.gridy = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 0.1;
         gridBagConstraints.weighty = 1.0;
         jPanelInformationsCentre.add(jLabelInformationsGithubProjet, gridBagConstraints);
-
-        jButtonInformationsGithubElliot.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vue/github.png"))); // NOI18N
-        jButtonInformationsGithubElliot.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonInformationsGithubElliotActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
-        gridBagConstraints.weightx = 0.1;
-        gridBagConstraints.weighty = 1.0;
-        jPanelInformationsCentre.add(jButtonInformationsGithubElliot, gridBagConstraints);
-
-        jButtonInformationsGithubFrancois.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vue/github.png"))); // NOI18N
-        jButtonInformationsGithubFrancois.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonInformationsGithubFrancoisActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
-        gridBagConstraints.weightx = 0.1;
-        gridBagConstraints.weighty = 1.0;
-        jPanelInformationsCentre.add(jButtonInformationsGithubFrancois, gridBagConstraints);
-
-        jButtonInformationsGithubProjet.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vue/github.png"))); // NOI18N
-        jButtonInformationsGithubProjet.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonInformationsGithubProjetActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 9;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
-        gridBagConstraints.weightx = 0.1;
-        gridBagConstraints.weighty = 1.0;
-        jPanelInformationsCentre.add(jButtonInformationsGithubProjet, gridBagConstraints);
 
         jPanelInformationsEspace.setPreferredSize(new java.awt.Dimension(0, 20));
 
@@ -499,8 +477,7 @@ public class Fenetre extends javax.swing.JFrame {
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 0.1;
         gridBagConstraints.weighty = 2.0;
@@ -1407,7 +1384,6 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.weightx = 0.1;
         gridBagConstraints.weighty = 1.0;
         jPanelEcran4Centre1.add(jComboBoxEcran4Choix2, gridBagConstraints);
 
@@ -1423,13 +1399,20 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelEcran4Centre1.add(jButtonEcran4Valider, gridBagConstraints);
 
-        jLabelEcran4InfoResultat.setText("Résultat :");
+        jLabelEcran4InfoResultat.setText("Itinéraire :");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 1.0;
         jPanelEcran4Centre1.add(jLabelEcran4InfoResultat, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.weighty = 1.0;
+        jPanelEcran4Centre1.add(jLabelEcran4Resultat, gridBagConstraints);
 
         jPanelEcran4Espacement.setMaximumSize(new java.awt.Dimension(32767, 0));
         jPanelEcran4Espacement.setMinimumSize(new java.awt.Dimension(100, 0));
@@ -1447,7 +1430,7 @@ public class Fenetre extends javax.swing.JFrame {
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridy = 8;
         gridBagConstraints.weighty = 3.0;
         jPanelEcran4Centre1.add(jPanelEcran4Espacement, gridBagConstraints);
 
@@ -1595,27 +1578,47 @@ public class Fenetre extends javax.swing.JFrame {
 		jDialogLegende.setSize(new Dimension(550, 400));
     }//GEN-LAST:event_jMenuItemFichierLegendeActionPerformed
 
-    private void jButtonInformationsGithubElliotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInformationsGithubElliotActionPerformed
-		try {
+    private void jButtonEcran4ValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEcran4ValiderActionPerformed
+        Sommet choix1 = (Sommet)jComboBoxEcran4Choix1.getSelectedItem();
+		Sommet choix2 = (Sommet)jComboBoxEcran4Choix2.getSelectedItem();
+		
+		if(!choix1.equals(choix2)) {
+			Map<Sommet, Arete> iti = graphePrincipal.itineraire(choix1, choix2);
+			ListIterator<Map.Entry<Sommet, Arete>> iterator = new ArrayList<>(iti.entrySet()).listIterator(iti.size());
+			jLabelEcran4InfoResultat.setText("Itinéraire : " + graphePrincipal.longueurItineraire(iti) + "km");
+			String res = "Au départ de " + choix1 + " prendre ";
+			while (iterator.hasPrevious()) {
+				Map.Entry<Sommet, Arete> entry = iterator.previous();
+				res = res + entry.getValue() + " vers " + entry.getKey() + " puis ";
+			}
+			res = res.substring(0, res.length() - 6);
+			jLabelEcran4Resultat.setText(res);
+		} else {
+			jLabelEcran4InfoResultat.setText("Itinéraire : 0km");
+		}		
+    }//GEN-LAST:event_jButtonEcran4ValiderActionPerformed
+
+    private void jLabelInformationsGithubElliotMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelInformationsGithubElliotMouseClicked
+        try {
 			Desktop.getDesktop().browse(new URL("https://github.com/ECurvat").toURI());
 		} catch (MalformedURLException e) {
 			System.out.println("Gestionnaire : " + e.getMessage());
 		} catch (URISyntaxException | IOException e) {
 			System.out.println("Gestionnaire : " + e.getMessage());
 		}
-    }//GEN-LAST:event_jButtonInformationsGithubElliotActionPerformed
+    }//GEN-LAST:event_jLabelInformationsGithubElliotMouseClicked
 
-    private void jButtonInformationsGithubFrancoisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInformationsGithubFrancoisActionPerformed
-		try {
+    private void jLabelInformationsGithubFrancoisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelInformationsGithubFrancoisMouseClicked
+        try {
 			Desktop.getDesktop().browse(new URL("https://github.com/SkyalphaBe").toURI());
 		} catch (MalformedURLException e) {
 			System.out.println("Gestionnaire : " + e.getMessage());
 		} catch (URISyntaxException | IOException e) {
 			System.out.println("Gestionnaire : " + e.getMessage());
 		}
-    }//GEN-LAST:event_jButtonInformationsGithubFrancoisActionPerformed
+    }//GEN-LAST:event_jLabelInformationsGithubFrancoisMouseClicked
 
-    private void jButtonInformationsGithubProjetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonInformationsGithubProjetActionPerformed
+    private void jLabelInformationsGithubProjetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelInformationsGithubProjetMouseClicked
         try {
 			Desktop.getDesktop().browse(new URL("https://github.com/ECurvat/SAE-S2.125").toURI());
 		} catch (MalformedURLException e) {
@@ -1623,11 +1626,7 @@ public class Fenetre extends javax.swing.JFrame {
 		} catch (URISyntaxException | IOException e) {
 			System.out.println("Gestionnaire : " + e.getMessage());
 		}
-    }//GEN-LAST:event_jButtonInformationsGithubProjetActionPerformed
-
-    private void jButtonEcran4ValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEcran4ValiderActionPerformed
-        
-    }//GEN-LAST:event_jButtonEcran4ValiderActionPerformed
+    }//GEN-LAST:event_jLabelInformationsGithubProjetMouseClicked
 
 	/**
 	 * @param args the command line arguments
@@ -1669,9 +1668,6 @@ public class Fenetre extends javax.swing.JFrame {
     private javax.swing.JButton jButtonEcran2Valider;
     private javax.swing.JButton jButtonEcran3Valider;
     private javax.swing.JButton jButtonEcran4Valider;
-    private javax.swing.JButton jButtonInformationsGithubElliot;
-    private javax.swing.JButton jButtonInformationsGithubFrancois;
-    private javax.swing.JButton jButtonInformationsGithubProjet;
     private javax.swing.JComboBox<String> jComboBoxEcran1DroiteChoix;
     private javax.swing.JComboBox<String> jComboBoxEcran1GaucheChoix;
     private javax.swing.JComboBox<String> jComboBoxEcran2Choix1;
@@ -1710,6 +1706,7 @@ public class Fenetre extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelEcran4Choix1;
     private javax.swing.JLabel jLabelEcran4Choix2;
     private javax.swing.JLabel jLabelEcran4InfoResultat;
+    private javax.swing.JLabel jLabelEcran4Resultat;
     private javax.swing.JLabel jLabelEcran4Titre;
     private javax.swing.JLabel jLabelInformationsAuteurs;
     private javax.swing.JLabel jLabelInformationsDescription;
