@@ -12,25 +12,38 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- *
- * @author François, Elliot
+ *La classe représentant un graphe
+ * @author François Graux
+ * @author Elliot Curvat
+ * @version JDK 11.0.13
  */
 public class Graphe {
 	
 	private final List<Sommet> listeSommet = new ArrayList<>();
 	private final String nomFichier;
 	private Sommet survol;
-
+	/**
+	 * Constructeur de graphe
+	 * @param nomFichier nom du fichier du graphe
+	 * @throws IOException 
+	 */
 	public Graphe(String nomFichier) throws IOException {
 		this.nomFichier = nomFichier;
 		ouvrir();
 	}
-
+	/**
+	 * Getteur de la liste de tout les sommets du graphe
+	 * @return liste de sommet
+	 */
 	public List<Sommet> getListeSommet() {
 		return listeSommet;
 	}
 	
-	
+	/**
+	 * Ouverture de graphe et création des objets
+	 * @throws FileNotFoundException
+	 * @throws IOException 
+	 */
 	private void ouvrir() throws FileNotFoundException, IOException{
 		
 		String ligneActuelle;
@@ -65,6 +78,11 @@ public class Graphe {
         }
 	}
 	
+	/**
+	 * Trouve les sommets par type 
+	 * @param type type de sommet
+	 * @return sommet du type voulu
+	 */
 	public List<Sommet> trouverSommetsParType(String type) {
 		List<Sommet> trouvailles = new ArrayList<>();
 
@@ -78,6 +96,11 @@ public class Graphe {
 		return trouvailles;
 	}
 	
+	/**
+	 * Trouve les arêtes par type 
+	 * @param type type d'arête
+	 * @return arête du type voulu
+	 */
 	public List<Arete> trouverAretesParType(String type) {
 		List<Arete> trouvailles = new ArrayList<>();
 		if (type.equalsIgnoreCase("A") || type.equalsIgnoreCase("N") || type.equalsIgnoreCase("D")) {
@@ -92,6 +115,11 @@ public class Graphe {
 		return trouvailles;
 	}
 	
+	/**
+	 * Trouve les extremitées d'une arête
+	 * @param test une arête
+	 * @return liste de sommet correspondant
+	 */
 	public List<Sommet> trouverSommetsRelies(Arete test) {
 		List<Sommet> trouvailles = new ArrayList<>();
 		for(Sommet item : listeSommet) {
@@ -105,6 +133,12 @@ public class Graphe {
 		return trouvailles;
 	}
 	
+	/**
+	 * Trouve si deux sommet sont liés à 1 de distance
+	 * @param premier Premier sommet
+	 * @param deuxieme Deuxième sommet
+	 * @return true si liés , false sinon
+	 */
 	public boolean rechercher1Distance(Sommet premier, Sommet deuxieme) {
 		for(Arete item : premier.getSuccesseurs()) {
 			if(item.getDestination().equals(deuxieme)) {
@@ -114,6 +148,12 @@ public class Graphe {
 		return false;
 	}
 	
+	/**
+	 * Trouve si deux sommet sont liés à 2 de distance
+	 * @param premier Premier sommet
+	 * @param deuxieme Deuxième sommet
+	 * @return true si liés , false sinon
+	 */
 	public boolean rechercher2Distance(Sommet premier, Sommet deuxieme) {
 		// 2-distance exactement donc : 
 		if(rechercher1Distance(premier, deuxieme)) {
@@ -131,6 +171,10 @@ public class Graphe {
 		return false;
 	}
 	
+	/**
+	 * Compte le total de sommet et le nombre de sommet par type
+	 * @return liste de valeur numérique
+	 */
 	public List<Integer> comptageSommets(){
 		List<Integer> compte= new ArrayList<>();
 		int countSommets = 0;
@@ -160,6 +204,10 @@ public class Graphe {
 		return compte;
 	}
 	
+	/**
+	 * Compte le total d'arête et le nombre d'arête par type
+	 * @return liste de valeur numérique
+	 */
 	public List<Integer>comptageAretes(){
 		List<Integer> compte= new ArrayList<>();
 		int countAretes = 0;
@@ -195,6 +243,12 @@ public class Graphe {
 
 	//pour le sommet en question on regarde tous ses voisins puis on regarde les voisins de ces voisins
 	
+	/**
+	 * Compare deux sommet(ouverture,culturel,gastonomique)
+	 * @param premier Premier sommet
+	 * @param deuxieme Deuxièmre sommet
+	 * @return liste de valeur numérique
+	 */
 	public List<Integer> comparerOCG(Sommet premier, Sommet deuxieme) {
 		List<Integer> resultat = new ArrayList<>();
 		List<Sommet> eviterLesDoublons1 = new ArrayList<>();
@@ -278,15 +332,29 @@ public class Graphe {
 		resultat.add(comparaison);
 		return resultat;
 	}
-
+	
+	/**
+	 * Getter du surval
+	 * @return le survol du sommet
+	 */
 	public Sommet getSurvol() {
 		return survol;
 	}
-
+	
+	/**
+	 * Setteur du survol
+	 * @param survol sommet choisi
+	 */
 	public void setSurvol(Sommet survol) {
 		this.survol = survol;
 	}
 	
+	/**
+	 * Trouve une arête entre deux sommets
+	 * @param premier Premier sommet
+	 * @param deuxieme Deuxième sommet
+	 * @return arête si trouvée, null sinon
+	 */
 	public Arete trouverAreteEntreSommets(Sommet premier, Sommet deuxieme) {
 		for(Arete item : premier.getSuccesseurs()) {
 			for(Arete elem : deuxieme.getSuccesseurs()) {
@@ -298,6 +366,12 @@ public class Graphe {
 		return null;
 	}
 	
+	/**
+	 * Détermine un itinéraire entre deux sommets
+	 * @param depart Premier sommet
+	 * @param arrivee Deuxième sommet
+	 * @return l'itinéraire entre les deux sommets,sinon null
+	 */
 	public Map<Sommet, Arete> itineraire(Sommet depart, Sommet arrivee) {
 		if(!depart.equals(arrivee)) {
 			// Dijkstra :
@@ -358,6 +432,11 @@ public class Graphe {
 		}
 	}
 	
+	/**
+	 * Calcule la longeur d'itineraire
+	 * @param resultat map de sommet et d'arête
+	 * @return distance total
+	 */
 	public int longueurItineraire(Map<Sommet, Arete> resultat) {
 		int total = 0;
 		for(Map.Entry<Sommet, Arete> elem : resultat.entrySet()) {
