@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  *
@@ -300,7 +301,7 @@ public class Graphe {
 	public Map<Sommet, Arete> itineraire(Sommet depart, Sommet arrivee) {
 		if(!depart.equals(arrivee)) {
 			// Dijkstra :
-			List<Sommet> listeSommetsNonTraites = listeSommet;
+			List<Sommet> listeSommetsNonTraites = new ArrayList<>(listeSommet);
 			HashMap<Sommet, Integer> distance = new HashMap<>();
 			// premier dans la hashmap = sommet qu on regarde /////////// deuxieme = predecesseur dans l'itinéraire du sommet en première position
 			HashMap<Sommet, Sommet> predecesseur = new HashMap<>();
@@ -315,7 +316,6 @@ public class Graphe {
 				predecesseur.put(item, item);
 			}
 
-
 			while(!listeSommetsNonTraites.isEmpty()) {
 				int minimumTrouve = Integer.MAX_VALUE;
 				Sommet si = null;
@@ -327,7 +327,8 @@ public class Graphe {
 					}
 				}
 				listeSommetsNonTraites.remove(si);
-
+				
+				
 				if(!(si == null)) {
 					for(Arete suivantes : si.getSuccesseurs()) {
 						Sommet sj = suivantes.getDestination();
@@ -337,12 +338,14 @@ public class Graphe {
 						}					
 					}
 				}
+				
 			}
-
 			Map<Sommet, Arete> decodage = new LinkedHashMap<>();
+			Set<Map.Entry<Sommet, Sommet>> parcours = predecesseur.entrySet();
 
 			Sommet predDernier = predecesseur.get(arrivee);
 			Sommet dernier = arrivee;
+			
 			if(!predDernier.equals(depart)) {
 				do {
 					decodage.put(dernier, trouverAreteEntreSommets(dernier, predecesseur.get(dernier)));

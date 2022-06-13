@@ -291,7 +291,7 @@ public class Fenetre extends javax.swing.JFrame {
         jPanelEcran4 = new javax.swing.JPanel();
         jPanelEcran4Ouest = new javax.swing.JPanel();
         jPanelEcran4Est = new javax.swing.JPanel();
-        jPanelEcran4Centre1 = new javax.swing.JPanel();
+        jPanelEcran4Centre = new javax.swing.JPanel();
         jLabelEcran4Titre = new javax.swing.JLabel();
         jLabelEcran4Choix1 = new javax.swing.JLabel();
         jComboBoxEcran4Choix1 = new javax.swing.JComboBox<>();
@@ -308,9 +308,7 @@ public class Fenetre extends javax.swing.JFrame {
         jMenuItemFichierInformations = new javax.swing.JMenuItem();
         jMenuItemFichierQuitter = new javax.swing.JMenuItem();
 
-        jDialogInformations.setMaximumSize(new java.awt.Dimension(800, 400));
         jDialogInformations.setMinimumSize(new java.awt.Dimension(800, 400));
-        jDialogInformations.setPreferredSize(new java.awt.Dimension(800, 400));
 
         jPanelInformationsEst.setPreferredSize(new java.awt.Dimension(50, 425));
 
@@ -1343,7 +1341,7 @@ public class Fenetre extends javax.swing.JFrame {
 
         jPanelEcran4.add(jPanelEcran4Est, java.awt.BorderLayout.LINE_END);
 
-        jPanelEcran4Centre1.setLayout(new java.awt.GridBagLayout());
+        jPanelEcran4Centre.setLayout(new java.awt.GridBagLayout());
 
         jLabelEcran4Titre.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         jLabelEcran4Titre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1353,7 +1351,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 5.0;
-        jPanelEcran4Centre1.add(jLabelEcran4Titre, gridBagConstraints);
+        jPanelEcran4Centre.add(jLabelEcran4Titre, gridBagConstraints);
 
         jLabelEcran4Choix1.setText("Choisir le premier sommet :");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -1361,7 +1359,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 1.0;
-        jPanelEcran4Centre1.add(jLabelEcran4Choix1, gridBagConstraints);
+        jPanelEcran4Centre.add(jLabelEcran4Choix1, gridBagConstraints);
 
         jComboBoxEcran4Choix1.setModel(modeleEcran4Choix1Combo);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -1369,7 +1367,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 1.0;
-        jPanelEcran4Centre1.add(jComboBoxEcran4Choix1, gridBagConstraints);
+        jPanelEcran4Centre.add(jComboBoxEcran4Choix1, gridBagConstraints);
 
         jLabelEcran4Choix2.setText("Choisir le deuxième sommet :");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -1377,7 +1375,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.gridy = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 1.0;
-        jPanelEcran4Centre1.add(jLabelEcran4Choix2, gridBagConstraints);
+        jPanelEcran4Centre.add(jLabelEcran4Choix2, gridBagConstraints);
 
         jComboBoxEcran4Choix2.setModel(modeleEcran4Choix2Combo);
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -1385,7 +1383,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 1.0;
-        jPanelEcran4Centre1.add(jComboBoxEcran4Choix2, gridBagConstraints);
+        jPanelEcran4Centre.add(jComboBoxEcran4Choix2, gridBagConstraints);
 
         jButtonEcran4Valider.setText("Valider");
         jButtonEcran4Valider.addActionListener(new java.awt.event.ActionListener() {
@@ -1397,7 +1395,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
         gridBagConstraints.weighty = 1.0;
-        jPanelEcran4Centre1.add(jButtonEcran4Valider, gridBagConstraints);
+        jPanelEcran4Centre.add(jButtonEcran4Valider, gridBagConstraints);
 
         jLabelEcran4InfoResultat.setText("Itinéraire :");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -1405,14 +1403,17 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.gridy = 6;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 1.0;
-        jPanelEcran4Centre1.add(jLabelEcran4InfoResultat, gridBagConstraints);
+        jPanelEcran4Centre.add(jLabelEcran4InfoResultat, gridBagConstraints);
+
+        jLabelEcran4Resultat.setText("<html><p></p></html>");
+        jLabelEcran4Resultat.setPreferredSize(new java.awt.Dimension(100, 40));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 7;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 0.1;
         gridBagConstraints.weighty = 1.0;
-        jPanelEcran4Centre1.add(jLabelEcran4Resultat, gridBagConstraints);
+        jPanelEcran4Centre.add(jLabelEcran4Resultat, gridBagConstraints);
 
         jPanelEcran4Espacement.setMaximumSize(new java.awt.Dimension(32767, 0));
         jPanelEcran4Espacement.setMinimumSize(new java.awt.Dimension(100, 0));
@@ -1432,9 +1433,9 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 8;
         gridBagConstraints.weighty = 3.0;
-        jPanelEcran4Centre1.add(jPanelEcran4Espacement, gridBagConstraints);
+        jPanelEcran4Centre.add(jPanelEcran4Espacement, gridBagConstraints);
 
-        jPanelEcran4.add(jPanelEcran4Centre1, java.awt.BorderLayout.CENTER);
+        jPanelEcran4.add(jPanelEcran4Centre, java.awt.BorderLayout.CENTER);
 
         jTabbedPanePrincipal.addTab("Itinéraire", jPanelEcran4);
 
@@ -1581,17 +1582,18 @@ public class Fenetre extends javax.swing.JFrame {
     private void jButtonEcran4ValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEcran4ValiderActionPerformed
         Sommet choix1 = (Sommet)jComboBoxEcran4Choix1.getSelectedItem();
 		Sommet choix2 = (Sommet)jComboBoxEcran4Choix2.getSelectedItem();
-		
+		Map<Sommet, Arete> iti;
 		if(!choix1.equals(choix2)) {
-			Map<Sommet, Arete> iti = graphePrincipal.itineraire(choix1, choix2);
+			iti = graphePrincipal.itineraire(choix1, choix2);
 			ListIterator<Map.Entry<Sommet, Arete>> iterator = new ArrayList<>(iti.entrySet()).listIterator(iti.size());
 			jLabelEcran4InfoResultat.setText("Itinéraire : " + graphePrincipal.longueurItineraire(iti) + "km");
-			String res = "Au départ de " + choix1 + " prendre ";
+			String res = "<html><p>Au départ de " + choix1 + " prendre ";
 			while (iterator.hasPrevious()) {
 				Map.Entry<Sommet, Arete> entry = iterator.previous();
 				res = res + entry.getValue() + " vers " + entry.getKey() + " puis ";
 			}
 			res = res.substring(0, res.length() - 6);
+			res = res + "</p></html>";
 			jLabelEcran4Resultat.setText(res);
 		} else {
 			jLabelEcran4InfoResultat.setText("Itinéraire : 0km");
@@ -1777,7 +1779,7 @@ public class Fenetre extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelEcran3Est;
     private javax.swing.JPanel jPanelEcran3Ouest;
     private javax.swing.JPanel jPanelEcran4;
-    private javax.swing.JPanel jPanelEcran4Centre1;
+    private javax.swing.JPanel jPanelEcran4Centre;
     private javax.swing.JPanel jPanelEcran4Espacement;
     private javax.swing.JPanel jPanelEcran4Est;
     private javax.swing.JPanel jPanelEcran4Ouest;
