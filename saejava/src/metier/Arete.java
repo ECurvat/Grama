@@ -1,59 +1,57 @@
 package metier;
 
 /**
- *Cette class permet de crée les objets de type "Arete" aisni que de definir les méthodes nécessaire pour les manipuler
- * 
- * @author François, Elliot
+ * La classe représentant une arête
+ * @author François Graux
+ * @author Elliot Curvat
+ * @version JDK 11.0.13
  */
 public class Arete {
 	
 	private final String type;
 	private final int longueur;
 	private final Sommet destination;
+	
 	/**
-	 * Constructeur d'Arete
-	 * @param type Ce paramètre représente le type de l'arrete (Autoroute, Départementale ou Nationale)
-	 * @param kilometrage Ce paramètre représente la longeur de l'arete en kilométre 
-	 * @param destination Ce paramètre représente un objet "Sommet" qui est la destination de l'arete
+	 * Constructeur d'arête
+	 * @param type type de l'arête (A : autoroute, N : nationale, D : départementale)
+	 * @param kilometrage longueur de l'arête en kilomètres
+	 * @param destination objet Sommet qui est la destination de l'arête
 	 */
 	public Arete(String type, int kilometrage,Sommet destination) {
 		this.type = type;
 		this.longueur = kilometrage;
 		this.destination=destination;
 	}
+	
 	/**
-	 * Ce getteur permet de renvoyer la destination d'un Sommet 
-	 * @return La destination
+	 * Getter de la destination
+	 * @return destination de l'arête
 	 */
 	public Sommet getDestination() {
 		return destination;
 	}
+	
 	/**
-	 * la méthode toString permet de renvoyer un apperç visuele des aretes avce leurs "Type" et leurs "Longueur" 
-	 * @return la chaine de caractère correspondante
-	 */
-	@Override
-	public String toString() {
-		return type + ", " + longueur;
-	}
-	/**
-	 * Ce getteur permet de renvoyer le type d'une arete
-	 * @return Le type
+	 * Getter du type
+	 * @return le type de l'arête
 	 */
 	public String getType() {
 		return type;
 	}
+	
 	/**
-	 * Ce getteur permet de renvoyer la longueur en kilométre d'une arete
-	 * @return la longueur en kilométre
+	 * Getter de la longueur
+	 * @return la longueur en kilomètres de l'arête
 	 */
 	public int getLongueur() {
 		return longueur;
 	}
+	
 	/**
-	 * La méthode equals permet de comparer des objet arete pour savoir si ils sont identique
-	 * @param o Ce paramètre représente une arete que nous voulons tester
-	 * @return True si les objet sont identique ,False dans le cas contraire
+	 * Comparateur d'égalité entre deux arêtes
+	 * @param o un objet avec lequel comparer l'arête
+	 * @return true si les objet sont identiques, false sinon
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -63,5 +61,14 @@ public class Arete {
 		Arete p = (Arete) o;
 		return this.type.equals(p.type) && this.longueur == p.longueur;
 	}
-
+	
+	/**
+	 * Description d'arête
+	 * @return une chaîne descriptive de l'arête
+	 */
+	@Override
+	public String toString() {
+		return type + ", " + longueur;
+	}
+	
 }
