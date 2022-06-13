@@ -51,7 +51,7 @@ public class Arete {
 	/**
 	 * Comparateur d'égalité entre deux arêtes
 	 * @param o un objet avec lequel comparer l'arête
-	 * @return true si les objet sont identiques, false sinon
+	 * @return true si les objets sont identiques, false sinon
 	 */
 	@Override
 	public boolean equals(Object o) {
