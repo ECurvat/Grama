@@ -13,8 +13,10 @@ import metier.Graphe;
 import metier.Sommet;
 
 /**
- *
- * @author Elliot, François
+ * Panel de dessin du graphe
+ * @author François Graux
+ * @author Elliot Curvat
+ * @version JDK 11.0.13
  */
 public class Schema extends JPanel {
 	

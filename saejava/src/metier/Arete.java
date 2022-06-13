@@ -1,5 +1,7 @@
 package metier;
 
+import java.util.Objects;
+
 /**
  * La classe représentant une arête
  * @author François Graux
@@ -60,6 +62,19 @@ public class Arete {
 		}
 		Arete p = (Arete) o;
 		return this.type.equals(p.type) && this.longueur == p.longueur;
+	}
+
+	/**
+	 * Hashcode d'arête
+	 * @return hashcode
+	 */
+	@Override
+	public int hashCode() {
+		int hash = 7;
+		hash = 53 * hash + Objects.hashCode(this.type);
+		hash = 53 * hash + this.longueur;
+		hash = 53 * hash + Objects.hashCode(this.destination);
+		return hash;
 	}
 	
 	/**

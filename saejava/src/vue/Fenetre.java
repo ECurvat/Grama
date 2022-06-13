@@ -1181,6 +1181,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 8;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 3.0;
         jPanelEcran2Centre.add(jPanelEcran2Espacement, gridBagConstraints);
 
@@ -1355,7 +1356,7 @@ public class Fenetre extends javax.swing.JFrame {
 
         jLabelEcran4Titre.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         jLabelEcran4Titre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelEcran4Titre.setText("Trouver un itinéraire");
+        jLabelEcran4Titre.setText("Trouver l'itinéraire le plus court");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;

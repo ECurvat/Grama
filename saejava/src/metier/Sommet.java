@@ -2,6 +2,7 @@ package metier;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * La classe représentant un sommet
@@ -95,6 +96,21 @@ public class Sommet {
 		Sommet p = (Sommet)o;
 		return type.equals(p.getType()) && nom.equals(p.getNom());
 	} 
+
+	/**
+	 * Hashcode de sommet
+	 * @return hashcode
+	 */
+	@Override
+	public int hashCode() {
+		int hash = 7;
+		hash = 89 * hash + Objects.hashCode(this.type);
+		hash = 89 * hash + Objects.hashCode(this.nom);
+		hash = 89 * hash + Objects.hashCode(this.successeurs);
+		hash = 89 * hash + this.positionX;
+		hash = 89 * hash + this.positionY;
+		return hash;
+	}
 	
 	/**
 	 * Description de sommet

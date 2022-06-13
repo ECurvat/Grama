@@ -3,15 +3,15 @@ package application;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.ListIterator;
 import java.util.Map;
-import java.util.Set;
 import metier.*;
 
 /**
- *
- * @author François, Elliot
+ * Classe de test des méthodes de la classe Graphe
+ * @author François Graux
+ * @author Elliot Curvat
+ * @version JDK 11.0.13
  */
 public class Test {
 	
@@ -60,12 +60,13 @@ public class Test {
 		// TEST COMPARAISON VILLES
 		System.out.println("Comparaison 0 avec 29 : " + test.comparerOCG(test.getListeSommet().get(0), test.getListeSommet().get(29)).toString());
 		
-		//TEST POUR NOMBRE NOEUD,VILLES,RETSTAURANT,LIEUX DE LOISIR
+		// TEST POUR NOMBRE NOEUD,VILLES,RETSTAURANT,LIEUX DE LOISIR
 		System.out.println(test.comptageSommets());
 		
-		//TEST POUR LE NOMBRE D'ARETE
+		// TEST POUR LE NOMBRE D'ARETE
 		System.out.println(test.comptageAretes());
 
+		// TEST POUR DIJKSTRA
 		Map<Sommet, Arete> iti = test.itineraire(test.getListeSommet().get(0), test.getListeSommet().get(9));
 
 		ListIterator<Map.Entry<Sommet, Arete>> iterator = new ArrayList<>(iti.entrySet()).listIterator(iti.size());

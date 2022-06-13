@@ -406,10 +406,9 @@ public class Graphe {
 						}					
 					}
 				}
-				
 			}
+			
 			Map<Sommet, Arete> decodage = new LinkedHashMap<>();
-			Set<Map.Entry<Sommet, Sommet>> parcours = predecesseur.entrySet();
 
 			Sommet predDernier = predecesseur.get(arrivee);
 			Sommet dernier = arrivee;
