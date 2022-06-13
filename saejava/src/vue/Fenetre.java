@@ -144,12 +144,30 @@ public class Fenetre extends javax.swing.JFrame {
 			}
 		} else {
 			jTabbedPanePrincipal.setEnabled(false);
+			
 			modeleVilles.viderModele();
 			modeleLoisirs.viderModele();
 			modeleRestaurants.viderModele();
+			
 			modeleAutoroutes.viderModele();
 			modeleDepartementales.viderModele();
 			modeleNationales.viderModele();
+			
+			modeleEcran1Aretes.clear();
+			modeleEcran1Sommets.clear();
+			
+			modeleEcran1AretesCombo.removeAllElements();
+			modeleEcran1SommetsCombo.removeAllElements();
+			
+			modeleEcran2SommetsChoix1Combo.removeAllElements();
+			modeleEcran2SommetsChoix2Combo.removeAllElements();
+			
+			modeleEcran3Choix1Combo.removeAllElements();
+			modeleEcran3Choix2Combo.removeAllElements();
+			
+			modeleEcran4Choix1Combo.removeAllElements();
+			modeleEcran4Choix2Combo.removeAllElements();
+			
 			jButtonAccueilImporter.setText("Importer un graphe");
 			jMenuItemFichierImporter.setEnabled(true);
 		}
