@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *La classe représentant une sommet
+ * La classe représentant un sommet
  * @author François Graux
  * @author Elliot Curvat
  * @version JDK 11.0.13
@@ -19,7 +19,7 @@ public class Sommet {
 	
 	/**
 	 * Constructeur de sommet
-	 * @param type type de sommet(V : ville, R : restaurant, L : lieux de loisir)
+	 * @param type type de sommet (V : ville, R : restaurant, L : lieu de loisir)
 	 * @param nom nom du sommet
 	 */
 	public Sommet(String type, String nom) {
@@ -28,26 +28,65 @@ public class Sommet {
 	}
 	
 	/**
-	 * Getteur de sucesseur 
-	 * @return le sommet successeurs
+	 * Getter des successeurs
+	 * @return une liste d'arêtes qui partent du sommet
 	 */
 	public List<Arete> getSuccesseurs() {
 		return successeurs;
 	}
 	
 	/**
-	 * Description de sommet
-	 * @return une chaîne descriptive du sommet
+	 * Getter du type
+	 * @return le type du sommet
 	 */
-	@Override
-	public String toString() {
-		return type + ", " + nom;
+	public String getType() {
+		return type;
 	}
 	
 	/**
-	 * Comparateur d'égalité entre deux sommet
+	 * Getter du nom 
+	 * @return le nom du sommet
+	 */
+	public String getNom() {
+		return nom;
+	}
+	
+	/**
+	 * Getteur positionX
+	 * @return renvoie la position X du sommet dans l'affichage du graphe
+	 */
+	public int getPositionX() {
+		return positionX;
+	}
+	
+	/**
+	 * Getteur positionY
+	 * @return renvoie la position Y du sommet dans l'affichage du graphe
+	 */
+	public int getPositionY() {
+		return positionY;
+	}
+	
+	/**
+	 * Setteur positionX
+	 * @param positionX position X du sommet dans l'accueil (affichage du graphe)
+	 */
+	public void setPositionX(int positionX) {
+		this.positionX = positionX;
+	}
+	
+	/**
+	 * Setteur positionY
+	 * @param positionY position Y du sommet dans l'accueil (affichage du graphe)
+	 */
+	public void setPositionY(int positionY) {
+		this.positionY = positionY;
+	}
+	
+	/**
+	 * Comparateur d'égalité entre deux sommets
 	 * @param o un objet avec lequel comparer le sommet
-	 * @return true si les objets sont identiques, false sinon
+	 * @return true si les objets sont identiques (même type et nom), false sinon
 	 */
 	@Override
 	public boolean equals(Object o ){
@@ -58,51 +97,12 @@ public class Sommet {
 	} 
 	
 	/**
-	 * Getteur du type
-	 * @return le type du sommet
+	 * Description de sommet
+	 * @return une chaîne descriptive du sommet
 	 */
-	public String getType() {
-		return type;
-	}
-	
-	/**
-	 * Getteur du nom 
-	 * @return le nom du sommet
-	 */
-	public String getNom() {
-		return nom;
-	}
-	
-	/**
-	 * Setteur positionX
-	 * @param positionX 
-	 */
-	public void setPositionX(int positionX) {
-		this.positionX = positionX;
-	}
-	
-	/**
-	 * Setteur positionY
-	 * @param positionY 
-	 */
-	public void setPositionY(int positionY) {
-		this.positionY = positionY;
-	}
-	
-	/**
-	 * Getteur positionX
-	 * @return renvoie la position X
-	 */
-	public int getPositionX() {
-		return positionX;
-	}
-	
-	/**
-	 * Getteur positionY
-	 * @return renvoie la position Y
-	 */
-	public int getPositionY() {
-		return positionY;
+	@Override
+	public String toString() {
+		return type + ", " + nom;
 	}
 	
 }
