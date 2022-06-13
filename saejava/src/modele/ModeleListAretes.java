@@ -6,7 +6,7 @@ import javax.swing.AbstractListModel;
 import metier.Arete;
 
 /**
- * La classe pour crée un model de liste d'arête
+ * La classe pour créer un modèle de liste d'arêtes
  * @author François Graux
  * @author Elliot Curvat
  * @version JDK 11.0.13
@@ -16,8 +16,8 @@ public class ModeleListAretes extends AbstractListModel<String> {
 	private final List<Arete> dataAutouroute = new ArrayList<>();
 	
 	/**
-	 * Getteur de la taille
-	 * @return revoie la taille du modele
+	 * Getter de la taille
+	 * @return la taille du modele
 	 */
 	@Override
 	public int getSize() {
@@ -25,9 +25,9 @@ public class ModeleListAretes extends AbstractListModel<String> {
 	}
 	
 	/**
-	 * Getteur pour un element par sont indice
-	 * @param index indice de l'element
-	 * @return la valeur trouver ou null si pas de valeur
+	 * Getter pour un élément par son indice
+	 * @param index indice de l'élément
+	 * @return la valeur trouvée ou null si pas de valeur
 	 */
 	@Override
 	public String getElementAt(int index) {
@@ -36,11 +36,11 @@ public class ModeleListAretes extends AbstractListModel<String> {
 	}
 	
 	/**
-	 * Ajoute les arêtes au modéle
-	 * @param listeAutoroute une liste d'arête
+	 * Ajoute les arêtes au modèle
+	 * @param liste liste d'arête
 	 */
-	public void ajouterAretes(List<Arete> listeAutoroute){
-		for(Arete elem:listeAutoroute){
+	public void ajouterAretes(List<Arete> liste){
+		for(Arete elem:liste){
 			dataAutouroute.add(elem);
 		}
 		fireIntervalAdded(this, 0, dataAutouroute.size());
@@ -48,7 +48,7 @@ public class ModeleListAretes extends AbstractListModel<String> {
 	}
 	
 	/**
-	 * vide le modéle
+	 * Vide le modèle
 	 */
 	public void viderModele(){
 		dataAutouroute.clear();

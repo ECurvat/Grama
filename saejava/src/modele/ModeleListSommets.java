@@ -6,50 +6,50 @@ import javax.swing.AbstractListModel;
 import metier.Sommet;
 
 /**
- * La classe pour crée un model de liste d'arête
+ * La classe pour créer un modèle de liste de sommets
  * @author François Graux
  * @author Elliot Curvat
  * @version JDK 11.0.13
  */
 public class ModeleListSommets extends AbstractListModel<String>{
 	
-	private final List<Sommet> dataVille =new ArrayList<>();
+	private final List<Sommet> data = new ArrayList<>();
 	
 	/**
-	 * Getteur de la taille
-	 * @return revoie la taille du modele
+	 * Getter de la taille
+	 * @return revoie la taille du modèle
 	 */
 	@Override
 	public int getSize() {
-		return dataVille.size();
+		return data.size();
 	}
 	
 	/**
-	 * Getteur pour un element par sont indice
-	 * @param index indice de l'element
-	 * @return la valeur trouver ou null si pas de valeur
+	 * Getter pour un élément par son indice
+	 * @param index indice de l'élément
+	 * @return la valeur trouvée ou null si pas de valeur
 	 */
 	@Override
 	public String getElementAt(int index) {
-		return dataVille.get(index).getNom();
+		return data.get(index).getNom();
 	}
 	
 	/**
-	 * Ajoute les sommets au modéle
-	 * @param listeVille une liste de sommet
+	 * Ajoute les sommets au modèle
+	 * @param liste liste de sommets
 	 */
-	public void ajouterSommets(List<Sommet> listeVille){
-		for(Sommet elem:listeVille){
-			dataVille.add(elem);
+	public void ajouterSommets(List<Sommet> liste){
+		for(Sommet elem:liste){
+			data.add(elem);
 		}
-		fireIntervalAdded(this, 0, dataVille.size());	
+		fireIntervalAdded(this, 0, data.size());	
 	}
 	
 	/**
-	 * vide le modéle
+	 * Vide le modèle
 	 */
 	public void viderModele(){
-		dataVille.clear();
+		data.clear();
 	}
 	
 }
