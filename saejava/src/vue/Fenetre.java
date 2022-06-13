@@ -3,6 +3,7 @@ package vue;
 import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.Point;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 import java.io.File;
@@ -30,16 +31,14 @@ import modele.ModeleListSommets;
  */
 public class Fenetre extends javax.swing.JFrame {
 	
-	
-		
 	public Graphe graphePrincipal;
+	
 	private ModeleListSommets modeleVilles = new ModeleListSommets();
 	private ModeleListSommets modeleRestaurants = new ModeleListSommets();
 	private ModeleListSommets modeleLoisirs = new ModeleListSommets();
 	private ModeleListAretes modeleAutoroutes = new ModeleListAretes();
 	private ModeleListAretes modeleNationales = new ModeleListAretes();
 	private ModeleListAretes modeleDepartementales = new ModeleListAretes();
-	
 	
 	// Selection pour combo box avec tous les sommets OU toutes les arêtes (quelque soit le type)
 	private DefaultComboBoxModel modeleEcran1SommetsCombo = new DefaultComboBoxModel();
@@ -50,17 +49,14 @@ public class Fenetre extends javax.swing.JFrame {
 	private DefaultComboBoxModel modeleEcran3Choix2Combo = new DefaultComboBoxModel();
 	private DefaultComboBoxModel modeleEcran4Choix1Combo = new DefaultComboBoxModel();
 	private DefaultComboBoxModel modeleEcran4Choix2Combo = new DefaultComboBoxModel();
-
 	
 	// Resultat dans l'écran 1 de la recherche de voisins
-	private DefaultListModel  modeleEcran1Sommets = new DefaultListModel();
-	private DefaultListModel modeleEcran1Aretes = new DefaultListModel();
+	private DefaultListModel  modeleEcran1ResultatSommets = new DefaultListModel();
+	private DefaultListModel modeleEcran1ResultatAretes = new DefaultListModel();
 
-	
-	
 	public Fenetre() {
 		initComponents();
-		jPanelAccueilCentreHautSchema.addMouseMotionListener(new MouseMotionListener() {
+		jPanelAccueilCentreHautSchema.addMouseMotionListener(new MouseAdapter() {
 			@Override
 			public void mouseMoved(MouseEvent arg0) {
 				if(!(graphePrincipal == null)) {
@@ -71,11 +67,6 @@ public class Fenetre extends javax.swing.JFrame {
 						} 
 					}
 				}
-			}
-
-			@Override
-			public void mouseDragged(MouseEvent arg0) {
-				
 			}
 		});
 	}
@@ -153,8 +144,8 @@ public class Fenetre extends javax.swing.JFrame {
 			modeleDepartementales.viderModele();
 			modeleNationales.viderModele();
 			
-			modeleEcran1Aretes.clear();
-			modeleEcran1Sommets.clear();
+			modeleEcran1ResultatAretes.clear();
+			modeleEcran1ResultatSommets.clear();
 			
 			modeleEcran1AretesCombo.removeAllElements();
 			modeleEcran1SommetsCombo.removeAllElements();
@@ -965,7 +956,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelEcran1CentreGauche.add(jLabelEcran1GaucheResultat, gridBagConstraints);
 
-        jListEcran1GaucheResultat.setModel(modeleEcran1Sommets);
+        jListEcran1GaucheResultat.setModel(modeleEcran1ResultatSommets);
         jScrollPaneEcran1GaucheResultat.setViewportView(jListEcran1GaucheResultat);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -1037,7 +1028,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelEcran1CentreDroite.add(jLabelEcran1DroiteResultat, gridBagConstraints);
 
-        jListEcran1DroiteResultat.setModel(modeleEcran1Aretes);
+        jListEcran1DroiteResultat.setModel(modeleEcran1ResultatAretes);
         jScrollPaneEcran1DroiteResultat.setViewportView(jListEcran1DroiteResultat);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -1503,11 +1494,11 @@ public class Fenetre extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jComboBoxEcran1GaucheChoixItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxEcran1GaucheChoixItemStateChanged
-        modeleEcran1Sommets.clear();
+        modeleEcran1ResultatSommets.clear();
 		for(Sommet s:graphePrincipal.getListeSommet()){
 		   if(jComboBoxEcran1GaucheChoix.getSelectedItem()==s){
 			   for(Arete elem:s.getSuccesseurs()){
-					modeleEcran1Sommets.addElement(elem.getDestination());
+					modeleEcran1ResultatSommets.addElement(elem.getDestination());
 				}
 			}
 		}
@@ -1515,9 +1506,9 @@ public class Fenetre extends javax.swing.JFrame {
 
     private void jComboBoxEcran1DroiteChoixItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxEcran1DroiteChoixItemStateChanged
 		Object val = jComboBoxEcran1DroiteChoix.getSelectedItem();
-		modeleEcran1Aretes.clear();
+		modeleEcran1ResultatAretes.clear();
 		for(Sommet elem:graphePrincipal.trouverSommetsRelies((Arete) val)){
-			modeleEcran1Aretes.addElement(elem);
+			modeleEcran1ResultatAretes.addElement(elem);
 		}
     }//GEN-LAST:event_jComboBoxEcran1DroiteChoixItemStateChanged
 

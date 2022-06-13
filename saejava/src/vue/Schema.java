@@ -17,12 +17,13 @@ import metier.Sommet;
  * @author Elliot, François
  */
 public class Schema extends JPanel {
+	
 	private static Point centre;
 	private static double rayon;
 	private Graphe graphePrincipal;
 				
 	@Override
-	public void paint(Graphics f) {	
+	public void paint(Graphics f) {
 		Graphics2D g = (Graphics2D) f;
 		rayon = 0.48 * this.getSize().height;
 		if(this.getSize().width < this.getSize().height) {
@@ -97,4 +98,5 @@ public class Schema extends JPanel {
 	public void setGraphePrincipal(Graphe g) {
 		this.graphePrincipal = g;
 	}
+	
 }
