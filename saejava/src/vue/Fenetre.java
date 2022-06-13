@@ -95,9 +95,9 @@ public class Fenetre extends javax.swing.JFrame {
 					int nbNationales = graphePrincipal.comptageAretes().get(2);
 					int nbDepartmentales = graphePrincipal.comptageAretes().get(3);
 
-					jLabelEcran0Autoroutes.setText(nbAutoroutes / 2+" Autoroutes");
-					jLabelEcran0Nationales.setText(nbNationales / 2+" Nationales");
-					jLabelEcran0Departementales.setText(nbDepartmentales / 2+" Departementales");
+					jLabelEcran0Autoroutes.setText(nbAutoroutes / 2+" autoroutes");
+					jLabelEcran0Nationales.setText(nbNationales / 2+" nationales");
+					jLabelEcran0Departementales.setText(nbDepartmentales / 2+" départementales");
 
 					jLabelEcran0Titre.setText("Informations sur le graphe : " + nbSommets + " sommets et " + nbAretes / 2 + " arêtes");
 
@@ -160,6 +160,9 @@ public class Fenetre extends javax.swing.JFrame {
 			modeleEcran4Choix2Combo.removeAllElements();
 			
 			jButtonAccueilImporter.setText("Importer un graphe");
+			
+			jPanelAccueilCentreHautSchema.setGraphePrincipal(null);
+			
 			jMenuItemFichierImporter.setEnabled(true);
 		}
 	}
