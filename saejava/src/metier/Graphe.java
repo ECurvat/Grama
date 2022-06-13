@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- *La classe représentant un graphe
+ * La classe représentant un graphe
  * @author François Graux
  * @author Elliot Curvat
  * @version JDK 11.0.13
@@ -65,7 +65,6 @@ public class Graphe {
 		String ligneActuelle;
 		try (BufferedReader scanSommets = new BufferedReader(new FileReader(nomFichier))) {
 			while ((ligneActuelle = scanSommets.readLine()) != null) {
-				//System.out.println(ligneActuelle);
 				String sommet = ligneActuelle.split(":")[0];
 				String[] sommetSplit = sommet.split(",");
 				listeSommet.add(new Sommet(sommetSplit[0], sommetSplit[1]));
@@ -293,7 +292,6 @@ public class Graphe {
 					case "L" : nbLPremier++;
 								break;
 				}
-				System.out.println(item.getDestination());
 				eviterLesDoublons1.add(item.getDestination());
 			}
 		}

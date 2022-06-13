@@ -5,7 +5,6 @@ import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionListener;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -19,40 +18,39 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import metier.Arete;
-import metier.Graphe;
-import metier.Sommet;
-import modele.ModeleListAretes;
-import modele.ModeleListSommets;
+import metier.*;
+import modele.*;
 
 /**
- *
- * @author François, Elliot
+ * IHM de l'application
+ * @author François Graux
+ * @author Elliot Curvat
+ * @version JDK 11.0.13
  */
 public class Fenetre extends javax.swing.JFrame {
 	
 	public Graphe graphePrincipal;
 	
-	private ModeleListSommets modeleVilles = new ModeleListSommets();
-	private ModeleListSommets modeleRestaurants = new ModeleListSommets();
-	private ModeleListSommets modeleLoisirs = new ModeleListSommets();
-	private ModeleListAretes modeleAutoroutes = new ModeleListAretes();
-	private ModeleListAretes modeleNationales = new ModeleListAretes();
-	private ModeleListAretes modeleDepartementales = new ModeleListAretes();
+	private final ModeleListSommets modeleVilles = new ModeleListSommets();
+	private final ModeleListSommets modeleRestaurants = new ModeleListSommets();
+	private final ModeleListSommets modeleLoisirs = new ModeleListSommets();
+	private final ModeleListAretes modeleAutoroutes = new ModeleListAretes();
+	private final ModeleListAretes modeleNationales = new ModeleListAretes();
+	private final ModeleListAretes modeleDepartementales = new ModeleListAretes();
 	
 	// Selection pour combo box avec tous les sommets OU toutes les arêtes (quelque soit le type)
-	private DefaultComboBoxModel modeleEcran1SommetsCombo = new DefaultComboBoxModel();
-	private DefaultComboBoxModel modeleEcran1AretesCombo = new DefaultComboBoxModel();
-	private DefaultComboBoxModel modeleEcran2SommetsChoix1Combo = new DefaultComboBoxModel();
-	private DefaultComboBoxModel modeleEcran2SommetsChoix2Combo = new DefaultComboBoxModel();
-	private DefaultComboBoxModel modeleEcran3Choix1Combo = new DefaultComboBoxModel();
-	private DefaultComboBoxModel modeleEcran3Choix2Combo = new DefaultComboBoxModel();
-	private DefaultComboBoxModel modeleEcran4Choix1Combo = new DefaultComboBoxModel();
-	private DefaultComboBoxModel modeleEcran4Choix2Combo = new DefaultComboBoxModel();
+	private final DefaultComboBoxModel modeleEcran1SommetsCombo = new DefaultComboBoxModel();
+	private final DefaultComboBoxModel modeleEcran1AretesCombo = new DefaultComboBoxModel();
+	private final DefaultComboBoxModel modeleEcran2SommetsChoix1Combo = new DefaultComboBoxModel();
+	private final DefaultComboBoxModel modeleEcran2SommetsChoix2Combo = new DefaultComboBoxModel();
+	private final DefaultComboBoxModel modeleEcran3Choix1Combo = new DefaultComboBoxModel();
+	private final DefaultComboBoxModel modeleEcran3Choix2Combo = new DefaultComboBoxModel();
+	private final DefaultComboBoxModel modeleEcran4Choix1Combo = new DefaultComboBoxModel();
+	private final DefaultComboBoxModel modeleEcran4Choix2Combo = new DefaultComboBoxModel();
 	
 	// Resultat dans l'écran 1 de la recherche de voisins
-	private DefaultListModel  modeleEcran1ResultatSommets = new DefaultListModel();
-	private DefaultListModel modeleEcran1ResultatAretes = new DefaultListModel();
+	private final DefaultListModel  modeleEcran1ResultatSommets = new DefaultListModel();
+	private final DefaultListModel modeleEcran1ResultatAretes = new DefaultListModel();
 
 	public Fenetre() {
 		initComponents();
@@ -418,7 +416,7 @@ public class Fenetre extends javax.swing.JFrame {
 
         jLabelInformationsAuteurs.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
         jLabelInformationsAuteurs.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelInformationsAuteurs.setText("Auteurs :");
+        jLabelInformationsAuteurs.setText("Profils Github des auteurs :");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
@@ -428,7 +426,7 @@ public class Fenetre extends javax.swing.JFrame {
         jPanelInformationsCentre.add(jLabelInformationsAuteurs, gridBagConstraints);
 
         jLabelInformationsGithubElliot.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelInformationsGithubElliot.setText("Elliot Curvat");
+        jLabelInformationsGithubElliot.setText("> Elliot Curvat <");
         jLabelInformationsGithubElliot.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabelInformationsGithubElliotMouseClicked(evt);
@@ -443,7 +441,7 @@ public class Fenetre extends javax.swing.JFrame {
         jPanelInformationsCentre.add(jLabelInformationsGithubElliot, gridBagConstraints);
 
         jLabelInformationsGithubFrancois.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelInformationsGithubFrancois.setText("François Graux");
+        jLabelInformationsGithubFrancois.setText("> François Graux <");
         jLabelInformationsGithubFrancois.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabelInformationsGithubFrancoisMouseClicked(evt);
@@ -458,7 +456,7 @@ public class Fenetre extends javax.swing.JFrame {
         jPanelInformationsCentre.add(jLabelInformationsGithubFrancois, gridBagConstraints);
 
         jLabelInformationsGithubProjet.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelInformationsGithubProjet.setText("Projet");
+        jLabelInformationsGithubProjet.setText("> Respository Github du projet <");
         jLabelInformationsGithubProjet.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabelInformationsGithubProjetMouseClicked(evt);
@@ -1526,7 +1524,7 @@ public class Fenetre extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonEcran2ValiderActionPerformed
 
     private void jButtonEcran3ValiderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEcran3ValiderActionPerformed
-        List<Integer> resultat = new ArrayList<>();
+        List<Integer> resultat;
 		Sommet choix1 = (Sommet)jComboBoxEcran3Choix1.getSelectedItem();
 		Sommet choix2 = (Sommet)jComboBoxEcran3Choix2.getSelectedItem();
 		resultat = graphePrincipal.comparerOCG(choix1, choix2);

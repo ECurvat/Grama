@@ -165,7 +165,7 @@
                   <Font name="Helvetica Neue" size="13" style="2"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Auteurs :"/>
+                <Property name="text" type="java.lang.String" value="Profils Github des auteurs :"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
@@ -176,7 +176,7 @@
             <Component class="javax.swing.JLabel" name="jLabelInformationsGithubElliot">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Elliot Curvat"/>
+                <Property name="text" type="java.lang.String" value="&gt; Elliot Curvat &lt;"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabelInformationsGithubElliotMouseClicked"/>
@@ -190,7 +190,7 @@
             <Component class="javax.swing.JLabel" name="jLabelInformationsGithubFrancois">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Fran&#xe7;ois Graux"/>
+                <Property name="text" type="java.lang.String" value="&gt; Fran&#xe7;ois Graux &lt;"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabelInformationsGithubFrancoisMouseClicked"/>
@@ -204,7 +204,7 @@
             <Component class="javax.swing.JLabel" name="jLabelInformationsGithubProjet">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="Projet"/>
+                <Property name="text" type="java.lang.String" value="&gt; Respository Github du projet &lt;"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabelInformationsGithubProjetMouseClicked"/>
