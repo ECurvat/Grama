@@ -73,6 +73,7 @@ public class Fenetre extends javax.swing.JFrame {
 	public void importer() {
 		if (jButtonAccueilImporter.getText().equals("Importer un graphe")) {
 			JFileChooser choixFichier = new JFileChooser();
+			choixFichier.setCurrentDirectory(new File("."));
 			int option = choixFichier.showOpenDialog(null);
 			if(option == JFileChooser.APPROVE_OPTION){
 				try {
@@ -1464,7 +1465,7 @@ public class Fenetre extends javax.swing.JFrame {
 
         jLabelEcran4Resultat.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelEcran4Resultat.setText("<html><p></p></html>");
-        jLabelEcran4Resultat.setPreferredSize(new java.awt.Dimension(100, 40));
+        jLabelEcran4Resultat.setPreferredSize(new java.awt.Dimension(100, 100));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 7;
