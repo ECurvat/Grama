@@ -16,6 +16,7 @@ import java.util.ListIterator;
 import java.util.Map;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import metier.*;
@@ -630,6 +631,8 @@ public class Fenetre extends javax.swing.JFrame {
         jDialogLegende.getContentPane().add(jPanelLegendeCentre, java.awt.BorderLayout.CENTER);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setTitle("GRAMA");
+        setIconImage(new ImageIcon("./src/vue/satellite.png").getImage());
         setMinimumSize(new java.awt.Dimension(1000, 600));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
