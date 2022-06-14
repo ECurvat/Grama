@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * La classe représentant un graphe
@@ -22,6 +21,7 @@ public class Graphe {
 	private final List<Sommet> listeSommet = new ArrayList<>();
 	private final String nomFichier;
 	private Sommet survol;
+	
 	/**
 	 * Constructeur de graphe
 	 * @param nomFichier nom du fichier du graphe
@@ -317,7 +317,7 @@ public class Graphe {
 			if(!eviterLesDoublons2.contains(item.getDestination())) {
 				switch (item.getDestination().getType()) {
 					case "V" : nbVDeuxieme++;
-									break;
+								break;
 					case "R" : nbRDeuxieme++;
 								break;
 					case "L" : nbLDeuxieme++;

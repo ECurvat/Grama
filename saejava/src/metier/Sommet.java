@@ -106,9 +106,6 @@ public class Sommet {
 		int hash = 7;
 		hash = 89 * hash + Objects.hashCode(this.type);
 		hash = 89 * hash + Objects.hashCode(this.nom);
-		hash = 89 * hash + Objects.hashCode(this.successeurs);
-		hash = 89 * hash + this.positionX;
-		hash = 89 * hash + this.positionY;
 		return hash;
 	}
 	

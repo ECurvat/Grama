@@ -73,7 +73,6 @@ public class Arete {
 		int hash = 7;
 		hash = 53 * hash + Objects.hashCode(this.type);
 		hash = 53 * hash + this.longueur;
-		hash = 53 * hash + Objects.hashCode(this.destination);
 		return hash;
 	}
 	
