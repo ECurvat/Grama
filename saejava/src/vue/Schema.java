@@ -72,7 +72,7 @@ public class Schema extends JPanel {
 					g.drawLine(debut.getPositionX(), debut.getPositionY(), fin.getPositionX(), fin.getPositionY());
 					g.setColor(Color.BLACK);
 					g.drawString(Integer.toString(item.getLongueur()), (debut.getPositionX()+ fin.getPositionX()) / 2, (debut.getPositionY() + fin.getPositionY()) / 2 + 20);
-				}	
+				}				
 			}
 			for(Arete item : graphePrincipal.trouverAretesParType("N")) {
 				g.setColor(new Color(75, 123, 236));

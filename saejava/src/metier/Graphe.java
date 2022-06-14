@@ -25,7 +25,7 @@ public class Graphe {
 	/**
 	 * Constructeur de graphe
 	 * @param nomFichier nom du fichier du graphe
-	 * @throws IOException 
+	 * @throws IOException si fichier pas compatible
 	 */
 	public Graphe(String nomFichier) throws IOException {
 		this.nomFichier = nomFichier;
@@ -260,7 +260,7 @@ public class Graphe {
 	 * @param premier premier sommet
 	 * @param deuxieme deuxième sommet
 	 * @return liste d'int sous la forme [comparaison premier avec deuxieme VILLE, comparaison premier avec deuxieme RESTAURANT, comparaison premier avec deuxieme LOISIR]
-	 * valeurs possibles de la liste de retour [1: premier > deuxième, 0: premier = deuxieme, -1: premier < deuxieme]
+	 * valeurs possibles de la liste de retour [1: premier &gt; deuxième, 0: premier = deuxieme, -1: premier &lt; deuxieme]
 	 */
 	public List<Integer> comparerOCG(Sommet premier, Sommet deuxieme) {
 		List<Integer> resultat = new ArrayList<>();

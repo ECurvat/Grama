@@ -383,7 +383,7 @@ public class Fenetre extends javax.swing.JFrame {
 
         jPanelInformationsCentre.setLayout(new java.awt.GridBagLayout());
 
-        jLabelInformationsTitre.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jLabelInformationsTitre.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
         jLabelInformationsTitre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelInformationsTitre.setText("Informations :");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -394,6 +394,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 2.0;
         jPanelInformationsCentre.add(jLabelInformationsTitre, gridBagConstraints);
 
+        jLabelInformationsVersion.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelInformationsVersion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelInformationsVersion.setText("Version : 3.04");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -404,6 +405,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelInformationsCentre.add(jLabelInformationsVersion, gridBagConstraints);
 
+        jLabelInformationsDescription.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelInformationsDescription.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelInformationsDescription.setText("<html><p>Une application Java de manipulation de graphe, calcul de distances... développée dans le cadre d'un projet de fin de semestre.</p></html>");
         jLabelInformationsDescription.setPreferredSize(new java.awt.Dimension(759, 50));
@@ -415,7 +417,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelInformationsCentre.add(jLabelInformationsDescription, gridBagConstraints);
 
-        jLabelInformationsAuteurs.setFont(new java.awt.Font("Helvetica Neue", 2, 13)); // NOI18N
+        jLabelInformationsAuteurs.setFont(new java.awt.Font("Helvetica Neue", 2, 24)); // NOI18N
         jLabelInformationsAuteurs.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelInformationsAuteurs.setText("Profils Github des auteurs :");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -426,6 +428,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelInformationsCentre.add(jLabelInformationsAuteurs, gridBagConstraints);
 
+        jLabelInformationsGithubElliot.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelInformationsGithubElliot.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelInformationsGithubElliot.setText("> Elliot Curvat <");
         jLabelInformationsGithubElliot.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -441,6 +444,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelInformationsCentre.add(jLabelInformationsGithubElliot, gridBagConstraints);
 
+        jLabelInformationsGithubFrancois.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelInformationsGithubFrancois.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelInformationsGithubFrancois.setText("> François Graux <");
         jLabelInformationsGithubFrancois.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -456,6 +460,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelInformationsCentre.add(jLabelInformationsGithubFrancois, gridBagConstraints);
 
+        jLabelInformationsGithubProjet.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelInformationsGithubProjet.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelInformationsGithubProjet.setText("> Respository Github du projet <");
         jLabelInformationsGithubProjet.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -550,9 +555,9 @@ public class Fenetre extends javax.swing.JFrame {
 
         jPanelLegendeCentre.setLayout(new java.awt.GridBagLayout());
 
-        jLabelLegendeTitre.setFont(new java.awt.Font("Helvetica Neue", 1, 13)); // NOI18N
+        jLabelLegendeTitre.setFont(new java.awt.Font("Helvetica Neue", 1, 36)); // NOI18N
         jLabelLegendeTitre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelLegendeTitre.setText("Légende du graphe :");
+        jLabelLegendeTitre.setText("Légende :");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -562,6 +567,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 2.0;
         jPanelLegendeCentre.add(jLabelLegendeTitre, gridBagConstraints);
 
+        jLabelLegendeVille.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelLegendeVille.setForeground(new java.awt.Color(252, 92, 101));
         jLabelLegendeVille.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelLegendeVille.setText("Ville");
@@ -573,6 +579,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelLegendeCentre.add(jLabelLegendeVille, gridBagConstraints);
 
+        jLabelLegendeRestaurant.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelLegendeRestaurant.setForeground(new java.awt.Color(253, 150, 68));
         jLabelLegendeRestaurant.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelLegendeRestaurant.setText("Restaurant");
@@ -584,6 +591,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelLegendeCentre.add(jLabelLegendeRestaurant, gridBagConstraints);
 
+        jLabelLegendeLoisir.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelLegendeLoisir.setForeground(new java.awt.Color(38, 222, 129));
         jLabelLegendeLoisir.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelLegendeLoisir.setText("Lieu de loisir");
@@ -595,6 +603,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelLegendeCentre.add(jLabelLegendeLoisir, gridBagConstraints);
 
+        jLabelLegendeAutoroute.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelLegendeAutoroute.setForeground(new java.awt.Color(165, 94, 234));
         jLabelLegendeAutoroute.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelLegendeAutoroute.setText("Autoroute");
@@ -606,6 +615,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelLegendeCentre.add(jLabelLegendeAutoroute, gridBagConstraints);
 
+        jLabelLegendeNationale.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelLegendeNationale.setForeground(new java.awt.Color(75, 123, 236));
         jLabelLegendeNationale.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelLegendeNationale.setText("Route nationale");
@@ -617,6 +627,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelLegendeCentre.add(jLabelLegendeNationale, gridBagConstraints);
 
+        jLabelLegendeDepartementale.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelLegendeDepartementale.setForeground(new java.awt.Color(69, 170, 242));
         jLabelLegendeDepartementale.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelLegendeDepartementale.setText("Route départementale");
@@ -750,6 +761,7 @@ public class Fenetre extends javax.swing.JFrame {
 
         jPanelAccueilCentreBas.add(jPanelAccueilCentreBasSud, java.awt.BorderLayout.PAGE_END);
 
+        jButtonAccueilImporter.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jButtonAccueilImporter.setText("Importer un graphe");
         jButtonAccueilImporter.setMaximumSize(new java.awt.Dimension(78, 20));
         jButtonAccueilImporter.setMinimumSize(new java.awt.Dimension(78, 20));
@@ -800,6 +812,7 @@ public class Fenetre extends javax.swing.JFrame {
         jPanelEcran0CentreHaut.setPreferredSize(new java.awt.Dimension(800, 50));
         jPanelEcran0CentreHaut.setLayout(new java.awt.BorderLayout());
 
+        jLabelEcran0Titre.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         jLabelEcran0Titre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelEcran0Titre.setText("Informations sur le graphe");
         jPanelEcran0CentreHaut.add(jLabelEcran0Titre, java.awt.BorderLayout.CENTER);
@@ -811,6 +824,7 @@ public class Fenetre extends javax.swing.JFrame {
 
         jPanelEcran0Villes.setLayout(new java.awt.BorderLayout());
 
+        jLabelEcran0Villes.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelEcran0Villes.setText("Villes");
         jPanelEcran0Villes.add(jLabelEcran0Villes, java.awt.BorderLayout.PAGE_END);
 
@@ -823,6 +837,7 @@ public class Fenetre extends javax.swing.JFrame {
 
         jPanelEcran0Loisirs.setLayout(new java.awt.BorderLayout());
 
+        jLabelEcran0Loisirs.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelEcran0Loisirs.setText("Lieux de loisir");
         jPanelEcran0Loisirs.add(jLabelEcran0Loisirs, java.awt.BorderLayout.PAGE_END);
 
@@ -835,6 +850,7 @@ public class Fenetre extends javax.swing.JFrame {
 
         jPanelEcran0Restaurants.setLayout(new java.awt.BorderLayout());
 
+        jLabelEcran0Restaurants.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelEcran0Restaurants.setText("Restaurants");
         jPanelEcran0Restaurants.add(jLabelEcran0Restaurants, java.awt.BorderLayout.PAGE_END);
 
@@ -847,6 +863,7 @@ public class Fenetre extends javax.swing.JFrame {
 
         jPanelEcran0Autoroutes.setLayout(new java.awt.BorderLayout());
 
+        jLabelEcran0Autoroutes.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelEcran0Autoroutes.setText("Autoroutes");
         jPanelEcran0Autoroutes.add(jLabelEcran0Autoroutes, java.awt.BorderLayout.PAGE_END);
 
@@ -859,6 +876,7 @@ public class Fenetre extends javax.swing.JFrame {
 
         jPanelEcran0Nationales.setLayout(new java.awt.BorderLayout());
 
+        jLabelEcran0Nationales.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelEcran0Nationales.setText("Nationales");
         jPanelEcran0Nationales.add(jLabelEcran0Nationales, java.awt.BorderLayout.PAGE_END);
 
@@ -871,6 +889,7 @@ public class Fenetre extends javax.swing.JFrame {
 
         jPanelEcran0Departementales.setLayout(new java.awt.BorderLayout());
 
+        jLabelEcran0Departementales.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelEcran0Departementales.setText("Departementales");
         jPanelEcran0Departementales.add(jLabelEcran0Departementales, java.awt.BorderLayout.PAGE_END);
 
@@ -921,7 +940,7 @@ public class Fenetre extends javax.swing.JFrame {
         jPanel31Layout.rowHeights = new int[] {100};
         jPanelEcran1CentreGauche.setLayout(jPanel31Layout);
 
-        jLabelEcran1GaucheTitre.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        jLabelEcran1GaucheTitre.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         jLabelEcran1GaucheTitre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelEcran1GaucheTitre.setText("Voisins directs d'un sommet");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -931,6 +950,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 5.0;
         jPanelEcran1CentreGauche.add(jLabelEcran1GaucheTitre, gridBagConstraints);
 
+        jLabelEcran1GaucheChoix.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelEcran1GaucheChoix.setText("Choisir le sommet :");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -952,6 +972,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelEcran1CentreGauche.add(jComboBoxEcran1GaucheChoix, gridBagConstraints);
 
+        jLabelEcran1GaucheResultat.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelEcran1GaucheResultat.setText("Voisins directs :");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -992,7 +1013,7 @@ public class Fenetre extends javax.swing.JFrame {
 
         jPanelEcran1CentreDroite.setLayout(new java.awt.GridBagLayout());
 
-        jLabelEcran1DroiteTitre.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        jLabelEcran1DroiteTitre.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         jLabelEcran1DroiteTitre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelEcran1DroiteTitre.setText("Sommets reliés par une arête");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -1003,6 +1024,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 5.0;
         jPanelEcran1CentreDroite.add(jLabelEcran1DroiteTitre, gridBagConstraints);
 
+        jLabelEcran1DroiteChoix.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelEcran1DroiteChoix.setText("Choisir l'arête :");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -1024,6 +1046,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelEcran1CentreDroite.add(jComboBoxEcran1DroiteChoix, gridBagConstraints);
 
+        jLabelEcran1DroiteResultat.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelEcran1DroiteResultat.setText("Sommets reliés :");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -1108,6 +1131,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 5.0;
         jPanelEcran2Centre.add(jLabelEcran2Titre, gridBagConstraints);
 
+        jLabelEcran2Choix1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelEcran2Choix1.setText("Choisir le premier sommet :");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -1124,6 +1148,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelEcran2Centre.add(jComboBoxEcran2Choix1, gridBagConstraints);
 
+        jLabelEcran2Choix2.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelEcran2Choix2.setText("Choisir le deuxième sommet :");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -1140,6 +1165,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelEcran2Centre.add(jComboBoxEcran2Choix2, gridBagConstraints);
 
+        jButtonEcran2Valider.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jButtonEcran2Valider.setText("Vérifier la 2-distance");
         jButtonEcran2Valider.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1152,6 +1178,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelEcran2Centre.add(jButtonEcran2Valider, gridBagConstraints);
 
+        jLabelEcran2InfoResultat.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelEcran2InfoResultat.setText("Résultat :");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -1159,6 +1186,8 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 1.0;
         jPanelEcran2Centre.add(jLabelEcran2InfoResultat, gridBagConstraints);
+
+        jLabelEcran2Resultat.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 7;
@@ -1232,6 +1261,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 5.0;
         jPanelEcran3Centre.add(jLabelEcran3Titre, gridBagConstraints);
 
+        jLabelEcran3Choix1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelEcran3Choix1.setText("Choisir le premier sommet :");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -1248,6 +1278,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelEcran3Centre.add(jComboBoxEcran3Choix1, gridBagConstraints);
 
+        jLabelEcran3Choix2.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelEcran3Choix2.setText("Choisir le deuxième sommet :");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -1264,6 +1295,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelEcran3Centre.add(jComboBoxEcran3Choix2, gridBagConstraints);
 
+        jButtonEcran3Valider.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jButtonEcran3Valider.setText("Comparer");
         jButtonEcran3Valider.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1276,6 +1308,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelEcran3Centre.add(jButtonEcran3Valider, gridBagConstraints);
 
+        jLabelEcran3InfoResultat.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelEcran3InfoResultat.setText("Résultat :");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -1283,12 +1316,16 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 1.0;
         jPanelEcran3Centre.add(jLabelEcran3InfoResultat, gridBagConstraints);
+
+        jLabelEcran3ResultatOuverture.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 7;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 1.0;
         jPanelEcran3Centre.add(jLabelEcran3ResultatOuverture, gridBagConstraints);
+
+        jLabelEcran3ResultatGastronomie.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 8;
@@ -1296,6 +1333,8 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weightx = 0.1;
         gridBagConstraints.weighty = 1.0;
         jPanelEcran3Centre.add(jLabelEcran3ResultatGastronomie, gridBagConstraints);
+
+        jLabelEcran3ResultatCulture.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 9;
@@ -1367,6 +1406,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 5.0;
         jPanelEcran4Centre.add(jLabelEcran4Titre, gridBagConstraints);
 
+        jLabelEcran4Choix1.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelEcran4Choix1.setText("Choisir le premier sommet :");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -1383,6 +1423,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelEcran4Centre.add(jComboBoxEcran4Choix1, gridBagConstraints);
 
+        jLabelEcran4Choix2.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelEcran4Choix2.setText("Choisir le deuxième sommet :");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -1399,6 +1440,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelEcran4Centre.add(jComboBoxEcran4Choix2, gridBagConstraints);
 
+        jButtonEcran4Valider.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jButtonEcran4Valider.setText("Valider");
         jButtonEcran4Valider.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1411,6 +1453,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelEcran4Centre.add(jButtonEcran4Valider, gridBagConstraints);
 
+        jLabelEcran4InfoResultat.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelEcran4InfoResultat.setText("Itinéraire :");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -1419,6 +1462,7 @@ public class Fenetre extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         jPanelEcran4Centre.add(jLabelEcran4InfoResultat, gridBagConstraints);
 
+        jLabelEcran4Resultat.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabelEcran4Resultat.setText("<html><p></p></html>");
         jLabelEcran4Resultat.setPreferredSize(new java.awt.Dimension(100, 40));
         gridBagConstraints = new java.awt.GridBagConstraints();
