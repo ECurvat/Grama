@@ -39,5 +39,5 @@ Consignes d’installation pour éditer et visualiser le projet « Caseus » :
 
 ##  5. <a name='Sources'></a>Sources et contact des auteurs
 Si vous rencontrez des problèmes lors de l’installation ou de la manipulation du projet, veuillez contacter l’équipe de développement pour obtenir de l'aide :
-- [GRAUX François](SkyalphaBE) (francois.graux@etu.univ-lyon1.fr)
-- [CURVAT Elliot](ECurvat) (elliot.curvat@etu.univ-lyon1.fr)
+- [GRAUX François](https://github.com/SkyalphaBE) (francois.graux@etu.univ-lyon1.fr)
+- [CURVAT Elliot](https://github.com/ECurvat) (curvat.elliot@outlook.com)
